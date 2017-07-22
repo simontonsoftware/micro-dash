@@ -1,3 +1,9 @@
-export { LibComponent } from './src/component/lib.component';
-export { LibService } from './src/service/lib.service';
-export { LibModule } from './src/module';
+export * from './src/array';
+export * from './src/collection';
+export * from './src/function';
+export * from './src/lang';
+export * from './src/math';
+export * from './src/object';
+export * from './src/string';
+export * from './src/util';
+export * from './src/interfaces';
