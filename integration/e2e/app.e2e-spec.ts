@@ -1,6 +1,7 @@
-import { browser, element, by } from 'protractor';
+import {browser, by, element} from 'protractor';
 
-describe('QuickStart Lib E2E Tests', function () {
+describe('Micro-Dash E2E Tests', function () {
+  beforeAll(() => browser.waitForAngularEnabled(false));
 
   beforeEach(() => browser.get(''));
 
@@ -10,12 +11,7 @@ describe('QuickStart Lib E2E Tests', function () {
     });
   });
 
-  it('should display lib', () => {
-    expect(element(by.css('h2')).getText()).toEqual('Hello Angular Library');
+  it('should display kebab-case', () => {
+    expect(element(by.css('.result')).getText()).toEqual('kebab-case');
   });
-
-  it('should display meaning', () => {
-    expect(element(by.css('h3')).getText()).toEqual('Meaning is: 42');
-  });
-
 });

@@ -14,8 +14,7 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "files": [
-    "src/app/app.module.ts",
-    "src/main-aot.ts"
+    "src/main.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "out-tsc",

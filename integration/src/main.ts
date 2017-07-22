@@ -1,5 +1,6 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {kebabCase} from 'micro-dash';
 
-import { AppModule } from './app/app.module';
-
-platformBrowserDynamic().bootstrapModule(AppModule);
+const p = document.createElement('p');
+p.className = 'result';
+p.innerText = kebabCase('kebab case');
+document.querySelector('body').appendChild(p);

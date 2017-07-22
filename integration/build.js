@@ -12,7 +12,7 @@ const srcDir = path.join(__dirname, 'src/');
 const distDir = path.join(__dirname, 'dist/');
 const aotDir = path.join(__dirname, 'aot/');
 const rollupConfig = {
-  entry: `${srcDir}/main-aot.js`,
+  entry: `${srcDir}/main.js`,
   sourceMap: false,
   format: 'iife',
   onwarn: function (warning) {
@@ -56,8 +56,7 @@ return Promise.resolve()
     const appBundle = bundle.generate(rollupConfig);
 
     const scripts = [
-      'node_modules/core-js/client/shim.min.js',
-      'node_modules/zone.js/dist/zone.min.js'
+      'node_modules/core-js/client/shim.min.js'
     ];
 
     let concatenatedScripts = scripts.map((script) => {
