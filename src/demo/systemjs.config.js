@@ -39,7 +39,7 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'quickstart-lib': {
+      'micro-dash': {
         main: 'index.js',
         defaultExtension: 'js',
         meta: {

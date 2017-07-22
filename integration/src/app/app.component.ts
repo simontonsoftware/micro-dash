@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibService } from 'quickstart-lib';
+import { LibService } from 'micro-dash';
 
 @Component({
   selector: 'integration-app',

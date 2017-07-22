@@ -14,8 +14,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "quickstart-lib.js",
-    "flatModuleId": "quickstart-lib",
+    "flatModuleOutFile": "micro-dash.js",
+    "flatModuleId": "micro-dash",
     "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }
