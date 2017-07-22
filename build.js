@@ -11,8 +11,6 @@ const sourcemaps = require('rollup-plugin-sourcemaps');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 
-const inlineResources = require('./inline-resources');
-
 const libName = require('./package.json').name;
 const rootFolder = path.join(__dirname);
 const compilationFolder = path.join(rootFolder, 'out-tsc');
@@ -23,11 +21,8 @@ const es5OutputFolder = path.join(compilationFolder, 'lib-es5');
 const es2015OutputFolder = path.join(compilationFolder, 'lib-es2015');
 
 return Promise.resolve()
-  // Copy library to temporary folder and inline html/css.
-  .then(() => _relativeCopy(`**/*`, srcFolder, tempLibFolder)
-    .then(() => inlineResources(tempLibFolder))
-    .then(() => console.log('Inlining succeeded.'))
-  )
+  // Copy library to temporary folder.
+  .then(() => _relativeCopy(`**/*`, srcFolder, tempLibFolder))
   // Compile to ES2015.
   .then(() => ngc({ project: `${tempLibFolder}/tsconfig.lib.json` })
     .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
