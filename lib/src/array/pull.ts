@@ -1,5 +1,11 @@
 import {remove} from './remove';
 
-export function pull<T>(array: T[], value: T) {
-  remove(array, (item) => item === value);
+/**
+ * Removes all given values from array using `SameValueZero` for equality comparisons.
+ */
+export function pull<T>(array: T[], ...values: T[]) {
+  for (const value of values) {
+    remove(array, (item) => Object.is(item, value));
+  }
+  return array;
 }
