@@ -1,0 +1,7 @@
+instrumentation:
+  root: src/lib/src
+  include-all-sources: true
+  excludes: ['**/*.spec.js']
+reporting:
+  reports:
+    - lcovonly

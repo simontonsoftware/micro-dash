@@ -10,7 +10,9 @@ export function forEachRight<T>(
 
 export function forEachRight<T>(collection: any, iteratee: any) {
   if (Array.isArray(collection)) {
-    forEachRight(collection, iteratee);
+    for (let i = collection.length; --i >= 0; ) {
+      iteratee(collection[i], i);
+    }
   } else if (collection) {
     forOwnRight(collection, iteratee);
   }
