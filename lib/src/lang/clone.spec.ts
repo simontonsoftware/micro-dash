@@ -1,6 +1,6 @@
 import {clone} from './clone';
 
-// stolen from mini-dash
+// stolen from https://github.com/healthiers/mini-dash
 describe('clone()', function () {
   it('should return an empty object if empty given', function () {
     expect(clone({})).toEqual({});
