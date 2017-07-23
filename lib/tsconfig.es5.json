@@ -2,20 +2,17 @@
   "extends": "./tsconfig.lib.json",
   "compilerOptions": {
     "target": "es5",
-    "outDir": "../out-tsc/lib-es5/",
+    "outDir": "../../out-tsc/lib-es5/",
     "baseUrl": "",
     "types": []
   },
-  "files": [
-    "./index.ts",
-    "./typings.d.ts"
-  ],
+  "files": ["./index.ts"],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "micro-dash.js",
     "flatModuleId": "micro-dash",
-    "genDir": "../out-tsc/lib-gen-dir/"
+    "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }

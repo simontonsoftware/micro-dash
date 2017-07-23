@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test Coverage" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/mini-dash/coverage/remapped/index.html">
+  <configuration default="false" name="Test Coverage" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/micro-dash/coverage/remapped/index.html">
     <method>
       <option name="NpmBeforeRunTask" enabled="true">
         <package-json value="$PROJECT_DIR$/package.json" />

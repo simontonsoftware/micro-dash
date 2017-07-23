@@ -10,7 +10,6 @@ const ngc = require('@angular/compiler-cli/src/main').main;
 
 const srcDir = path.join(__dirname, 'src/');
 const distDir = path.join(__dirname, 'dist/');
-const aotDir = path.join(__dirname, 'aot/');
 const rollupConfig = {
   entry: `${srcDir}/main.js`,
   sourceMap: false,

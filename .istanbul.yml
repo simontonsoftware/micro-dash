@@ -1,7 +1,7 @@
 instrumentation:
   root: lib/src
   include-all-sources: true
-  excludes: ['**/*.spec.js']
+  excludes: ['**/*.spec.js', '**/index.js']
 reporting:
   reports:
     - lcovonly
