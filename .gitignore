@@ -4,7 +4,7 @@ node_modules/
 out-tsc/
 debug.log
 npm-debug.log
-src/**/*.js
+lib/**/*.js
 *.js.map
 e2e/**/*.js
 e2e/**/*.js.map

@@ -1,5 +1,5 @@
 instrumentation:
-  root: src/lib/src
+  root: lib/src
   include-all-sources: true
   excludes: ['**/*.spec.js']
 reporting:

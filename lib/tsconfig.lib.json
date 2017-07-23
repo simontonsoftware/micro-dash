@@ -1,8 +1,9 @@
 {
-  "extends": "./tsconfig.lib.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "outDir": "../../out-tsc/lib-es5/",
+    "outDir": "../out-tsc/lib-es2015/",
+    "target": "es2015",
+    "rootDir": "./",
     "baseUrl": "",
     "types": []
   },
@@ -16,6 +17,6 @@
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "micro-dash.js",
     "flatModuleId": "micro-dash",
-    "genDir": "../../out-tsc/lib-gen-dir/"
+    "genDir": "../out-tsc/lib-gen-dir/"
   }
 }
