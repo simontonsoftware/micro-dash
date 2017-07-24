@@ -1,8 +1,13 @@
 {
-  "name": "size-compare",
+  "name": "micro-dash-sizes",
   "version": "1.0.0",
-  "description": "App for integration tests",
-  "scripts": {},
+  "description": "Compares bundle sizes using lodash vs micro-dash",
+  "scripts": {
+    "clean": "rimraf build/* bundle/*",
+    "prebuild": "yarn run clean",
+    "build": "tsc",
+    "postbuild": "node explore.js"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",

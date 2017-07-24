@@ -29,6 +29,7 @@
     "integration": "yarn run integration:aot && yarn run integration:jit",
     "integration:jit": "cd integration && yarn run e2e",
     "integration:aot": "cd integration && yarn run e2e:aot",
+    "sizes": "cd sizes && yarn build",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "release": "standard-version"
   },

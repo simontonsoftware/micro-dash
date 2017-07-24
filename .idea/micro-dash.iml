@@ -6,14 +6,15 @@
       <sourceFolder url="file://$MODULE_DIR$/lib/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/integration/e2e" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/integration/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/size-compare/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sizes/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
       <excludeFolder url="file://$MODULE_DIR$/integration/dist" />
       <excludeFolder url="file://$MODULE_DIR$/integration/out-tsc" />
       <excludeFolder url="file://$MODULE_DIR$/out-tsc" />
-      <excludeFolder url="file://$MODULE_DIR$/size-compare/bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/size-compare/out-tsc" />
+      <excludeFolder url="file://$MODULE_DIR$/sizes/build" />
+      <excludeFolder url="file://$MODULE_DIR$/sizes/bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/sizes/out-tsc" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,5 +1,5 @@
+/build/
 /bundle/
 /node_module/
-/out-tsc/
 /src/**/*.js
 /src/**/*.js.map

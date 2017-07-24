@@ -1,16 +1,15 @@
 const fs = require('fs');
 const path = require('path');
-const spawnSync = require('child_process').spawnSync;
 const glob = require('glob');
 const rollup = require('rollup');
 const uglify = require('rollup-plugin-uglify');
 const commonjs = require('rollup-plugin-commonjs');
 const nodeResolve = require('rollup-plugin-node-resolve');
-const ngc = require('@angular/compiler-cli/src/main').main;
+const childProcess = require('child_process');
 
 const forEach = require('micro-dash').forEach;
 
-const srcDir = path.join(__dirname, 'src/');
+const buildDir = path.join(__dirname, 'build/');
 const bundleDir = path.join(__dirname, 'bundle/');
 const sourceMapExplorer = path.join(
   __dirname, 'node_modules', 'source-map-explorer', 'index.js'
@@ -33,16 +32,14 @@ const rollupConfig = {
 
 return Promise.resolve()
   .then(() => _recursiveMkDir(bundleDir))
-  .then(() => ngc({project: `./tsconfig.aot.json`}))
   .then(() => {
-    // return bundle('src/main.js');
     let queue = Promise.resolve();
     glob(
-      path.join(srcDir, '**/*.js'),
+      path.join(buildDir, '**/*.js'),
       {nodir: true},
       (err, files) => {
-        for (const file of files) {
-          queue = queue.then(() => bundle(file));
+        for (const inFile of files) {
+          queue = queue.then(() => bundle(inFile)).then(explore);
         }
       }
     );
@@ -50,7 +47,7 @@ return Promise.resolve()
   });
 
 function bundle(entry) {
-  const relPath = path.relative(srcDir, entry);
+  const relPath = path.relative(buildDir, entry);
   console.log(relPath);
   rollupConfig.entry = entry;
   const dest = path.join(bundleDir, relPath);
@@ -58,15 +55,16 @@ function bundle(entry) {
   // Bundle app.
     .then(() => rollup.rollup(rollupConfig))
     // Write to file.
-    .then(bundle => bundle.write({dest: dest, format: 'iife', sourceMap: true}))
-    .then(() => explore(dest));
+    .then(bundle =>
+      bundle.write({dest: dest, format: 'iife', sourceMap: true})
+    )
+    .then(() => dest);
 }
 
 function explore(file) {
   const basePath = file.substring(0, file.length - 2);
   fs.writeFileSync(basePath + 'html', generate('html'));
 
-  const json = JSON.parse(generate('json'));
   let lodash = 0;
   let microdash = 0;
   forEach(JSON.parse(generate('json')), (bytes, path) => {
@@ -76,13 +74,14 @@ function explore(file) {
       microdash += bytes;
     }
   });
-  summary = '      lodash: ' + lodash;
-  summary += '\n  micro-dash: ' + microdash;
+  let summary =
+    '   * lodash: ' + lodash.toLocaleString()
+    + '\n   * micro-dash: ' + microdash.toLocaleString();
   console.log(summary);
   fs.writeFileSync(basePath + 'txt', summary);
 
   function generate(format) {
-    return spawnSync(
+    return childProcess.spawnSync(
       process.execPath, [sourceMapExplorer, file, '--' + format]
     ).stdout;
   }
