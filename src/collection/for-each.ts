@@ -16,10 +16,10 @@ import {forOwn} from '../object/for-own';
 
 export function forEach<T>(
   array: T[] | undefined, iteratee: ArrayIteratee<T, void>,
-): void;
+): T[];
 export function forEach<T>(
   object: ObjectWith<T> | undefined, iteratee: ObjectIteratee<T, void>,
-): void;
+): ObjectWith<T>;
 
 export function forEach(collection: any, iteratee: any) {
   if (Array.isArray(collection)) {

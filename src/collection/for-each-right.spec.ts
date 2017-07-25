@@ -1,11 +1,11 @@
+import {forEachRight} from './for-each-right';
 import {stub} from 'sinon';
-import {forEach} from './for-each';
 import {noop} from 'lodash';
 
-describe('forEach()', () => {
+describe('forEachRight()', () => {
   it('works on undefined', () => {
     let count = 0;
-    forEach(undefined, () => { ++count; });
+    forEachRight(undefined, () => { ++count; });
     expect(count).toEqual(0);
   });
 
@@ -16,9 +16,9 @@ describe('forEach()', () => {
   it('should provide correct iteratee arguments', () => {
     const logger = stub();
 
-    forEach([1, 2, 3], logger);
+    forEachRight([1, 2, 3], logger);
 
-    expect(logger.args).toEqual([[1, 0], [2, 1], [3, 2]]);
+    expect(logger.args).toEqual([[3, 2], [2, 1], [1, 0]]);
   });
 
   it('should treat sparse arrays as dense', () => {
@@ -26,9 +26,9 @@ describe('forEach()', () => {
     array[2] = 3;
     const logger = stub();
 
-    forEach(array, logger);
+    forEachRight(array, logger);
 
-    expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
+    expect(logger.args).toEqual([[3, 2], [undefined, 1], [1, 0]]);
   });
 
   it('should not iterate custom properties', () => {
@@ -36,20 +36,20 @@ describe('forEach()', () => {
     (array as any).a = 1;
     const logger = stub();
 
-    forEach(array, logger);
+    forEachRight(array, logger);
 
     expect(logger.args).toEqual([[1, 0]]);
   });
 
   it('iterates over own string keyed properties of objects', () => {
-    function Foo() {
+    function Foo(this: any) {
       this.a = 1;
     }
 
     Foo.prototype.b = 2;
     const logger = stub();
 
-    forEach(new (Foo as any), logger);
+    forEachRight(new (Foo as any), logger);
 
     expect(logger.args).toEqual([[1, 'a']]);
   });
@@ -57,14 +57,14 @@ describe('forEach()', () => {
   it('should return the collection', () => {
     const array = [1, 2, 3];
 
-    expect(forEach(array, noop)).toBe(array);
+    expect(forEachRight(array, noop)).toBe(array);
   });
 
   it('should ignore changes to `length`', () => {
     const array = [1];
     let count = 0;
 
-    forEach(array, () => {
+    forEachRight(array, () => {
       if (!count) {
         array.push(2);
       }
@@ -78,7 +78,7 @@ describe('forEach()', () => {
     const object: any = {a: 1};
     let count = 0;
 
-    forEach(object, () => {
+    forEachRight(object, () => {
       object.b = 2;
       ++count;
     });

@@ -1,4 +1,4 @@
-import {isString} from '.';
+import {isString} from './';
 
 // stolen from https://github.com/healthiers/mini-dash
 describe('isString()', function () {

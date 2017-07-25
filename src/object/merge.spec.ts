@@ -1,4 +1,4 @@
-import {merge} from '.';
+import {merge} from './';
 
 describe('merge()', function () {
   it('should return empty object when single empty object given', function () {
@@ -22,7 +22,7 @@ describe('merge()', function () {
   });
 
   it('should mutate (only) the first input', function () {
-    let first = {a: 1};
+    let first: {a: number, b?: number, c?: number} = {a: 1};
     let second = {b: 2};
     let third = {c: 3};
 

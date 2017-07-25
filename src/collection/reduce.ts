@@ -14,15 +14,23 @@ import {forEachRight} from './for-each-right';
  * - Lodash: 14,600 bytes
  * - Micro-dash: 309 bytes
  */
+export function reduce<E>(
+  array: E[] | undefined,
+  iteratee: (accumulator: E, value: E, index: number) => E,
+): E;
 export function reduce<E, A>(
   array: E[] | undefined,
   iteratee: (accumulator: A, value: E, index: number) => A,
   accumulator?: A,
 ): A;
+export function reduce<E>(
+  array: ObjectWith<E> | undefined,
+  iteratee: (accumulator: E, value: E, key: keyof E) => E,
+): E;
 export function reduce<E, A>(
   array: ObjectWith<E> | undefined,
   iteratee: (accumulator: A, value: E, key: keyof E) => A,
-  accumulator?: A,
+  accumulator: A,
 ): A;
 export function reduce(collection: any, iteratee: any, accumulator?: any) {
   return doReduce(
@@ -42,17 +50,27 @@ export function reduce(collection: any, iteratee: any, accumulator?: any) {
  * - Lodash: 14,598 bytes
  * - Micro-dash: 299 bytes
  */
+export function reduceRight<E>(
+  array: E[] | undefined,
+  iteratee: (accumulator: E, value: E, index: number) => E,
+): E;
 export function reduceRight<E, A>(
   array: E[] | undefined,
   iteratee: (accumulator: A, value: E, index: number) => A,
-  accumulator?: A,
+  accumulator: A,
 ): A;
+export function reduceRight<E>(
+  array: ObjectWith<E> | undefined,
+  iteratee: (accumulator: E, value: E, key: keyof E) => E,
+): E;
 export function reduceRight<E, A>(
   array: ObjectWith<E> | undefined,
   iteratee: (accumulator: A, value: E, key: keyof E) => A,
-  accumulator?: A,
+  accumulator: A,
 ): A;
-export function reduceRight(collection: any, iteratee: any, accumulator?: any) {
+export function reduceRight(
+  collection: any, iteratee: any, accumulator?: any,
+) {
   return doReduce(
     forEachRight, collection, iteratee, accumulator, arguments.length < 3,
   );

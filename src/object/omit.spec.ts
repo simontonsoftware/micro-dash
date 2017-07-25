@@ -1,4 +1,4 @@
-import {omit} from '.';
+import {omit} from './';
 
 // stolen from https://github.com/healthiers/mini-dash
 describe('omit()', function () {

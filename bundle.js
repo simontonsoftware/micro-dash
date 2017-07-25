@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const camelCase = require('camelcase');
-const ngc = require('@angular/compiler-cli/src/main').main;
 const rollup = require('rollup');
 const uglify = require('rollup-plugin-uglify');
 const sourcemaps = require('rollup-plugin-sourcemaps');
@@ -13,60 +12,23 @@ const commonjs = require('rollup-plugin-commonjs');
 
 const libName = require('./package.json').name;
 const rootFolder = path.join(__dirname);
-const compilationFolder = path.join(rootFolder, 'out-tsc');
-const srcFolder = path.join(rootFolder, 'lib');
+const buildFolder = path.join(rootFolder, 'build');
 const distFolder = path.join(rootFolder, 'dist');
-const tempLibFolder = path.join(compilationFolder, 'lib');
-const es5OutputFolder = path.join(compilationFolder, 'lib-es5');
-const es2015OutputFolder = path.join(compilationFolder, 'lib-es2015');
+const es5Folder = path.join(buildFolder, 'es5');
+const es2015Folder = path.join(buildFolder, 'es2015');
 
 return Promise.resolve()
-  // Copy library to temporary folder.
-  .then(() => _relativeCopy(`**/*`, srcFolder, tempLibFolder))
-  // Compile to ES2015.
-  .then(() => ngc({ project: `${tempLibFolder}/tsconfig.lib.json` })
-    .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
-    .then(() => console.log('ES2015 compilation succeeded.'))
-  )
-  // Compile to ES5.
-  .then(() => ngc({ project: `${tempLibFolder}/tsconfig.es5.json` })
-    .then(exitCode => exitCode === 0 ? Promise.resolve() : Promise.reject())
-    .then(() => console.log('ES5 compilation succeeded.'))
-  )
-  // Copy typings and metadata to `dist/` folder.
-  .then(() => Promise.resolve()
-    .then(() => _relativeCopy('**/*.d.ts', es2015OutputFolder, distFolder))
-    .then(() => _relativeCopy('**/*.metadata.json', es2015OutputFolder, distFolder))
-    .then(() => console.log('Typings and metadata copy succeeded.'))
-  )
-  // Bundle lib.
   .then(() => {
     // Base configuration.
-    const es5Entry = path.join(es5OutputFolder, `${libName}.js`);
-    const es2015Entry = path.join(es2015OutputFolder, `${libName}.js`);
+    const es5Entry = path.join(es5Folder, 'index.js');
+    const es2015Entry = path.join(es2015Folder, 'index.js');
     const rollupBaseConfig = {
       moduleName: camelCase(libName),
       sourceMap: true,
-      // ATTENTION:
-      // Add any dependency or peer dependency your library to `globals` and `external`.
-      // This is required for UMD bundle users.
-      globals: {
-        // The key here is library name, and the value is the the name of the global variable name
-        // the window object.
-        // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals for more.
-        '@angular/core': 'ng.core'
-      },
-      external: [
-        // List of dependencies
-        // See https://github.com/rollup/rollup/wiki/JavaScript-API#external for more.
-        '@angular/core'
-      ],
       plugins: [
-        commonjs({
-          include: ['node_modules/rxjs/**']
-        }),
+        commonjs(),
         sourcemaps(),
-        nodeResolve({ jsnext: true, module: true })
+        nodeResolve({jsnext: true, module: true})
       ]
     };
 
@@ -109,6 +71,8 @@ return Promise.resolve()
     return Promise.all(allBundles)
       .then(() => console.log('All bundles generated successfully.'))
   })
+  // Copy typings
+  .then(() => _relativeCopy('**/*.d.ts', es2015Folder, distFolder))
   // Copy package files
   .then(() => Promise.resolve()
     .then(() => _relativeCopy('LICENSE', rootFolder, distFolder))
@@ -117,7 +81,7 @@ return Promise.resolve()
     .then(() => console.log('Package files copy succeeded.'))
   )
   .catch(e => {
-    console.error('\Build failed. See below for errors.\n');
+    console.error('Build failed. See below for errors.\n');
     console.error(e);
     process.exit(1);
   });
@@ -126,7 +90,7 @@ return Promise.resolve()
 // Copy files maintaining relative paths.
 function _relativeCopy(fileGlob, from, to) {
   return new Promise((resolve, reject) => {
-    glob(fileGlob, { cwd: from, nodir: true }, (err, files) => {
+    glob(fileGlob, {cwd: from, nodir: true}, (err, files) => {
       if (err) reject(err);
       files.forEach(file => {
         const origin = path.join(from, file);

@@ -11,7 +11,7 @@ describe('compact()', () => {
   });
 
   it('is OK with all falsey values', () => {
-    expect(compact([false, null, ''])).toEqual([]);
+    expect(compact([false, null, '']) as any[]).toEqual([]);
   });
 
   it('is OK with an empty array', () => {

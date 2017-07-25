@@ -18,10 +18,10 @@ import {forEach} from './for-each';
 
 export function keyBy<T>(
   array: T[] | undefined, iteratee: ValueIteratee<T, string>,
-): void;
+): ObjectWith<T>;
 export function keyBy<T>(
   array: ObjectWith<T> | undefined, iteratee: ValueIteratee<T, string>,
-): void;
+): ObjectWith<T>;
 
 export function keyBy<T>(collection: any, iteratee: any) {
   const obj: ObjectWith<T> = {};

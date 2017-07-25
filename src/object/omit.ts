@@ -7,7 +7,9 @@ import {clone} from '../lang/clone';
  * - the result does not contain inherited properties of `object`
  * - `paths` must be direct keys of `object` (they cannot refer to deeper properties)
  */
-export function omit<T extends object>(object: T, ...paths: Array<keyof T>) {
+export function omit<T extends object>(
+  object: T, ...paths: Array<keyof T>,
+): Partial<T> {
   const obj = clone(object);
   for (const path of paths) {
     delete obj[path];

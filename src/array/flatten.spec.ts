@@ -44,7 +44,7 @@ describe('flatten()', function () {
     let object2: object = { '0': 'a', 'length': 1 };
     object1[Symbol.isConcatSpreadable] = true;
 
-    expect(flatten([object1, object2])).toEqual(['a', object2]);
+    expect(flatten([object1, object2] as any)).toEqual(['a', object2]);
   });
 
   it('should work with extremely large arrays', () => {

@@ -1,5 +1,4 @@
 import {keyBy} from './key-by';
-import {noop} from 'lodash';
 
 describe('keyBy()', () => {
   it('works with `undefined`', () => {
@@ -29,8 +28,8 @@ describe('keyBy()', () => {
 
   it('should work with an object for `collection`', () => {
     expect(keyBy(
-      { 'a': 6.1, 'b': 4.2, 'c': 6.3 },
+      {a: 6.1, b: 4.2, c: 6.3},
       (value) => Math.floor(value) + '',
-    )).toEqual({ '4': 4.2, '6': 6.3 });
+    )).toEqual({4: 4.2, 6: 6.3});
   });
 });
