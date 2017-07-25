@@ -75,8 +75,8 @@ function explore(file) {
     }
   });
   let summary =
-    '   * lodash: ' + lodash.toLocaleString()
-    + '\n   * micro-dash: ' + microdash.toLocaleString();
+    ` * - Lodash: ${lodash.toLocaleString()} bytes`
+    + `\n * - Micro-dash: ${microdash.toLocaleString()} bytes`;
   console.log(summary);
   fs.writeFileSync(basePath + 'txt', summary);
 

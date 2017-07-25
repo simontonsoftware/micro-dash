@@ -17,3 +17,4 @@ export type Transformer<T> = (input: T) => T;
 
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
 export type ObjectIteratee<I, O> = (item: I, key: string) => O;
+export type ValueIteratee<T, O> = (value: T) => O;

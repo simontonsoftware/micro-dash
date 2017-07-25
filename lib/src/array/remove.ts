@@ -8,7 +8,7 @@ import {ArrayIteratee} from '../interfaces';
  * - does not pass `array` to the predicate
  * - does not support iteratee shorthand; `predicate` must be a function
  *
- * Contibution to minified bundle size, when it is the only function imported:
+ * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,615 bytes
  * - Micro-dash: 89 bytes
  */
