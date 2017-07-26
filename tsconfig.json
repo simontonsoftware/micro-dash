@@ -2,7 +2,6 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "lib": ["es2015"],
-    "noImplicitAny": true,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
     "stripInternal": true,

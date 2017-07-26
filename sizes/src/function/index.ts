@@ -1,0 +1,2 @@
+import './curry';
+import './partial';

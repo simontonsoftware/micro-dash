@@ -4,7 +4,7 @@
   "description": "Compares bundle sizes of lodash vs micro-dash",
   "scripts": {
     "clean": "rimraf build/* bundle/*",
-    "prebuild": "yarn install --check-files && yarn run clean",
+    "prebuild": "yarn run clean && rimraf node_modules/micro-dash/* && copyfiles -u 2 ../dist/**/* node_modules/micro-dash",
     "build": "tsc",
     "postbuild": "node explore.js"
   },
@@ -15,9 +15,12 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.14.5",
+    "@types/underscore": "^1.8.1",
+    "copyfiles": "^1.2.0",
     "process-promises": "^1.0.0",
     "rimraf": "^2.6.1",
     "source-map-explorer": "danvk/source-map-explorer#57/head",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "underscore-es": "^1.9.8"
   }
 }

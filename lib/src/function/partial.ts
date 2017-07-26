@@ -8,6 +8,18 @@ import {
 
 // type definitions from @types/lodash
 
+/**
+ * Creates a function that invokes `func` with `partials` prepended to the arguments it receives. This method is like `bind` except it does not alter the `this` binding.
+ *
+ * Differences from lodash:
+ * - there is no "placeholder" functionality
+ * - sets the "length" property of partially applied functions
+ *
+ * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 9,579 bytes
+ * - Micro-dash: 114 bytes
+ */
+
 // arity 1
 export function partial<T1, R>(func: Function1<T1, R>, arg1: T1): Function0<R>;
 
