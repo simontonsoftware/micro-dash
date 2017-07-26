@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "lib": ["es2015"],
     "noImplicitAny": true,
+    "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
     "stripInternal": true,
-    "strict": true,
-    "lib": ["es2015"]
+    "strict": true
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "lib/src/**/*.ts"
+  ]
 }

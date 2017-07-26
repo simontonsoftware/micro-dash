@@ -1,7 +1,2 @@
-build/
-coverage/
 dist/
 node_modules/
-
-e2e/**/*.js
-e2e/**/*.js.map

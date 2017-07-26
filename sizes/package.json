@@ -1,21 +1,22 @@
 {
   "name": "micro-dash-sizes",
   "version": "1.0.0",
-  "description": "Compares bundle sizes using lodash vs micro-dash",
+  "description": "Compares bundle sizes of lodash vs micro-dash",
   "scripts": {
     "clean": "rimraf build/* bundle/*",
-    "prebuild": "yarn run clean",
+    "prebuild": "yarn install --check-files && yarn run clean",
     "build": "tsc",
     "postbuild": "node explore.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Simonton Software",
   "license": "MIT",
   "dependencies": {
     "micro-dash": "../dist/"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.14.5",
     "process-promises": "^1.0.0",
+    "rimraf": "^2.6.1",
     "source-map-explorer": "danvk/source-map-explorer#57/head",
     "typescript": "^2.4.2"
   }
