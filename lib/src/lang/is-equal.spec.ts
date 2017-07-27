@@ -135,7 +135,7 @@ describe('isEqual()', () => {
     expect(isEqual(36, '36')).toBe(false);
   });
 
-  it('should return `false` for objects with custom `toString` methods', () => {
+  it('is `false` for objects with custom `toString` methods', () => {
     let primitive: any;
     const object = {'toString': function () { return primitive; }};
 

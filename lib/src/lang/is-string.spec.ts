@@ -1,6 +1,9 @@
 import {isString} from './';
 
+//
 // stolen from https://github.com/healthiers/mini-dash
+//
+
 describe('isString()', function () {
   it('should pass for empty string', function () {
     expect(isString('')).toBe(true);
@@ -49,5 +52,33 @@ describe('isString()', function () {
 
   it('should not pass for a function', function () {
     expect(isString(function () { /* empty */ })).toBe(false);
+  });
+
+  //
+  // stolen from https://github.com/lodash/lodash
+  //
+
+  it('should return `true` for strings', () => {
+    expect(isString('a')).toBe(true);
+  });
+
+  it('should return `false` for non-strings', function() {
+    expect(isString(null)).toBe(false);
+    expect(isString(undefined)).toBe(false);
+    expect(isString(false)).toBe(false);
+    expect(isString(0)).toBe(false);
+    expect(isString(NaN)).toBe(false);
+    expect(isString('')).toBe(true);
+
+    expect(isString(arguments)).toBe(false);
+    expect(isString([1, 2, 3])).toBe(false);
+    expect(isString(true)).toBe(false);
+    expect(isString(new Date)).toBe(false);
+    expect(isString(new Error)).toBe(false);
+    expect(isString(Array.prototype.slice)).toBe(false);
+    expect(isString({ '0': 1, 'length': 1 })).toBe(false);
+    expect(isString(1)).toBe(false);
+    expect(isString(/x/)).toBe(false);
+    expect(isString(Symbol('a'))).toBe(false);
   });
 });

@@ -7,13 +7,10 @@
     "prebuild:test": "rimraf build/spec/*",
     "build:test": "tsc -p tsconfig.spec.json",
     "build:test:watch": "yarn run build:test -- -w",
-    "pretest": "yarn run build:test",
-    "test": "jasmine --config=jasmine.json",
+    "pretest": "yarn run build:test && rimraf coverage/*",
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js -- --config=jasmine.json",
     "test:watch": "concurrently \"yarn run build:test:watch\" \"nodemon --watch build/spec node_modules/jasmine/bin/jasmine.js --config=jasmine.json\"",
-    "posttest": "yarn run coverage",
-    "precoverage": "rimraf coverage/*",
-    "coverage": "istanbul cover node_modules/jasmine/bin/jasmine.js -- --config=jasmine.json",
-    "postcoverage": "remap-istanbul -i coverage/coverage.json -t html -o coverage/remapped"
+    "posttest": "remap-istanbul -i coverage/coverage.json -t html -o coverage/remapped"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.53",

@@ -1,5 +1,4 @@
 import {clone} from './clone';
-import {makeSampleObjects} from '../test-helpers';
 import {forOwn, isObject} from 'lodash';
 
 describe('clone()', function () {
