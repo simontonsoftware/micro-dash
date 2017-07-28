@@ -31,7 +31,7 @@ describe('forEach()', () => {
     expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
   });
 
-  it('should not iterate custom properties', () => {
+  it('should not iterate custom properties of arrays', () => {
     const array = [1];
     (array as any).a = 1;
     const logger = stub();

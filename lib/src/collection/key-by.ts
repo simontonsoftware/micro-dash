@@ -9,7 +9,7 @@ import {forEach} from './for-each';
  *
  * Differences from lodash:
  * - only iterates actual arrays like arrays, not "array-like" objects
- * - does not support iteratee shorthand; `predicate` must be a function
+ * - does not support iteratee shorthand; `iteratee` must be a function
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,809 bytes

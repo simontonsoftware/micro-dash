@@ -4,7 +4,7 @@ import {forOwn} from '../object/for-own';
 /**
  * Iterates over elements of `collection` and invokes `iteratee` for each element.
  *
- * **Differences from lodash:**
+ * Differences from lodash:
  * - does not pass `collection` to `iteratee`
  * - only iterates actual arrays like arrays, not "array-like" objects
  * - `iteratee` may not exit iteration early by explicitly returning `false`
