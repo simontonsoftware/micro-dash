@@ -4,11 +4,6 @@ import {forOwnRight} from '../object/for-own-right';
 /**
  * This method is like `forEach` except that it iterates over elements of `collection` from right to left.
  *
- * Differences from lodash:
- * - does not pass `collection` to `iteratee`
- * - only iterates actual arrays like arrays, not "array-like" objects
- * - `iteratee` may not exit iteration early by explicitly returning `false`
- *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,793 bytes
  * - Micro-dash: 169 bytes

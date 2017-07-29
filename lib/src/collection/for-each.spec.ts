@@ -41,19 +41,6 @@ describe('forEach()', () => {
     expect(logger.args).toEqual([[1, 0]]);
   });
 
-  it('iterates over own string keyed properties of objects', () => {
-    function Foo(this: any) {
-      this.a = 1;
-    }
-
-    Foo.prototype.b = 2;
-    const logger = stub();
-
-    forEach(new (Foo as any), logger);
-
-    expect(logger.args).toEqual([[1, 'a']]);
-  });
-
   it('should return the collection', () => {
     const array = [1, 2, 3];
 

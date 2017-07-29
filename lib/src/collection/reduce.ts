@@ -5,11 +5,6 @@ import {forEachRight} from './for-each-right';
 /**
  * Reduces `collection` to a value which is the accumulated result of running each element in collection thru `iteratee`, where each successive invocation is supplied the return value of the previous. If accumulator is not given, the first element of collection is used as the initial value.
  *
- * Differences from lodash:
- * - does not pass `collection` to `iteratee`
- * - does not iterate "array-like" objects as arrays
- * - does not support iteratee shorthand; `iteratee` must be a function
- *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,600 bytes
  * - Micro-dash: 309 bytes

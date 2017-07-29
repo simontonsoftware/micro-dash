@@ -3,13 +3,7 @@
  *
  * Differences from lodash:
  * - cannot handle circular references
- * - summary: only meant to work with primitives, arrays and plain objects. For the details, read on.
- * - only considers own enumerable properties (and not own enumerable property symbols). NB this means it does not support (among other things):
- *   - primitive objects (e.g. `Object(false)`)
- *   - `arguments` objects
- *   - Date objects
- *   - Map and Set objects
- * - does not give special treatment to arrays (or array-like objects); their own properties are compared just like other objects. Note this means sparse arrays are not equal to their dense "equivalents".
+ * - does not give special treatment to arrays; their own properties are compared just like other objects. Note this means sparse arrays are not equal to their dense "equivalents".
  * - `isEqual(0, -0) === false`
  *
  * Contribution to minified bundle size, when it is the only function imported:

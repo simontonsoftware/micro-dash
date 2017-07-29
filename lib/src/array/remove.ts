@@ -5,8 +5,6 @@ import {ArrayIteratee} from '../interfaces';
  *
  * Differences from lodash:
  * - iterates over `array` in reverse order
- * - does not pass `array` to the predicate
- * - does not support iteratee shorthand; `predicate` must be a function
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,615 bytes
