@@ -55,24 +55,52 @@ describe('clone()', function () {
   const clonable = {
     'arrays': ['a', ''],
     'array-like objects': {'0': 'a', 'length': 1},
+    'booleans': false,
+    'null values': null,
+    'numbers': 0,
     'objects': {'a': 0, 'b': 1, 'c': 2},
-    'objects with object values': {'a': /a/, 'b': ['B'], 'c': {'C': 1}},
-    'properties that shadow those on `Object.prototype`': {
-      'constructor': Object.prototype.constructor,
-      'hasOwnProperty': Object.prototype.hasOwnProperty,
-      'isPrototypeOf': Object.prototype.isPrototypeOf,
-      'propertyIsEnumerable': Object.prototype.propertyIsEnumerable,
-      'toLocaleString': Object.prototype.toLocaleString,
-      'toString': Object.prototype.toString,
-      'valueOf': Object.prototype.valueOf
-    },
+    'strings': 'a',
+    'undefined values': undefined,
+    'objects with object values': {b: ['B'], c: {C: 1}},
   };
   forOwn(clonable, (object, kind) => {
     it('should clone ' + kind, () => {
       const actual = clone(object);
 
       expect(actual).toEqual(object);
-      expect(actual).not.toBe(object);
+      if (isObject(object)) {
+        expect(actual).not.toBe(object);
+      } else {
+        expect(actual).toBe(object);
+      }
     });
+  });
+
+  it('clones properties that shadow those on `Object.prototype`', () => {
+    const object = {
+      constructor: 1,
+      hasOwnProperty: 2,
+      isPrototypeOf: 3,
+      propertyIsEnumerable: 4,
+      toLocaleString: 5,
+      toString: 6,
+      valueOf: 7,
+    };
+
+    const actual = clone(object);
+
+    expect(actual).toEqual(object);
+    expect(actual).not.toBe(object);
+  });
+
+  it('works for methods like `map`', () => {
+    const expected: any[] = [{a: [0]}, {b: [1]}];
+
+    const actual = expected.map(clone);
+
+    expect(actual).toEqual(expected);
+    expect(actual[0]).not.toBe(expected[0]);
+    expect(actual[0].a).toBe(expected[0].a);
+    expect(actual[1].b).toBe(expected[1].b);
   });
 });

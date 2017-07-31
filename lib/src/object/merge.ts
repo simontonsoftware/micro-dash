@@ -1,5 +1,6 @@
 import {forOwn} from './for-own';
-import {clone} from '../lang/clone';
+import {cloneDeep} from '../lang/clone-deep';
+import {forEach} from '../collection/for-each';
 
 /**
  * Recursively merges own enumerable string keyed properties of source objects into the destination object. Array and plain object properties are merged recursively. Other objects and value types are overridden by assignment. Source objects are applied from left to right. Subsequent sources overwrite property assignments of previous sources.
@@ -10,7 +11,6 @@ import {clone} from '../lang/clone';
  * - will overwrite a value with `undefined`
  * - only supports arguments that are objects
  * - cannot handle circular references
- * - does not treat sparse arrays as dense
  * - when merging an array onto a non-array, the result is a non-array
  */
 export function merge<T extends object>(
@@ -47,12 +47,12 @@ export function merge<
 
 export function merge(object: any, ...sources: any[]) {
   for (const source of sources) {
-    forOwn<any>(source, (value, key) => {
+    forEach<any>(source, (value, key) => {
       const myValue = object[key];
       if (myValue instanceof Object) {
         merge(myValue, value);
       } else {
-        object[key] = value instanceof Object ? cloneDeep(value) : value;
+        object[key] = cloneDeep(value);
       }
     });
   }

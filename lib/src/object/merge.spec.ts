@@ -103,14 +103,23 @@ describe('merge()', function () {
   });
 
   it('should assign `null` values', () => {
-    expect(merge({'a': 1}, {'a': null})).toEqual({a: null});
+    expect(merge({'a': 1}, {'a': null})).toEqual({a: null} as any);
+  });
+
+  it('should treat sparse arrays as dense', () => {
+    const array = [1];
+    array[2] = 3;
+
+    const actual = merge([], array);
+
+    expect('1' in actual).toBeTruthy();
+    expect(actual as any).toEqual([1, undefined, 3]);
   });
 
   it('should not augment source objects', () => {
     let source1: any = {'a': [{'a': 1}]};
     let source2: any = {'a': [{'b': 2}]};
     let actual: any = merge({}, source1, source2);
-
     expect(source1.a).toEqual([{'a': 1}]);
     expect(source2.a).toEqual([{'b': 2}]);
     expect(actual.a).toEqual([{'a': 1, 'b': 2}]);
@@ -118,7 +127,6 @@ describe('merge()', function () {
     source1 = {'a': [[1, 2, 3]]};
     source2 = {'a': [[3, 4]]};
     actual = merge({}, source1, source2);
-
     expect(source1.a).toEqual([[1, 2, 3]]);
     expect(source2.a).toEqual([[3, 4]]);
     expect(actual.a).toEqual([[3, 4, 3]]);
