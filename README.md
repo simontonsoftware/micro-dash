@@ -8,6 +8,7 @@ Philosophical differences from lodash:
 - There is no shorthand for "iteratees" - functions that accept one expect you to pass an actual function.
 - It has no special knowledge of "array like" objects; only actual arrays are treated as arrays.
 - Does not pass the iterated object to iteratee functions. This allows simplifications, e.g. methods like `merge` can be used as an iteratee for `reduce` without being guarded.
+- String functions are designed for simple cases like variable names. They only treat `[0-9A-Za-z]` as part of words and are not smart about contractions (e.g. `I'll`) or ordinals (e.g. `1st`).
 - A modern environment/buildchain is assumed. E.g. this project will not contain duplicates of ES6 functions (such as `Array.isArray()`), and it may use ES6 functions directly. If you target older browsers/environments, you may need to include polyfills separately. However, it will only use features that _can_ be polyfilled.
 - <FESM / angular 4 module format>
 
