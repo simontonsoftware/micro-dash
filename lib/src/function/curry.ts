@@ -33,7 +33,7 @@ export interface CurriedFunction4<T1, T2, T3, T4, R> {
  * - it will return plain functions; they will not inherit the prototype of `func`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 9,376 bytes
+ * - Lodash: 9,400 bytes
  * - Micro-dash: 312 bytes
  */
 

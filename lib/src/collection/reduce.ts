@@ -6,8 +6,8 @@ import {forEachRight} from './for-each-right';
  * Reduces `collection` to a value which is the accumulated result of running each element in collection thru `iteratee`, where each successive invocation is supplied the return value of the previous. If accumulator is not given, the first element of collection is used as the initial value.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,600 bytes
- * - Micro-dash: 309 bytes
+ * - Lodash: 14,632 bytes
+ * - Micro-dash: 337 bytes
  */
 export function reduce<E>(
   array: E[] | undefined,
@@ -42,8 +42,8 @@ export function reduce(collection: any, iteratee: any, accumulator?: any) {
  * - does not support iteratee shorthand; `iteratee` must be a function
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,598 bytes
- * - Micro-dash: 299 bytes
+ * - Lodash: 14,630 bytes
+ * - Micro-dash: 308 bytes
  */
 export function reduceRight<E>(
   array: E[] | undefined,

@@ -5,6 +5,12 @@ import {clone} from '../lang/clone';
  *
  * Differences from lodash:
  * - `paths` must be direct keys of `object` (they cannot refer to deeper properties)
+ * - does not work with arrays
+ * - `omit(obj, -0)` (which is a type error) acts like `omit(obj, '0')` instead of `omit(obj, '-0')`
+ *
+ * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 16,283 bytes
+ * - Micro-dash: 220 bytes
  */
 export function omit<T extends object | null | undefined>(
   object: T, ...paths: Array<keyof T>,

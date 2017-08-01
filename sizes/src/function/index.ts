@@ -1,2 +1,0 @@
-import './curry';
-import './partial';

@@ -6,6 +6,8 @@
  * - `get(obj, [-0])` (which is a type error) acts like `get(obj, ['0'])` instead of `get(obj, ['-0'])
  *
  * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 5,328 bytes
+ * - Micro-dash: 65 bytes
  */
 export function get(
   object: object | null | undefined, path: string[], defaultValue?: any,

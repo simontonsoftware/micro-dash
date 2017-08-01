@@ -47,4 +47,9 @@ describe('omit()', () => {
     omit(object, 'a');
     expect(object).toEqual({a: {b: 2}});
   });
+
+  it('should create an object with omitted string keyed properties', () => {
+    const object = {a: 1, b: 2, c: 3, d: 4};
+    expect(omit(object, 'a')).toEqual({b: 2, c: 3, d: 4});
+  });
 });

@@ -7,7 +7,7 @@
  * - `isEqual(0, -0) === false`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 10,979 bytes
+ * - Lodash: 11,009 bytes
  * - Micro-dash: 302 bytes
  */
 export function isEqual(value: any, other: any) {

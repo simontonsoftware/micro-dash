@@ -16,7 +16,7 @@ import {
  * - sets the "length" property of partially applied functions
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 9,579 bytes
+ * - Lodash: 9,606 bytes
  * - Micro-dash: 114 bytes
  */
 

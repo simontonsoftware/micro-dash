@@ -5,8 +5,8 @@ import {forEach} from '../collection/for-each';
  * This method is like `min` except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,185 bytes
- * - Micro-dash: 86 bytes
+ * - Lodash: 14,214 bytes
+ * - Micro-dash: 288 bytes
  */
 export function minBy<T extends Existant>(
   array: T[], iteratee: ValueIteratee<T, Primitive>,

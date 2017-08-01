@@ -5,8 +5,8 @@ import {forOwn} from '../object/for-own';
  * Iterates over elements of `collection` and invokes `iteratee` for each element.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 3,795 bytes
- * - Micro-dash: 179 bytes
+ * - Lodash: 3,832 bytes
+ * - Micro-dash: 207 bytes
  */
 
 export function forEach<T>(

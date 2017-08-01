@@ -12,6 +12,10 @@ import {forEach} from '../collection/for-each';
  * - only supports arguments that are objects
  * - cannot handle circular references
  * - when merging an array onto a non-array, the result is a non-array
+ *
+ * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 10,442 bytes
+ * - Micro-dash: 561 bytes
  */
 export function merge<T extends object>(
   object: T, ...sources: Array<Partial<T>>,

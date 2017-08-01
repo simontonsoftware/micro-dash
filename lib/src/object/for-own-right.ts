@@ -9,6 +9,8 @@ import {forEachRight} from '../collection/for-each-right';
  * - `iteratee` may not exit iteration early by explicitly returning `false`
  *
  * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 3,558 bytes
+ * - Micro-dash: 178 bytes
  */
 export function forOwnRight<T>(
   object: ObjectWith<T>, iteratee: ObjectIteratee<T, void>,

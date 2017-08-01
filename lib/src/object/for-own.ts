@@ -8,6 +8,8 @@ import {ObjectIteratee, ObjectWith} from '../interfaces';
  * - `iteratee` may not exit iteration early by explicitly returning `false`
  *
  * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 3,556 bytes
+ * - Micro-dash: 96 bytes
  */
 export function forOwn<T>(
   object: ObjectWith<T>, iteratee: ObjectIteratee<T, void>,

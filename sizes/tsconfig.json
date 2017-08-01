@@ -9,6 +9,7 @@
     "outDir": "build"
   },
   "files": [
-    "src/index.ts"
+    "src/index.microdash.ts",
+    "src/index.lodash.ts"
   ]
 }

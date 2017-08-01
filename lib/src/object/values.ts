@@ -1,8 +1,12 @@
-import {forOwn} from './for-own';
 import {ObjectWith} from '../interfaces';
 
+/**
+ * Creates an array of the own enumerable string keyed property values of `object`.
+ *
+ * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 3,437 bytes
+ * - Micro-dash: 72 bytes
+ */
 export function values<T>(object: ObjectWith<T>) {
-  const v: T[] = [];
-  forOwn(object, (val) => { v.push(val); });
-  return v;
+  return Object.getOwnPropertyNames(object).map((key) => object[key]);
 }

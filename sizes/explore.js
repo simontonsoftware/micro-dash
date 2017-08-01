@@ -63,7 +63,7 @@ function bundle(entry) {
 
 function explore(file) {
   const basePath = file.substring(0, file.length - 2);
-  fs.writeFileSync(basePath + 'html', generate('html'));
+  // fs.writeFileSync(basePath + 'html', generate('html'));
 
   let lodash = 0;
   let microdash = 0;
@@ -87,19 +87,6 @@ function explore(file) {
   }
 }
 
-
-// Copy files maintaining relative paths.
-function _relativeCopy(fileGlob, from, to) {
-  return glob(fileGlob, {cwd: from, nodir: true}, (err, files) => {
-    if (err) throw err;
-    files.forEach(file => {
-      const origin = path.join(from, file);
-      const dest = path.join(to, file);
-      _recursiveMkDir(path.dirname(dest));
-      fs.createReadStream(origin).pipe(fs.createWriteStream(dest));
-    })
-  })
-}
 
 // Recursively create a dir.
 function _recursiveMkDir(dir) {
