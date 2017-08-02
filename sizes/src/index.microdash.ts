@@ -4,3 +4,4 @@ import './function/index.microdash';
 import './lang/index.microdash';
 import './math/index.microdash';
 import './object/index.microdash';
+import './string/index.microdash';

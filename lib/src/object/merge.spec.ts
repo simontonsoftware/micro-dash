@@ -40,7 +40,7 @@ describe('merge()', function () {
   });
 
   //
-  // stolen from https://github.com/healthiers/mini-dash
+  // stolen from https://github.com/lodash/lodash
   //
 
   it('should throws strict mode errors', () => {

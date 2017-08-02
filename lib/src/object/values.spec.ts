@@ -3,7 +3,7 @@ import {values} from './values';
 describe('values()', () => {
 
   //
-  // stolen from https://github.com/healthiers/mini-dash
+  // stolen from https://github.com/lodash/lodash
   //
 
   it('should get string keyed values of `object`', () => {

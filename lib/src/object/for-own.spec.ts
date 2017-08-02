@@ -5,7 +5,7 @@ import {noop} from 'lodash';
 describe('forOwn()', () => {
 
   //
-  // stolen from https://github.com/healthiers/mini-dash
+  // stolen from https://github.com/lodash/lodash
   //
 
   it('should iterate over `length` properties', () => {

@@ -5,7 +5,7 @@ import {identity, range} from 'lodash';
 describe('minBy()', () => {
 
   //
-  // stolen from https://github.com/healthiers/mini-dash
+  // stolen from https://github.com/lodash/lodash
   //
 
   it('should provide correct iteratee arguments', () => {

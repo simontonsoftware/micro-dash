@@ -2,11 +2,14 @@ import {words} from './words';
 import {capitalize} from './capitalize';
 
 /**
- * Converts string to camel case.
+ * Converts `string` to camel case.
  *
- * **Differences from lodash:**
- * - treats all non-ascii characters as separators
+ * Differences from lodash:
  * - requires `string` to be a string
+ *
+ * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 5,987 bytes
+ * - Micro-dash: 376 bytes
  */
 export function camelCase(string: string) {
   return words(string)

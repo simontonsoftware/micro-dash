@@ -3,6 +3,10 @@
  *
  * Differences from lodash:
  * - does not accept a `pattern` argument
+ *
+ * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 2,771 bytes
+ * - Micro-dash: 188 bytes
  */
 export function words(string: string): string[] {
   return string

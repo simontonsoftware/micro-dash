@@ -4,7 +4,7 @@ import {mapValues} from '../object/map-values';
 describe('words()', () => {
 
   //
-  // stolen from https://github.com/healthiers/mini-dash
+  // stolen from https://github.com/lodash/lodash
   //
 
   it('should work with compound words', () => {

@@ -1,6 +1,11 @@
 import {get} from './get';
 
 describe('get()', () => {
+
+  //
+  // stolen from https://github.com/lodash/lodash
+  //
+
   it('should get string keyed property values', () => {
     expect(get({a: 1}, ['a'])).toBe(1);
   });

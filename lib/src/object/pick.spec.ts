@@ -26,7 +26,7 @@ describe('pick()', () => {
   });
 
   //
-  // stolen from https://github.com/healthiers/mini-dash
+  // stolen from https://github.com/lodash/lodash
   //
 
   it('should flatten `paths`', () => {
