@@ -5,3 +5,4 @@ import './lang/index.lodash';
 import './math/index.lodash';
 import './object/index.lodash';
 import './string/index.lodash';
+import './util/index.lodash';

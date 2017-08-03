@@ -5,3 +5,4 @@ import './lang/index.microdash';
 import './math/index.microdash';
 import './object/index.microdash';
 import './string/index.microdash';
+import './util/index.microdash';
