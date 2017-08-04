@@ -13,19 +13,19 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "clean": "yarn run clean:lib && yarn run clean:sizes && yarn run clean:integration",
+    "clean:all": "yarn run clean:lib && yarn run clean:sizes && yarn run clean:integration",
     "clean:lib": "cd lib && yarn run clean",
     "clean:sizes": "cd sizes && yarn run clean",
     "clean:integration": "cd integration && yarn run clean",
-    "install": "yarn run install:lib && yarn run install:sizes && yarn run install:integration",
+    "install:all": "yarn run install:lib && yarn run install:sizes && yarn run install:integration",
     "install:lib": "cd lib && yarn install",
     "install:sizes": "cd sizes && yarn install",
     "install:integration": "cd integration && yarn install",
-    "build": "yarn run build:lib && yarn run build:sizes && yarn run build:integration",
+    "build:all": "yarn run build:lib && yarn run build:sizes && yarn run build:integration",
     "build:lib": "cd lib && yarn build",
     "build:sizes": "cd sizes && yarn build",
     "build:integration": "cd integration && yarn build",
-    "test": "yarn run test:lib && yarn run test:integration",
+    "test:all": "yarn run test:lib && yarn run test:integration",
     "test:lib": "cd lib && yarn run test",
     "test:integration": "cd integration && yarn run e2e && yarn run e2e:aot",
     "release": "standard-version"
