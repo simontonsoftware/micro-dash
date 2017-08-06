@@ -1,11 +1,21 @@
-Micro-dash offers a subset of the functionality found in [lodash](https://github.com/lodash/lodash), with a drastrically reduced bundle size.
+Micro-dash offers a subset of the functionality found in [lodash](https://github.com/lodash/lodash), with drastrically reduced bundle size.
+
+## Installation
+
+Install `micro-dash` from npm:
+
+```
+npm install micro-dash --save
+# OR
+yarn add micro-dash
+```
 
 ## Project goals:
 
 **The main goals of this project are:**
 
 - Api compatibility with lodash. Not in the sense that each function can do everything that its lodash courterpart can do; most are simplified (see the philosophical differences below). But they have the same names, signatures, and basic functionality.
-- Small payload size. This full package is `3,162 bytes` minified, while a bundle containing the corresponding lodash functions is `37,968 bytes`. Size comparisons when importing individual functions are provided in their documentation.
+- Small payload size. This full package is `3,249 bytes` minified, while a bundle containing the corresponding lodash functions is `38,208 bytes`. Size comparisons when importing individual functions are provided in their documentation.
 - Pass all tests from the lodash test suite that are relevant given the differences below.
 
 **Philosophical differences from lodash:**
@@ -14,7 +24,7 @@ Micro-dash offers a subset of the functionality found in [lodash](https://github
 - There is no shorthand for "iteratees" - functions that accept one expect you to pass an actual function.
 - It has no special knowledge of "array like" objects; only actual arrays are treated as arrays.
 - Does not pass the iterated object to iteratee functions. This allows simplifications, e.g. methods like `merge` can be used as an iteratee for `reduce` without being guarded.
-- String functions are designed for simple cases like variable names. They only treat `[0-9A-Za-z]` as part of words and are not smart about contractions (e.g. `I'll`) or ordinals (e.g. `1st`).
+- String functions are designed for simple cases like variable names. They only treat `[0-9A-Za-z]` as part of words and are not smart about contractions or ordinals (e.g. `I'll` or `1st`).
 - A modern environment/buildchain is assumed. E.g. this project will not contain duplicates of ES6 functions (such as `Array.isArray()`), and it may use ES6 functions directly. If you target older browsers/environments, you may need to include polyfills separately. However, it will only use features that _can_ be polyfilled.
 - <FESM / angular 4 module format>
 

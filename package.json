@@ -28,7 +28,7 @@
     "test:all": "yarn run test:lib && yarn run test:integration",
     "test:lib": "cd lib && yarn run test",
     "test:integration": "cd integration && yarn run e2e && yarn run e2e:aot",
-    "release": "standard-version"
+    "release": "standard-version && yarn run build"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.53",
