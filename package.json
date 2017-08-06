@@ -1,6 +1,6 @@
 {
   "name": "micro-dash",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "main": "./bundles/micro-dash.umd.js",
   "module": "./micro-dash.es5.js",
