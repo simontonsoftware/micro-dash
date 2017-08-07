@@ -15,7 +15,7 @@ yarn add micro-dash
 **The main goals of this project are:**
 
 - Api compatibility with lodash. Not in the sense that each function can do everything that its lodash courterpart can do; most are simplified (see the philosophical differences below). But they have the same names, signatures, and basic functionality.
-- Small payload size. This full package is `3,249 bytes` minified, while a bundle containing the corresponding lodash functions is `38,208 bytes`. Size comparisons when importing individual functions are provided in their documentation.
+- Small payload size. This full package is `3,301 bytes` minified, while a bundle containing the corresponding lodash functions is `38,394 bytes`. Size comparisons when importing individual functions are provided in their documentation.
 - Pass all tests from the lodash test suite that are relevant given the differences below.
 
 **Philosophical differences from lodash:**
