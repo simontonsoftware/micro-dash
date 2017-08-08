@@ -2,6 +2,14 @@ import {merge} from './';
 import {reduce} from '../collection/reduce';
 
 describe('merge()', function () {
+  it('only clones as much as it needs to', () => {
+    const o1 = {a: {b: 2}, c: {d: 4}};
+    const o2 = {a: {b: -2}};
+    const origC = o1.c;
+
+    expect(merge(o1, o2).c).toBe(origC);
+    expect(merge(o2, o1).c).toBe(origC);
+  });
 
   //
   // stolen from https://github.com/healthiers/mini-dash
@@ -53,20 +61,6 @@ describe('merge()', function () {
   it('should work as an iteratee for methods like `reduce`', () => {
     expect(reduce([{a: 1}, {b: 2}, {c: 3}], merge, {a: '0'}))
       .toEqual({a: 1, b: 2, c: 3});
-  });
-
-  it('should not assign values that are the same as their destinations', () => {
-    const object = {};
-    for (const value of [['a'], {a: 1}]) {
-      Object.defineProperty(object, 'a', {
-        configurable: true,
-        enumerable: true,
-        get: () => value,
-        set: function (v: any) { fail('tried to set "a" to ' + v); },
-      });
-
-      merge(object, {a: value});
-    }
   });
 
   it('should merge `source` into `object`', () => {
