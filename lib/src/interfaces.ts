@@ -1,6 +1,9 @@
 export interface ClassFor<T> {new(...args: any[]): T; }
 
-export interface ObjectWith<T> {[key: string]: T; }
+export interface ObjectWith<T> {
+  [key: string]: T;
+  [index: number]: T;
+}
 
 export type Primitive = number | boolean | string;
 export type Existant = Primitive | object;
