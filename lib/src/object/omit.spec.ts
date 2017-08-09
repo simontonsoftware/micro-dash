@@ -33,10 +33,6 @@ describe('omit()', () => {
     expect(omit(object, 'a', 'c')).toEqual({b: 2, d: 4});
   });
 
-  it('should coerce `paths` to strings', () => {
-    expect(omit({0: 'a'}, 0 as any)).toEqual({});
-  });
-
   it('should return an empty object when `object` is nullish', () => {
     expect(omit<any>(null, 'valueOf')).toEqual({});
     expect(omit<any>(undefined, 'valueOf')).toEqual({});

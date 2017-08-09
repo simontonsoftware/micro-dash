@@ -30,19 +30,30 @@ const rollupConfig = {
   ]
 };
 
+let fileGlobs;
+let args = process.argv.slice(2);
+if (args.length) {
+  fileGlobs = args.map((arg) => `**/${arg}*.js`);
+  fileGlobs.push('index.*.js');
+} else {
+  fileGlobs = ['**/*.js'];
+}
+
 return Promise.resolve()
   .then(() => _recursiveMkDir(bundleDir))
   .then(() => {
     let queue = Promise.resolve();
-    glob(
-      path.join(buildDir, '**/*.js'),
-      {nodir: true},
-      (err, files) => {
-        for (const inFile of files) {
-          queue = queue.then(() => bundle(inFile)).then(explore);
+    for (const fileGlob of fileGlobs) {
+      glob(
+        path.join(buildDir, fileGlob),
+        {nodir: true},
+        (err, files) => {
+          for (const inFile of files) {
+            queue = queue.then(() => bundle(inFile)).then(explore);
+          }
         }
-      }
-    );
+      );
+    }
     return queue;
   });
 

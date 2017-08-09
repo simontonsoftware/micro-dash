@@ -4,3 +4,4 @@ export * from './flow-right';
 export * from './identity';
 export * from './noop';
 export * from './times';
+export * from './unique-id';

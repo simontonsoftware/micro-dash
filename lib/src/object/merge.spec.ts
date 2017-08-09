@@ -1,5 +1,5 @@
-import {merge} from './';
 import {reduce} from '../collection/reduce';
+import {merge} from './';
 
 describe('merge()', function () {
   it('only clones as much as it needs to', () => {

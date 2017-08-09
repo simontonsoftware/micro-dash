@@ -5,8 +5,7 @@
   "scripts": {
     "clean": "rimraf build/* bundle/*",
     "prebuild": "yarn run clean && rimraf node_modules/micro-dash/* && copyfiles -u 2 ../dist/**/* node_modules/micro-dash",
-    "build": "tsc",
-    "postbuild": "node explore.js"
+    "build": "tsc && node explore.js"
   },
   "author": "Simonton Software",
   "license": "MIT",

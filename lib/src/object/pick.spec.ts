@@ -33,10 +33,6 @@ describe('pick()', () => {
     expect(pick({a: 1, b: 2, c: 3, d: 4}, 'a', 'c')).toEqual({a: 1, c: 3});
   });
 
-  it('should coerce `paths` to strings', () => {
-    expect(pick({0: 'a', 1: 'b'}, 0 as any)).toEqual({0: 'a'});
-  });
-
   it('should return an empty object when `object` is nullish', () => {
     expect(pick<any>(null, 'valueOf')).toEqual({});
     expect(pick<any>(undefined, 'valueOf')).toEqual({});
