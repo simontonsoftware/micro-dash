@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/simontonsoftware/micro-dash/compare/v0.2.2...v0.3.0) (2017-08-09)
+
+
+### Features
+
+* added `uniqueId()` ([dde8b7b](https://github.com/simontonsoftware/micro-dash/commit/dde8b7b))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/simontonsoftware/micro-dash/compare/v0.2.1...v0.2.2) (2017-08-08)
 
