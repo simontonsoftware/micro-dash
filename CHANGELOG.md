@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/simontonsoftware/micro-dash/compare/v0.5.0...v0.6.0) (2017-08-18)
+
+
+### Features
+
+* added `clamp()` ([bc8a899](https://github.com/simontonsoftware/micro-dash/commit/bc8a899))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/simontonsoftware/micro-dash/compare/v0.4.0...v0.5.0) (2017-08-17)
 
