@@ -3,6 +3,7 @@ export * from './collection';
 export * from './function';
 export * from './lang';
 export * from './math';
+export * from './number';
 export * from './object';
 export * from './string';
 export * from './util';

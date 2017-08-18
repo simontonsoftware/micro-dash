@@ -3,6 +3,7 @@ import './collection/index.microdash';
 import './function/index.microdash';
 import './lang/index.microdash';
 import './math/index.microdash';
+import './number/index.microdash';
 import './object/index.microdash';
 import './string/index.microdash';
 import './util/index.microdash';
