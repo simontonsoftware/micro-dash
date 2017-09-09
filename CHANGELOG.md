@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/simontonsoftware/micro-dash/compare/v0.6.0...v1.0.0) (2017-09-09)
+
+
+### Features
+
+* added `inRange()` ([a73f845](https://github.com/simontonsoftware/micro-dash/commit/a73f845))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/simontonsoftware/micro-dash/compare/v0.5.0...v0.6.0) (2017-08-18)
 
