@@ -15,7 +15,7 @@ yarn add micro-dash
 **The main goals of this project are:**
 
 - Api compatibility with lodash. Not in the sense that each function can do everything that its lodash courterpart can do; most are simplified (see the philosophical differences below). But they have the same names, signatures, and basic functionality.
-- Small payload size. This full package is `3,674 bytes` minified, while a bundle containing the corresponding lodash functions is `39,254 bytes`. Size comparisons when importing individual functions are provided in their documentation.
+- Small payload size. This full package is `3,979 bytes` minified, while a bundle containing the corresponding lodash functions is `39,637 bytes`. Size comparisons when importing individual functions are provided in their documentation.
 - Pass all tests from the lodash test suite that are relevant given the differences below.
 
 **Philosophical differences from lodash:**
@@ -39,4 +39,4 @@ Other differences are listed in the documentation for each function.
 - **[Lodash](https://github.com/lodash/lodash)** - on which this entire project's API is based, most of its tests, and some of its source.
 - **[DefinitelyTyped/lodash](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash)** - on which some of the more complicated type definitions are based.
 - **[Mini-dash](https://github.com/healthiers/mini-dash)** - from which this project draws inspiration, and a few tests.
-- **[Angular QuickStart Lib](https://github.com/filipesilva/angular-quickstart-lib)** - which served as the starting point for project configuration (branched on [Jul 22, 2017](https://github.com/filipesilva/angular-quickstart-lib/commit/c687d9a3c00c8db5c290f0dfb243172f8dbfdf40)).
+- **[Angular QuickStart Lib](https://github.com/filipesilva/angular-quickstart-lib)** - which served as the starting point for project configuration (forked on [Jul 22, 2017](https://github.com/filipesilva/angular-quickstart-lib/commit/c687d9a3c00c8db5c290f0dfb243172f8dbfdf40)).

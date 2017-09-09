@@ -12,9 +12,9 @@
   version "4.14.71"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.71.tgz#0dc383f78981216ac76e2f2c3afd998e0450e4c1"
 
-"@types/underscore@^1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@types/underscore/-/underscore-1.8.1.tgz#bf5d680f24277284d4e42fed86bd86e5a59a44a4"
+"@types/node@^8.0.28":
+  version "8.0.28"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.28.tgz#86206716f8d9251cf41692e384264cbd7058ad60"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -101,7 +101,7 @@ ltcdr@^2.2.1:
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
 
 micro-dash@../dist/:
-  version "0.0.1"
+  version "0.6.0"
 
 minimatch@^3.0.3, minimatch@^3.0.4:
   version "3.0.4"
@@ -249,10 +249,6 @@ through2@^2.0.1:
 typescript@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.2.tgz#f8395f85d459276067c988aa41837a8f82870844"
-
-underscore-es@^1.9.8:
-  version "1.9.8"
-  resolved "https://registry.yarnpkg.com/underscore-es/-/underscore-es-1.9.8.tgz#a714575274b27b0b1d93de1747a4d153d8de6776"
 
 underscore@^1.8.3:
   version "1.8.3"
