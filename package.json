@@ -1,12 +1,13 @@
 {
   "name": "micro-dash",
   "version": "0.6.0",
-  "description": "",
+  "description": "Lightweight implementations of simplified lodash functions",
   "main": "./bundles/micro-dash.umd.js",
   "module": "./micro-dash.es5.js",
   "es2015": "./micro-dash.js",
   "typings": "./micro-dash.d.ts",
   "author": "Simonton Software",
+  "repository": "simontonsoftware/micro-dash",
   "license": "MIT",
   "engines": {
     "node": ">= 6.9.0",

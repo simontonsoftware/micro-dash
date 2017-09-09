@@ -1,4 +1,4 @@
 import {isString} from 'micro-dash';
-isString('a');
-isString({});
-isString([]);
+console.log(isString('a'));
+console.log(isString({}));
+console.log(isString([]));
