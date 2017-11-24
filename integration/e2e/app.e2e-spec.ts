@@ -11,7 +11,7 @@ describe('Micro-Dash E2E Tests', function () {
     });
   });
 
-  it('should display kebab-case', () => {
-    expect(element(by.css('.result')).getText()).toEqual('kebab-case');
+  it('should display kebab-case', async () => {
+    expect(await element(by.css('.result')).getText()).toEqual('kebab-case');
   });
 });
