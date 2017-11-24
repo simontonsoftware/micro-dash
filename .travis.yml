@@ -14,4 +14,5 @@ before_install:
 install:
   - yarn install:all
 script:
+  - yarn build:lib
   - yarn test:all
