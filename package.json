@@ -18,7 +18,7 @@
     "clean:lib": "cd lib && yarn run clean",
     "clean:sizes": "cd sizes && yarn run clean",
     "clean:integration": "cd integration && yarn run clean",
-    "install:all": "yarn install:lib && yarn install:sizes && yarn install:integration",
+    "install:all": "yarn install && yarn install:lib && yarn install:sizes && yarn install:integration",
     "install:lib": "cd lib && yarn install",
     "install:sizes": "cd sizes && yarn install",
     "install:integration": "cd integration && yarn install",
