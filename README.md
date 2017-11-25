@@ -1,5 +1,7 @@
 Micro-dash offers a subset of the functionality found in [lodash](https://github.com/lodash/lodash), with drastrically reduced bundle size.
 
+[![Build Status](https://travis-ci.org/simontonsoftware/micro-dash.svg?branch=master)](https://travis-ci.org/simontonsoftware/micro-dash)
+
 ## Installation
 
 Install `micro-dash` from npm:
