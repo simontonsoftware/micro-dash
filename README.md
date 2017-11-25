@@ -1,6 +1,6 @@
 Micro-dash offers a subset of the functionality found in [lodash](https://github.com/lodash/lodash), with drastrically reduced bundle size.
 
-[![Build Status](https://travis-ci.org/simontonsoftware/micro-dash.svg?branch=master)](https://travis-ci.org/simontonsoftware/micro-dash)
+[![Build Status](https://travis-ci.org/simontonsoftware/micro-dash.svg?branch=master)](https://travis-ci.org/simontonsoftware/micro-dash) [![Coverage Status](https://coveralls.io/repos/github/simontonsoftware/micro-dash/badge.svg?branch=master)](https://coveralls.io/github/simontonsoftware/micro-dash?branch=master)
 
 ## Installation
 
