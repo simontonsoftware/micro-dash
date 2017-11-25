@@ -18,6 +18,7 @@
     "@types/node": "^8.0.17",
     "@types/sinon": "^2.3.3",
     "concurrently": "^3.5.0",
+    "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "jasmine": "^2.6.0",
     "nodemon": "^1.11.0",
