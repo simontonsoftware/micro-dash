@@ -14,7 +14,7 @@ describe('curry()', () => {
 
     const curried = curry(fn);
 
-    expect(curried(1)(2)(3)(4)).toEqual([1, 2, 3, 4]);
+    expect(curried(1)(2)(3)(4)).not.toEqual([1, 2, 3, 4]);
     expect(curried(1, 2)(3, 4)).toEqual([1, 2, 3, 4]);
     expect(curried(1, 2, 3, 4)).toEqual([1, 2, 3, 4]);
   });

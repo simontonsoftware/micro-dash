@@ -5,14 +5,13 @@ node_js:
   - "6"
 os:
   - linux
-before_install:
-  # Use a virtual display.
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  # Install latest chrome.
-  - export CHROME_BIN=chromium-browser
+#before_install:
+#  # Use a virtual display.
+#  - export DISPLAY=:99.0
+#  - sh -e /etc/init.d/xvfb start
+#  # Install latest chrome.
+#  - export CHROME_BIN=chromium-browser
 install:
-  - yarn install:all
+  - yarn install:lib
 script:
-  - yarn build:lib
-  - yarn test:all
+  - yarn test:lib
