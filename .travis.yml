@@ -17,3 +17,5 @@ script:
   - yarn test:lib
 after_success:
   - cat lib/coverage/lcov.info | lib/node_modules/coveralls/bin/coveralls.js
+notifications:
+ email: false

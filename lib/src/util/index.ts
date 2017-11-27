@@ -1,4 +1,5 @@
 export * from './constant';
+export * from './debounce';
 export * from './flow';
 export * from './flow-right';
 export * from './identity';
