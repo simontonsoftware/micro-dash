@@ -11,8 +11,8 @@ import {forOwn} from '../object/for-own';
 export function cloneDeep<T>(value: T): T {
   if (value instanceof Object) {
     value = clone(value);
-    forOwn(value as any, (v, k) => {
-      value[k] = cloneDeep(v);
+    forOwn(value, (item, key) => {
+      value[key] = cloneDeep(item);
     });
   }
   return value;

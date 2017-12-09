@@ -1,5 +1,5 @@
-import {ObjectIteratee, ObjectWith} from '../interfaces';
-import {forEachRight} from '../collection/for-each-right';
+import { forEachRight } from '../collection/for-each-right';
+import { ObjectIteratee } from '../interfaces';
 
 /**
  * This method is like `forOwn` except that it iterates over properties of `object` in the opposite order.
@@ -12,12 +12,10 @@ import {forEachRight} from '../collection/for-each-right';
  * - Lodash: 3,558 bytes
  * - Micro-dash: 178 bytes
  */
-export function forOwnRight<T>(
-  object: ObjectWith<T>, iteratee: ObjectIteratee<T, void>,
-) {
+export function forOwnRight<T>(object: T, iteratee: ObjectIteratee<T, void>) {
   forEachRight(
     Object.getOwnPropertyNames(object),
-    (key) => { iteratee(object[key], key); },
+    (key: keyof T) => { iteratee(object[key], key); },
   );
   return object;
 }

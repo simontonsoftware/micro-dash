@@ -11,11 +11,9 @@ import {ObjectIteratee, ObjectWith} from '../interfaces';
  * - Lodash: 3,556 bytes
  * - Micro-dash: 96 bytes
  */
-export function forOwn<T>(
-  object: ObjectWith<T>, iteratee: ObjectIteratee<T, void>,
-) {
+export function forOwn<T>(object: T, iteratee: ObjectIteratee<T, void>) {
   for (const key of Object.getOwnPropertyNames(object)) {
-    iteratee(object[key], key);
+    iteratee(object[key], key as keyof T);
   }
   return object;
 }

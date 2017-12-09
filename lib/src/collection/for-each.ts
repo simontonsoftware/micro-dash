@@ -13,8 +13,8 @@ export function forEach<T>(
   array: T[] | undefined, iteratee: ArrayIteratee<T, void>,
 ): T[];
 export function forEach<T>(
-  object: ObjectWith<T> | undefined, iteratee: ObjectIteratee<T, void>,
-): ObjectWith<T>;
+  object: T | undefined, iteratee: ObjectIteratee<T, void>,
+): T;
 
 export function forEach(collection: any, iteratee: any) {
   if (Array.isArray(collection)) {

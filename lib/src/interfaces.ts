@@ -1,4 +1,6 @@
-export interface ClassFor<T> {new(...args: any[]): T; }
+export interface ClassFor<T> {
+  new(...args: any[]): T;
+}
 
 export interface ObjectWith<T> {
   [key: string]: T;
@@ -19,5 +21,5 @@ export type Function4<T1, T2, T3, T4, R> =
 export type Transformer<T> = (input: T) => T;
 
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
-export type ObjectIteratee<I, O> = (item: I, key: string) => O;
+export type ObjectIteratee<T, O> = <K extends keyof T>(item: T[K], key: K) => O;
 export type ValueIteratee<T, O> = (value: T) => O;
