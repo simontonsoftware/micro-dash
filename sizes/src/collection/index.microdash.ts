@@ -1,3 +1,4 @@
+import './filter.microdash';
 import './for-each.microdash';
 import './for-each-right.microdash';
 import './key-by.microdash';
