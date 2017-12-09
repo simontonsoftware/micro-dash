@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/simontonsoftware/micro-dash/compare/v1.1.0...v2.0.0) (2017-12-09)
+
+
+### Features
+
+* add `filter()` ([37322d3](https://github.com/simontonsoftware/micro-dash/commit/37322d3))
+* add `pickBy()` and `omitBy()` ([8238e9d](https://github.com/simontonsoftware/micro-dash/commit/8238e9d))
+* Better typing for object iteratees ([f2b08f4](https://github.com/simontonsoftware/micro-dash/commit/f2b08f4))
+
+
+### BREAKING CHANGES
+
+* The type argument `T` for functions that receive an object iteratee changed from representing the values of the object to the object itself. This only affects you if you manually specify such a type argument (e.g. `forEach<ItemType>(...)` becomes `forEach<ObjectType>(...)`).
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/simontonsoftware/micro-dash/compare/v1.0.0...v1.1.0) (2017-11-27)
 
