@@ -1,5 +1,5 @@
 /**
- * Creates an object composed of the picked object properties.
+ * Creates an object composed of the picked `object` properties.
  *
  * Differences from lodash:
  * - `paths` must be direct properties of `object` (they cannot references deep properties)

@@ -4,5 +4,7 @@ import './get.lodash';
 import './map-values.lodash';
 import './merge.lodash';
 import './omit.lodash';
+import './omit-by.lodash';
 import './pick.lodash';
+import './pick-by.lodash';
 import './values.lodash';

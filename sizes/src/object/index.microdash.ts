@@ -4,5 +4,7 @@ import './get.microdash';
 import './map-values.microdash';
 import './merge.microdash';
 import './omit.microdash';
+import './omit-by.microdash';
 import './pick.microdash';
+import './pick-by.microdash';
 import './values.microdash';

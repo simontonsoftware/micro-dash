@@ -4,5 +4,7 @@ export * from './get';
 export * from './map-values';
 export * from './merge';
 export * from './omit';
+export * from './omit-by';
 export * from './pick';
+export * from './pick-by';
 export * from './values';
