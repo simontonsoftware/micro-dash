@@ -1,13 +1,9 @@
-import { noop } from 'lodash';
 import { stub } from 'sinon';
-import { forEach } from './for-each';
+import { map } from './map';
+import { identity } from '../util/identity';
+
 
 describe('forEach()', () => {
-  it('works on undefined', () => {
-    let count = 0;
-    forEach(undefined, () => { ++count; });
-    expect(count).toBe(0);
-  });
 
   //
   // stolen from https://github.com/lodash/lodash
@@ -16,7 +12,7 @@ describe('forEach()', () => {
   it('should provide correct iteratee arguments', () => {
     const logger = stub();
 
-    forEach([1, 2, 3], logger);
+    map([1, 2, 3], logger);
 
     expect(logger.args).toEqual([[1, 0], [2, 1], [3, 2]]);
   });
@@ -26,7 +22,7 @@ describe('forEach()', () => {
     array[2] = 3;
     const logger = stub();
 
-    forEach(array, logger);
+    map(array, logger);
 
     expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
   });
@@ -36,7 +32,7 @@ describe('forEach()', () => {
     (array as any).a = 1;
     const logger = stub();
 
-    forEach(array, logger);
+    map(array, logger);
 
     expect(logger.args).toEqual([[1, 0]]);
   });
@@ -45,22 +41,16 @@ describe('forEach()', () => {
     const object = {a: 1};
     const logger = stub();
 
-    forEach(object, logger);
+    const result = map(object, logger);
 
     expect(logger.args).toEqual([[1, 'a']]);
-  });
-
-  it('should return the collection', () => {
-    const array = [1, 2, 3];
-
-    expect(forEach(array, noop)).toBe(array);
   });
 
   it('should ignore changes to `length`', () => {
     const array = [1];
     let count = 0;
 
-    forEach(array, () => {
+    map(array, () => {
       if (!count) {
         array.push(2);
       }
@@ -74,11 +64,26 @@ describe('forEach()', () => {
     const object: any = {a: 1};
     let count = 0;
 
-    forEach(object, () => {
+    map(object, () => {
       object.b = 2;
       ++count;
     });
 
     expect(count).toEqual(1);
+  });
+
+  it('should map values in `collection` to a new array', () => {
+    expect(map({a: 1, b: 2}, identity)).toEqual([1, 2]);
+    expect(map([1, 2], identity)).toEqual([1, 2]);
+  });
+
+  it('should accept `undefined` for `collection`', () => {
+    const logger = stub();
+    expect(map(undefined, logger)).toEqual([]);
+    expect(logger.callCount).toBe(0);
+  });
+
+  it('should work with objects with non-number length properties', () => {
+    expect(map({length: {value: 'x'}}, identity)).toEqual([{value: 'x'}]);
   });
 });
