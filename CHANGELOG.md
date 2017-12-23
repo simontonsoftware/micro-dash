@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/simontonsoftware/micro-dash/compare/v2.1.0...v3.0.0) (2017-12-23)
+
+
+### Features
+
+* add `every()` ([acf6462](https://github.com/simontonsoftware/micro-dash/commit/acf6462))
+
+
+### BREAKING CHANGES
+
+* Iteration functions (forEach, forEachRight, forOwn, and forOwnRight) now short-circuit when the iteratee returns `false`. This matches Lodash's behavior.
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/simontonsoftware/micro-dash/compare/v2.0.0...v2.1.0) (2017-12-23)
 
