@@ -1,6 +1,6 @@
 {
   "name": "micro-dash",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Lightweight implementations of simplified lodash functions",
   "main": "./bundles/micro-dash.umd.js",
   "module": "./micro-dash.es5.js",
