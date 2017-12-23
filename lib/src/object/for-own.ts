@@ -5,15 +5,18 @@ import {ObjectIteratee, ObjectWith} from '../interfaces';
  *
  * Differences from lodash:
  * - does not treat sparse arrays as dense
- * - `iteratee` may not exit iteration early by explicitly returning `false`
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,556 bytes
  * - Micro-dash: 96 bytes
  */
-export function forOwn<T>(object: T, iteratee: ObjectIteratee<T, void>) {
+export function forOwn<T>(
+  object: T, iteratee: ObjectIteratee<T, void | boolean>,
+) {
   for (const key of Object.getOwnPropertyNames(object)) {
-    iteratee(object[key], key as keyof T);
+    if (iteratee(object[key], key as keyof T) === false) {
+      break;
+    }
   }
   return object;
 }

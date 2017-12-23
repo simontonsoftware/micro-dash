@@ -10,16 +10,18 @@ import {forOwnRight} from '../object/for-own-right';
  */
 
 export function forEachRight<T>(
-  array: T[] | undefined, iteratee: ArrayIteratee<T, void>,
+  array: T[] | undefined, iteratee: ArrayIteratee<T, void | boolean>,
 ): T[];
 export function forEachRight<T>(
-  object: T | undefined, iteratee: ObjectIteratee<T, void>,
+  object: T | undefined, iteratee: ObjectIteratee<T, void | boolean>,
 ): T;
 
 export function forEachRight<T>(collection: any, iteratee: any) {
   if (Array.isArray(collection)) {
     for (let i = collection.length; --i >= 0; ) {
-      iteratee(collection[i], i);
+      if (iteratee(collection[i], i) === false) {
+        break;
+      }
     }
   } else if (collection) {
     forOwnRight(collection, iteratee);

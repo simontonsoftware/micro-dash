@@ -1,3 +1,4 @@
+import './every.lodash';
 import './filter.lodash';
 import './for-each.lodash';
 import './for-each-right.lodash';

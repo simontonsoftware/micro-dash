@@ -13,6 +13,26 @@ describe('forEachRight()', () => {
   // stolen from https://github.com/lodash/lodash
   //
 
+  it('can exit early when iterating arrays', () => {
+    const logger = stub();
+    logger.onCall(1).returns(true);
+    logger.onCall(2).returns(false);
+
+    forEachRight([1, 2, 3, 4], logger);
+
+    expect(logger.args).toEqual([[4, 3], [3, 2], [2, 1]]);
+  });
+
+  it('can exit early when iterating objects', () => {
+    const logger = stub();
+    logger.onCall(1).returns(true);
+    logger.onCall(2).returns(false);
+
+    forEachRight({a: 1, b: 2, c: 3, d: 4}, logger);
+
+    expect(logger.args).toEqual([[4, 'd'], [3, 'c'], [2, 'b']]);
+  });
+
   it('should provide correct iteratee arguments', () => {
     const logger = stub();
 
