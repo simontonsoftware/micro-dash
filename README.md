@@ -16,7 +16,7 @@ npm install micro-dash --save
 yarn add micro-dash
 ```
 
-## Project goals:
+## Project goals
 
 **The main goals of this project are:**
 
@@ -25,7 +25,11 @@ yarn add micro-dash
 - Pass all tests from the lodash test suite that are relevant given the differences below.
 - Supply build artifacts according to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs), for an optimal experience using all the common, modern build chains. This does not mean `micro-dash` is designed for Angular - it contains generic utility functions useful in any modern javascript environment. The Angular Package Format is the structure followed by the Angular team, published as a recommendation to improve any support libraries.
 
-**Differences from lodash:**
+**Goals that are _not_ part of this project:**
+- Complete feature parity with lodash. This project does not aspire to have a "micro" version of every function in lodash.
+- Additional functions that are not part of lodash. While there may be many other handy "utility" functions in the world, they do not belong in this library.
+
+##Differences from lodash
 
 Below are the main differences between the implementations in this library compared to lodash. Other differences, when they exist, are listed in the [documentation](https://simontonsoftware.github.io/micro-dash/typedoc) for each function.
 - Only designed to work with primitives, plain objects, and arrays. It it not designed or tested to handle inherited properties, symbol keys, `arguments` objects, primitive objects (e.g. `Object(1)`), Dates, Maps, Sets, etc.
@@ -35,10 +39,6 @@ Below are the main differences between the implementations in this library compa
 - It has no special knowledge of "array like" objects; only actual arrays are treated as arrays.
 - String functions are designed for simple cases like variable names. They only treat `[0-9A-Za-z]` as part of words and are not smart about contractions or ordinals (e.g. `I'll` or `1st`).
 - A modern environment/buildchain is assumed. E.g. this project will not contain duplicates of ES6 functions (such as `Array.isArray()`), and it may use ES6 functions directly. If you target older browsers/environments, you may need to include polyfills separately. However, it will only use features that _can_ be polyfilled.
-
-**Goals that are _not_ part of this project:**
-- Complete feature parity with lodash. This project does not aspire to have a "micro" version of every function in lodash.
-- Additional functions that are not part of lodash. While there may be many other handy "utility" functions in the world, they do not belong in this library.
 
 ## Credits
 - **[Lodash](https://github.com/lodash/lodash)** - on which this entire project's API is based, most of its tests, and some of its source.

@@ -7,7 +7,6 @@
     "out": "docs",
     "module": "commonjs",
     "target": "ES6",
-    "excludePrivate": true,
     "theme": "../docs/typedoc-theme",
     "readme": "none"
   }
