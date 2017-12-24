@@ -29,7 +29,7 @@ yarn add micro-dash
 - Complete feature parity with lodash. This project does not aspire to have a "micro" version of every function in lodash.
 - Additional functions that are not part of lodash. While there may be many other handy "utility" functions in the world, they do not belong in this library.
 
-##Differences from lodash
+## Differences from lodash
 
 Below are the main differences between the implementations in this library compared to lodash. Other differences, when they exist, are listed in the [documentation](https://simontonsoftware.github.io/micro-dash/typedoc) for each function.
 - Only designed to work with primitives, plain objects, and arrays. It it not designed or tested to handle inherited properties, symbol keys, `arguments` objects, primitive objects (e.g. `Object(1)`), Dates, Maps, Sets, etc.
