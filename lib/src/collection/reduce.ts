@@ -71,6 +71,7 @@ export function reduceRight(
   );
 }
 
+/** @private */
 function doReduce(
   iterationFn: any,
   collection: any,

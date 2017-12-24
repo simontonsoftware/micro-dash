@@ -24,6 +24,7 @@
     "install:integration": "cd integration && yarn install",
     "build:all": "yarn build:lib && yarn build:sizes && yarn build:integration",
     "build:lib": "cd lib && yarn build",
+    "build:docs": "typedoc lib/src",
     "build:sizes": "cd sizes && yarn build",
     "build:integration": "cd integration && yarn build",
     "test:all": "yarn test:lib && yarn test:integration",
@@ -45,6 +46,7 @@
     "rollup-plugin-uglify": "^2.0.1",
     "standard-version": "^4.0.0",
     "tslint": "^5.5.0",
+    "typedoc": "^0.9.0",
     "typescript": "^2.4.2"
   }
 }

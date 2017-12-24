@@ -9,5 +9,15 @@
   },
   "include": [
     "lib/src/**/*.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "name": "Micro-dash",
+    "mode": "file",
+    "out": "docs/typedoc",
+    "module": "commonjs",
+    "target": "ES6",
+    "excludePrivate": true,
+    "theme": "docs/typedoc-theme",
+    "readme": "none"
+  }
 }

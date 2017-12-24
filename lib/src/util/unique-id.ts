@@ -1,3 +1,4 @@
+/** @private */
 let nextId = 1;
 
 /**

@@ -1,5 +1,6 @@
 import {identity} from '../util/identity';
 
+/** @private */
 export interface MemoizedFunction extends Function {
   cache: Map<any, any>;
 }

@@ -1,5 +1,5 @@
 /**
- * Creates a shallow clone of value.
+ * Creates a shallow clone of `value`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 12,794 bytes

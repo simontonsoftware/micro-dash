@@ -10,10 +10,12 @@
       <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/typedoc" />
       <excludeFolder url="file://$MODULE_DIR$/integration/dist" />
       <excludeFolder url="file://$MODULE_DIR$/integration/out-tsc" />
       <excludeFolder url="file://$MODULE_DIR$/lib/build" />
       <excludeFolder url="file://$MODULE_DIR$/lib/coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/lib/docs" />
       <excludeFolder url="file://$MODULE_DIR$/out-tsc" />
       <excludeFolder url="file://$MODULE_DIR$/sizes/build" />
       <excludeFolder url="file://$MODULE_DIR$/sizes/bundle" />
