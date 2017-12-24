@@ -18,6 +18,7 @@
     "target": "ES6",
     "excludePrivate": true,
     "theme": "docs/typedoc-theme",
-    "readme": "none"
+    "readme": "none",
+    "gaID": "UA-111611854-1"
   }
 }
