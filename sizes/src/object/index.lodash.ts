@@ -1,10 +1,12 @@
-import './for-own.lodash';
 import './for-own-right.lodash';
+import './for-own.lodash';
 import './get.lodash';
 import './map-values.lodash';
 import './merge.lodash';
-import './omit.lodash';
 import './omit-by.lodash';
-import './pick.lodash';
+import './omit.lodash';
 import './pick-by.lodash';
+import './pick.lodash';
+import './set.lodash';
+import './update.lodash';
 import './values.lodash';

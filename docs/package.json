@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "typedoc ../lib/src"
+  },
+  "devDependencies": {
+    "typedoc": "^0.9.0"
+  }
+}

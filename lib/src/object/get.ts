@@ -3,14 +3,16 @@
  *
  * Differences from lodash:
  * - only accepts an array for `path`, not a dot-separated string
- * - `get(obj, [-0])` (which is a type error) acts like `get(obj, ['0'])` instead of `get(obj, ['-0'])
+ * - using `-0` in the path (which is a type error) acts like `'0'` instead of `'-0'`
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 5,328 bytes
  * - Micro-dash: 65 bytes
  */
 export function get(
-  object: object | null | undefined, path: string[], defaultValue?: any,
+  object: object | null | undefined,
+  path: string[],
+  defaultValue?: any
 ) {
   const length = path.length;
   let index = 0;

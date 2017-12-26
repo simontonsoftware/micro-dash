@@ -1,10 +1,12 @@
-import './for-own.microdash';
 import './for-own-right.microdash';
+import './for-own.microdash';
 import './get.microdash';
 import './map-values.microdash';
 import './merge.microdash';
-import './omit.microdash';
 import './omit-by.microdash';
-import './pick.microdash';
+import './omit.microdash';
 import './pick-by.microdash';
+import './pick.microdash';
+import './set.microdash';
+import './update.microdash';
 import './values.microdash';

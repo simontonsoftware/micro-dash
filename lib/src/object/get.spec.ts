@@ -1,31 +1,36 @@
-import {get} from './get';
+import { get } from './get';
 
 describe('get()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
 
   it('should get string keyed property values', () => {
-    expect(get({a: 1}, ['a'])).toBe(1);
+    expect(get({ a: 1 }, ['a'])).toBe(1);
   });
 
   it('should get deep property values', () => {
-    const object = {'-0': 'a', 0: 'b'};
-
-    expect(get({a: {b: 2}}, ['a', 'b'])).toBe(2);
+    expect(get({ a: { b: 2 } }, ['a', 'b'])).toBe(2);
   });
 
   it('should handle empty paths', () => {
     expect(get({}, [])).toBeUndefined();
-    expect(get({'': 3}, [''])).toBe(3);
+    expect(get({ '': 3 }, [''])).toBe(3);
   });
 
   it('should handle complex paths', () => {
-    expect(get(
-      {a: {'-1.23': {'["b"]': {'c': {'[\'d\']': {'\ne\n': {f: {g: 8}}}}}}}},
-      ['a', '-1.23', '["b"]', 'c', '[\'d\']', '\ne\n', 'f', 'g'],
-    )).toBe(8);
+    expect(
+      get(
+        {
+          a: {
+            '-1.23': {
+              '["b"]': { c: { "['d']": { '\ne\n': { f: { g: 8 } } } } },
+            },
+          },
+        },
+        ['a', '-1.23', '["b"]', 'c', "['d']", '\ne\n', 'f', 'g']
+      )
+    ).toBe(8);
   });
 
   it('should return `undefined` when `object` is nullish', () => {
@@ -41,18 +46,30 @@ describe('get()', () => {
   });
 
   it('should return `undefined` if parts of `path` are missing', () => {
-    expect(get({a: [, null]}, ['a', '1', 'b', 'c'])).toBeUndefined();
+    expect(get({ a: [, null] }, ['a', '1', 'b', 'c'])).toBeUndefined();
   });
 
   it('should be able to return `null` values', () => {
-    expect(get({a: {b: null}}, ['a', 'b'])).toBeNull();
+    expect(get({ a: { b: null } }, ['a', 'b'])).toBeNull();
   });
 
   it('should return the default value for `undefined` values', () => {
-    const object = {a: {}};
+    const object = { a: {} };
     const path = ['a', 'b'];
     const values = [
-      [], {}, null, undefined, false, 0, NaN, '', true, new Date, 1, /x/, 'a',
+      [],
+      {},
+      null,
+      undefined,
+      false,
+      0,
+      NaN,
+      '',
+      true,
+      new Date(),
+      1,
+      /x/,
+      'a',
     ];
 
     for (const value of values) {

@@ -7,4 +7,6 @@ export * from './omit';
 export * from './omit-by';
 export * from './pick';
 export * from './pick-by';
+export * from './set';
+export * from './update';
 export * from './values';
