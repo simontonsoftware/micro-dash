@@ -9,7 +9,7 @@ import { forOwn } from './for-own';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 15,263 bytes
- * - Micro-dash: 186 bytes
+ * - Micro-dash: 200 bytes
  */
 export function pickBy<T>(object: T, predicate: ObjectIteratee<T, boolean>) {
   const obj: Partial<T> = {};

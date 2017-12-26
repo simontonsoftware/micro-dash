@@ -16,16 +16,17 @@
     "@types/jasmine": "^2.5.53",
     "@types/lodash": "^4.14.71",
     "@types/node": "^8.0.17",
-    "@types/sinon": "^2.3.3",
+    "@types/sinon": "^4.1.2",
     "concurrently": "^3.5.0",
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "jasmine": "^2.6.0",
+    "lodash": "^4.17.4",
     "nodemon": "^1.11.0",
     "remap-istanbul": "^0.9.5",
     "rimraf": "^2.6.1",
-    "sinon": "^2.3.8",
-    "source-map-support": "^0.4.15",
+    "sinon": "^4.1.3",
+    "source-map-support": "^0.5.0",
     "typescript": "^2.4.2"
   }
 }

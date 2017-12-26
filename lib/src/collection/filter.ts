@@ -6,16 +6,16 @@ import { forEach } from './for-each';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,510 bytes
- * - Micro-dash: 279 bytes
+ * - Micro-dash: 300 bytes
  */
 
 export function filter<T>(
   array: T[],
-  predicate: ArrayIteratee<T, boolean>,
+  predicate: ArrayIteratee<T, boolean>
 ): T[];
 export function filter<T>(
   object: T,
-  predicate: ObjectIteratee<T, boolean>,
+  predicate: ObjectIteratee<T, boolean>
 ): Array<T[keyof T]>;
 
 export function filter(collection: any, predicate: any) {

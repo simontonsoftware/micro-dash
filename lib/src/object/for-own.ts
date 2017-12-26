@@ -8,7 +8,7 @@ import {ObjectIteratee, ObjectWith} from '../interfaces';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,556 bytes
- * - Micro-dash: 96 bytes
+ * - Micro-dash: 110 bytes
  */
 export function forOwn<T>(
   object: T, iteratee: ObjectIteratee<T, void | boolean>,

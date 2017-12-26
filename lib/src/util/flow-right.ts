@@ -1,5 +1,5 @@
-import {Transformer} from '../interfaces';
-import {identity} from './identity';
+import { Transformer } from '../interfaces';
+import { identity } from './identity';
 
 /**
  * This method is like `flow` except that it creates a function that invokes the given functions from right to left.
@@ -14,29 +14,25 @@ import {identity} from './identity';
  * - Micro-dash: 172 bytes
  */
 
-
 // 0-argument first function
-export function flowRight<R1, R2>(
-  f2: (a: R1) => R2,
-  f1: () => R1,
-): () => R2;
+export function flowRight<R1, R2>(f2: (a: R1) => R2, f1: () => R1): () => R2;
 export function flowRight<R1, R2, R3>(
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: () => R1,
+  f1: () => R1
 ): () => R3;
 export function flowRight<R1, R2, R3, R4>(
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: () => R1,
+  f1: () => R1
 ): () => R4;
 export function flowRight<R1, R2, R3, R4, R5>(
   f5: (a: R4) => R5,
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: () => R1,
+  f1: () => R1
 ): () => R5;
 export function flowRight<R1, R2, R3, R4, R5, R6>(
   f6: (a: R5) => R6,
@@ -44,7 +40,7 @@ export function flowRight<R1, R2, R3, R4, R5, R6>(
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: () => R1,
+  f1: () => R1
 ): () => R6;
 export function flowRight<R1, R2, R3, R4, R5, R6, R7>(
   f7: (a: R6) => R7,
@@ -53,31 +49,31 @@ export function flowRight<R1, R2, R3, R4, R5, R6, R7>(
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: () => R1,
+  f1: () => R1
 ): () => R7;
 
 // 1-argument first function
 export function flowRight<A1, R1, R2>(
   f2: (a: R1) => R2,
-  f1: (a1: A1) => R1,
+  f1: (a1: A1) => R1
 ): (a1: A1) => R2;
 export function flowRight<A1, R1, R2, R3>(
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: (a1: A1) => R1,
+  f1: (a1: A1) => R1
 ): (a1: A1) => R3;
 export function flowRight<A1, R1, R2, R3, R4>(
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: (a1: A1) => R1,
+  f1: (a1: A1) => R1
 ): (a1: A1) => R4;
 export function flowRight<A1, R1, R2, R3, R4, R5>(
   f5: (a: R4) => R5,
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: (a1: A1) => R1,
+  f1: (a1: A1) => R1
 ): (a1: A1) => R5;
 export function flowRight<A1, R1, R2, R3, R4, R5, R6>(
   f6: (a: R5) => R6,
@@ -85,7 +81,7 @@ export function flowRight<A1, R1, R2, R3, R4, R5, R6>(
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: (a1: A1) => R1,
+  f1: (a1: A1) => R1
 ): (a1: A1) => R6;
 export function flowRight<A1, R1, R2, R3, R4, R5, R6, R7>(
   f7: (a: R6) => R7,
@@ -94,7 +90,7 @@ export function flowRight<A1, R1, R2, R3, R4, R5, R6, R7>(
   f4: (a: R3) => R4,
   f3: (a: R2) => R3,
   f2: (a: R1) => R2,
-  f1: (a1: A1) => R1,
+  f1: (a1: A1) => R1
 ): (a1: A1) => R7;
 
 // generic function

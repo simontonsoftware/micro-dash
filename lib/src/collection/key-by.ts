@@ -6,7 +6,7 @@ import { forEach } from './for-each';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,860 bytes
- * - Micro-dash: 269 bytes
+ * - Micro-dash: 290 bytes
  */
 
 export function keyBy<T>(

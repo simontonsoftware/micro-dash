@@ -6,14 +6,15 @@ import { Existant, Primitive, ValueIteratee } from '../interfaces';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,214 bytes
- * - Micro-dash: 288 bytes
+ * - Micro-dash: 309 bytes
  */
 export function minBy<T extends Existant>(
-  array: T[], iteratee: ValueIteratee<T, Primitive>,
+  array: T[],
+  iteratee: ValueIteratee<T, Primitive>
 ) {
   let min: T | undefined;
   let minValue: Primitive;
-  forEach(array, (value) => {
+  forEach(array, value => {
     const criterion = iteratee(value);
     if (min === undefined || criterion < minValue) {
       min = value;

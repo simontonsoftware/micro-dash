@@ -6,7 +6,7 @@ import {forOwnRight} from '../object/for-own-right';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,830 bytes
- * - Micro-dash: 178 bytes
+ * - Micro-dash: 192 bytes
  */
 
 export function forEachRight<T>(

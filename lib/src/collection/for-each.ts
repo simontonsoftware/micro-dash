@@ -6,7 +6,7 @@ import {forOwn} from '../object/for-own';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,832 bytes
- * - Micro-dash: 207 bytes
+ * - Micro-dash: 228 bytes
  */
 
 export function forEach<T>(

@@ -6,7 +6,7 @@ import { forOwn } from './for-own';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,454 bytes
- * - Micro-dash: 162 bytes
+ * - Micro-dash: 176 bytes
  */
 export function mapValues<T, O>(object: T, iteratee: ObjectIteratee<T, O>) {
   const obj: ObjectWith<O> = {};

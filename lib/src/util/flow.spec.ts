@@ -1,5 +1,5 @@
+import {curry, head, identity} from 'lodash';
 import {flow} from './flow';
-import {curry, head, identity, noop} from 'lodash';
 
 describe('flow()', () => {
 
