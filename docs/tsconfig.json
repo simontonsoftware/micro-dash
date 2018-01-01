@@ -14,6 +14,7 @@
     "excludePrivate": true,
     "theme": "typedoc-theme",
     "readme": "none",
-    "gaID": "UA-111611854-1"
+    "gaID": "UA-111611854-1",
+    "gitRevision": "master"
   }
 }

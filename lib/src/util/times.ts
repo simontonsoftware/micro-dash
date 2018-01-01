@@ -7,10 +7,10 @@
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 1,586 bytes
- * - Micro-dash: 55 bytes
+ * - Micro-dash: 49 bytes
  */
 export function times<T>(n: number, iteratee: (index: number) => T) {
-  const result: T[] = Array(n);
+  const result: T[] = [];
   for (let i = 0; i < n; ++i) {
     result[i] = iteratee(i);
   }
