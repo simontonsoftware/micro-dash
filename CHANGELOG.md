@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/simontonsoftware/micro-dash/compare/v3.1.0...v3.2.0) (2018-01-01)
+
+
+### Features
+
+* add `zip()` ([60f3ef3](https://github.com/simontonsoftware/micro-dash/commit/60f3ef3))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/simontonsoftware/micro-dash/compare/v3.0.0...v3.1.0) (2017-12-26)
 
