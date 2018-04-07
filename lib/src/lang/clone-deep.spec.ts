@@ -1,7 +1,7 @@
 import {cloneDeep} from './clone-deep';
 import {forOwn, isObject} from 'lodash';
 
-describe('cloneDeep()', function () {
+describe('cloneDeep()',  () => {
 
   it('clones deeply', () => {
     const object = {a: {b: [{c: 3}, [{d: 4}]]}};
