@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/simontonsoftware/micro-dash/compare/v3.2.0...v3.3.0) (2018-04-07)
+
+
+### Features
+
+* add `isNil()` ([23af0d1](https://github.com/simontonsoftware/micro-dash/commit/23af0d1))
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/simontonsoftware/micro-dash/compare/v3.1.0...v3.2.0) (2018-01-01)
 
