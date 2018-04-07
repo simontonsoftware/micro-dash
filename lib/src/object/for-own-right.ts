@@ -13,10 +13,10 @@ import { ObjectIteratee } from '../interfaces';
  */
 export function forOwnRight<T>(
   object: T,
-  iteratee: ObjectIteratee<T, void | boolean>
+  iteratee: ObjectIteratee<T, void | boolean>,
 ) {
   forEachRight(Object.getOwnPropertyNames(object), (key: keyof T) =>
-    iteratee(object[key], key)
+    iteratee(object[key], key),
   );
   return object;
 }
