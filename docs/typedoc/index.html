@@ -934,6 +934,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-variable tsd-is-private tsd-is-not-exported">
 			<a href="index.html#nextid" class="tsd-kind-icon">next<wbr>Id</a>
 		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="index.html#_makepadding" class="tsd-kind-icon">_make<wbr>Padding</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a>
 		</li>
@@ -1015,6 +1018,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#keyby" class="tsd-kind-icon">key<wbr>By</a>
 		</li>
+		<li class=" tsd-kind-function tsd-is-private">
+			<a href="index.html#makepadding" class="tsd-kind-icon">make<wbr>Padding</a>
+		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#map" class="tsd-kind-icon">map</a>
 		</li>
@@ -1041,6 +1047,15 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#once" class="tsd-kind-icon">once</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#pad" class="tsd-kind-icon">pad</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#padend" class="tsd-kind-icon">pad<wbr>End</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#padstart" class="tsd-kind-icon">pad<wbr>Start</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#partial" class="tsd-kind-icon">partial</a>
@@ -1139,6 +1154,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-function tsd-is-not-exported"><a href="index.html#_makepadding" class="tsd-kind-icon">_make<wbr>Padding</a></li>
 							<li class="tsd-kind-function"><a href="index.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a></li>
 							<li class="tsd-kind-function"><a href="index.html#capitalize" class="tsd-kind-icon">capitalize</a></li>
 							<li class="tsd-kind-function"><a href="index.html#clamp" class="tsd-kind-icon">clamp</a></li>
@@ -1166,6 +1182,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function"><a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a></li>
 							<li class="tsd-kind-function"><a href="index.html#kebabcase" class="tsd-kind-icon">kebab<wbr>Case</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#keyby" class="tsd-kind-icon">key<wbr>By</a></li>
+							<li class="tsd-kind-function tsd-is-private"><a href="index.html#makepadding" class="tsd-kind-icon">make<wbr>Padding</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#map" class="tsd-kind-icon">map</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#mapvalues" class="tsd-kind-icon">map<wbr>Values</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#memoize" class="tsd-kind-icon">memoize</a></li>
@@ -1175,6 +1192,9 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#omit" class="tsd-kind-icon">omit</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#omitby" class="tsd-kind-icon">omit<wbr>By</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#once" class="tsd-kind-icon">once</a></li>
+							<li class="tsd-kind-function"><a href="index.html#pad" class="tsd-kind-icon">pad</a></li>
+							<li class="tsd-kind-function"><a href="index.html#padend" class="tsd-kind-icon">pad<wbr>End</a></li>
+							<li class="tsd-kind-function"><a href="index.html#padstart" class="tsd-kind-icon">pad<wbr>Start</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#partial" class="tsd-kind-icon">partial</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#pick" class="tsd-kind-icon">pick</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#pickby" class="tsd-kind-icon">pick<wbr>By</a></li>
@@ -1361,6 +1381,22 @@ img { max-width: 100%; }
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+				<a name="_makepadding" class="tsd-anchor"></a>
+				<h3>_make<wbr>Padding</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">_make<wbr>Padding<span class="tsd-signature-symbol">(</span>needed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/string/pad.ts#L22">string/pad.ts:22</a></li>
+							</ul>
+						</aside>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="camelcase" class="tsd-anchor"></a>
 				<h3>camel<wbr>Case</h3>
@@ -2410,6 +2446,24 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-private">
+				<a name="makepadding" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> make<wbr>Padding</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">make<wbr>Padding<span class="tsd-signature-symbol">(</span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/string/pad.ts#L18">string/pad.ts:18</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 				<a name="map" class="tsd-anchor"></a>
 				<h3>map</h3>
@@ -2711,6 +2765,84 @@ img { max-width: 100%; }
 							<ul>
 								<li>Lodash: 1,511 bytes</li>
 								<li>Micro-dash: 87 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="pad" class="tsd-anchor"></a>
+				<h3>pad</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">pad<span class="tsd-signature-symbol">(</span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/string/pad.ts#L8">string/pad.ts:8</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Pads <code>string</code> on the left and right sides if it&#39;s shorter than <code>length</code>. Padding characters are truncated if they can&#39;t be evenly divided by <code>length</code>.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 3,711 bytes</li>
+								<li>Micro-dash: 191 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="padend" class="tsd-anchor"></a>
+				<h3>pad<wbr>End</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">pad<wbr>End<span class="tsd-signature-symbol">(</span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/string/pad-end.ts#L10">string/pad-end.ts:10</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Pads <code>string</code> on the right side if it&#39;s shorter than <code>length</code>. Padding characters are truncated if they exceed <code>length</code>.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 3,645 bytes</li>
+								<li>Micro-dash: 183 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="padstart" class="tsd-anchor"></a>
+				<h3>pad<wbr>Start</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">pad<wbr>Start<span class="tsd-signature-symbol">(</span>s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/string/pad-start.ts#L10">string/pad-start.ts:10</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Pads <code>string</code> on the left side if it&#39;s shorter than <code>length</code>. Padding characters are truncated if they exceed <code>length</code>.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 3,645 bytes</li>
+								<li>Micro-dash: 183 bytes</li>
 							</ul>
 						</div>
 					</li>
