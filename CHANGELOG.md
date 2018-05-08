@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.5.0"></a>
+# [3.5.0](https://github.com/simontonsoftware/micro-dash/compare/v3.4.0...v3.5.0) (2018-05-08)
+
+
+### Features
+
+* add `last()` ([50d17e2](https://github.com/simontonsoftware/micro-dash/commit/50d17e2))
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/simontonsoftware/micro-dash/compare/v3.3.0...v3.4.0) (2018-04-14)
 
