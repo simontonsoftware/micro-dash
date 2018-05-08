@@ -1,24 +1,24 @@
 import {flatten} from '.';
 
-describe('flatten()', function () {
+describe('flatten()', () => {
 
   //
   // stolen from https://github.com/healthiers/mini-dash
   //
 
-  it('should return empty array', function () {
+  it('should return empty array', () => {
     expect(flatten([])).toEqual([]);
   });
 
-  it('should flatten uniform length arrays', function () {
+  it('should flatten uniform length arrays', () => {
     expect(flatten([[1], [2], [3]])).toEqual([1, 2, 3]);
   });
 
-  it('should return different lenth arrays', function () {
+  it('should return different lenth arrays', () => {
     expect(flatten([[1, 2, 3], [4], [5, 6]])).toEqual([1, 2, 3, 4, 5, 6]);
   });
 
-  it('should not modify original array', function () {
+  it('should not modify original array', () => {
     let array = [[1, 2, 3], [4], [5, 6]];
 
     let flattened = flatten(array);
