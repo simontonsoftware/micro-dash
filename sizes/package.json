@@ -11,12 +11,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash-es": "^4.14.5",
-    "@types/node": "^9.6.2",
+    "@types/node": "^10.5.1",
     "copyfiles": "^2.0.0",
-    "lodash-es": "^4.17.4",
+    "lodash-es": "^4.17.10",
     "process-promises": "^1.0.0",
     "rimraf": "^2.6.1",
     "source-map-explorer": "^1.5.0",
-    "typescript": "^2.4.2"
+    "typescript": "2.7.2"
   }
 }
