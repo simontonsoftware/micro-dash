@@ -1013,10 +1013,16 @@ img { max-width: 100%; }
 			<a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="index.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="index.html#kebabcase" class="tsd-kind-icon">kebab<wbr>Case</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#keyby" class="tsd-kind-icon">key<wbr>By</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#last" class="tsd-kind-icon">last</a>
 		</li>
 		<li class=" tsd-kind-function tsd-is-private">
 			<a href="index.html#makepadding" class="tsd-kind-icon">make<wbr>Padding</a>
@@ -1180,8 +1186,10 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function"><a href="index.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a></li>
+							<li class="tsd-kind-function"><a href="index.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a></li>
 							<li class="tsd-kind-function"><a href="index.html#kebabcase" class="tsd-kind-icon">kebab<wbr>Case</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#keyby" class="tsd-kind-icon">key<wbr>By</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#last" class="tsd-kind-icon">last</a></li>
 							<li class="tsd-kind-function tsd-is-private"><a href="index.html#makepadding" class="tsd-kind-icon">make<wbr>Padding</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#map" class="tsd-kind-icon">map</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#mapvalues" class="tsd-kind-icon">map<wbr>Values</a></li>
@@ -2383,6 +2391,32 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="isundefined" class="tsd-anchor"></a>
+				<h3>is<wbr>Undefined</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Undefined<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/lang/is-undefined.ts#L8">lang/is-undefined.ts:8</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if <code>value</code> is <code>undefined</code>.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 77 bytes</li>
+								<li>Micro-dash: 32 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="kebabcase" class="tsd-anchor"></a>
 				<h3>kebab<wbr>Case</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -2443,6 +2477,36 @@ img { max-width: 100%; }
 								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/collection/key-by.ts#L15">collection/key-by.ts:15</a></li>
 							</ul>
 						</aside>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="last" class="tsd-anchor"></a>
+				<h3>last</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">last&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/lib/src/array/last.ts#L11">array/last.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Gets the last element of array.</p>
+							</div>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>no special consideration is given to string-keyed values set on the array</li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 84 bytes</li>
+								<li>Micro-dash: 33 bytes</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</section>
