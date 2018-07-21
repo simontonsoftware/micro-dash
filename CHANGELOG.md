@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.6.0"></a>
+# [3.6.0](https://github.com/simontonsoftware/micro-dash/compare/v3.5.0...v3.6.0) (2018-07-21)
+
+
+### Features
+
+* add `isUndefined()` ([6bed3b3](https://github.com/simontonsoftware/micro-dash/commit/6bed3b3))
+
+
+
 <a name="3.5.0"></a>
 # [3.5.0](https://github.com/simontonsoftware/micro-dash/compare/v3.4.0...v3.5.0) (2018-05-08)
 
