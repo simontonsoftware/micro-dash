@@ -23,6 +23,12 @@
       ],
       "micro-dash/*": [
         "dist/micro-dash/*"
+      ],
+      "sizes": [
+        "dist/sizes"
+      ],
+      "sizes/*": [
+        "dist/sizes/*"
       ]
     }
   }
