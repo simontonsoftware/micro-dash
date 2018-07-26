@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "micro-dash": [
+        "dist/micro-dash"
+      ],
+      "micro-dash/*": [
+        "dist/micro-dash/*"
+      ]
+    }
   }
 }
