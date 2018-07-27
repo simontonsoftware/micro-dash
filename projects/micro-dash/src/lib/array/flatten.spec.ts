@@ -1,7 +1,6 @@
-import {flatten} from '.';
+import { flatten } from '.';
 
 describe('flatten()', () => {
-
   //
   // stolen from https://github.com/healthiers/mini-dash
   //
@@ -19,9 +18,9 @@ describe('flatten()', () => {
   });
 
   it('should not modify original array', () => {
-    let array = [[1, 2, 3], [4], [5, 6]];
+    const array = [[1, 2, 3], [4], [5, 6]];
 
-    let flattened = flatten(array);
+    const flattened = flatten(array);
 
     expect(flattened).toEqual([1, 2, 3, 4, 5, 6]);
     expect(array).toEqual([[1, 2, 3], [4], [5, 6]]);
@@ -35,25 +34,33 @@ describe('flatten()', () => {
     const sparse = [4];
     sparse[2] = 6;
 
-    expect(flatten([[1, 2, 3], sparse, Array(2)]))
-      .toEqual([1, 2, 3, 4, undefined, 6, undefined, undefined]);
+    expect(flatten([[1, 2, 3], sparse, Array(2)])).toEqual([
+      1,
+      2,
+      3,
+      4,
+      undefined,
+      6,
+      undefined,
+      undefined,
+    ]);
   });
 
   it('should respect `Symbol.isConcatSpreadable`', () => {
-    let object1: object = { '0': 'a', 'length': 1 };
-    let object2: object = { '0': 'a', 'length': 1 };
+    const object1: any = { '0': 'a', length: 1 };
+    const object2: any = { '0': 'a', length: 1 };
     object1[Symbol.isConcatSpreadable] = true;
 
     expect(flatten([object1, object2] as any)).toEqual(['a', object2]);
   });
 
   it('should work with extremely large arrays', () => {
-    let large = Array(5e5);
+    const large = Array(5e5);
 
     expect(flatten([large])).toEqual(large);
   });
 
   it('should work with empty arrays', () => {
-    expect(flatten( [[], [[]], [[], [[[]]]]])).toEqual([[], [], [[[]]]]);
+    expect(flatten([[], [[]], [[], [[[]]]]])).toEqual([[], [], [[[]]]]);
   });
 });

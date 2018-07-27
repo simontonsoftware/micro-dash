@@ -1,8 +1,7 @@
-import {flowRight} from './flow-right';
-import {curry, head, identity, noop} from 'lodash';
+import { flowRight } from './flow-right';
+import { curry, head, identity, Function1 } from 'lodash';
 
 describe('flowRight()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -12,7 +11,13 @@ describe('flowRight()', () => {
     const square = (x: number) => x * x;
     const fixed = (n: number) => n.toFixed(1);
 
-    expect(flowRight(fixed, square, increment)(2)).toBe('9.0');
+    expect(
+      flowRight(
+        fixed,
+        square,
+        increment,
+      )(2),
+    ).toBe('9.0');
   });
 
   it('should return an identity function when no arguments are given', () => {
@@ -20,9 +25,11 @@ describe('flowRight()', () => {
   });
 
   it('should work with a curried function and `_.head`', () => {
-    const curried = curry(identity);
-
-    const combined: any = flowRight(head as <T>(array: T[]) => T, curried);
+    const curried: any = curry(identity);
+    const combined: any = flowRight(
+      head as any,
+      curried,
+    );
 
     expect(combined([1])).toBe(1);
   });

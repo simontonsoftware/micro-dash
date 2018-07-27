@@ -1,10 +1,11 @@
-import {cloneDeep} from './clone-deep';
-import {forOwn, isObject} from 'lodash';
+import { cloneDeep } from './clone-deep';
+import { forOwn, isObject } from 'lodash';
 
-describe('cloneDeep()',  () => {
-
+describe('cloneDeep()', () => {
   it('clones deeply', () => {
-    const object = {a: {b: [{c: 3}, [{d: 4}]]}};
+    const object = {
+      a: { b: [{ c: 3 }, [{ d: 4 }]] as [{ c: 3 }, [{ d: 4 }]] },
+    };
 
     const cloned = cloneDeep(object);
 
@@ -20,15 +21,15 @@ describe('cloneDeep()',  () => {
   //
 
   const clonable = {
-    'arrays': ['a', ''],
-    'array-like objects': {'0': 'a', 'length': 1},
-    'booleans': false,
+    arrays: ['a', ''],
+    'array-like objects': { '0': 'a', length: 1 },
+    booleans: false,
     'null values': null,
-    'numbers': 0,
-    'objects': {'a': 0, 'b': 1, 'c': 2},
-    'strings': 'a',
+    numbers: 0,
+    objects: { a: 0, b: 1, c: 2 },
+    strings: 'a',
     'undefined values': undefined,
-    'objects with object values': {b: ['B'], c: {C: 1}},
+    'objects with object values': { b: ['B'], c: { C: 1 } },
   };
   forOwn(clonable, (object, kind) => {
     it('should clone ' + kind, () => {
@@ -61,7 +62,7 @@ describe('cloneDeep()',  () => {
   });
 
   it('works for methods like `map`', () => {
-    const expected: any[] = [{a: [0]}, {b: [1]}];
+    const expected: any[] = [{ a: [0] }, { b: [1] }];
 
     const actual = expected.map(cloneDeep);
 

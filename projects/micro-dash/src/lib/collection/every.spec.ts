@@ -1,4 +1,4 @@
-import { identity, map } from 'lodash';
+import { identity } from 'lodash';
 import { stub } from 'sinon';
 import { every } from './every';
 
@@ -58,7 +58,7 @@ describe('every()', () => {
   });
 
   it('iterates over own string keyed properties of objects', () => {
-    const object = {a: 1};
+    const object = { a: 1 };
     const logger = stub().returns(true);
 
     every(object, logger);
@@ -81,7 +81,7 @@ describe('every()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     every(object, () => {

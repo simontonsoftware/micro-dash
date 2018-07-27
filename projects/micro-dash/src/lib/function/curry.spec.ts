@@ -1,8 +1,8 @@
-import {curry} from './curry';
-import {bind} from 'lodash';
+import { curry } from './curry';
+import { bind } from 'lodash';
+import { ObjectWith } from '../interfaces';
 
 describe('curry()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -56,11 +56,16 @@ describe('curry()', () => {
   });
 
   it('should use `this` binding of function', () => {
-    const object = {a: 1, b: 2, c: 3};
+    const object = { a: 1, b: 2, c: 3 };
     const expected = [1, 2, 3];
     type Fn = (a: string, b: string, c: string) => number[];
 
-    function fn(this: object | undefined, a: string, b: string, c: string) {
+    function fn(
+      this: ObjectWith<number> | undefined,
+      a: string,
+      b: string,
+      c: string,
+    ) {
       const value = this || {};
       return [value[a], value[b], value[c]];
     }
@@ -75,11 +80,13 @@ describe('curry()', () => {
   });
 
   it('should work for names that shadow `Object.prototype`', () => {
-    const curried = curry(
-      function hasOwnProperty(a: number, b: number, c: number) {
-        return [a, b, c];
-      },
-    );
+    const curried = curry(function hasOwnProperty(
+      a: number,
+      b: number,
+      c: number,
+    ) {
+      return [a, b, c];
+    });
 
     expect(curried(1)(2)(3)).toEqual([1, 2, 3]);
   });
