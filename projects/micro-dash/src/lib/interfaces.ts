@@ -1,13 +1,11 @@
 /** @private */
 export interface ClassFor<T> {
-  new(...args: any[]): T;
+  new (...args: any[]): T;
 }
 
 /** @private */
-
 export interface ObjectWith<T> {
   [key: string]: T;
-  [index: number]: T;
 }
 
 /** @private */
@@ -26,8 +24,12 @@ export type Function2<T1, T2, R> = (t1: T1, t2: T2) => R;
 /** @private */
 export type Function3<T1, T2, T3, R> = (t1: T1, t2: T2, t3: T3) => R;
 /** @private */
-export type Function4<T1, T2, T3, T4, R> =
-  (t1: T1, t2: T2, t3: T3, t4: T4) => R;
+export type Function4<T1, T2, T3, T4, R> = (
+  t1: T1,
+  t2: T2,
+  t3: T3,
+  t4: T4,
+) => R;
 
 /** @private */
 export type Transformer<T> = (input: T) => T;

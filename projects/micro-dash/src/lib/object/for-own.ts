@@ -1,4 +1,5 @@
-import {ObjectIteratee, ObjectWith} from '../interfaces';
+import { ObjectIteratee } from '../interfaces';
+import { keys } from './keys';
 
 /**
  * Iterates over own enumerable string keyed properties of an object and invokes `iteratee` for each property.
@@ -11,10 +12,11 @@ import {ObjectIteratee, ObjectWith} from '../interfaces';
  * - Micro-dash: 110 bytes
  */
 export function forOwn<T>(
-  object: T, iteratee: ObjectIteratee<T, void | boolean>,
+  object: T,
+  iteratee: ObjectIteratee<T, void | boolean>,
 ) {
-  for (const key of Object.getOwnPropertyNames(object)) {
-    if (iteratee(object[key], key as keyof T) === false) {
+  for (const key of keys(object)) {
+    if (iteratee(object[key], key) === false) {
       break;
     }
   }

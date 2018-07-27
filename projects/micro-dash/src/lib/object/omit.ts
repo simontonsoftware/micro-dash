@@ -1,4 +1,4 @@
-import {clone} from '../lang/clone';
+import { clone } from '../lang/clone';
 
 /**
  * The opposite of `pick`; this method creates an object composed of the own enumerable string properties of object that are not omitted.
@@ -13,7 +13,8 @@ import {clone} from '../lang/clone';
  * - Micro-dash: 220 bytes
  */
 export function omit<T extends object | null | undefined>(
-  object: T, ...paths: Array<keyof T>,
+  object: T,
+  ...paths: Array<keyof T>
 ): Partial<T> {
   const obj: any = clone(object) || {};
   for (const path of paths) {

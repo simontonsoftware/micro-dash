@@ -1,5 +1,6 @@
 import { forEachRight } from '../collection/for-each-right';
 import { ObjectIteratee } from '../interfaces';
+import { keys } from './keys';
 
 /**
  * This method is like `forOwn` except that it iterates over properties of `object` in the opposite order.
@@ -15,8 +16,6 @@ export function forOwnRight<T>(
   object: T,
   iteratee: ObjectIteratee<T, void | boolean>,
 ) {
-  forEachRight(Object.getOwnPropertyNames(object), (key: keyof T) =>
-    iteratee(object[key], key),
-  );
+  forEachRight(keys(object), (key) => iteratee(object[key], key));
   return object;
 }

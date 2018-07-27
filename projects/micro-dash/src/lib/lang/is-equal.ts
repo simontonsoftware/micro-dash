@@ -1,3 +1,5 @@
+import { keys } from '../object/keys';
+
 /**
  * Performs a deep comparison between two values to determine if they are equivalent.
  *
@@ -11,18 +13,19 @@
  * - Micro-dash: 302 bytes
  */
 export function isEqual(value: any, other: any) {
-  if (Object.is(value, other)) { // covers e.g. NaN === NaN
+  if (Object.is(value, other)) {
+    // covers e.g. NaN === NaN
     return true;
   }
   if (!(value instanceof Object && other instanceof Object)) {
     return false;
   }
-  for (const key of Object.getOwnPropertyNames(value)) {
+  for (const key of keys(value)) {
     if (!other.hasOwnProperty(key)) {
       return false;
     }
   }
-  for (const key of Object.getOwnPropertyNames(other)) {
+  for (const key of keys(other)) {
     if (!isEqual(value[key], other[key])) {
       return false;
     }

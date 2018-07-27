@@ -10,6 +10,8 @@ import { forOwn } from './for-own';
  */
 export function mapValues<T, O>(object: T, iteratee: ObjectIteratee<T, O>) {
   const obj: ObjectWith<O> = {};
-  forOwn(object, (value, key) => { obj[key] = iteratee(value, key); });
+  forOwn(object, (value, key) => {
+    obj[key as string] = iteratee(value, key);
+  });
   return obj;
 }

@@ -10,11 +10,11 @@
  * - Micro-dash: 156 bytes
  */
 export function pick<T>(object: T, ...paths: Array<keyof T>) {
-  const obj: Partial<T> = {};
+  const result: Partial<T> = {};
   if (object != null) {
     for (const path of paths) {
-      obj[path] = object[path as any];
+      result[path] = object[path];
     }
   }
-  return obj;
+  return result;
 }

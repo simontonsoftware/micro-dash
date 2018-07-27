@@ -9,11 +9,41 @@
  * - Lodash: 5,328 bytes
  * - Micro-dash: 65 bytes
  */
+
+export function get<T, K1 extends keyof T>(
+  object: T,
+  path: [K1],
+  defaultValue: T[K1],
+): T[K1];
+export function get<T, K1 extends keyof T, K2 extends keyof T[K1]>(
+  object: T,
+  path: [K1, K2],
+  defaultValue: T[K1][K2],
+): T[K1][K2];
+export function get<
+  T,
+  K1 extends keyof T,
+  K2 extends keyof T[K1],
+  K3 extends keyof T[K1][K2]
+>(object: T, path: [K1, K2, K3], defaultValue: T[K1][K2][K3]): T[K1][K2][K3];
+export function get<
+  T,
+  K1 extends keyof T,
+  K2 extends keyof T[K1],
+  K3 extends keyof T[K1][K2],
+  K4 extends keyof T[K1][K2][K3]
+>(
+  object: T,
+  path: [K1, K2, K3, K4],
+  defaultValue: T[K1][K2][K3][K4],
+): T[K1][K2][K3][K4];
 export function get(
   object: object | null | undefined,
   path: string[],
-  defaultValue?: any
-) {
+  defaultValue?: any,
+): any;
+
+export function get(object: any, path: string[], defaultValue?: any) {
   const length = path.length;
   let index = 0;
   while (object != null && index < length) {

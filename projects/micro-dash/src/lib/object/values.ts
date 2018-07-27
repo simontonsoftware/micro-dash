@@ -1,4 +1,5 @@
-import {ObjectWith} from '../interfaces';
+import { ObjectWith } from '../interfaces';
+import { keys } from './keys';
 
 /**
  * Creates an array of the own enumerable string keyed property values of `object`.
@@ -8,5 +9,5 @@ import {ObjectWith} from '../interfaces';
  * - Micro-dash: 72 bytes
  */
 export function values<T>(object: ObjectWith<T>) {
-  return Object.getOwnPropertyNames(object).map((key) => object[key]);
+  return keys(object).map((key) => object[key]);
 }

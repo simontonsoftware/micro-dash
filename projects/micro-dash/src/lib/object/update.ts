@@ -1,3 +1,5 @@
+import { Function1 } from '../interfaces';
+
 /**
  * This method is like `set()` except that it accepts `updater` to produce the value to set.
  *
@@ -15,14 +17,14 @@
 export function update<T>(
   object: T,
   path: Array<string | number>,
-  updater: (value: any) => any
+  updater: Function1<any, any>,
 ): T {
   if (object && path.length) {
-    let current = object;
+    let current: any = object;
     const length = path.length;
     for (let i = 0; i < length; ++i) {
       const key = path[i];
-      let value: any = current[key];
+      let value = current[key];
       if (i < length - 1) {
         if (!(value instanceof Object)) {
           value = Number.isInteger(path[i + 1] as any) ? [] : {};

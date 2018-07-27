@@ -1,5 +1,5 @@
-import {ArrayIteratee, ObjectIteratee, ObjectWith} from '../interfaces';
-import {forOwnRight} from '../object/for-own-right';
+import { ArrayIteratee, ObjectIteratee } from '../interfaces';
+import { forOwnRight } from '../object/for-own-right';
 
 /**
  * This method is like `forEach` except that it iterates over elements of `collection` from right to left.
@@ -10,10 +10,12 @@ import {forOwnRight} from '../object/for-own-right';
  */
 
 export function forEachRight<T>(
-  array: T[] | undefined, iteratee: ArrayIteratee<T, void | boolean>,
+  array: T[] | undefined,
+  iteratee: ArrayIteratee<T, void | boolean>,
 ): T[];
 export function forEachRight<T>(
-  object: T | undefined, iteratee: ObjectIteratee<T, void | boolean>,
+  object: T | undefined,
+  iteratee: ObjectIteratee<T, void | boolean>,
 ): T;
 
 export function forEachRight<T>(collection: any, iteratee: any) {

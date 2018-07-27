@@ -1,5 +1,5 @@
-import {forEach} from '../collection/for-each';
-import {clone} from '../lang/clone';
+import { forEach } from '../collection/for-each';
+import { clone } from '../lang/clone';
 
 /**
  * Recursively merges own enumerable string keyed properties of source objects into the destination object. Object properties are merged recursively. Source objects are applied from left to right. Subsequent sources overwrite property assignments of previous sources.
@@ -26,29 +26,37 @@ export function merge<A extends object, B extends object, C extends object>(
   source1: B,
   source2: C,
 ): A & B & C;
-export function merge<A extends object, B extends object, C extends object, D extends object>(
-  object: A,
-  source1: B,
-  source2: C,
-  source3: D,
-): A & B & C & D;
-export function merge<A extends object,
+export function merge<
+  A extends object,
+  B extends object,
+  C extends object,
+  D extends object
+>(object: A, source1: B, source2: C, source3: D): A & B & C & D;
+export function merge<
+  A extends object,
   B extends object,
   C extends object,
   D extends object,
-  E extends object>(
-  object: A, source1: B, source2: C, source3: D, source4: E,
-): A & B & C & D & E;
-export function merge<A extends object,
+  E extends object
+>(object: A, source1: B, source2: C, source3: D, source4: E): A & B & C & D & E;
+export function merge<
+  A extends object,
   B extends object,
   C extends object,
   D extends object,
   E extends object,
-  F extends object>(
-  object: A, source1: B, source2: C, source3: D, source4: E, source5: F,
+  F extends object
+>(
+  object: A,
+  source1: B,
+  source2: C,
+  source3: D,
+  source4: E,
+  source5: F,
 ): A & B & C & D & E & F;
 export function merge<T extends object>(
-  object: T, ...sources: Array<Partial<T>>,
+  object: T,
+  ...sources: Array<Partial<T>>
 ): T;
 
 export function merge(object: any, ...sources: any[]) {
