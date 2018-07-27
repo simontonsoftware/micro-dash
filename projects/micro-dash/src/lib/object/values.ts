@@ -5,8 +5,8 @@ import { keys } from './keys';
  * Creates an array of the own enumerable string keyed property values of `object`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 3,437 bytes
- * - Micro-dash: 72 bytes
+ * - Lodash: 3,368 bytes
+ * - Micro-dash: 77 bytes
  */
 export function values<T>(object: ObjectWith<T>) {
   return keys(object).map((key) => object[key]);

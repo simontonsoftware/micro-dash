@@ -9,8 +9,8 @@ import { clone } from '../lang/clone';
  * - `omit(obj, -0)` (which is a type error) acts like `omit(obj, '0')` instead of `omit(obj, '-0')`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 16,283 bytes
- * - Micro-dash: 220 bytes
+ * - Lodash: 15,624 bytes
+ * - Micro-dash: 329 bytes
  */
 export function omit<T extends object | null | undefined>(
   object: T,

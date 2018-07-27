@@ -6,7 +6,7 @@
  * - using `-0` in the path (which is a type error) acts like `'0'` instead of `'-0'`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,328 bytes
+ * - Lodash: 5,092 bytes
  * - Micro-dash: 65 bytes
  */
 

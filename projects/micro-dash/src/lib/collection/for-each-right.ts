@@ -5,8 +5,8 @@ import { forOwnRight } from '../object/for-own-right';
  * This method is like `forEach` except that it iterates over elements of `collection` from right to left.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 3,830 bytes
- * - Micro-dash: 192 bytes
+ * - Lodash: 3,764 bytes
+ * - Micro-dash: 204 bytes
  */
 
 export function forEachRight<T>(

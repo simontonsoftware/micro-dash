@@ -7,21 +7,24 @@ import { forEach } from './for-each';
  * **Note:** This method returns `true` for [empty collections](https://en.wikipedia.org/wiki/Empty_set) because [everything is true](https://en.wikipedia.org/wiki/Vacuous_truth) of elements of empty collections.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,762 bytes
- * - Micro-dash: 300 bytes
+ * - Lodash: 14,455 bytes
+ * - Micro-dash: 422 bytes
  */
 
 export function every<T>(
-  array: T[] | undefined, predicate: ArrayIteratee<T, any>,
+  array: T[] | undefined,
+  predicate: ArrayIteratee<T, any>,
 ): boolean;
 export function every<T>(
-  object: T | undefined, predicate: ObjectIteratee<T, any>,
+  object: T | undefined,
+  predicate: ObjectIteratee<T, any>,
 ): boolean;
 
 export function every(collection: any, predicate: any) {
   let result = true;
   forEach(
-    collection, (value, keyOrIndex) => result = !!predicate(value, keyOrIndex),
+    collection,
+    (value, keyOrIndex) => (result = !!predicate(value, keyOrIndex)),
   );
   return result;
 }

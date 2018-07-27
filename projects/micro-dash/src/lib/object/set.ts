@@ -12,8 +12,8 @@ import { update } from './update';
  * - using `-0` in the path (which is a type error) acts like `'0'` instead of `'-0'`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,885 bytes
- * - Micro-dash: 245 bytes
+ * - Lodash: 5,716 bytes
+ * - Micro-dash: 201 bytes
  */
 export function set<T>(object: T, path: Array<string | number>, value: any): T {
   return update(object, path, constant(value));

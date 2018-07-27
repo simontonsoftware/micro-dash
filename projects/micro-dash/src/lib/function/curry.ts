@@ -1,4 +1,4 @@
-import {partial} from './partial';
+import { partial } from './partial';
 
 // type definitions from @types/lodash
 
@@ -37,31 +37,35 @@ export interface CurriedFunction4<T1, T2, T3, T4, R> {
  * - it will return plain functions; they will not inherit the prototype of `func`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 9,400 bytes
- * - Micro-dash: 312 bytes
+ * - Lodash: 9,084 bytes
+ * - Micro-dash: 299 bytes
  */
 
 export function curry<T1, R>(func: (t1: T1) => R): CurriedFunction1<T1, R>;
 export function curry<T1, R>(
-  func: (t1: T1, ...more: any[]) => R, arity: 1,
+  func: (t1: T1, ...more: any[]) => R,
+  arity: 1,
 ): CurriedFunction1<T1, R>;
 export function curry<T1, T2, R>(
   func: (t1: T1, t2: T2) => R,
 ): CurriedFunction2<T1, T2, R>;
 export function curry<T1, T2, R>(
-  func: (t1: T1, t2: T2, ...more: any[]) => R, arity: 2,
+  func: (t1: T1, t2: T2, ...more: any[]) => R,
+  arity: 2,
 ): CurriedFunction2<T1, T2, R>;
 export function curry<T1, T2, T3, R>(
   func: (t1: T1, t2: T2, t3: T3) => R,
 ): CurriedFunction3<T1, T2, T3, R>;
 export function curry<T1, T2, T3, R>(
-  func: (t1: T1, t2: T2, t3: T3, ...more: any[]) => R, arity: 3,
+  func: (t1: T1, t2: T2, t3: T3, ...more: any[]) => R,
+  arity: 3,
 ): CurriedFunction3<T1, T2, T3, R>;
 export function curry<T1, T2, T3, T4, R>(
   func: (t1: T1, t2: T2, t3: T3, t4: T4) => R,
 ): CurriedFunction4<T1, T2, T3, T4, R>;
 export function curry<T1, T2, T3, T4, R>(
-  func: (t1: T1, t2: T2, t3: T3, t4: T4, ...more: any[]) => R, arity: 4,
+  func: (t1: T1, t2: T2, t3: T3, t4: T4, ...more: any[]) => R,
+  arity: 4,
 ): CurriedFunction4<T1, T2, T3, T4, R>;
 
 export function curry(func: (...args: any[]) => any, arity = func.length) {

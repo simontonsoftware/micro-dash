@@ -1,4 +1,4 @@
-import {identity} from '../util/identity';
+import { identity } from '../util/identity';
 
 /** @private */
 export interface MemoizedFunction extends Function {
@@ -15,13 +15,14 @@ export interface MemoizedFunction extends Function {
  * - does not let you customize cache creation
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 4,030 bytes
+ * - Lodash: 3,920 bytes
  * - Micro-dash: 218 bytes
  */
 export function memoize<T extends Function>(
-  func: T, resolver: Function = identity,
+  func: T,
+  resolver: Function = identity,
 ): T & MemoizedFunction {
-  const memoized: any = (function (this: any) {
+  const memoized: any = function(this: any) {
     const cache = memoized.cache;
     const key = resolver.apply(this, arguments);
     if (cache.has(key)) {
@@ -31,7 +32,7 @@ export function memoize<T extends Function>(
       cache.set(key, value);
       return value;
     }
-  });
+  };
   memoized.cache = new Map();
   return memoized;
 }

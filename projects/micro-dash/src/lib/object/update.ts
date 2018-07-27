@@ -11,7 +11,7 @@ import { Function1 } from '../interfaces';
  * - using `-0` in the path (which is a type error) acts like `'0'` instead of `'-0'`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 6,131 bytes
+ * - Lodash: 5,946 bytes
  * - Micro-dash: 164 bytes
  */
 export function update<T>(

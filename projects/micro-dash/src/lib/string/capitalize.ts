@@ -1,4 +1,4 @@
-import {upperFirst} from './upper-first';
+import { upperFirst } from './upper-first';
 
 /**
  * Converts the first character of `string` to upper case and the remaining to lower case.
@@ -7,8 +7,8 @@ import {upperFirst} from './upper-first';
  * - requires `string` to be a string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 2,141 bytes
- * - Micro-dash: 90 bytes
+ * - Lodash: 1,924 bytes
+ * - Micro-dash: 62 bytes
  */
 export function capitalize(string: string) {
   return upperFirst(string.toLowerCase());

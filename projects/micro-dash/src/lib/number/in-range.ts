@@ -6,7 +6,7 @@
  * - does not coerce falsey bounds to `0`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,435 bytes
+ * - Lodash: 1,374 bytes
  * - Micro-dash: 59 bytes
  */
 export function inRange(number: number, start: number, end: number) {
