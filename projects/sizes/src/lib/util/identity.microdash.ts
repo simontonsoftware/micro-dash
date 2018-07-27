@@ -1,2 +1,2 @@
 import { identity } from 'micro-dash';
-console.log(identity(1));
+console.log(identity, identity(1));

@@ -1,3 +1,3 @@
 import uniqueId from 'lodash-es/uniqueId';
-uniqueId();
-uniqueId('a');
+console.log(uniqueId());
+console.log(uniqueId('a'));

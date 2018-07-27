@@ -1,2 +1,2 @@
 import identity from 'lodash-es/identity';
-console.log(identity(1));
+console.log(identity, identity(1));

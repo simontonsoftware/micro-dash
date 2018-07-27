@@ -1,2 +1,3 @@
 import { constant } from 'micro-dash';
-constant(1)();
+const fn = constant(1);
+console.log(fn, fn());

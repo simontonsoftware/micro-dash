@@ -1,2 +1,2 @@
 import { noop } from 'micro-dash';
-[1].map(noop);
+console.log(noop, [1].map(noop));

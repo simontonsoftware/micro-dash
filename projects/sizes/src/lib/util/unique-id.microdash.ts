@@ -1,3 +1,3 @@
 import { uniqueId } from 'micro-dash';
-uniqueId();
-uniqueId('a');
+console.log(uniqueId());
+console.log(uniqueId('a'));
