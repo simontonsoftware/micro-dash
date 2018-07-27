@@ -30,6 +30,7 @@
       "sizes/*": [
         "dist/sizes/*"
       ]
-    }
+    },
+    "strict": true
   }
 }
