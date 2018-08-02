@@ -5,6 +5,6 @@
  *
  * Contribution to minified bundle size, when it is the only function imported:
  */
-export function keys<T>(object: T): Array<keyof T> {
-  return Object.getOwnPropertyNames(object) as Array<keyof T>;
-}
+export const keys = Object.getOwnPropertyNames as <T>(
+  object: T,
+) => Array<keyof T>;

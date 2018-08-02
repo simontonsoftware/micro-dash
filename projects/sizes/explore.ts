@@ -1,30 +1,32 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
-const rollup = require('rollup');
+import * as fs from 'fs';
+import * as glob from 'glob';
+import * as path from 'path';
+import * as readline from 'readline';
+import * as childProcess from 'child_process';
+import { rollup, RollupFileOptions } from 'rollup';
+import { forEach } from '../micro-dash/src/lib/collection/for-each';
+
+// no typings for these imports
 const uglify = require('rollup-plugin-uglify').uglify;
-const readline = require('readline');
 const commonjs = require('rollup-plugin-commonjs');
 const nodeResolve = require('rollup-plugin-node-resolve');
-const childProcess = require('child_process');
 
 const projectRootDir = path.join(__dirname, '..', '..');
 const distDir = path.join(projectRootDir, 'dist');
 const sourceMapExplorer = path.join(
-  projectRootDir, 'node_modules', 'source-map-explorer', 'index.js'
+  projectRootDir,
+  'node_modules',
+  'source-map-explorer',
+  'index.js',
 );
 const buildDir = path.join(distDir, 'sizes', 'esm5', 'lib');
 const bundleDir = path.join(__dirname, 'bundle/');
-const microDashDir = path.join(distDir, 'micro-dash');
 
-const forEach = require(microDashDir).forEach;
-
-const rollupConfig = {
-  onwarn: function (warning) {
-    if (warning.code === 'THIS_IS_UNDEFINED') {
-      return;
-    }
-    console.warn(warning.message);
+const rollupConfig: RollupFileOptions = {
+  input: 'thiswillchange',
+  inlineDynamicImports: false,
+  onwarn: function(warning) {
+    console.warn(warning);
   },
   plugins: [
     nodeResolve({
@@ -33,33 +35,33 @@ const rollupConfig = {
       customResolveOptions: { paths: [distDir] },
     }),
     commonjs(),
-    uglify()
-  ]
+    uglify(),
+  ],
 };
 
-return run();
+run();
 
 async function run() {
   await recursiveMkDir(bundleDir);
 
-  let input = await getInput(
-    'Filename bases, comma separated (blank for all): '
-  );
-  if (input) {
-    for (const name of input.split(' ')) {
-      await bundleAndExplore(`**/${name}.*.js`);
+  while (true) {
+    const input = await getInput(
+      'Filename base, "full" for index, or blank for all: ',
+    );
+    if (!input) {
+      await bundleAndExplore(`**/*.js`);
     }
-    await bundleAndExplore(`index.*.js`);
-  } else {
-    await bundleAndExplore(`**/*.js`);
-  }
 
-  // hack, because I don't know how to node
-  process.exit();
+    if (input === 'full') {
+      await bundleAndExplore(`index.*.js`);
+    } else {
+      await bundleAndExplore(`**/${input}.*.js`);
+    }
+  }
 }
 
-function getInput(text) {
-  return new Promise((resolve) => {
+function getInput(text: string) {
+  return new Promise<string>((resolve) => {
     const reader = readline.createInterface(process.stdin, process.stdout);
     reader.question(text, (answer) => {
       resolve(answer);
@@ -68,7 +70,7 @@ function getInput(text) {
   });
 }
 
-async function bundleAndExplore(fileGlob) {
+async function bundleAndExplore(fileGlob: string) {
   const inputPaths = await getPaths(fileGlob);
   for (const inputPath of inputPaths) {
     const outputPath = await bundle(inputPath);
@@ -76,15 +78,15 @@ async function bundleAndExplore(fileGlob) {
   }
 }
 
-function getPaths(fileGlob) {
-  return new Promise((resolve) => {
+function getPaths(fileGlob: string) {
+  return new Promise<string[]>((resolve) => {
     glob(path.join(buildDir, fileGlob), { nodir: true }, (err, files) => {
       resolve(files);
     });
   });
 }
 
-async function bundle(inputPath) {
+async function bundle(inputPath: string) {
   const relativePath = path.relative(buildDir, inputPath);
 
   // lodash files come first, so print only on those
@@ -95,8 +97,8 @@ async function bundle(inputPath) {
 
   rollupConfig.input = inputPath;
   const dest = path.join(bundleDir, relativePath);
-  const bundle = await rollup.rollup(rollupConfig);
-  await bundle.write({
+  const fileBuild = await rollup(rollupConfig);
+  await fileBuild.write({
     file: dest,
     format: 'iife',
     sourcemap: true,
@@ -105,16 +107,23 @@ async function bundle(inputPath) {
   return dest;
 }
 
-function explore(file) {
+function explore(file: string) {
   const basePath = file.substring(0, file.length - 2);
   // fs.writeFileSync(basePath + 'html', generate('html'));
 
+  const exploreOutput = childProcess.spawnSync(process.execPath, [
+    sourceMapExplorer,
+    file,
+    '--json',
+  ]).stdout;
+  const files: { [sourceFile: string]: number } = JSON.parse(exploreOutput);
+
   let lodash = 0;
   let microdash = 0;
-  forEach(JSON.parse(generate('json')), (bytes, path) => {
-    if (path.includes('lodash')) {
+  forEach(files, (bytes, sourceFile) => {
+    if (sourceFile.includes('lodash')) {
       lodash += bytes;
-    } else if (path.includes('micro-dash')) {
+    } else if (sourceFile.includes('micro-dash')) {
       microdash += bytes;
     }
   });
@@ -126,16 +135,10 @@ function explore(file) {
   }
   console.log(summary);
   fs.writeFileSync(basePath + 'txt', summary);
-
-  function generate(format) {
-    return childProcess.spawnSync(
-      process.execPath, [sourceMapExplorer, file, '--' + format]
-    ).stdout;
-  }
 }
 
 // Recursively create a dir.
-function recursiveMkDir(dir) {
+function recursiveMkDir(dir: string) {
   if (!fs.existsSync(dir)) {
     recursiveMkDir(path.dirname(dir));
     fs.mkdirSync(dir);

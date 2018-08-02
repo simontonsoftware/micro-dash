@@ -10,7 +10,7 @@ import { keys } from './keys';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,473 bytes
- * - Micro-dash: 192 bytes
+ * - Micro-dash: 188 bytes
  */
 export function forOwnRight<T>(
   object: T,

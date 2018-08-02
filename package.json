@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sizes": "ng build sizes --prod && cd projects/sizes && node explore"
+    "sizes": "ng build micro-dash --prod && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
+    "docs": "cd docs && typedoc ../projects/micro-dash/src/public_api.ts"
   },
   "private": true,
   "dependencies": {
