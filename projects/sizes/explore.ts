@@ -46,16 +46,20 @@ async function run() {
 
   while (true) {
     const input = await getInput(
-      'Filename base, "full" for index, or blank for all: ',
+      'Filename base, "full" for index, or "all" for all: ',
     );
-    if (!input) {
-      await bundleAndExplore(`**/*.js`);
-    }
 
-    if (input === 'full') {
-      await bundleAndExplore(`index.*.js`);
-    } else {
-      await bundleAndExplore(`**/${input}.*.js`);
+    switch (input) {
+      case 'full':
+        await bundleAndExplore(`index.*.js`);
+        break;
+      case 'all':
+        await bundleAndExplore(`**/*.js`);
+        break;
+      default:
+        await bundleAndExplore(`**/${input}.*.js`);
+    }
+    if (!input) {
     }
   }
 }

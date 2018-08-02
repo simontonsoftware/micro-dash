@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sizes": "ng build micro-dash --prod && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
-    "docs": "cd docs && typedoc ../projects/micro-dash/src/public_api.ts"
+    "docs": "cd docs && typedoc ../projects/micro-dash/src"
   },
   "private": true,
   "dependencies": {
@@ -60,6 +60,7 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.9.1",
+    "typedoc": "^0.11.1",
     "typescript": "^2.9.2"
   },
   "prettier": {
