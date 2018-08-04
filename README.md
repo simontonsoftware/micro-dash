@@ -1,4 +1,4 @@
-Micro-dash offers a subset of the functionality found in [lodash](https://github.com/lodash/lodash), with drastrically reduced bundle size.
+Micro-dash offers a subset of the functionality found in [lodash](https://github.com/lodash/lodash), with drastically reduced bundle size.
 
 [![Build Status](https://travis-ci.org/simontonsoftware/micro-dash.svg?branch=master)](https://travis-ci.org/simontonsoftware/micro-dash) [![Coverage Status](https://coveralls.io/repos/github/simontonsoftware/micro-dash/badge.svg?branch=master)](https://coveralls.io/github/simontonsoftware/micro-dash?branch=master)
 
@@ -20,8 +20,8 @@ yarn add micro-dash
 
 **The main goals of this project are:**
 
-- Api compatibility with lodash. Not in the sense that each function can do everything that its lodash courterpart can do; most are simplified (see the philosophical differences below). But they have the same names, signatures, and basic functionality.
-- Small payload size. This full package is `5,370 bytes` minified, while a bundle containing the corresponding lodash functions is `43,925 bytes`. Size comparisons when importing individual functions can be even more dramatic. Those comparisons are provided in each function's [documentation](https://simontonsoftware.github.io/micro-dash/typedoc).
+- Api compatibility with lodash. Not in the sense that each function can do everything that its lodash counterpart can do; most are simplified (see the philosophical differences below). But they have the same names, signatures, and basic functionality.
+- Small payload size. This full package is `6,009 bytes` minified, while a bundle containing the corresponding lodash functions is `42,505 bytes`. Size comparisons when importing individual functions can be even more dramatic. Those comparisons are provided in each function's [documentation](https://simontonsoftware.github.io/micro-dash/typedoc).
 - Pass all tests from the lodash test suite that are relevant given the differences below.
 - Supply build artifacts according to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs), for an optimal experience using all the common, modern build chains. This does not mean `micro-dash` is designed for Angular - it contains generic utility functions useful in any modern javascript environment. The Angular Package Format is the structure followed by the Angular team, published as a recommendation to improve any support libraries.
 
@@ -44,4 +44,4 @@ Below are the main differences between the implementations in this library compa
 - **[Lodash](https://github.com/lodash/lodash)** - on which this entire project's API is based, most of its tests, and some of its source.
 - **[DefinitelyTyped/lodash](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash)** - on which some of the more complicated type definitions are based.
 - **[Mini-dash](https://github.com/healthiers/mini-dash)** - from which this project draws inspiration, and a few tests.
-- **[Angular QuickStart Lib](https://github.com/filipesilva/angular-quickstart-lib)** - which served as the starting point for project configuration (forked on [Jul 22, 2017](https://github.com/filipesilva/angular-quickstart-lib/commit/c687d9a3c00c8db5c290f0dfb243172f8dbfdf40)).
+- **[Angular CLI](https://cli.angular.io/)** - which provides most of the project setup and buildchain for this library.

@@ -1,9 +1,0 @@
-dist/
-node_modules/
-out-tsc/
-
-src/**/*.js
-!src/systemjs.config.js
-*.js.map
-e2e/**/*.js
-e2e/**/*.js.map

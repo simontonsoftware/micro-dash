@@ -1,7 +1,0 @@
-instrumentation:
-  root: build/spec
-  include-all-sources: true
-  excludes: ['**/*.spec.js', '**/index.js', '**/test-helpers.js']
-reporting:
-  reports:
-    - lcovonly

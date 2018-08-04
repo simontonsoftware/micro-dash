@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/micro-dash.iml" filepath="$PROJECT_DIR$/.idea/micro-dash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/micro-dash-platform.iml" filepath="$PROJECT_DIR$/.idea/micro-dash-platform.iml" />
     </modules>
   </component>
 </project>
