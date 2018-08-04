@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
+import { kebabCase } from 'micro-dash';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'micro-dash-platform';
+  title = kebabCase('micro dash');
 }
