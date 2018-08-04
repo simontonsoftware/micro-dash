@@ -2,6 +2,7 @@
   "name": "micro-dash-platform",
   "version": "0.0.0",
   "scripts": {
+    "postinstall": "ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" work-around-private-annotations",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -38,6 +39,7 @@
     "@types/node": "~8.9.4",
     "@types/sinon": "^5.0.1",
     "codelyzer": "~4.2.1",
+    "coveralls": "^3.0.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
