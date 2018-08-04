@@ -1,6 +1,6 @@
 {
   "name": "micro-dash-platform",
-  "version": "0.0.0",
+  "version": "3.6.0",
   "scripts": {
     "postinstall": "ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" work-around-private-annotations",
     "ng": "ng",
@@ -58,6 +58,7 @@
     "rollup-plugin-uglify": "^4.0.0",
     "sinon": "^6.1.4",
     "source-map-explorer": "^1.5.0",
+    "standard-version": "^4.4.0",
     "ts-node": "~5.0.1",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
@@ -69,5 +70,12 @@
     "singleQuote": true,
     "trailingComma": "all",
     "arrowParens": "always"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "ts-node standard-version-postbump",
+      "postchangelog": "prettier --write CHANGELOG.md",
+      "precommit": "git add projects/ng-app-state/package.json"
+    }
   }
 }
