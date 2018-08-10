@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sizes": "ng build micro-dash --prod && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
+    "sizes": "ng build micro-dash --prod && ng build sizes && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
     "docs": "cd docs && typedoc ../projects/micro-dash/src"
   },
   "private": true,

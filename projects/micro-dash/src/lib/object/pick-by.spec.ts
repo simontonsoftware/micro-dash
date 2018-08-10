@@ -1,11 +1,10 @@
 import { pickBy } from './pick-by';
-import {stub} from 'sinon';
+import { stub } from 'sinon';
 
 describe('pickBy()', () => {
-
   // lodash's test (and behavior) is the opposite
   it('does not treat sparse arrays as dense', () => {
-    let array = [1];
+    const array = [1];
     array[2] = 3;
     const logger = stub();
 
@@ -16,8 +15,8 @@ describe('pickBy()', () => {
 
   // lodash's test for `pick`, but not `pickBy`, even though the behavior is the same
   it('should return an empty object when `object` is nullish', () => {
-    expect(pickBy<any>(null, () => true)).toEqual({});
-    expect(pickBy<any>(undefined, () => false)).toEqual({});
+    expect(pickBy(null, () => true)).toEqual({});
+    expect(pickBy(undefined, () => false)).toEqual({});
   });
 
   //
@@ -33,7 +32,7 @@ describe('pickBy()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     pickBy(object, () => {
@@ -46,13 +45,13 @@ describe('pickBy()', () => {
   });
 
   it('should create an object of picked string keyed properties', () => {
-    const object = {a: 1, b: 2, c: 3, d: 4};
+    const object = { a: 1, b: 2, c: 3, d: 4 };
 
-    expect(pickBy(object, (item, key) => key === 'a')).toEqual({a: 1});
+    expect(pickBy(object, (item, key) => key === 'a')).toEqual({ a: 1 });
   });
 
   it('should work with an array `object`', () => {
-    let array = [1, 2, 3];
-    expect(pickBy<any>(array, (item, key) => key === '1')).toEqual({1: 2});
+    const array = [1, 2, 3];
+    expect(pickBy(array, (item, key) => key === '1')).toEqual({ 1: 2 });
   });
 });

@@ -25,7 +25,7 @@ export function forEachRight<T>(collection: any, iteratee: any) {
         break;
       }
     }
-  } else if (collection) {
+  } else {
     forOwnRight(collection, iteratee);
   }
   return collection;

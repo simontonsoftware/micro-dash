@@ -1,12 +1,13 @@
-import {forEachRight} from './for-each-right';
-import {stub} from 'sinon';
-import {noop} from 'lodash';
+import { forEachRight } from './for-each-right';
+import { stub } from 'sinon';
+import { noop } from 'lodash';
 
 describe('forEachRight()', () => {
-  it('works on undefined', () => {
-    let count = 0;
-    forEachRight(undefined, () => { ++count; });
-    expect(count).toEqual(0);
+  it('works for null & undefined', () => {
+    const spy = jasmine.createSpy();
+    forEachRight(null, spy);
+    forEachRight(undefined, spy);
+    expect(spy).not.toHaveBeenCalled();
   });
 
   //
@@ -28,7 +29,7 @@ describe('forEachRight()', () => {
     logger.onCall(1).returns(true);
     logger.onCall(2).returns(false);
 
-    forEachRight({a: 1, b: 2, c: 3, d: 4}, logger);
+    forEachRight({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
     expect(logger.args).toEqual([[4, 'd'], [3, 'c'], [2, 'b']]);
   });
@@ -69,7 +70,7 @@ describe('forEachRight()', () => {
     Foo.prototype.b = 2;
     const logger = stub();
 
-    forEachRight(new (Foo as any), logger);
+    forEachRight(new (Foo as any)(), logger);
 
     expect(logger.args).toEqual([[1, 'a']]);
   });
@@ -95,7 +96,7 @@ describe('forEachRight()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     forEachRight(object, () => {

@@ -3,10 +3,11 @@ import { stub } from 'sinon';
 import { forEach } from './for-each';
 
 describe('forEach()', () => {
-  it('works on undefined', () => {
-    let count = 0;
-    forEach(undefined, () => { ++count; });
-    expect(count).toBe(0);
+  it('works for null & undefined', () => {
+    const spy = jasmine.createSpy();
+    forEach(null, spy);
+    forEach(undefined, spy);
+    expect(spy).not.toHaveBeenCalled();
   });
 
   //
@@ -28,7 +29,7 @@ describe('forEach()', () => {
     logger.onCall(1).returns(true);
     logger.onCall(2).returns(false);
 
-    forEach({a: 1, b: 2, c: 3, d: 4}, logger);
+    forEach({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
     expect(logger.args).toEqual([[1, 'a'], [2, 'b'], [3, 'c']]);
   });
@@ -42,7 +43,7 @@ describe('forEach()', () => {
   });
 
   it('should treat sparse arrays as dense', () => {
-    let array = [1];
+    const array = [1];
     array[2] = 3;
     const logger = stub();
 
@@ -62,7 +63,7 @@ describe('forEach()', () => {
   });
 
   it('iterates over own string keyed properties of objects', () => {
-    const object = {a: 1};
+    const object = { a: 1 };
     const logger = stub();
 
     forEach(object, logger);
@@ -91,7 +92,7 @@ describe('forEach()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     forEach(object, () => {

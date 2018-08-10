@@ -1,18 +1,24 @@
-import {forOwn} from './for-own';
-import {stub} from 'sinon';
-import {noop} from 'lodash';
+import { forOwn } from './for-own';
+import { stub } from 'sinon';
+import { noop } from 'lodash';
 
 describe('forOwn()', () => {
-
   // lodash's test (and behavior) is the opposite
   it('does not treat sparse arrays as dense', () => {
-    let array = [1];
+    const array = [1];
     array[2] = 3;
     const logger = stub();
 
     forOwn(array, logger);
 
     expect(logger.args).toEqual([[1, '0'], [3, '2'], [3, 'length']]);
+  });
+
+  it('works for null & undefined', () => {
+    const spy = jasmine.createSpy();
+    forOwn(null, spy);
+    forOwn(undefined, spy);
+    expect(spy).not.toHaveBeenCalled();
   });
 
   //
@@ -34,7 +40,7 @@ describe('forOwn()', () => {
     logger.onCall(1).returns(true);
     logger.onCall(2).returns(false);
 
-    forOwn({a: 1, b: 2, c: 3, d: 4}, logger);
+    forOwn({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
     expect(logger.args).toEqual([[1, 'a'], [2, 'b'], [3, 'c']]);
   });
@@ -42,7 +48,7 @@ describe('forOwn()', () => {
   it('should iterate over `length` properties', () => {
     const logger = stub();
 
-    forOwn({0: 'zero', 1: 'one', length: 2}, logger);
+    forOwn({ 0: 'zero', 1: 'one', length: 2 }, logger);
 
     expect(logger.args).toEqual([['zero', '0'], ['one', '1'], [2, 'length']]);
   });
@@ -62,7 +68,7 @@ describe('forOwn()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     forOwn(object, () => {

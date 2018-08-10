@@ -1,4 +1,4 @@
-import { ArrayIteratee, ObjectIteratee, ObjectWith } from '../interfaces';
+import { ArrayIteratee, ObjectIteratee } from '../interfaces';
 import { forOwn } from '../object/for-own';
 
 /**
@@ -14,7 +14,7 @@ export function forEach<T>(
   iteratee: ArrayIteratee<T, void | boolean>,
 ): T[];
 export function forEach<T>(
-  object: T | undefined,
+  object: T,
   iteratee: ObjectIteratee<T, void | boolean>,
 ): T;
 
@@ -25,7 +25,7 @@ export function forEach(collection: any, iteratee: any) {
         break;
       }
     }
-  } else if (collection) {
+  } else {
     forOwn(collection, iteratee);
   }
   return collection;

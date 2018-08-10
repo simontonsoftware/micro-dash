@@ -1,9 +1,8 @@
-import {forOwnRight} from './for-own-right';
-import {stub} from 'sinon';
-import {noop} from 'lodash';
+import { forOwnRight } from './for-own-right';
+import { stub } from 'sinon';
+import { noop } from 'lodash';
 
 describe('forOwnRight()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -23,7 +22,7 @@ describe('forOwnRight()', () => {
     logger.onCall(1).returns(true);
     logger.onCall(2).returns(false);
 
-    forOwnRight({a: 1, b: 2, c: 3, d: 4}, logger);
+    forOwnRight({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
     expect(logger.args).toEqual([[4, 'd'], [3, 'c'], [2, 'b']]);
   });
@@ -31,7 +30,7 @@ describe('forOwnRight()', () => {
   it('should iterate over `length` properties', () => {
     const logger = stub();
 
-    forOwnRight({0: 'zero', 1: 'one', length: 2}, logger);
+    forOwnRight({ 0: 'zero', 1: 'one', length: 2 }, logger);
 
     expect(logger.args).toContain([2, 'length']);
   });
@@ -61,7 +60,7 @@ describe('forOwnRight()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     forOwnRight(object, () => {

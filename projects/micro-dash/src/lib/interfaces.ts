@@ -9,6 +9,14 @@ export interface ObjectWith<T> {
 }
 
 /** @private */
+export type DeepPartial<T> = { [K in keyof T]?: DeepPartial<T[K]> };
+
+/** @private */
+export interface NumberKeyedObject {
+  [key: number]: any;
+}
+
+/** @private */
 export type Primitive = number | boolean | string;
 /** @private */
 export type Existant = Primitive | object;
@@ -36,7 +44,15 @@ export type Transformer<T> = (input: T) => T;
 
 /** @private */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
-/** @private */
-export type ObjectIteratee<T, O> = <K extends keyof T>(item: T[K], key: K) => O;
+/**
+ * Note: key should be string, not keyof T, because the actual object may contain extra properties that were not specified in the type.
+ *
+ * @private
+ */
+export type ObjectIteratee<T, O> = <K extends keyof T>(
+  item: T[K],
+  key: T extends NumberKeyedObject ? string : K,
+) => O;
+// export type ObjectIteratee<T, O> = (item: T[keyof T], key: string) => O;
 /** @private */
 export type ValueIteratee<T, O> = (value: T) => O;

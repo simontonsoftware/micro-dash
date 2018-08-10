@@ -1,4 +1,3 @@
-import { ObjectWith } from '../interfaces';
 import { keys } from './keys';
 
 /**
@@ -6,8 +5,8 @@ import { keys } from './keys';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,368 bytes
- * - Micro-dash: 72 bytes
+ * - Micro-dash: 82 bytes
  */
-export function values<T>(object: ObjectWith<T>) {
-  return keys(object).map((key) => object[key]);
+export function values<T>(object: T) {
+  return keys(object).map((key) => object[key as keyof T]);
 }
