@@ -7,10 +7,7 @@ import { NumberKeyedObject } from '../interfaces';
  * - does not give any special consideration for arrays, arguments objects, strings, or prototype objects (e.g. many will have `'length'` in the returned array)
  *
  * Contribution to minified bundle size, when it is the only function imported:
- *
- * @private
  */
-// export const keys = Object.getOwnPropertyNames;
 export function keys<T>(
   object: T,
 ): Array<T extends NumberKeyedObject ? string : keyof T> {

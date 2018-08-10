@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sizes": "ng build micro-dash --prod && ng build sizes && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
+    "predocs": "cd node_modules/typedoc && npm i typescript@2.9.2",
     "docs": "cd docs && typedoc ../projects/micro-dash/src"
   },
   "private": true,
