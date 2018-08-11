@@ -1,7 +1,6 @@
-import {isEqual} from './is-equal';
+import { isEqual } from './is-equal';
 
 describe('isEqual()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -45,8 +44,8 @@ describe('isEqual()', () => {
     let array2: any[] = [true, null, 1, 'a', undefined];
     expect(isEqual(array1, array2)).toBe(true);
 
-    array1 = [[1, 2, 3], new Date(2012, 4, 23), /x/, {e: 1}];
-    array2 = [[1, 2, 3], new Date(2012, 4, 23), /x/, {e: 1}];
+    array1 = [[1, 2, 3], new Date(2012, 4, 23), /x/, { e: 1 }];
+    array2 = [[1, 2, 3], new Date(2012, 4, 23), /x/, { e: 1 }];
     expect(isEqual(array1, array2)).toBe(true);
 
     array1 = [1, 2, 3];
@@ -66,30 +65,30 @@ describe('isEqual()', () => {
   });
 
   it('should compare plain objects', () => {
-    let object1: object = {a: true, b: null, c: 1, d: 'a', e: undefined};
-    let object2: object = {a: true, b: null, c: 1, d: 'a', e: undefined};
+    let object1: object = { a: true, b: null, c: 1, d: 'a', e: undefined };
+    let object2: object = { a: true, b: null, c: 1, d: 'a', e: undefined };
     expect(isEqual(object1, object2)).toBe(true);
 
-    object1 = {a: [1, 2, 3], d: {e: 1}};
-    object2 = {a: [1, 2, 3], d: {e: 1}};
+    object1 = { a: [1, 2, 3], d: { e: 1 } };
+    object2 = { a: [1, 2, 3], d: { e: 1 } };
     expect(isEqual(object1, object2)).toBe(true);
 
-    object1 = {a: 1, b: 2, c: 3};
-    object2 = {a: 3, b: 2, c: 1};
+    object1 = { a: 1, b: 2, c: 3 };
+    object2 = { a: 3, b: 2, c: 1 };
     expect(isEqual(object1, object2)).toBe(false);
 
-    object1 = {a: 1, b: 2, c: 3};
-    object2 = {d: 1, e: 2, f: 3};
+    object1 = { a: 1, b: 2, c: 3 };
+    object2 = { d: 1, e: 2, f: 3 };
     expect(isEqual(object1, object2)).toBe(false);
 
-    object1 = {a: 1, b: 2};
-    object2 = {a: 1, b: 2, c: 3};
+    object1 = { a: 1, b: 2 };
+    object2 = { a: 1, b: 2, c: 3 };
     expect(isEqual(object1, object2)).toBe(false);
   });
 
   it('should compare objects regardless of key order', () => {
-    const object1 = {a: 1, b: 2, c: 3};
-    const object2 = {c: 3, a: 1, b: 2};
+    const object1 = { a: 1, b: 2, c: 3 };
+    const object2 = { c: 3, a: 1, b: 2 };
 
     expect(isEqual(object1, object2)).toBe(true);
   });
@@ -99,29 +98,29 @@ describe('isEqual()', () => {
       a: [1, 2, 3],
       b: true,
       d: 'a',
-      e: {f: ['a', 'c'], j: 'a'},
+      e: { f: ['a', 'c'], j: 'a' },
     };
     const object2 = {
       a: [1, 2, 3],
       b: true,
       d: 'a',
-      e: {f: ['a', 'c'], j: 'a'},
+      e: { f: ['a', 'c'], j: 'a' },
     };
 
     expect(isEqual(object1, object2)).toBe(true);
   });
 
   it('should compare objects with constructor properties', () => {
-    expect(isEqual({constructor: 1}, {constructor: 1})).toBe(true);
-    expect(isEqual({constructor: 1}, {constructor: '1'})).toBe(false);
-    expect(isEqual({constructor: [1]}, {constructor: [1]})).toBe(true);
-    expect(isEqual({constructor: [1]}, {constructor: ['1']})).toBe(false);
-    expect(isEqual({constructor: Object}, {})).toBe(false);
+    expect(isEqual({ constructor: 1 }, { constructor: 1 })).toBe(true);
+    expect(isEqual({ constructor: 1 }, { constructor: '1' })).toBe(false);
+    expect(isEqual({ constructor: [1] }, { constructor: [1] })).toBe(true);
+    expect(isEqual({ constructor: [1] }, { constructor: ['1'] })).toBe(false);
+    expect(isEqual({ constructor: Object }, {})).toBe(false);
   });
 
   it('should compare objects with shared property values', () => {
-    let object1: any = {a: [1, 2]};
-    let object2 = {a: [1, 2], b: [1, 2]};
+    const object1: any = { a: [1, 2] };
+    const object2 = { a: [1, 2], b: [1, 2] };
     object1.b = object1.a;
 
     expect(isEqual(object1, object2)).toBe(true);
@@ -137,7 +136,11 @@ describe('isEqual()', () => {
 
   it('is `false` for objects with custom `toString` methods', () => {
     let primitive: any;
-    const object = {'toString': function () { return primitive; }};
+    const object = {
+      toString: function() {
+        return primitive;
+      },
+    };
 
     for (const value of [true, null, 1, 'a', undefined]) {
       primitive = value;

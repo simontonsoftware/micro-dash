@@ -892,11 +892,17 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-interface tsd-is-private">
 			<a href="interfaces/memoizedfunction.html" class="tsd-kind-icon">Memoized<wbr>Function</a>
 		</li>
+		<li class=" tsd-kind-interface tsd-is-private">
+			<a href="interfaces/numberkeyedobject.html" class="tsd-kind-icon">Number<wbr>Keyed<wbr>Object</a>
+		</li>
 		<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-private">
 			<a href="interfaces/objectwith.html" class="tsd-kind-icon">Object<wbr>With</a>
 		</li>
 		<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-private">
 			<a href="index.html#arrayiteratee" class="tsd-kind-icon">Array<wbr>Iteratee</a>
+		</li>
+		<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-private">
+			<a href="index.html#deeppartial" class="tsd-kind-icon">Deep<wbr>Partial</a>
 		</li>
 		<li class=" tsd-kind-type-alias tsd-is-private">
 			<a href="index.html#existant" class="tsd-kind-icon">Existant</a>
@@ -933,9 +939,6 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-variable tsd-is-not-exported">
 			<a href="index.html#context" class="tsd-kind-icon">context</a>
-		</li>
-		<li class=" tsd-kind-variable tsd-is-private">
-			<a href="index.html#keys" class="tsd-kind-icon">keys</a>
 		</li>
 		<li class=" tsd-kind-variable tsd-is-private tsd-is-not-exported">
 			<a href="index.html#nextid" class="tsd-kind-icon">next<wbr>Id</a>
@@ -1012,8 +1015,17 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function">
 			<a href="index.html#inrange" class="tsd-kind-icon">in<wbr>Range</a>
 		</li>
+		<li class=" tsd-kind-function tsd-is-private">
+			<a href="index.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#ismatch" class="tsd-kind-icon">is<wbr>Match</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-private tsd-is-not-exported">
+			<a href="index.html#ismatch0" class="tsd-kind-icon">is<wbr>Match0</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a>
@@ -1029,6 +1041,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#keyby" class="tsd-kind-icon">key<wbr>By</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#keys" class="tsd-kind-icon">keys</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#last" class="tsd-kind-icon">last</a>
@@ -1140,6 +1155,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-interface tsd-has-type-parameter tsd-is-private"><a href="interfaces/curriedfunction3.html" class="tsd-kind-icon">Curried<wbr>Function3</a></li>
 							<li class="tsd-kind-interface tsd-has-type-parameter tsd-is-private"><a href="interfaces/curriedfunction4.html" class="tsd-kind-icon">Curried<wbr>Function4</a></li>
 							<li class="tsd-kind-interface tsd-is-private"><a href="interfaces/memoizedfunction.html" class="tsd-kind-icon">Memoized<wbr>Function</a></li>
+							<li class="tsd-kind-interface tsd-is-private"><a href="interfaces/numberkeyedobject.html" class="tsd-kind-icon">Number<wbr>Keyed<wbr>Object</a></li>
 							<li class="tsd-kind-interface tsd-has-type-parameter tsd-is-private"><a href="interfaces/objectwith.html" class="tsd-kind-icon">Object<wbr>With</a></li>
 						</ul>
 					</section>
@@ -1147,6 +1163,7 @@ img { max-width: 100%; }
 						<h3>Type aliases</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-private"><a href="index.html#arrayiteratee" class="tsd-kind-icon">Array<wbr>Iteratee</a></li>
+							<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-private"><a href="index.html#deeppartial" class="tsd-kind-icon">Deep<wbr>Partial</a></li>
 							<li class="tsd-kind-type-alias tsd-is-private"><a href="index.html#existant" class="tsd-kind-icon">Existant</a></li>
 							<li class="tsd-kind-type-alias tsd-is-private"><a href="index.html#falsey" class="tsd-kind-icon">Falsey</a></li>
 							<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-private"><a href="index.html#function0" class="tsd-kind-icon">Function0</a></li>
@@ -1160,11 +1177,10 @@ img { max-width: 100%; }
 							<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-private"><a href="index.html#valueiteratee" class="tsd-kind-icon">Value<wbr>Iteratee</a></li>
 						</ul>
 					</section>
-					<section class="tsd-index-section ">
+					<section class="tsd-index-section tsd-is-not-exported">
 						<h3>Variables</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-variable tsd-is-not-exported"><a href="index.html#context" class="tsd-kind-icon">context</a></li>
-							<li class="tsd-kind-variable tsd-is-private"><a href="index.html#keys" class="tsd-kind-icon">keys</a></li>
 							<li class="tsd-kind-variable tsd-is-private tsd-is-not-exported"><a href="index.html#nextid" class="tsd-kind-icon">next<wbr>Id</a></li>
 							<li class="tsd-kind-variable tsd-is-not-exported"><a href="index.html#require" class="tsd-kind-icon">require</a></li>
 						</ul>
@@ -1195,12 +1211,16 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#get" class="tsd-kind-icon">get</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#identity" class="tsd-kind-icon">identity</a></li>
 							<li class="tsd-kind-function"><a href="index.html#inrange" class="tsd-kind-icon">in<wbr>Range</a></li>
+							<li class="tsd-kind-function tsd-is-private"><a href="index.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#ismatch" class="tsd-kind-icon">is<wbr>Match</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter tsd-is-private tsd-is-not-exported"><a href="index.html#ismatch0" class="tsd-kind-icon">is<wbr>Match0</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a></li>
 							<li class="tsd-kind-function"><a href="index.html#kebabcase" class="tsd-kind-icon">kebab<wbr>Case</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#keyby" class="tsd-kind-icon">key<wbr>By</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#keys" class="tsd-kind-icon">keys</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#last" class="tsd-kind-icon">last</a></li>
 							<li class="tsd-kind-function tsd-is-private"><a href="index.html#makepadding" class="tsd-kind-icon">make<wbr>Padding</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#map" class="tsd-kind-icon">map</a></li>
@@ -1245,7 +1265,19 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Array<wbr>Iteratee<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:38</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L46">lib/interfaces.ts:46</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter tsd-is-private">
+				<a name="deeppartial" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> Deep<wbr>Partial</h3>
+				<div class="tsd-signature tsd-kind-icon">Deep<wbr>Partial<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L12">lib/interfaces.ts:12</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1257,7 +1289,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Existant<span class="tsd-signature-symbol">:</span> <a href="index.html#primitive" class="tsd-signature-type">Primitive</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:14</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L22">lib/interfaces.ts:22</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1269,7 +1301,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Falsey<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:16</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L24">lib/interfaces.ts:24</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1281,7 +1313,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Function0<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:19</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L27">lib/interfaces.ts:27</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1293,7 +1325,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Function1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:21</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L29">lib/interfaces.ts:29</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1305,7 +1337,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Function2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:23</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L31">lib/interfaces.ts:31</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1317,7 +1349,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Function3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:25</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L33">lib/interfaces.ts:33</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1329,7 +1361,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Function4<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:27</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L35">lib/interfaces.ts:35</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1341,10 +1373,13 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Object<wbr>Iteratee<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:40</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L52">lib/interfaces.ts:52</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Note: key should be string, not keyof T, because the actual object may contain extra properties that were not specified in the type.</p>
+					</div>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-private">
@@ -1353,7 +1388,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Primitive<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:12</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L20">lib/interfaces.ts:20</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1365,7 +1400,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Transformer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:35</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L43">lib/interfaces.ts:43</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1377,14 +1412,14 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Value<wbr>Iteratee<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/interfaces.ts:42</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/interfaces.ts#L58">lib/interfaces.ts:58</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
 				</div>
 			</section>
 		</section>
-		<section class="tsd-panel-group tsd-member-group ">
+		<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 			<h2>Variables</h2>
 			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
 				<a name="context" class="tsd-anchor"></a>
@@ -1392,26 +1427,9 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in test.ts:20</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L20">test.ts:20</a></li>
 					</ul>
 				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-private">
-				<a name="keys" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagConst">Const</span> keys</h3>
-				<div class="tsd-signature tsd-kind-icon">keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;Object.getOwnPropertyNames as &lt;T&gt;(object: T,) &#x3D;&gt; Array&lt;keyof T&gt;</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in lib/object/keys.ts:10</li>
-					</ul>
-				</aside>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Creates an array of the own enumerable property names of object.</p>
-					</div>
-					<p>Differences from lodash:</p>
-					<p>Contribution to minified bundle size, when it is the only function imported:</p>
-				</div>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-private tsd-is-not-exported">
 				<a name="nextid" class="tsd-anchor"></a>
@@ -1419,7 +1437,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">next<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in lib/util/unique-id.ts:2</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/unique-id.ts#L2">lib/util/unique-id.ts:2</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1431,7 +1449,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">require<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in test.ts:12</li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L12">test.ts:12</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1448,7 +1466,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/pad.ts:22</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/pad.ts#L22">lib/string/pad.ts:22</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -1464,7 +1482,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/camel-case.ts:14</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/camel-case.ts#L14">lib/string/camel-case.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1494,7 +1512,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/capitalize.ts:13</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/capitalize.ts#L13">lib/string/capitalize.ts:13</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1524,7 +1542,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/number/clamp.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/number/clamp.ts#L12">lib/number/clamp.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1555,7 +1573,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/lang/clone.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/clone.ts#L8">lib/lang/clone.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1581,7 +1599,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/lang/clone-deep.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/clone-deep.ts#L11">lib/lang/clone-deep.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1591,7 +1609,7 @@ img { max-width: 100%; }
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
 								<li>Lodash: 12,251 bytes</li>
-								<li>Micro-dash: 409 bytes</li>
+								<li>Micro-dash: 412 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -1607,7 +1625,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/compact.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/compact.ts#L11">lib/array/compact.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1633,7 +1651,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/constant.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/constant.ts#L8">lib/util/constant.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1666,7 +1684,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:44</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L44">lib/function/curry.ts:44</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1688,49 +1706,49 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:45</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L45">lib/function/curry.ts:45</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:49</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L49">lib/function/curry.ts:49</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:52</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L52">lib/function/curry.ts:52</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:56</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L56">lib/function/curry.ts:56</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:59</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L59">lib/function/curry.ts:59</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:63</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L63">lib/function/curry.ts:63</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/curry.ts:66</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/curry.ts#L66">lib/function/curry.ts:66</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -1746,7 +1764,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/debounce.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/debounce.ts#L16">lib/util/debounce.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1780,7 +1798,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:81</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L81">lib/collection/reduce.ts:81</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1799,7 +1817,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/every.ts:14</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/every.ts#L14">lib/collection/every.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1817,7 +1835,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/every.ts:18</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/every.ts#L18">lib/collection/every.ts:18</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -1834,7 +1852,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/filter.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/filter.ts#L12">lib/collection/filter.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1851,7 +1869,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/filter.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/filter.ts#L16">lib/collection/filter.ts:16</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -1867,7 +1885,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/flatten.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/flatten.ts#L8">lib/array/flatten.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1905,7 +1923,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:20</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L20">lib/util/flow.ts:20</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1928,84 +1946,84 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:21</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L21">lib/util/flow.ts:21</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:26</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L26">lib/util/flow.ts:26</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:32</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L32">lib/util/flow.ts:32</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:39</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L39">lib/util/flow.ts:39</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:47</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L47">lib/util/flow.ts:47</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:58</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L58">lib/util/flow.ts:58</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:62</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L62">lib/util/flow.ts:62</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:67</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L67">lib/util/flow.ts:67</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:73</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L73">lib/util/flow.ts:73</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:80</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L80">lib/util/flow.ts:80</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:88</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L88">lib/util/flow.ts:88</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow.ts:102</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow.ts#L102">lib/util/flow.ts:102</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2033,7 +2051,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:18</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L18">lib/util/flow-right.ts:18</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2056,84 +2074,84 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:19</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L19">lib/util/flow-right.ts:19</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:24</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L24">lib/util/flow-right.ts:24</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:30</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L30">lib/util/flow-right.ts:30</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:37</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L37">lib/util/flow-right.ts:37</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:45</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L45">lib/util/flow-right.ts:45</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:56</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L56">lib/util/flow-right.ts:56</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:60</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L60">lib/util/flow-right.ts:60</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:65</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L65">lib/util/flow-right.ts:65</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:71</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L71">lib/util/flow-right.ts:71</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:78</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L78">lib/util/flow-right.ts:78</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:86</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L86">lib/util/flow-right.ts:86</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/flow-right.ts:100</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/flow-right.ts#L100">lib/util/flow-right.ts:100</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2144,13 +2162,13 @@ img { max-width: 100%; }
 				<h3>for<wbr>Each</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
 					<li class="tsd-signature tsd-kind-icon">for<wbr>Each&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, iteratee<span class="tsd-signature-symbol">: </span><a href="index.html#arrayiteratee" class="tsd-signature-type">ArrayIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
-					<li class="tsd-signature tsd-kind-icon">for<wbr>Each&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, iteratee<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					<li class="tsd-signature tsd-kind-icon">for<wbr>Each&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, iteratee<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/for-each.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/for-each.ts#L12">lib/collection/for-each.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2167,7 +2185,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/for-each.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/for-each.ts#L16">lib/collection/for-each.ts:16</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2184,7 +2202,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/for-each-right.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/for-each-right.ts#L12">lib/collection/for-each-right.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2201,7 +2219,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/for-each-right.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/for-each-right.ts#L16">lib/collection/for-each-right.ts:16</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2217,7 +2235,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/for-own.ts:14</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/for-own.ts#L14">lib/object/for-own.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2231,7 +2249,7 @@ img { max-width: 100%; }
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
 								<li>Lodash: 3,466 bytes</li>
-								<li>Micro-dash: 244 bytes</li>
+								<li>Micro-dash: 247 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2247,7 +2265,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/for-own-right.ts:15</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/for-own-right.ts#L15">lib/object/for-own-right.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2261,7 +2279,7 @@ img { max-width: 100%; }
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
 								<li>Lodash: 3,473 bytes</li>
-								<li>Micro-dash: 188 bytes</li>
+								<li>Micro-dash: 192 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2281,7 +2299,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/get.ts:13</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L13">lib/object/get.ts:13</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2303,28 +2321,28 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/get.ts:18</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L18">lib/object/get.ts:18</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/get.ts:23</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L23">lib/object/get.ts:23</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/get.ts:29</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L29">lib/object/get.ts:29</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/get.ts:40</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L40">lib/object/get.ts:40</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2340,7 +2358,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/identity.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/identity.ts#L8">lib/util/identity.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2366,7 +2384,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/number/in-range.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/number/in-range.ts#L12">lib/number/in-range.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2387,6 +2405,24 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-private">
+				<a name="isempty" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Empty</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-is-private">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-empty.ts#L6">lib/lang/is-empty.ts:6</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="isequal" class="tsd-anchor"></a>
 				<h3>is<wbr>Equal</h3>
@@ -2397,7 +2433,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/lang/is-equal.ts:15</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-equal.ts#L15">lib/lang/is-equal.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2419,6 +2455,56 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="ismatch" class="tsd-anchor"></a>
+				<h3>is<wbr>Match</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Match&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, source<span class="tsd-signature-symbol">: </span><a href="index.html#deeppartial" class="tsd-signature-type">DeepPartial</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-match.ts#L19">lib/lang/is-match.ts:19</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Performs a partial deep comparison between <code>object</code> and <code>source</code> to determine if <code>object</code> contains equivalent property values.</p>
+							</div>
+							<p><em>Note:</em> This method is equivalent to <code>matches</code> when source is partially applied.</p>
+							<p>Partial comparisons will match empty array and empty object source values against any array or object value, respectively. See <code>isEqual</code> for a list of supported value comparisons.</p>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>does not match <code>0</code> to <code>-0</code></li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 11,235 bytes</li>
+								<li>Micro-dash: 1,048 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-private tsd-is-not-exported">
+				<a name="ismatch0" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Match0</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-private tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Match0&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-match.ts#L24">lib/lang/is-match.ts:24</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="isnil" class="tsd-anchor"></a>
 				<h3>is<wbr>Nil</h3>
@@ -2429,7 +2515,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/lang/is-nil.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-nil.ts#L8">lib/lang/is-nil.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2455,7 +2541,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/lang/is-string.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-string.ts#L8">lib/lang/is-string.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2481,7 +2567,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/lang/is-undefined.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-undefined.ts#L8">lib/lang/is-undefined.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2507,7 +2593,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/kebab-case.ts:14</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/kebab-case.ts#L14">lib/string/kebab-case.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2538,7 +2624,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/key-by.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/key-by.ts#L12">lib/collection/key-by.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2555,9 +2641,35 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/key-by.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/key-by.ts#L16">lib/collection/key-by.ts:16</a></li>
 							</ul>
 						</aside>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="keys" class="tsd-anchor"></a>
+				<h3>keys</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">keys&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T extends NumberKeyedObject ? string : keyof T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/keys.ts#L11">lib/object/keys.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates an array of the own enumerable property names of object.</p>
+							</div>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>does not give any special consideration for arrays, arguments objects, strings, or prototype objects (e.g. many will have <code>&#39;length&#39;</code> in the returned array)</li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+						</div>
 					</li>
 				</ul>
 			</section>
@@ -2571,7 +2683,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/last.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/last.ts#L11">lib/array/last.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2601,7 +2713,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/pad.ts:18</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/pad.ts#L18">lib/string/pad.ts:18</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2620,7 +2732,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/map.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/map.ts#L12">lib/collection/map.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2637,7 +2749,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/map.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/map.ts#L16">lib/collection/map.ts:16</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2653,7 +2765,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/map-values.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/map-values.ts#L11">lib/object/map-values.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2679,7 +2791,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/memoize.ts:21</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/memoize.ts#L21">lib/function/memoize.ts:21</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2716,7 +2828,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/merge.ts:20</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/merge.ts#L20">lib/object/merge.ts:20</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2741,35 +2853,35 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/merge.ts:24</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/merge.ts#L24">lib/object/merge.ts:24</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/merge.ts:29</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/merge.ts#L29">lib/object/merge.ts:29</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/merge.ts:35</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/merge.ts#L35">lib/object/merge.ts:35</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/merge.ts:42</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/merge.ts#L42">lib/object/merge.ts:42</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/merge.ts:57</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/merge.ts#L57">lib/object/merge.ts:57</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2785,7 +2897,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/math/min-by.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/min-by.ts#L11">lib/math/min-by.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2811,7 +2923,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/noop.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/noop.ts#L8">lib/util/noop.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2837,7 +2949,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/omit.ts:15</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/omit.ts#L15">lib/object/omit.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2863,13 +2975,13 @@ img { max-width: 100%; }
 				<a name="omitby" class="tsd-anchor"></a>
 				<h3>omit<wbr>By</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">omit<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					<li class="tsd-signature tsd-kind-icon">omit<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends null | undefined ? {} : Partial&lt;T&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/omit-by.ts:14</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/omit-by.ts#L14">lib/object/omit-by.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2899,7 +3011,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/once.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/once.ts#L8">lib/function/once.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2925,7 +3037,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/pad.ts:8</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/pad.ts#L8">lib/string/pad.ts:8</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2951,7 +3063,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/pad-end.ts:10</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/pad-end.ts#L10">lib/string/pad-end.ts:10</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2977,7 +3089,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/pad-start.ts:10</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/pad-start.ts#L10">lib/string/pad-start.ts:10</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3013,7 +3125,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:24</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L24">lib/function/partial.ts:24</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3035,70 +3147,70 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:27</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L27">lib/function/partial.ts:27</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:31</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L31">lib/function/partial.ts:31</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:38</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L38">lib/function/partial.ts:38</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:42</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L42">lib/function/partial.ts:42</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:47</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L47">lib/function/partial.ts:47</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:55</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L55">lib/function/partial.ts:55</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:59</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L59">lib/function/partial.ts:59</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:64</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L64">lib/function/partial.ts:64</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:70</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L70">lib/function/partial.ts:70</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/function/partial.ts:79</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L79">lib/function/partial.ts:79</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3114,7 +3226,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/pick.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick.ts#L12">lib/object/pick.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3139,13 +3251,13 @@ img { max-width: 100%; }
 				<a name="pickby" class="tsd-anchor"></a>
 				<h3>pick<wbr>By</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends null | undefined ? {} : Partial&lt;T&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/pick-by.ts:14</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L14">lib/object/pick-by.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3159,7 +3271,7 @@ img { max-width: 100%; }
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
 								<li>Lodash: 15,013 bytes</li>
-								<li>Micro-dash: 334 bytes</li>
+								<li>Micro-dash: 328 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3175,7 +3287,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/pull.ts:10</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/pull.ts#L10">lib/array/pull.ts:10</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3204,7 +3316,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L12">lib/collection/reduce.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3221,21 +3333,21 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:16</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L16">lib/collection/reduce.ts:16</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:21</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L21">lib/collection/reduce.ts:21</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:25</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L25">lib/collection/reduce.ts:25</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3254,7 +3366,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:52</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L52">lib/collection/reduce.ts:52</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3277,21 +3389,21 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:56</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L56">lib/collection/reduce.ts:56</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:61</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L61">lib/collection/reduce.ts:61</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/collection/reduce.ts:65</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L65">lib/collection/reduce.ts:65</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3307,7 +3419,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/remove.ts:13</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/remove.ts#L13">lib/array/remove.ts:13</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3337,7 +3449,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/set.ts:18</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/set.ts#L18">lib/object/set.ts:18</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3370,7 +3482,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/times.ts:12</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/times.ts#L12">lib/util/times.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3401,7 +3513,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/to-lower.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/to-lower.ts#L11">lib/string/to-lower.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3431,7 +3543,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/util/unique-id.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/unique-id.ts#L11">lib/util/unique-id.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3457,7 +3569,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/update.ts:17</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/update.ts#L17">lib/object/update.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3490,7 +3602,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/upper-first.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/upper-first.ts#L11">lib/string/upper-first.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3514,13 +3626,13 @@ img { max-width: 100%; }
 				<a name="values" class="tsd-anchor"></a>
 				<h3>values</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">values&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><a href="interfaces/objectwith.html" class="tsd-signature-type">ObjectWith</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+					<li class="tsd-signature tsd-kind-icon">values&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[keyof T]</span><span class="tsd-signature-symbol">[]</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/object/values.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/values.ts#L10">lib/object/values.ts:10</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3530,7 +3642,7 @@ img { max-width: 100%; }
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
 								<li>Lodash: 3,368 bytes</li>
-								<li>Micro-dash: 72 bytes</li>
+								<li>Micro-dash: 82 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3546,7 +3658,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/without.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/without.ts#L11">lib/array/without.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3576,7 +3688,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/string/words.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/words.ts#L11">lib/string/words.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3609,7 +3721,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/zip.ts:11</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/zip.ts#L11">lib/array/zip.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3626,21 +3738,21 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/zip.ts:15</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/zip.ts#L15">lib/array/zip.ts:15</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/zip.ts:20</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/zip.ts#L20">lib/array/zip.ts:20</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in lib/array/zip.ts:26</li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/zip.ts#L26">lib/array/zip.ts:26</a></li>
 							</ul>
 						</aside>
 					</li>
