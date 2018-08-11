@@ -44,11 +44,7 @@ export type Transformer<T> = (input: T) => T;
 
 /** @private */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
-/**
- * Note: key should be string, not keyof T, because the actual object may contain extra properties that were not specified in the type.
- *
- * @private
- */
+/** @private */
 export type ObjectIteratee<T, O> = <K extends keyof T>(
   item: T[K],
   key: T extends NumberKeyedObject ? string : K,
