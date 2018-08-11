@@ -1,5 +1,6 @@
 import './clone-deep.lodash';
 import './clone.lodash';
+import './is-empty.lodash';
 import './is-equal.lodash';
 import './is-match.lodash';
 import './is-nil.lodash';
