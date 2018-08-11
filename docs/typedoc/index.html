@@ -1057,6 +1057,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#mapvalues" class="tsd-kind-icon">map<wbr>Values</a>
 		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#matches" class="tsd-kind-icon">matches</a>
+		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#memoize" class="tsd-kind-icon">memoize</a>
 		</li>
@@ -1225,6 +1228,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-is-private"><a href="index.html#makepadding" class="tsd-kind-icon">make<wbr>Padding</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#map" class="tsd-kind-icon">map</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#mapvalues" class="tsd-kind-icon">map<wbr>Values</a></li>
+							<li class="tsd-kind-function"><a href="index.html#matches" class="tsd-kind-icon">matches</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#memoize" class="tsd-kind-icon">memoize</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#merge" class="tsd-kind-icon">merge</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#minby" class="tsd-kind-icon">min<wbr>By</a></li>
@@ -2480,7 +2484,7 @@ img { max-width: 100%; }
 								<p>Performs a partial deep comparison between <code>object</code> and <code>source</code> to determine if <code>object</code> contains equivalent property values.</p>
 							</div>
 							<p><em>Note:</em> This method is equivalent to <code>matches</code> when source is partially applied.</p>
-							<p>Partial comparisons will match empty array and empty object source values against any array or object value, respectively. See <code>isEqual</code> for a list of supported value comparisons.</p>
+							<p>Partial comparisons will match empty array and empty object source values against any array or object value, respectively.</p>
 							<p>Differences from lodash:</p>
 							<ul>
 								<li>does not match <code>0</code> to <code>-0</code></li>
@@ -2783,6 +2787,38 @@ img { max-width: 100%; }
 							<ul>
 								<li>Lodash: 14,120 bytes</li>
 								<li>Micro-dash: 302 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="matches" class="tsd-anchor"></a>
+				<h3>matches</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">matches<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/matches.ts#L17">lib/util/matches.ts:17</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates a function that performs a partial deep comparison between a given <code>object</code> and <code>source</code>, returning <code>true</code> if the given object has equivalent property values, else <code>false</code>.</p>
+							</div>
+							<p>Note: The created function is equivalent to <code>isMatch</code> with source partially applied.</p>
+							<p>Partial comparisons will match empty array and empty object source values against any array or object value, respectively.</p>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>does not match <code>0</code> to <code>-0</code></li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 15,993 bytes</li>
+								<li>Micro-dash: 1,264 bytes</li>
 							</ul>
 						</div>
 					</li>

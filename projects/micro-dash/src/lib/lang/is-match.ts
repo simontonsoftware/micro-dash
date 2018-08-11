@@ -7,7 +7,7 @@ import { isEmpty } from './is-empty';
  *
  * *Note:* This method is equivalent to `matches` when source is partially applied.
  *
- * Partial comparisons will match empty array and empty object source values against any array or object value, respectively. See `isEqual` for a list of supported value comparisons.
+ * Partial comparisons will match empty array and empty object source values against any array or object value, respectively.
  *
  * Differences from lodash:
  * - does not match `0` to `-0`

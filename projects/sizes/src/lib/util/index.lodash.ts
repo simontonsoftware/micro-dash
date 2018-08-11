@@ -3,6 +3,7 @@ import './debounce.lodash';
 import './flow.lodash';
 import './flow-right.lodash';
 import './identity.lodash';
+import './matches.lodash';
 import './noop.lodash';
 import './times.lodash';
 import './unique-id.lodash';
