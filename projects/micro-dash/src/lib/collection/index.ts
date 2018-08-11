@@ -1,5 +1,6 @@
 export * from './every';
 export * from './filter';
+export * from './find';
 export * from './for-each';
 export * from './for-each-right';
 export * from './key-by';

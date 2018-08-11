@@ -21,7 +21,7 @@ yarn add micro-dash
 **The main goals of this project are:**
 
 - Api compatibility with lodash. Not in the sense that each function can do everything that its lodash counterpart can do; most are simplified (see the philosophical differences below). But they have the same names, signatures, and basic functionality.
-- Small payload size. This full package is `6,700 bytes` minified, while a bundle containing the corresponding lodash functions is `42,951 bytes`. However, it is unlikely you will use the full package, and size comparisons when importing individual functions can be even more dramatic. Those comparisons are provided in each function's [documentation](https://simontonsoftware.github.io/micro-dash/typedoc).
+- Small payload size. This full package is `7,021 bytes` minified, while a bundle containing the corresponding lodash functions is `43,334 bytes`. However, it is unlikely you will use the full package, and size comparisons when importing individual functions can be even more dramatic. Those comparisons are provided in each function's [documentation](https://simontonsoftware.github.io/micro-dash/typedoc).
 - Pass all tests from the lodash test suite that are relevant given the differences below.
 - Supply build artifacts according to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs), for an optimal experience using all the common, modern build chains. This does not mean `micro-dash` is designed for Angular - it contains generic utility functions useful in any modern javascript environment. The Angular Package Format is the structure followed by the Angular team, published as a recommendation to improve any support libraries.
 

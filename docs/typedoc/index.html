@@ -986,6 +986,9 @@ img { max-width: 100%; }
 			<a href="index.html#filter" class="tsd-kind-icon">filter</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#find" class="tsd-kind-icon">find</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#flatten" class="tsd-kind-icon">flatten</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
@@ -1204,6 +1207,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-is-private tsd-is-not-exported"><a href="index.html#doreduce" class="tsd-kind-icon">do<wbr>Reduce</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#every" class="tsd-kind-icon">every</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#filter" class="tsd-kind-icon">filter</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#find" class="tsd-kind-icon">find</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#flatten" class="tsd-kind-icon">flatten</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#flow" class="tsd-kind-icon">flow</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#flowright" class="tsd-kind-icon">flow<wbr>Right</a></li>
@@ -1871,6 +1875,40 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<ul>
 								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/filter.ts#L16">lib/collection/filter.ts:16</a></li>
+							</ul>
+						</aside>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="find" class="tsd-anchor"></a>
+				<h3>find</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">find&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, predicate<span class="tsd-signature-symbol">: </span><a href="index.html#arrayiteratee" class="tsd-signature-type">ArrayIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, fromIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					<li class="tsd-signature tsd-kind-icon">find&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><a href="index.html#objectiteratee" class="tsd-signature-type">ObjectIteratee</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>, fromIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[keyof T]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/find.ts#L12">lib/collection/find.ts:12</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Iterates over elements of <code>collection</code>, returning the first element <code>predicate</code> returns truthy for.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 14,699 bytes</li>
+								<li>Micro-dash: 355 bytes</li>
+							</ul>
+						</div>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/find.ts#L17">lib/collection/find.ts:17</a></li>
 							</ul>
 						</aside>
 					</li>
