@@ -11,7 +11,8 @@
     "e2e": "ng e2e",
     "sizes": "ng build micro-dash --prod && ng build sizes --prod && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
     "predocs": "cd node_modules/typedoc && npm i typescript@2.9.2",
-    "docs": "cd docs && typedoc ../projects/micro-dash/src"
+    "docs": "cd docs && typedoc ../projects/micro-dash/src",
+    "prettier-all": "prettier --write \"**/*.{ts,js,json,md,scss,yml}\""
   },
   "private": true,
   "dependencies": {
