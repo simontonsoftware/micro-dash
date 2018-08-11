@@ -12,7 +12,8 @@
     "sizes": "ng build micro-dash --prod && ng build sizes --prod && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
     "predocs": "cd node_modules/typedoc && npm i typescript@2.9.2",
     "docs": "cd docs && typedoc ../projects/micro-dash/src",
-    "prettier-all": "prettier --write \"**/*.{ts,js,json,md,scss,yml}\""
+    "prettier-all": "prettier --write \"**/*.{ts,js,json,md,scss,yml}\"",
+    "release": "standard-version --commit-all && yarn build micro-dash --prod"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +40,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash-es": "^4.17.1",
     "@types/node": "~8.9.4",
+    "@types/prettier": "^1.13.2",
     "@types/sinon": "^5.0.1",
     "codelyzer": "~4.2.1",
     "coveralls": "^3.0.2",
@@ -75,9 +77,9 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "ts-node standard-version-postbump",
+      "postbump": "ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" standard-version-postbump",
       "postchangelog": "prettier --write CHANGELOG.md",
-      "precommit": "git add projects/ng-app-state/package.json"
+      "precommit": "git add projects/micro-dash/package.json"
     }
   }
 }
