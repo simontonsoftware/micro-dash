@@ -3,29 +3,29 @@ sudo: false
 
 language: node_js
 node_js:
-- "8"
+  - '8'
 
 addons:
   apt:
     sources:
-    - google-chrome
+      - google-chrome
     packages:
-    - google-chrome-stable
+      - google-chrome-stable
 
 cache:
   directories:
-  - ./node_modules
+    - ./node_modules
 
 install:
-- yarn
+  - yarn
 
 script:
-- yarn test micro-dash --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
-- yarn build micro-dash --prod
-- yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
+  - yarn test micro-dash --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - yarn build micro-dash --prod
+  - yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 
 after_success:
-- cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
+  - cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
 
 notifications:
   email: false

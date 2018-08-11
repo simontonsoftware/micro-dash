@@ -1,8 +1,7 @@
 import { omitBy } from './omit-by';
-import {stub} from 'sinon';
+import { stub } from 'sinon';
 
 describe('omitBy()', () => {
-
   // lodash's test (and behavior) is the opposite
   it('does not treat sparse arrays as dense', () => {
     let array = [1];
@@ -33,7 +32,7 @@ describe('omitBy()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     omitBy(object, () => {
@@ -46,8 +45,11 @@ describe('omitBy()', () => {
   });
 
   it('should create an object with omitted string keyed properties', () => {
-    const object = {a: 1, b: 2, c: 3, d: 4};
-    expect(omitBy(object, (item, key) => key === 'a'))
-      .toEqual({b: 2, c: 3, d: 4});
+    const object = { a: 1, b: 2, c: 3, d: 4 };
+    expect(omitBy(object, (item, key) => key === 'a')).toEqual({
+      b: 2,
+      c: 3,
+      d: 4,
+    });
   });
 });

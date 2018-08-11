@@ -1,8 +1,7 @@
-import {find, identity, isFunction, noop} from 'lodash';
-import {memoize} from './memoize';
+import { find, identity, isFunction, noop } from 'lodash';
+import { memoize } from './memoize';
 
 describe('memoize()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -30,7 +29,7 @@ describe('memoize()', () => {
 
     const memoized = memoize(fn, fn);
 
-    let object = {memoized: memoized, b: 2, c: 3};
+    let object = { memoized: memoized, b: 2, c: 3 };
     expect(object.memoized(1)).toBe(6);
 
     object.b = 3;

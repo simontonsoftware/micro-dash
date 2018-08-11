@@ -1,9 +1,10 @@
-import {compact} from './compact';
+import { compact } from './compact';
 
 describe('compact()', () => {
   it('should filter falsey values', () => {
-    expect(compact([, null, undefined, false, 0, NaN, '', '0', '1', '2']))
-      .toEqual(['0', '1', '2']);
+    expect(
+      compact([, null, undefined, false, 0, NaN, '', '0', '1', '2']),
+    ).toEqual(['0', '1', '2']);
   });
 
   it('is OK when there are no falsey values', () => {

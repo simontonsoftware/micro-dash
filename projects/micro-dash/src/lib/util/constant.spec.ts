@@ -1,13 +1,12 @@
-import {constant} from './constant';
+import { constant } from './constant';
 
 describe('constant()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
 
   it('should create a function that returns `value`', () => {
-    const object = {a: 1};
+    const object = { a: 1 };
     const resultFn: any = constant(object);
     const values = [[], {}, null, undefined, false, 0, NaN, '', true, 1, 'a'];
 

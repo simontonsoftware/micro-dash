@@ -1,7 +1,6 @@
-import {pull} from './pull';
+import { pull } from './pull';
 
 describe('pull()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //

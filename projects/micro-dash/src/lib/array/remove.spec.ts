@@ -1,7 +1,6 @@
-import {remove} from './remove';
+import { remove } from './remove';
 
 describe('remove()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //

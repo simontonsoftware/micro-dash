@@ -3,7 +3,7 @@ import { filter } from './filter';
 
 describe('filter()', () => {
   it('works for objects', () => {
-    const object = {a: 1, b: 2, c: 3};
+    const object = { a: 1, b: 2, c: 3 };
     expect(filter(object, (item, key) => item === 2)).toEqual([2]);
     expect(filter(object, (item, key) => key === 'b')).toEqual([2]);
   });
@@ -60,7 +60,7 @@ describe('filter()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     filter(object, () => {

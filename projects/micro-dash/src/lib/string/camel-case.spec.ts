@@ -1,15 +1,20 @@
-import {camelCase} from './camel-case';
+import { camelCase } from './camel-case';
 
 describe('camelCase()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
 
   it('should convert `string` to camel case', () => {
     const strings = [
-      'foo bar', 'Foo bar', 'foo Bar', 'Foo Bar',
-      'FOO BAR', 'fooBar', '--foo-bar--', '__foo_bar__'
+      'foo bar',
+      'Foo bar',
+      'foo Bar',
+      'Foo Bar',
+      'FOO BAR',
+      'fooBar',
+      '--foo-bar--',
+      '__foo_bar__',
     ];
 
     for (const string of strings) {
@@ -19,8 +24,14 @@ describe('camelCase()', () => {
 
   it('should handle double-converting strings', () => {
     const strings = [
-      'foo bar', 'Foo bar', 'foo Bar', 'Foo Bar',
-      'FOO BAR', 'fooBar', '--foo-bar--', '__foo_bar__'
+      'foo bar',
+      'Foo bar',
+      'foo Bar',
+      'Foo Bar',
+      'FOO BAR',
+      'fooBar',
+      '--foo-bar--',
+      '__foo_bar__',
     ];
 
     for (const string of strings) {

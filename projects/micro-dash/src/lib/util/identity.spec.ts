@@ -1,4 +1,4 @@
-import {identity} from './identity';
+import { identity } from './identity';
 
 describe('identity()', () => {
   it('works when given too many arguments', () => {
@@ -10,7 +10,7 @@ describe('identity()', () => {
   //
 
   it('should return the first argument given', () => {
-    const object = { 'name': 'fred' };
+    const object = { name: 'fred' };
     expect(identity(object)).toBe(object);
   });
 });

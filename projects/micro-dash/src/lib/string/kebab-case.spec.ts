@@ -1,15 +1,20 @@
-import {kebabCase} from './kebab-case';
+import { kebabCase } from './kebab-case';
 
 describe('kebabCase()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
 
   it('should convert `string` to kebab case', () => {
     const strings = [
-      'foo bar', 'Foo bar', 'foo Bar', 'Foo Bar',
-      'FOO BAR', 'fooBar', '--foo-bar--', '__foo_bar__'
+      'foo bar',
+      'Foo bar',
+      'foo Bar',
+      'Foo Bar',
+      'FOO BAR',
+      'fooBar',
+      '--foo-bar--',
+      '__foo_bar__',
     ];
 
     for (const string of strings) {
@@ -19,8 +24,14 @@ describe('kebabCase()', () => {
 
   it('should handle double-converting strings', () => {
     const strings = [
-      'foo bar', 'Foo bar', 'foo Bar', 'Foo Bar',
-      'FOO BAR', 'fooBar', '--foo-bar--', '__foo_bar__'
+      'foo bar',
+      'Foo bar',
+      'foo Bar',
+      'Foo Bar',
+      'FOO BAR',
+      'fooBar',
+      '--foo-bar--',
+      '__foo_bar__',
     ];
 
     for (const string of strings) {

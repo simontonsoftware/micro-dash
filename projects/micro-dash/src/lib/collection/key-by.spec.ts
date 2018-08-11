@@ -1,4 +1,4 @@
-import {keyBy} from './key-by';
+import { keyBy } from './key-by';
 
 describe('keyBy()', () => {
   it('works with `undefined`', () => {
@@ -10,16 +10,18 @@ describe('keyBy()', () => {
   //
 
   it('should transform keys by `iteratee`', () => {
-    const array = [{dir: 'left', code: 97}, {dir: 'right', code: 100}];
+    const array = [{ dir: 'left', code: 97 }, { dir: 'right', code: 100 }];
 
-    expect(keyBy(array, (object) => String.fromCharCode(object.code)))
-      .toEqual({a: {dir: 'left', code: 97}, d: {dir: 'right', code: 100}});
+    expect(keyBy(array, (object) => String.fromCharCode(object.code))).toEqual({
+      a: { dir: 'left', code: 97 },
+      d: { dir: 'right', code: 100 },
+    });
   });
 
   it('should only add values to own, not inherited, properties', () => {
     const actual: any = keyBy(
       [6.1, 4.2, 6.3],
-      (n) => Math.floor(n) > 4 ? 'hasOwnProperty' : 'constructor',
+      (n) => (Math.floor(n) > 4 ? 'hasOwnProperty' : 'constructor'),
     );
 
     expect(actual.constructor).toEqual(4.2);
@@ -27,9 +29,8 @@ describe('keyBy()', () => {
   });
 
   it('should work with an object for `collection`', () => {
-    expect(keyBy(
-      {a: 6.1, b: 4.2, c: 6.3},
-      (value) => Math.floor(value) + '',
-    )).toEqual({4: 4.2, 6: 6.3});
+    expect(
+      keyBy({ a: 6.1, b: 4.2, c: 6.3 }, (value) => Math.floor(value) + ''),
+    ).toEqual({ 4: 4.2, 6: 6.3 });
   });
 });

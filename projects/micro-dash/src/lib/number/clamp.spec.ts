@@ -1,7 +1,6 @@
-import {clamp} from './clamp';
+import { clamp } from './clamp';
 
 describe('clamp()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //

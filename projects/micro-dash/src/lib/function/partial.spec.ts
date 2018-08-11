@@ -1,9 +1,8 @@
-import {identity} from 'lodash';
-import {partial} from './partial';
-import {curry} from './curry';
+import { identity } from 'lodash';
+import { partial } from './partial';
+import { curry } from './curry';
 
 describe('partial()', () => {
-
   it('does not alter the `this` binding', () => {
     function fn(this: any) {
       return this;
@@ -31,7 +30,9 @@ describe('partial()', () => {
   });
 
   it('creates a function that can be invoked with additional arguments', () => {
-    const fn = function(a: string, b: string) { return [a, b]; };
+    const fn = function(a: string, b: string) {
+      return [a, b];
+    };
 
     const par = partial(fn, 'a');
 
@@ -39,7 +40,9 @@ describe('partial()', () => {
   });
 
   it('works when there are no partially applied arguments and the created function is invoked without additional arguments', () => {
-    const fn = function() { return arguments.length; };
+    const fn = function() {
+      return arguments.length;
+    };
 
     const par = partial(fn);
 
@@ -77,7 +80,9 @@ describe('partial()', () => {
   });
 
   it('should work with curried functions', () => {
-    const fn = function(a: number, b: number, c: number) { return a + b + c; };
+    const fn = function(a: number, b: number, c: number) {
+      return a + b + c;
+    };
     const curried = curry(partial(fn, 1), 2);
 
     expect(curried(2, 3)).toBe(6);

@@ -1,7 +1,6 @@
-import {capitalize} from './capitalize';
+import { capitalize } from './capitalize';
 
 describe('capitalize()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //

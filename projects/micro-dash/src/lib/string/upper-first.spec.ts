@@ -1,4 +1,4 @@
-import {upperFirst} from './upper-first';
+import { upperFirst } from './upper-first';
 
 describe('upperFirst()', () => {
   it('should uppercase only the first character', () => {

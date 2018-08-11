@@ -2,9 +2,7 @@ import { stub } from 'sinon';
 import { map } from './map';
 import { identity } from '../util/identity';
 
-
 describe('forEach()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -38,7 +36,7 @@ describe('forEach()', () => {
   });
 
   it('iterates over own string keyed properties of objects', () => {
-    const object = {a: 1};
+    const object = { a: 1 };
     const logger = stub();
 
     const result = map(object, logger);
@@ -61,7 +59,7 @@ describe('forEach()', () => {
   });
 
   it('should ignore added `object` properties', () => {
-    const object: any = {a: 1};
+    const object: any = { a: 1 };
     let count = 0;
 
     map(object, () => {
@@ -73,7 +71,7 @@ describe('forEach()', () => {
   });
 
   it('should map values in `collection` to a new array', () => {
-    expect(map({a: 1, b: 2}, identity)).toEqual([1, 2]);
+    expect(map({ a: 1, b: 2 }, identity)).toEqual([1, 2]);
     expect(map([1, 2], identity)).toEqual([1, 2]);
   });
 
@@ -84,6 +82,6 @@ describe('forEach()', () => {
   });
 
   it('should work with objects with non-number length properties', () => {
-    expect(map({length: {value: 'x'}}, identity)).toEqual([{value: 'x'}]);
+    expect(map({ length: { value: 'x' } }, identity)).toEqual([{ value: 'x' }]);
   });
 });

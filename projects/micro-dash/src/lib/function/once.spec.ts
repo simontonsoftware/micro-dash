@@ -1,7 +1,6 @@
-import {once} from './once';
+import { once } from './once';
 
 describe('once()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -9,7 +8,7 @@ describe('once()', () => {
   it('should invoke `func` once', () => {
     let count = 0;
 
-    const oncedFn = once(function () {
+    const oncedFn = once(function() {
       return ++count;
     });
     oncedFn();
@@ -20,7 +19,7 @@ describe('once()', () => {
   it('should ignore recursive calls', () => {
     let count = 0;
 
-    const oncedFn = once(function () {
+    const oncedFn = once(function() {
       oncedFn();
       return ++count;
     });
@@ -29,7 +28,7 @@ describe('once()', () => {
   });
 
   it('should not throw more than once', () => {
-    const oncedFn = once(function () {
+    const oncedFn = once(function() {
       throw new Error();
     });
 

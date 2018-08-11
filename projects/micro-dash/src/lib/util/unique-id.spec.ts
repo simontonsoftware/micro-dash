@@ -1,5 +1,5 @@
-import {times, uniq} from 'lodash';
-import {uniqueId} from './unique-id';
+import { times, uniq } from 'lodash';
+import { uniqueId } from './unique-id';
 
 describe('uniqueId()', () => {
   it('uses the given prefix', () => {

@@ -1,7 +1,6 @@
-import {without} from './without';
+import { without } from './without';
 
 describe('without()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -11,11 +10,11 @@ describe('without()', () => {
   });
 
   it('should use strict equality to determine the values to reject', () => {
-    const object1 = {a: 1};
-    const object2 = {b: 2};
+    const object1 = { a: 1 };
+    const object2 = { b: 2 };
     const array = [object1, object2];
 
-    expect(without(array, {a: 1})).toEqual(array);
+    expect(without(array, { a: 1 })).toEqual(array);
     expect(without(array, object1)).toEqual([object2]);
   });
 

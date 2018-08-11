@@ -1,5 +1,5 @@
-import {stub} from 'sinon';
-import {times} from './times';
+import { stub } from 'sinon';
+import { times } from './times';
 
 describe('times()', () => {
   it('handles n=0', () => {

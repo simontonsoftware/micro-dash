@@ -1,4 +1,4 @@
-import {toLower} from './to-lower';
+import { toLower } from './to-lower';
 
 describe('toLower()', () => {
   it('should convert whole string to lower case', () => {

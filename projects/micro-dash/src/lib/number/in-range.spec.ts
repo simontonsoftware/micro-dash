@@ -1,7 +1,6 @@
 import { inRange } from './in-range';
 
 describe('inRange()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //

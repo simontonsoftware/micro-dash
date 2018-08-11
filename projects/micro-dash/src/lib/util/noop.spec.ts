@@ -1,7 +1,6 @@
-import {noop} from './noop';
+import { noop } from './noop';
 
 describe('noop()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //

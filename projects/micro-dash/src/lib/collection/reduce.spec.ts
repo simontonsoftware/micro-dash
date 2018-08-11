@@ -1,6 +1,6 @@
-import {identity} from 'lodash';
-import {reduce, reduceRight} from './reduce';
-import {stub} from 'sinon';
+import { identity } from 'lodash';
+import { reduce, reduceRight } from './reduce';
+import { stub } from 'sinon';
 
 describe('reduce()', () => {
   it('works with `undefined`', () => {
@@ -28,11 +28,11 @@ describe('reduce()', () => {
 
   it('should provide correct `iteratee` arguments for an object', () => {
     const logger = stub().returns(7);
-    reduce({ 'a': 1, 'b': 2 }, logger, 0);
+    reduce({ a: 1, b: 2 }, logger, 0);
     expect(logger.args).toEqual([[0, 1, 'a'], [7, 2, 'b']]);
 
     logger.resetHistory();
-    reduce({ 'a': 1, 'b': 2 }, logger);
+    reduce({ a: 1, b: 2 }, logger);
     expect(logger.args).toEqual([[1, 2, 'b']]);
   });
 });
@@ -63,11 +63,11 @@ describe('reduceRight()', () => {
 
   it('should provide correct `iteratee` arguments for an object', () => {
     const logger = stub().returns(7);
-    reduceRight({ 'a': 1, 'b': 2 }, logger, 0);
+    reduceRight({ a: 1, b: 2 }, logger, 0);
     expect(logger.args).toEqual([[0, 2, 'b'], [7, 1, 'a']]);
 
     logger.resetHistory();
-    reduceRight({ 'a': 1, 'b': 2 }, logger);
+    reduceRight({ a: 1, b: 2 }, logger);
     expect(logger.args).toEqual([[2, 1, 'a']]);
   });
 });

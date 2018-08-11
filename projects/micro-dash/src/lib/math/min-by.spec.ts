@@ -1,9 +1,8 @@
-import {minBy} from './min-by';
-import {stub} from 'sinon';
-import {identity, range} from 'lodash';
+import { minBy } from './min-by';
+import { stub } from 'sinon';
+import { identity, range } from 'lodash';
 
 describe('minBy()', () => {
-
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -61,9 +60,9 @@ describe('minBy()', () => {
 
   it('should work when `iteratee` returns +/-Infinity', () => {
     const value = Infinity;
-    const object = {a: value};
+    const object = { a: value };
 
-    const actual = minBy([object, {a: value}], (obj: { a: number }) => obj.a);
+    const actual = minBy([object, { a: value }], (obj: { a: number }) => obj.a);
 
     expect(actual).toBe(object);
   });
