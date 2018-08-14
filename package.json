@@ -13,7 +13,7 @@
     "predocs": "cd node_modules/typedoc && npm i typescript@2.9.2",
     "docs": "cd docs && typedoc ../projects/micro-dash/src",
     "prettier-all": "prettier --write \"**/*.{ts,js,json,md,scss,yml}\"",
-    "release": "standard-version --commit-all && yarn build micro-dash --prod"
+    "release": "yarn docs && git add docs/* && standard-version --commit-all && yarn build micro-dash --prod"
   },
   "private": true,
   "dependencies": {
