@@ -1,3 +1,4 @@
+export * from './cast-array';
 export * from './clone';
 export * from './clone-deep';
 export * from './is-empty';

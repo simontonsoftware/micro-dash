@@ -1,3 +1,4 @@
+import './cast-array.microdash';
 import './clone-deep.microdash';
 import './clone.microdash';
 import './is-empty.microdash';

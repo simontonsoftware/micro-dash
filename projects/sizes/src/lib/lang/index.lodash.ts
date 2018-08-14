@@ -1,3 +1,4 @@
+import './cast-array.lodash';
 import './clone-deep.lodash';
 import './clone.lodash';
 import './is-empty.lodash';
