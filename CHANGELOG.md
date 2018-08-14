@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0"></a>
+
+# [4.1.0](https://github.com/simontonsoftware/micro-dash/compare/v4.0.0...v4.1.0) (2018-08-14)
+
+### Features
+
+- add `castArray()` ([44d0c88](https://github.com/simontonsoftware/micro-dash/commit/44d0c88))
+- add `pullAt()` ([db8efbc](https://github.com/simontonsoftware/micro-dash/commit/db8efbc))
+- add `sortBy()` ([baf018b](https://github.com/simontonsoftware/micro-dash/commit/baf018b))
+
 <a name="4.0.0"></a>
 
 # [4.0.0](https://github.com/simontonsoftware/micro-dash/compare/v3.6.0...v4.0.0) (2018-08-11)
