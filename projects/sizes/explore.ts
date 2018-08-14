@@ -2,23 +2,18 @@ import * as fs from 'fs';
 import * as glob from 'glob';
 import * as path from 'path';
 import * as readline from 'readline';
-import * as childProcess from 'child_process';
 import { rollup, RollupFileOptions } from 'rollup';
 import { forEach } from '../micro-dash/src/lib/collection/for-each';
+import { ObjectWith } from '../micro-dash/src/lib/interfaces';
 
 // no typings for these imports
 const uglify = require('rollup-plugin-uglify').uglify;
 const commonjs = require('rollup-plugin-commonjs');
 const nodeResolve = require('rollup-plugin-node-resolve');
+const sourceMapExplorer = require('source-map-explorer');
 
 const projectRootDir = path.join(__dirname, '..', '..');
 const distDir = path.join(projectRootDir, 'dist');
-const sourceMapExplorer = path.join(
-  projectRootDir,
-  'node_modules',
-  'source-map-explorer',
-  'index.js',
-);
 const buildDir = path.join(distDir, 'sizes', 'esm5', 'lib');
 const bundleDir = path.join(__dirname, 'bundle/');
 
@@ -113,14 +108,7 @@ async function bundle(inputPath: string) {
 
 function explore(file: string) {
   const basePath = file.substring(0, file.length - 2);
-  // fs.writeFileSync(basePath + 'html', generate('html'));
-
-  const exploreOutput = childProcess.spawnSync(process.execPath, [
-    sourceMapExplorer,
-    file,
-    '--json',
-  ]).stdout;
-  const files: { [sourceFile: string]: number } = JSON.parse(exploreOutput);
+  const files: ObjectWith<number> = sourceMapExplorer(file).files;
 
   let lodash = 0;
   let microdash = 0;
