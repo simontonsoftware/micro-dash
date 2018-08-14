@@ -7,3 +7,4 @@ import './key-by.microdash';
 import './map.microdash';
 import './reduce.microdash';
 import './reduce-right.microdash';
+import './sort-by.microdash';
