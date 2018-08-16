@@ -12,6 +12,7 @@ export function once<T extends Function>(func: T): T {
     if (needsCall) {
       needsCall = false;
       result = func.apply(this, arguments);
+      (func as any) = null;
     }
     return result;
   } as any) as T;
