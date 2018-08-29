@@ -3,7 +3,7 @@
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 1,421 bytes
- * - Micro-dash: 60 bytes
+ * - Micro-dash: 67 bytes
  */
 export function once<T extends Function>(func: T): T {
   let result: any;
