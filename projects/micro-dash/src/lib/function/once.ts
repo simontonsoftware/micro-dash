@@ -12,6 +12,8 @@ export function once<T extends Function>(func: T): T {
     if (needsCall) {
       needsCall = false;
       result = func.apply(this, arguments);
+
+      // allow func and any of its variables to be garbage collected
       (func as any) = null;
     }
     return result;
