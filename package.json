@@ -1,6 +1,6 @@
 {
   "name": "micro-dash-platform",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "scripts": {
     "postinstall": "ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" work-around-private-annotations",
     "ng": "ng",
