@@ -1,5 +1,5 @@
-import { ObjectIteratee } from '../interfaces';
-import { keys } from './keys';
+import { ObjectIteratee } from "../interfaces";
+import { keys } from "./keys";
 
 /**
  * Iterates over own enumerable string keyed properties of an object and invokes `iteratee` for each property.

@@ -1,4 +1,4 @@
-import { clone } from '../lang/clone';
+import { clone } from "../lang/clone";
 
 /**
  * The opposite of `pick`; this method creates an object composed of the own enumerable string properties of object that are not omitted.

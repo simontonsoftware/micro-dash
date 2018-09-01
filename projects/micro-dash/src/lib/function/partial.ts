@@ -4,7 +4,7 @@ import {
   Function2,
   Function3,
   Function4,
-} from '../interfaces';
+} from "../interfaces";
 
 // type definitions from @types/lodash
 

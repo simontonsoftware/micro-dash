@@ -1,4 +1,4 @@
-import { keys } from '../object/keys';
+import { keys } from "../object/keys";
 
 /**
  * Performs a deep comparison between two values to determine if they are equivalent.

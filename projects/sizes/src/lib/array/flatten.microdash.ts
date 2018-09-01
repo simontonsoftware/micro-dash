@@ -1,2 +1,2 @@
-import { flatten } from 'micro-dash';
+import { flatten } from "micro-dash";
 flatten([]);

@@ -1,2 +1,2 @@
-import { values } from 'micro-dash';
+import { values } from "micro-dash";
 values({ a: 1 });

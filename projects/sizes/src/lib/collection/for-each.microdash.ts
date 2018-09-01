@@ -1,3 +1,3 @@
-import { forEach } from 'micro-dash';
+import { forEach } from "micro-dash";
 forEach([], () => {});
 forEach({}, () => {});

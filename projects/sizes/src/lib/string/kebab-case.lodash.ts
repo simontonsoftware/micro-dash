@@ -1,2 +1,2 @@
-import kebabCase from 'lodash-es/kebabCase';
-kebabCase('a string');
+import kebabCase from "lodash-es/kebabCase";
+kebabCase("a string");

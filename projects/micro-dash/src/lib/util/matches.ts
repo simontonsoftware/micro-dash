@@ -1,4 +1,4 @@
-import { cloneDeep, isMatch } from '../lang';
+import { cloneDeep, isMatch } from "../lang";
 
 /**
  * Creates a function that performs a partial deep comparison between a given `object` and `source`, returning `true` if the given object has equivalent property values, else `false`.

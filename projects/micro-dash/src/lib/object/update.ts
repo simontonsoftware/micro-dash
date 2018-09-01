@@ -1,4 +1,4 @@
-import { Function1 } from '../interfaces';
+import { Function1 } from "../interfaces";
 
 /**
  * This method is like `set()` except that it accepts `updater` to produce the value to set.

@@ -1,4 +1,4 @@
-import { debounce } from 'micro-dash';
+import { debounce } from "micro-dash";
 debounce(() => {})();
 let lastValue;
 debounce((value: number) => {

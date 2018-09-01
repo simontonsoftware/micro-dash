@@ -1,3 +1,3 @@
-import isEmpty from 'lodash-es/isEmpty';
+import isEmpty from "lodash-es/isEmpty";
 isEmpty([]);
 isEmpty({});

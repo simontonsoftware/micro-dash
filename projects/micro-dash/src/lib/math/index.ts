@@ -1,1 +1,1 @@
-export * from './min-by';
+export * from "./min-by";

@@ -1,4 +1,4 @@
-import debounce from 'lodash-es/debounce';
+import debounce from "lodash-es/debounce";
 debounce(() => {})();
 let lastValue;
 debounce((value: number) => {

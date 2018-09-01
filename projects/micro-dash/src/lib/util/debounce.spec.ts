@@ -1,8 +1,8 @@
-import { debounce } from './debounce';
-import { fakeAsync, tick } from '@angular/core/testing';
+import { debounce } from "./debounce";
+import { fakeAsync, tick } from "@angular/core/testing";
 
-describe('debounce()', () => {
-  it('defaults `wait` to 0', fakeAsync(() => {
+describe("debounce()", () => {
+  it("defaults `wait` to 0", fakeAsync(() => {
     let callCount = 0;
     const debounced = debounce(() => {
       ++callCount;
@@ -19,7 +19,7 @@ describe('debounce()', () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it('should debounce a function', fakeAsync(() => {
+  it("should debounce a function", fakeAsync(() => {
     let callCount = 0;
     const debounced = debounce(() => {
       ++callCount;
@@ -42,7 +42,7 @@ describe('debounce()', () => {
     expect(callCount).toBe(2);
   }));
 
-  it('should not immediately call `func` when `wait` is `0`', fakeAsync(() => {
+  it("should not immediately call `func` when `wait` is `0`", fakeAsync(() => {
     let callCount = 0;
     const debounced = debounce(() => {
       ++callCount;
@@ -56,7 +56,7 @@ describe('debounce()', () => {
     expect(callCount).toBe(1);
   }));
 
-  it('should invoke the call with the correct arguments', fakeAsync(() => {
+  it("should invoke the call with the correct arguments", fakeAsync(() => {
     let actual: any[] | undefined;
     let callCount = 0;
     const object = {};
@@ -65,10 +65,10 @@ describe('debounce()', () => {
       ++callCount;
     }, 32);
 
-    debounced.call(object, 'a');
-    debounced.call(object, 'b', 3);
+    debounced.call(object, "a");
+    debounced.call(object, "b", 3);
     tick(64);
     expect(callCount).toBe(1);
-    expect(actual).toEqual(['b', 3]);
+    expect(actual).toEqual(["b", 3]);
   }));
 });

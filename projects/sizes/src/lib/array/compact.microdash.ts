@@ -1,2 +1,2 @@
-import { compact } from 'micro-dash';
+import { compact } from "micro-dash";
 compact([]);

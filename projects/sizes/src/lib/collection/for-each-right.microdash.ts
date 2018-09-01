@@ -1,3 +1,3 @@
-import { forEachRight } from 'micro-dash';
+import { forEachRight } from "micro-dash";
 forEachRight([], () => {});
 forEachRight({}, () => {});

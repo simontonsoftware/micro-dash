@@ -1,24 +1,24 @@
-import * as fs from 'fs';
-import * as glob from 'glob';
-import * as path from 'path';
-import * as readline from 'readline';
-import { rollup, RollupFileOptions } from 'rollup';
-import { forEach } from '../micro-dash/src/lib/collection/for-each';
-import { ObjectWith } from '../micro-dash/src/lib/interfaces';
+import * as fs from "fs";
+import * as glob from "glob";
+import * as path from "path";
+import * as readline from "readline";
+import { rollup, RollupFileOptions } from "rollup";
+import { forEach } from "../micro-dash/src/lib/collection/for-each";
+import { ObjectWith } from "../micro-dash/src/lib/interfaces";
 
 // no typings for these imports
-const uglify = require('rollup-plugin-uglify').uglify;
-const commonjs = require('rollup-plugin-commonjs');
-const nodeResolve = require('rollup-plugin-node-resolve');
-const sourceMapExplorer = require('source-map-explorer');
+const uglify = require("rollup-plugin-uglify").uglify;
+const commonjs = require("rollup-plugin-commonjs");
+const nodeResolve = require("rollup-plugin-node-resolve");
+const sourceMapExplorer = require("source-map-explorer");
 
-const projectRootDir = path.join(__dirname, '..', '..');
-const distDir = path.join(projectRootDir, 'dist');
-const buildDir = path.join(distDir, 'sizes', 'esm5', 'lib');
-const bundleDir = path.join(__dirname, 'bundle/');
+const projectRootDir = path.join(__dirname, "..", "..");
+const distDir = path.join(projectRootDir, "dist");
+const buildDir = path.join(distDir, "sizes", "esm5", "lib");
+const bundleDir = path.join(__dirname, "bundle/");
 
 const rollupConfig: RollupFileOptions = {
-  input: 'thiswillchange',
+  input: "thiswillchange",
   inlineDynamicImports: false,
   onwarn: function(warning) {
     console.warn(warning);
@@ -45,10 +45,10 @@ async function run() {
     );
 
     switch (input) {
-      case 'full':
+      case "full":
         await bundleAndExplore(`index.*.js`);
         break;
-      case 'all':
+      case "all":
         await bundleAndExplore(`**/*.js`);
         break;
       default:
@@ -89,7 +89,7 @@ async function bundle(inputPath: string) {
   const relativePath = path.relative(buildDir, inputPath);
 
   // lodash files come first, so print only on those
-  const lodashIndex = relativePath.indexOf('.lodash.js');
+  const lodashIndex = relativePath.indexOf(".lodash.js");
   if (lodashIndex > 0) {
     console.log(relativePath.substr(0, lodashIndex));
   }
@@ -99,9 +99,9 @@ async function bundle(inputPath: string) {
   const fileBuild = await rollup(rollupConfig);
   await fileBuild.write({
     file: dest,
-    format: 'iife',
+    format: "iife",
     sourcemap: true,
-    name: 'thisIsIgnoredButRequired',
+    name: "thisIsIgnoredButRequired",
   });
   return dest;
 }
@@ -113,9 +113,9 @@ function explore(file: string) {
   let lodash = 0;
   let microdash = 0;
   forEach(files, (bytes, sourceFile) => {
-    if (sourceFile.includes('lodash')) {
+    if (sourceFile.includes("lodash")) {
       lodash += bytes;
-    } else if (sourceFile.includes('micro-dash')) {
+    } else if (sourceFile.includes("micro-dash")) {
       microdash += bytes;
     }
   });
@@ -126,7 +126,7 @@ function explore(file: string) {
     summary = ` * - Micro-dash: ${microdash.toLocaleString()} bytes`;
   }
   console.log(summary);
-  fs.writeFileSync(basePath + 'txt', summary);
+  fs.writeFileSync(basePath + "txt", summary);
 }
 
 // Recursively create a dir.

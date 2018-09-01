@@ -1,2 +1,2 @@
-import words from 'lodash-es/words';
-words('a string');
+import words from "lodash-es/words";
+words("a string");

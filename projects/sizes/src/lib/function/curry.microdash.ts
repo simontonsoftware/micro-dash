@@ -1,2 +1,2 @@
-import { curry } from 'micro-dash';
+import { curry } from "micro-dash";
 curry(() => 1)();

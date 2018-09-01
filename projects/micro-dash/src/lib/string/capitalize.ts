@@ -1,4 +1,4 @@
-import { upperFirst } from './upper-first';
+import { upperFirst } from "./upper-first";
 
 /**
  * Converts the first character of `string` to upper case and the remaining to lower case.

@@ -1,3 +1,3 @@
-import { isEmpty } from 'micro-dash';
+import { isEmpty } from "micro-dash";
 isEmpty([]);
 isEmpty({});

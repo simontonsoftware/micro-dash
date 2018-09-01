@@ -1,2 +1,2 @@
-import { get } from 'micro-dash';
-get({ a: 1 }, ['a'], 0);
+import { get } from "micro-dash";
+get({ a: 1 }, ["a"], 0);

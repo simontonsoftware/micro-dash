@@ -1,5 +1,5 @@
-import { ObjectIteratee } from '../interfaces';
-import { forOwn } from './for-own';
+import { ObjectIteratee } from "../interfaces";
+import { forOwn } from "./for-own";
 
 /**
  * Creates an object composed of the `object` properties `predicate` returns truthy for.

@@ -1,11 +1,11 @@
-import { isUndefined } from './is-undefined';
+import { isUndefined } from "./is-undefined";
 
-describe('isUndefined', () => {
-  it('should return `true` for `undefined`', () => {
+describe("isUndefined", () => {
+  it("should return `true` for `undefined`", () => {
     expect(isUndefined(undefined)).toBe(true);
   });
 
-  it('should return `false` for non `undefined` values', () => {
+  it("should return `false` for non `undefined` values", () => {
     // tslint:disable-next-line:only-arrow-functions
     const args = (function() {
       return arguments;
@@ -16,7 +16,7 @@ describe('isUndefined', () => {
     expect(isUndefined(false)).toBe(false);
     expect(isUndefined(0)).toBe(false);
     expect(isUndefined(NaN)).toBe(false);
-    expect(isUndefined('')).toBe(false);
+    expect(isUndefined("")).toBe(false);
 
     // all the other things
     expect(isUndefined(args)).toBe(false);
@@ -28,7 +28,7 @@ describe('isUndefined', () => {
     expect(isUndefined({ a: 1 })).toBe(false);
     expect(isUndefined(1)).toBe(false);
     expect(isUndefined(/x/)).toBe(false);
-    expect(isUndefined('a')).toBe(false);
-    expect(isUndefined(Symbol('a'))).toBe(false);
+    expect(isUndefined("a")).toBe(false);
+    expect(isUndefined(Symbol("a"))).toBe(false);
   });
 });

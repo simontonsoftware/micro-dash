@@ -1,5 +1,5 @@
-import { ArrayIteratee, ObjectIteratee } from '../interfaces';
-import { keys } from '../object/keys';
+import { ArrayIteratee, ObjectIteratee } from "../interfaces";
+import { keys } from "../object/keys";
 
 /**
  * Iterates over elements of `collection`, returning the first element `predicate` returns truthy for.

@@ -1,4 +1,4 @@
-import { keys } from '../object/keys';
+import { keys } from "../object/keys";
 
 /**
  * Checks if `value` is an empty object or collection.

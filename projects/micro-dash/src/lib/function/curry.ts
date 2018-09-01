@@ -1,4 +1,4 @@
-import { partial } from './partial';
+import { partial } from "./partial";
 
 // type definitions from @types/lodash
 

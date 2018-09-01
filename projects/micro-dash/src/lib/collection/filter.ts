@@ -1,5 +1,5 @@
-import { ArrayIteratee, ObjectIteratee } from '../interfaces';
-import { forEach } from './for-each';
+import { ArrayIteratee, ObjectIteratee } from "../interfaces";
+import { forEach } from "./for-each";
 
 /**
  * Iterates over elements of `collection`, returning an array of all elements `predicate` returns truthy for.

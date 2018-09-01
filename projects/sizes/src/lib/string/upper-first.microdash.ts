@@ -1,2 +1,2 @@
-import { upperFirst } from 'micro-dash';
-upperFirst('a string');
+import { upperFirst } from "micro-dash";
+upperFirst("a string");

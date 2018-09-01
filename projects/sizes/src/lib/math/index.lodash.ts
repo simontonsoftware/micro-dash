@@ -1,1 +1,1 @@
-import './min-by.lodash';
+import "./min-by.lodash";

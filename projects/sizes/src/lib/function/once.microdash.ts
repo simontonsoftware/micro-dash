@@ -1,2 +1,2 @@
-import { once } from 'micro-dash';
+import { once } from "micro-dash";
 once(() => 1)();

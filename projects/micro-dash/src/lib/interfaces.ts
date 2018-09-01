@@ -21,7 +21,7 @@ export type Primitive = number | boolean | string;
 /** @private */
 export type Existant = Primitive | object;
 /** @private */
-export type Falsey = false | 0 | '' | null | undefined; // | NaN
+export type Falsey = false | 0 | "" | null | undefined; // | NaN
 
 /** @private */
 export type Function0<R> = () => R;

@@ -1,13 +1,13 @@
-import { minBy } from './min-by';
-import { stub } from 'sinon';
-import { identity, range } from 'lodash';
+import { minBy } from "./min-by";
+import { stub } from "sinon";
+import { identity, range } from "lodash";
 
-describe('minBy()', () => {
+describe("minBy()", () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it('should provide correct iteratee arguments', () => {
+  it("should provide correct iteratee arguments", () => {
     const logger = stub();
 
     minBy([1, 2, 3], logger);
@@ -15,7 +15,7 @@ describe('minBy()', () => {
     expect(logger.args).toEqual([[1], [2], [3]]);
   });
 
-  it('should treat sparse arrays as dense', () => {
+  it("should treat sparse arrays as dense", () => {
     let array = [1];
     array[2] = 3;
     const logger = stub();
@@ -25,7 +25,7 @@ describe('minBy()', () => {
     expect(logger.args).toEqual([[1], [undefined], [3]]);
   });
 
-  it('should not iterate custom properties of arrays', () => {
+  it("should not iterate custom properties of arrays", () => {
     const array = [1];
     (array as any).a = 1;
     const logger = stub();
@@ -35,7 +35,7 @@ describe('minBy()', () => {
     expect(logger.args).toEqual([[1]]);
   });
 
-  it('should ignore changes to `length`', () => {
+  it("should ignore changes to `length`", () => {
     const array = [1];
     let count = 0;
 
@@ -50,15 +50,15 @@ describe('minBy()', () => {
     expect(count).toEqual(1);
   });
 
-  it('should work with extremely large arrays', () => {
+  it("should work with extremely large arrays", () => {
     expect(minBy(range(0, 5e5), identity)).toBe(0);
   });
 
-  it('should work with an `iteratee`', () => {
+  it("should work with an `iteratee`", () => {
     expect(minBy([1, 2, 3], (n) => -n)).toBe(3);
   });
 
-  it('should work when `iteratee` returns +/-Infinity', () => {
+  it("should work when `iteratee` returns +/-Infinity", () => {
     const value = Infinity;
     const object = { a: value };
 

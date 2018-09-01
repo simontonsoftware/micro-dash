@@ -1,4 +1,4 @@
-import { NumberKeyedObject } from '../interfaces';
+import { NumberKeyedObject } from "../interfaces";
 
 /**
  * Creates an array of the own enumerable property names of object.

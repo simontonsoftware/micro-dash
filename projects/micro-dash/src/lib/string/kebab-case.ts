@@ -1,5 +1,5 @@
-import { words } from './words';
-import { toLower } from './to-lower';
+import { words } from "./words";
+import { toLower } from "./to-lower";
 
 /**
  * Converts `string` to kebab case.
@@ -14,5 +14,5 @@ import { toLower } from './to-lower';
 export function kebabCase(string: string) {
   return words(string)
     .map(toLower)
-    .join('-');
+    .join("-");
 }

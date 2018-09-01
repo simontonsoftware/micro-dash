@@ -1,2 +1,2 @@
-import { mapValues } from 'micro-dash';
+import { mapValues } from "micro-dash";
 mapValues({ a: 1 }, () => 1);

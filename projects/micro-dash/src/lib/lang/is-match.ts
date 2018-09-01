@@ -1,6 +1,6 @@
-import { every } from '../collection/every';
-import { DeepPartial } from '../interfaces';
-import { isEmpty } from './is-empty';
+import { every } from "../collection/every";
+import { DeepPartial } from "../interfaces";
+import { isEmpty } from "./is-empty";
 
 /**
  * Performs a partial deep comparison between `object` and `source` to determine if `object` contains equivalent property values.

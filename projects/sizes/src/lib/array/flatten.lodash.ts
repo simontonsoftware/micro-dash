@@ -1,2 +1,2 @@
-import flatten from 'lodash-es/flatten';
+import flatten from "lodash-es/flatten";
 flatten([]);

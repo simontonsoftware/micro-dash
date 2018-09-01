@@ -1,4 +1,4 @@
-import { identity } from '../util/identity';
+import { identity } from "../util/identity";
 
 /** @private */
 export interface MemoizedFunction extends Function {

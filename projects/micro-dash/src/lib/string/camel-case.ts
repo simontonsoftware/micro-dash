@@ -1,5 +1,5 @@
-import { words } from './words';
-import { capitalize } from './capitalize';
+import { words } from "./words";
+import { capitalize } from "./capitalize";
 
 /**
  * Converts `string` to camel case.
@@ -14,5 +14,5 @@ import { capitalize } from './capitalize';
 export function camelCase(string: string) {
   return words(string)
     .map((w, i) => (i ? capitalize(w) : w.toLowerCase()))
-    .join('');
+    .join("");
 }

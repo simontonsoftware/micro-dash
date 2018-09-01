@@ -1,5 +1,5 @@
-import { Transformer } from '../interfaces';
-import { identity } from './identity';
+import { Transformer } from "../interfaces";
+import { identity } from "./identity";
 
 /**
  * Creates a function that returns the result of invoking the given functions with the `this` binding of the created function, where each successive invocation is supplied the return value of the previous.

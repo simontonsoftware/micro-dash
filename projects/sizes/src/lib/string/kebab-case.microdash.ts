@@ -1,2 +1,2 @@
-import { kebabCase } from 'micro-dash';
-kebabCase('a string');
+import { kebabCase } from "micro-dash";
+kebabCase("a string");

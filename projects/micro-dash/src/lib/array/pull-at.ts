@@ -1,4 +1,4 @@
-import { flatten } from './flatten';
+import { flatten } from "./flatten";
 
 /**
  * Removes elements from array corresponding to indexes and returns an array of removed elements.

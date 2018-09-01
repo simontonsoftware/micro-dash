@@ -1,11 +1,11 @@
-import { remove } from './remove';
+import { remove } from "./remove";
 
-describe('remove()', () => {
+describe("remove()", () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it('should modify the array and return removed elements', () => {
+  it("should modify the array and return removed elements", () => {
     let argument = [1, 2, 3, 4];
 
     let returned = remove(argument, isEven);
@@ -14,7 +14,7 @@ describe('remove()', () => {
     expect(returned).toEqual([2, 4]);
   });
 
-  it('should provide correct `predicate` arguments', () => {
+  it("should provide correct `predicate` arguments", () => {
     let argument = [1, 2, 3];
     let log: Array<[number, number]> = [];
 
@@ -26,7 +26,7 @@ describe('remove()', () => {
     expect(log).toEqual([[3, 2], [2, 1], [1, 0]]);
   });
 
-  it('should preserve holes in arrays', () => {
+  it("should preserve holes in arrays", () => {
     let array = [1, 2, 3, 4];
     delete array[1];
     delete array[3];
@@ -38,7 +38,7 @@ describe('remove()', () => {
     expect(2 in array).toBeFalsy();
   });
 
-  it('should treat holes as `undefined`', () => {
+  it("should treat holes as `undefined`", () => {
     let array = [1, 2, 3];
     delete array[1];
 
@@ -47,7 +47,7 @@ describe('remove()', () => {
     expect(array).toEqual([1, 3]);
   });
 
-  it('should pass original indexes to `predicate`', () => {
+  it("should pass original indexes to `predicate`", () => {
     let array = [1, 2, 3];
 
     remove(array, (n, index) => isEven(index));

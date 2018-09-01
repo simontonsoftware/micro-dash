@@ -1,2 +1,2 @@
-import { toLower } from 'micro-dash';
-toLower('a string');
+import { toLower } from "micro-dash";
+toLower("a string");

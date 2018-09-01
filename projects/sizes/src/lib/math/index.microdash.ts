@@ -1,1 +1,1 @@
-import './min-by.microdash';
+import "./min-by.microdash";

@@ -1,5 +1,5 @@
-import { Transformer } from '../interfaces';
-import { identity } from './identity';
+import { Transformer } from "../interfaces";
+import { identity } from "./identity";
 
 /**
  * This method is like `flow` except that it creates a function that invokes the given functions from right to left.
