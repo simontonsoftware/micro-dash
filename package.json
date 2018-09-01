@@ -71,7 +71,6 @@
     "typescript": "^2.9.2"
   },
   "prettier": {
-    "singleQuote": true,
     "trailingComma": "all",
     "arrowParens": "always"
   },
