@@ -39,6 +39,7 @@ Below are the main differences between the implementations in this library compa
 - There is no shorthand for "iteratees"; functions that accept one require you to provide an actual function.
 - Does not pass the iterated object to iteratee functions. This allows simplifications, e.g. methods like `merge` can be used as an iteratee for `reduce` without being guarded.
 - It has no special knowledge of "array like" objects; only actual arrays are treated as arrays.
+- Makes no special attempts to preserve the sign of `-0`.
 - String functions are designed for simple cases like variable names. They only treat `[0-9A-Za-z]` as part of words and are not smart about contractions or ordinals (e.g. `I'll` or `1st`).
 - A modern environment/buildchain is assumed. E.g. this project will not contain duplicates of ES6 functions (such as `Array.isArray()`), and it may use ES6 functions directly. If you target older browsers/environments, you may need to include polyfills separately. However, it will only use features that _can_ be polyfilled.
 

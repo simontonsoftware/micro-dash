@@ -3,7 +3,6 @@
  *
  * Differences from lodash:
  * - `paths` must be direct properties of `object` (they cannot references deep properties)
- * - `pick(obj, -0)` (which is a type error) acts like `pick(obj, '0')` instead of `pick(obj, '-0')`
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 7,778 bytes
