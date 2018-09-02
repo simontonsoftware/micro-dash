@@ -13,6 +13,10 @@ describe("toString()", () => {
     );
   });
 
+  //
+  // stolen from https://github.com/lodash/lodash
+  //
+
   it("treats nullish values as empty strings", () => {
     expect(toString(null)).toBe("");
     expect(toString(undefined)).toBe("");
