@@ -7,3 +7,4 @@ import "./is-match.lodash";
 import "./is-nil.lodash";
 import "./is-string.lodash";
 import "./is-undefined.lodash";
+import "./to-string.lodash";

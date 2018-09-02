@@ -7,3 +7,4 @@ import "./is-match.microdash";
 import "./is-nil.microdash";
 import "./is-string.microdash";
 import "./is-undefined.microdash";
+import "./to-string.microdash";

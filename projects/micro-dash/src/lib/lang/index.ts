@@ -7,3 +7,4 @@ export * from "./is-match";
 export * from "./is-nil";
 export * from "./is-string";
 export * from "./is-undefined";
+export * from "./to-string";
