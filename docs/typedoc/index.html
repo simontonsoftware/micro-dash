@@ -1139,6 +1139,9 @@ img { max-width: 100%; }
 			<a href="index.html#tolower" class="tsd-kind-icon">to<wbr>Lower</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="index.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="index.html#uniqueid" class="tsd-kind-icon">unique<wbr>Id</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
@@ -1273,6 +1276,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#sortby" class="tsd-kind-icon">sort<wbr>By</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#times" class="tsd-kind-icon">times</a></li>
 							<li class="tsd-kind-function"><a href="index.html#tolower" class="tsd-kind-icon">to<wbr>Lower</a></li>
+							<li class="tsd-kind-function"><a href="index.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							<li class="tsd-kind-function"><a href="index.html#uniqueid" class="tsd-kind-icon">unique<wbr>Id</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#update" class="tsd-kind-icon">update</a></li>
 							<li class="tsd-kind-function"><a href="index.html#upperfirst" class="tsd-kind-icon">upper<wbr>First</a></li>
@@ -1449,7 +1453,7 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
 				<a name="context" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> context</h3>
-				<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</span></div>
+				<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require.context(&quot;./&quot;, true, /\.spec\.ts$/)</span></div>
 				<aside class="tsd-sources">
 					<ul>
 						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L20">test.ts:20</a></li>
@@ -2384,7 +2388,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L13">lib/object/get.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L12">lib/object/get.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2394,7 +2398,6 @@ img { max-width: 100%; }
 							<p>Differences from lodash:</p>
 							<ul>
 								<li>only accepts an array for <code>path</code>, not a dot-separated string</li>
-								<li>using <code>-0</code> in the path (which is a type error) acts like <code>&#39;0&#39;</code> instead of <code>&#39;-0&#39;</code></li>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -2406,28 +2409,28 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L18">lib/object/get.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L17">lib/object/get.ts:17</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L23">lib/object/get.ts:23</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L22">lib/object/get.ts:22</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L29">lib/object/get.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L28">lib/object/get.ts:28</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L40">lib/object/get.ts:40</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L39">lib/object/get.ts:39</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3076,7 +3079,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/omit.ts#L15">lib/object/omit.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/omit.ts#L14">lib/object/omit.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3087,7 +3090,6 @@ img { max-width: 100%; }
 							<ul>
 								<li><code>paths</code> must be direct keys of <code>object</code> (they cannot refer to deeper properties)</li>
 								<li>does not work with arrays</li>
-								<li><code>omit(obj, -0)</code> (which is a type error) acts like <code>omit(obj, &#39;0&#39;)</code> instead of <code>omit(obj, &#39;-0&#39;)</code></li>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -3369,7 +3371,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick.ts#L12">lib/object/pick.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick.ts#L11">lib/object/pick.ts:11</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3379,7 +3381,6 @@ img { max-width: 100%; }
 							<p>Differences from lodash:</p>
 							<ul>
 								<li><code>paths</code> must be direct properties of <code>object</code> (they cannot references deep properties)</li>
-								<li><code>pick(obj, -0)</code> (which is a type error) acts like <code>pick(obj, &#39;0&#39;)</code> instead of <code>pick(obj, &#39;-0&#39;)</code></li>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -3624,7 +3625,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/set.ts#L18">lib/object/set.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/set.ts#L17">lib/object/set.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3636,7 +3637,6 @@ img { max-width: 100%; }
 							<ul>
 								<li>only accepts an array for <code>path</code>, not a dot-separated string</li>
 								<li>does not handle <code>customizer</code> returning <code>undefined</code></li>
-								<li>using <code>-0</code> in the path (which is a type error) acts like <code>&#39;0&#39;</code> instead of <code>&#39;-0&#39;</code></li>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -3743,6 +3743,36 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="tostring" class="tsd-anchor"></a>
+				<h3>to<wbr>String</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/to-string.ts#L11">lib/lang/to-string.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Converts <code>value</code> to a string. An empty string is returned for <code>null</code> and <code>undefined</code> values.</p>
+							</div>
+							<p>Differences:</p>
+							<ul>
+								<li><code>null</code> and <code>undefined</code> array references are blank</li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 1,026 bytes</li>
+								<li>Micro-dash: 35 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="uniqueid" class="tsd-anchor"></a>
 				<h3>unique<wbr>Id</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -3778,7 +3808,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/update.ts#L17">lib/object/update.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/update.ts#L16">lib/object/update.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3790,7 +3820,6 @@ img { max-width: 100%; }
 							<ul>
 								<li>only accepts an array for <code>path</code>, not a dot-separated string</li>
 								<li>does not handle <code>customizer</code> returning <code>undefined</code></li>
-								<li>using <code>-0</code> in the path (which is a type error) acts like <code>&#39;0&#39;</code> instead of <code>&#39;-0&#39;</code></li>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
