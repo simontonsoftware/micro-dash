@@ -4,5 +4,6 @@ export * from "./last";
 export * from "./pull";
 export * from "./pull-at";
 export * from "./remove";
+export * from "./uniq";
 export * from "./without";
 export * from "./zip";

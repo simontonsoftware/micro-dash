@@ -4,5 +4,6 @@ import "./last.lodash";
 import "./pull.lodash";
 import "./pull-at.lodash";
 import "./remove.lodash";
+import "./uniq.lodash";
 import "./without.lodash";
 import "./zip.lodash";
