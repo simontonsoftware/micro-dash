@@ -1,4 +1,4 @@
-/** @private */
+/** @hidden */
 let nextId = 1;
 
 /**

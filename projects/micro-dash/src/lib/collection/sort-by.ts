@@ -62,7 +62,7 @@ function ordinal(value: any) {
   return 0;
 }
 
-/** @private */
+/** @hidden */
 interface Meta extends Array<any> {
   value: number;
 }

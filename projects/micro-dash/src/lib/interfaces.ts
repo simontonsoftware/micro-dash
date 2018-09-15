@@ -1,37 +1,37 @@
-/** @private */
+/** @hidden */
 export interface ClassFor<T> {
   new (...args: any[]): T;
 }
 
-/** @private */
+/** @hidden */
 export interface ObjectWith<T> {
   [key: string]: T;
 }
 
-/** @private */
+/** @hidden */
 export type DeepPartial<T> = { [K in keyof T]?: DeepPartial<T[K]> };
 
-/** @private */
+/** @hidden */
 export interface NumberKeyedObject {
   [key: number]: any;
 }
 
-/** @private */
+/** @hidden */
 export type Primitive = number | boolean | string;
-/** @private */
+/** @hidden */
 export type Existant = Primitive | object;
-/** @private */
+/** @hidden */
 export type Falsey = false | 0 | "" | null | undefined; // | NaN
 
-/** @private */
+/** @hidden */
 export type Function0<R> = () => R;
-/** @private */
+/** @hidden */
 export type Function1<T1, R> = (t1: T1) => R;
-/** @private */
+/** @hidden */
 export type Function2<T1, T2, R> = (t1: T1, t2: T2) => R;
-/** @private */
+/** @hidden */
 export type Function3<T1, T2, T3, R> = (t1: T1, t2: T2, t3: T3) => R;
-/** @private */
+/** @hidden */
 export type Function4<T1, T2, T3, T4, R> = (
   t1: T1,
   t2: T2,
@@ -39,16 +39,16 @@ export type Function4<T1, T2, T3, T4, R> = (
   t4: T4,
 ) => R;
 
-/** @private */
+/** @hidden */
 export type Transformer<T> = (input: T) => T;
 
-/** @private */
+/** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
-/** @private */
+/** @hidden */
 export type ObjectIteratee<T, O> = <K extends keyof T>(
   item: T[K],
   key: T extends NumberKeyedObject ? string : K,
 ) => O;
 // export type ObjectIteratee<T, O> = (item: T[keyof T], key: string) => O;
-/** @private */
+/** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;

@@ -14,7 +14,7 @@ export function pad(s: string, length: number, chars = " ") {
   );
 }
 
-/** @private */
+/** @hidden */
 export function makePadding(s: string, length: number, chars: string) {
   return _makePadding(length - s.length, chars);
 }

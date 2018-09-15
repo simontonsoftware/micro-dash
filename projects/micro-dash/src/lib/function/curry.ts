@@ -2,25 +2,25 @@ import { partial } from "./partial";
 
 // type definitions from @types/lodash
 
-/** @private */
+/** @hidden */
 export interface CurriedFunction1<T1, R> {
   (): CurriedFunction1<T1, R>;
   (t1: T1): R;
 }
-/** @private */
+/** @hidden */
 export interface CurriedFunction2<T1, T2, R> {
   (): CurriedFunction2<T1, T2, R>;
   (t1: T1): CurriedFunction1<T2, R>;
   (t1: T1, t2: T2): R;
 }
-/** @private */
+/** @hidden */
 export interface CurriedFunction3<T1, T2, T3, R> {
   (): CurriedFunction3<T1, T2, T3, R>;
   (t1: T1): CurriedFunction2<T2, T3, R>;
   (t1: T1, t2: T2): CurriedFunction1<T3, R>;
   (t1: T1, t2: T2, t3: T3): R;
 }
-/** @private */
+/** @hidden */
 export interface CurriedFunction4<T1, T2, T3, T4, R> {
   (): CurriedFunction4<T1, T2, T3, T4, R>;
   (t1: T1): CurriedFunction3<T2, T3, T4, R>;

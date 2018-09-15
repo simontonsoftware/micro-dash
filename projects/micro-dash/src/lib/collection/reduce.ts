@@ -77,7 +77,7 @@ export function reduceRight(collection: any, iteratee: any, accumulator?: any) {
   );
 }
 
-/** @private */
+/** @hidden */
 function doReduce(
   iterationFn: any,
   collection: any,
