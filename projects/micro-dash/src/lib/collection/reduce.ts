@@ -67,7 +67,11 @@ export function reduceRight<E, A>(
   iteratee: (accumulator: A, value: E, key: keyof E) => A,
   accumulator: A,
 ): A;
-export function reduceRight(collection: any, iteratee: any, accumulator?: any) {
+export function reduceRight(
+  collection: any,
+  iteratee: Function,
+  accumulator?: any,
+) {
   return doReduce(
     forEachRight,
     collection,
@@ -79,9 +83,9 @@ export function reduceRight(collection: any, iteratee: any, accumulator?: any) {
 
 /** @hidden */
 function doReduce(
-  iterationFn: any,
+  iterationFn: Function,
   collection: any,
-  iteratee: any,
+  iteratee: Function,
   accumulator: any,
   initAccum: boolean,
 ) {

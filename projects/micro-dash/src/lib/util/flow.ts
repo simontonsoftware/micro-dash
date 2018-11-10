@@ -103,7 +103,9 @@ export function flow<T>(...funcs: Array<Transformer<T>>): Transformer<T>;
 
 export function flow(...funcs: Function[]) {
   if (funcs.length) {
-    return funcs.reduce((result, func) => (input: any) => func(result(input)));
+    return funcs.reduce((result, func) => (input: unknown) =>
+      func(result(input)),
+    );
   } else {
     return identity;
   }

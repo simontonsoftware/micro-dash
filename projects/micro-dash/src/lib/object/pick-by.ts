@@ -1,4 +1,4 @@
-import { ObjectIteratee } from "../interfaces";
+import { NumberKeyedObject, ObjectIteratee } from "../interfaces";
 import { forOwn } from "./for-own";
 
 /**
@@ -11,6 +11,17 @@ import { forOwn } from "./for-own";
  * - Lodash: 15,013 bytes
  * - Micro-dash: 328 bytes
  */
+
+export function pickBy<T>(
+  object: T[],
+  predicate: ObjectIteratee<T, boolean>,
+): T extends null | undefined ? {} : NumberKeyedObject<T>;
+
+export function pickBy<T>(
+  object: T,
+  predicate: ObjectIteratee<T, boolean>,
+): T extends null | undefined ? {} : Partial<T>;
+
 export function pickBy<T>(
   object: T,
   predicate: ObjectIteratee<T, boolean>,

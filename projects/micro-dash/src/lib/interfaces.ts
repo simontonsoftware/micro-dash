@@ -1,6 +1,6 @@
 /** @hidden */
 export interface ClassFor<T> {
-  new (...args: any[]): T;
+  new (...args: unknown[]): T;
 }
 
 /** @hidden */
@@ -12,8 +12,8 @@ export interface ObjectWith<T> {
 export type DeepPartial<T> = { [K in keyof T]?: DeepPartial<T[K]> };
 
 /** @hidden */
-export interface NumberKeyedObject {
-  [key: number]: any;
+export interface NumberKeyedObject<T = unknown> {
+  [key: number]: T;
 }
 
 /** @hidden */

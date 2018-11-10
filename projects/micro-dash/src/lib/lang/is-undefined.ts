@@ -5,6 +5,6 @@
  * - Lodash: 77 bytes
  * - Micro-dash: 32 bytes
  */
-export function isUndefined(value: any) {
+export function isUndefined(value: any): value is undefined {
   return value === undefined;
 }

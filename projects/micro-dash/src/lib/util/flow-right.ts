@@ -101,7 +101,9 @@ export function flowRight<T>(...funcs: Array<Transformer<T>>): Transformer<T>;
 
 export function flowRight(...funcs: Function[]) {
   if (funcs.length) {
-    return funcs.reduce((result, func) => (input: any) => result(func(input)));
+    return funcs.reduce((result, func) => (input: unknown) =>
+      result(func(input)),
+    );
   } else {
     return identity;
   }

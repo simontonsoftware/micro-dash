@@ -1,10 +1,5 @@
 import { identity } from "../util/identity";
 
-/** @hidden */
-export interface MemoizedFunction extends Function {
-  cache: Map<any, any>;
-}
-
 /**
  * Creates a function that memoizes the result of `func`. If `resolver` is provided, it determines the cache key for storing the result based on the arguments provided to the memoized function. By default, the first argument provided to the memoized function is used as the map cache key. The `func` is invoked with the `this` binding of the memoized function.
  *
@@ -17,11 +12,13 @@ export interface MemoizedFunction extends Function {
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,920 bytes
  * - Micro-dash: 218 bytes
+ *
+ * @param resolver The function to resolve the cache key.
  */
 export function memoize<T extends Function>(
   func: T,
   resolver: Function = identity,
-): T & MemoizedFunction {
+): T & { cache: Map<any, any> } {
   const memoized: any = function(this: any) {
     const cache = memoized.cache;
     const key = resolver.apply(this, arguments);
