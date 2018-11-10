@@ -19,9 +19,8 @@ describe("keyBy()", () => {
   });
 
   it("should only add values to own, not inherited, properties", () => {
-    const actual: any = keyBy(
-      [6.1, 4.2, 6.3],
-      (n) => (Math.floor(n) > 4 ? "hasOwnProperty" : "constructor"),
+    const actual: any = keyBy([6.1, 4.2, 6.3], (n) =>
+      Math.floor(n) > 4 ? "hasOwnProperty" : "constructor",
     );
 
     expect(actual.constructor).toEqual(4.2);

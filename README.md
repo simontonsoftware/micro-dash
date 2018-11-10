@@ -11,9 +11,9 @@ To quickly see which functions are available, and any difference from Lodash bey
 Install `micro-dash` from npm:
 
 ```
-npm install micro-dash --save
-# OR
-yarn add micro-dash
+npm install micro-dash --save
+# OR
+yarn add micro-dash
 ```
 
 ## Project goals
