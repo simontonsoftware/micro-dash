@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+
+# [5.0.0](https://github.com/simontonsoftware/micro-dash/compare/v4.3.0...v5.0.0) (2018-11-10)
+
+### Chores
+
+- upgrade build tools ([b6c8927](https://github.com/simontonsoftware/micro-dash/commit/b6c8927))
+
+### Features
+
+- begin using `unknown`, other small typing improvements ([f46c106](https://github.com/simontonsoftware/micro-dash/commit/f46c106))
+
+### BREAKING CHANGES
+
+- uses Typescript 3 (up from 2)
+
 <a name="4.3.0"></a>
 
 # [4.3.0](https://github.com/simontonsoftware/micro-dash/compare/v4.2.0...v4.3.0) (2018-09-15)

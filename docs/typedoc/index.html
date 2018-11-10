@@ -1284,7 +1284,7 @@ img { max-width: 100%; }
 				<a name="castarray" class="tsd-anchor"></a>
 				<h3>cast<wbr>Array</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">cast<wbr>Array&lt;T&gt;<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends any[] ? T : T[]</span></li>
+					<li class="tsd-signature tsd-kind-icon">cast<wbr>Array&lt;T&gt;<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends unknown[] ? T : T[]</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2432,7 +2432,7 @@ img { max-width: 100%; }
 				<a name="keys" class="tsd-anchor"></a>
 				<h3>keys</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">keys&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T extends NumberKeyedObject ? string : keyof T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">keys&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T extends NumberKeyedObject&lt;unknown&gt; ? string : keyof T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2580,13 +2580,13 @@ img { max-width: 100%; }
 				<a name="memoize" class="tsd-anchor"></a>
 				<h3>memoize</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">memoize&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, resolver<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">MemoizedFunction</span></li>
+					<li class="tsd-signature tsd-kind-icon">memoize&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, resolver<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/memoize.ts#L21">lib/function/memoize.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/memoize.ts#L18">lib/function/memoize.ts:18</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3060,13 +3060,14 @@ img { max-width: 100%; }
 				<a name="pickby" class="tsd-anchor"></a>
 				<h3>pick<wbr>By</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends null | undefined ? {} : NumberKeyedObject&lt;T&gt;</span></li>
 					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends null | undefined ? {} : Partial&lt;T&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L14">lib/object/pick-by.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L15">lib/object/pick-by.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3083,6 +3084,13 @@ img { max-width: 100%; }
 								<li>Micro-dash: 328 bytes</li>
 							</ul>
 						</div>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L20">lib/object/pick-by.ts:20</a></li>
+							</ul>
+						</aside>
 					</li>
 				</ul>
 			</section>
