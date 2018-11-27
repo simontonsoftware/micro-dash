@@ -4,6 +4,7 @@ import "./kebab-case.lodash";
 import "./pad-end.lodash";
 import "./pad-start.lodash";
 import "./pad.lodash";
+import "./snake-case.lodash";
 import "./to-lower.lodash";
 import "./upper-first.lodash";
 import "./words.lodash";

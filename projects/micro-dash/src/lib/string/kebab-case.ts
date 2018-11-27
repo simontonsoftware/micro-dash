@@ -2,10 +2,7 @@ import { words } from "./words";
 import { toLower } from "./to-lower";
 
 /**
- * Converts `string` to kebab case.
- *
- * Differences from lodash:
- * - requires `string` to be a string
+ * Converts `string` to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 4,261 bytes
