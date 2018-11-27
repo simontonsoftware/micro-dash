@@ -3,6 +3,7 @@ import "./clone-deep.lodash";
 import "./clone.lodash";
 import "./is-empty.lodash";
 import "./is-equal.lodash";
+import "./is-function.lodash";
 import "./is-match.lodash";
 import "./is-nil.lodash";
 import "./is-string.lodash";
