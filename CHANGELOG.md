@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.0"></a>
+
+# [5.1.0](https://github.com/simontonsoftware/micro-dash/compare/v5.0.0...v5.1.0) (2018-11-27)
+
+### Features
+
+- add `chunk()` ([d3c16d5](https://github.com/simontonsoftware/micro-dash/commit/d3c16d5))
+- add `isFunction()` ([2654a79](https://github.com/simontonsoftware/micro-dash/commit/2654a79))
+- add `snakeCase()` ([0ec3771](https://github.com/simontonsoftware/micro-dash/commit/0ec3771))
+
 <a name="5.0.0"></a>
 
 # [5.0.0](https://github.com/simontonsoftware/micro-dash/compare/v4.3.0...v5.0.0) (2018-11-10)
