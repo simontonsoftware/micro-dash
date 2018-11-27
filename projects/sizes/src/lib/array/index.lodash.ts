@@ -1,3 +1,4 @@
+import "./chunk.lodash";
 import "./compact.lodash";
 import "./flatten.lodash";
 import "./last.lodash";

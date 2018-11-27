@@ -1,3 +1,4 @@
+import "./chunk.microdash";
 import "./compact.microdash";
 import "./flatten.microdash";
 import "./last.microdash";
