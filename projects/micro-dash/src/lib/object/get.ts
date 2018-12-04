@@ -43,6 +43,8 @@ export function get(
 ): any;
 
 export function get(object: any, path: string[], defaultValue?: any) {
+  // const val = property(path)(object);
+  // return isUndefined(val) ? defaultValue : val;
   const length = path.length;
   let index = 0;
   while (object != null && index < length) {
