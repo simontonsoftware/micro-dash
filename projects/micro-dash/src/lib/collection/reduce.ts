@@ -40,11 +40,6 @@ export function reduce(collection: any, iteratee: any, accumulator?: any) {
 /**
  * This method is like `_.reduce` except that it iterates over elements of `collection` from right to left.
  *
- * Differences from lodash:
- * - does not pass `collection` to `iteratee`
- * - does not iterate "array-like" objects as arrays
- * - does not support iteratee shorthand; `iteratee` must be a function
- *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,346 bytes
  * - Micro-dash: 326 bytes
