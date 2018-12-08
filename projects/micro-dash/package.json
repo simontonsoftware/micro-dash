@@ -1,6 +1,6 @@
 {
   "name": "micro-dash",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Lightweight implementations of simplified lodash functions",
   "author": "Simonton Software",
   "repository": "simontonsoftware/micro-dash",

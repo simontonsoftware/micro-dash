@@ -971,6 +971,9 @@ img { max-width: 100%; }
 			<a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="index.html#isregexp" class="tsd-kind-icon">is<wbr>Reg<wbr>Exp</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -1064,6 +1067,9 @@ img { max-width: 100%; }
 			<a href="index.html#sortby" class="tsd-kind-icon">sort<wbr>By</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#sumby" class="tsd-kind-icon">sum<wbr>By</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#times" class="tsd-kind-icon">times</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -1144,6 +1150,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function"><a href="index.html#isfunction" class="tsd-kind-icon">is<wbr>Function</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#ismatch" class="tsd-kind-icon">is<wbr>Match</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a></li>
+							<li class="tsd-kind-function"><a href="index.html#isregexp" class="tsd-kind-icon">is<wbr>Reg<wbr>Exp</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a></li>
 							<li class="tsd-kind-function"><a href="index.html#kebabcase" class="tsd-kind-icon">kebab<wbr>Case</a></li>
@@ -1175,6 +1182,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#set" class="tsd-kind-icon">set</a></li>
 							<li class="tsd-kind-function"><a href="index.html#snakecase" class="tsd-kind-icon">snake<wbr>Case</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#sortby" class="tsd-kind-icon">sort<wbr>By</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#sumby" class="tsd-kind-icon">sum<wbr>By</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#times" class="tsd-kind-icon">times</a></li>
 							<li class="tsd-kind-function"><a href="index.html#tolower" class="tsd-kind-icon">to<wbr>Lower</a></li>
 							<li class="tsd-kind-function"><a href="index.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
@@ -2377,6 +2385,36 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="isregexp" class="tsd-anchor"></a>
+				<h3>is<wbr>Reg<wbr>Exp</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Reg<wbr>Exp<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-reg-exp.ts#L11">lib/lang/is-reg-exp.ts:11</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if <code>value</code> is classified as a <code>RegExp</code> object.</p>
+							</div>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>returns <code>true</code> for subclasses of <code>RegExp</code></li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 1,003 bytes</li>
+								<li>Micro-dash: 41 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="isstring" class="tsd-anchor"></a>
 				<h3>is<wbr>String</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -3275,25 +3313,26 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L52">lib/collection/reduce.ts:52</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L47">lib/collection/reduce.ts:47</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>This method is like <code>_.reduce</code> except that it iterates over elements of <code>collection</code> from right to left.</p>
 							</div>
-							<p>Differences from lodash:</p>
-							<ul>
-								<li>does not pass <code>collection</code> to <code>iteratee</code></li>
-								<li>does not iterate &quot;array-like&quot; objects as arrays</li>
-								<li>does not support iteratee shorthand; <code>iteratee</code> must be a function</li>
-							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
 								<li>Lodash: 14,346 bytes</li>
 								<li>Micro-dash: 326 bytes</li>
 							</ul>
 						</div>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L51">lib/collection/reduce.ts:51</a></li>
+							</ul>
+						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
@@ -3305,14 +3344,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L61">lib/collection/reduce.ts:61</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L65">lib/collection/reduce.ts:65</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L60">lib/collection/reduce.ts:60</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3437,6 +3469,36 @@ img { max-width: 100%; }
 								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/sort-by.ts#L17">lib/collection/sort-by.ts:17</a></li>
 							</ul>
 						</aside>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="sumby" class="tsd-anchor"></a>
+				<h3>sum<wbr>By</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">sum<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, iteratee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function1</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/sum-by.ts#L13">lib/math/sum-by.ts:13</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>This method is like <code>sum</code> except that it accepts <code>iteratee</code> which is invoked for each element in <code>array</code> to generate the value to be summed. The iteratee is invoked with one argument: (value).</p>
+							</div>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>does not skip <code>undefined</code> values</li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 13,873 bytes</li>
+								<li>Micro-dash: 52 bytes</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</section>
