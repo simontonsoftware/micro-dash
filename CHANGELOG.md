@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.0"></a>
+
+# [5.3.0](https://github.com/simontonsoftware/micro-dash/compare/v5.2.0...v5.3.0) (2018-12-17)
+
+### Features
+
+- improve typing for several functions (remove, filter, find, pick, pickBy, isNil) ([1d0a699](https://github.com/simontonsoftware/micro-dash/commit/1d0a699))
+
 <a name="5.2.0"></a>
 
 # [5.2.0](https://github.com/simontonsoftware/micro-dash/compare/v5.1.0...v5.2.0) (2018-12-08)
