@@ -1,8 +1,19 @@
 import { matches } from "lodash-es";
 import { stub } from "sinon";
+import { isString } from "../lang";
 import { find } from "./find";
 
 describe("find()", () => {
+  it("fancily narrows types", () => {
+    let found: string | undefined;
+
+    found = find(["a", undefined, 3], isString);
+    expect(found).toEqual("a");
+
+    found = find({ a: "a", b: undefined, c: 3 }, isString);
+    expect(found).toEqual("a");
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //

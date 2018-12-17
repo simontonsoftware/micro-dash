@@ -1,4 +1,9 @@
-import { ArrayIteratee, ObjectIteratee } from "../interfaces";
+import {
+  ArrayIteratee,
+  NarrowingArrayIteratee,
+  NarrowingObjectIteratee,
+  ObjectIteratee,
+} from "../interfaces";
 import { keys } from "../object/keys";
 
 /**
@@ -9,11 +14,21 @@ import { keys } from "../object/keys";
  * - Micro-dash: 355 bytes
  */
 
+export function find<I, O extends I>(
+  array: I[],
+  predicate: NarrowingArrayIteratee<I, O>,
+  fromIndex?: number,
+): O | undefined;
 export function find<T>(
   array: T[],
   predicate: ArrayIteratee<T, boolean>,
   fromIndex?: number,
 ): T | undefined;
+export function find<I, O extends I[keyof I]>(
+  object: I,
+  predicate: NarrowingObjectIteratee<I, O>,
+  fromIndex?: number,
+): O | undefined;
 export function find<T>(
   object: T,
   predicate: ObjectIteratee<T, boolean>,

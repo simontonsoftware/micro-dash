@@ -21,7 +21,9 @@ export type Primitive = number | boolean | string;
 /** @hidden */
 export type Existant = Primitive | object;
 /** @hidden */
-export type Falsey = false | 0 | "" | null | undefined; // | NaN
+export type Nil = null | undefined;
+/** @hidden */
+export type Falsey = Nil | false | 0 | ""; // | NaN
 
 /** @hidden */
 export type Function0<R> = () => R;
@@ -45,10 +47,20 @@ export type Transformer<T> = (input: T) => T;
 /** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
 /** @hidden */
+export type NarrowingArrayIteratee<I, O extends I> = (
+  item: I,
+  index: number,
+) => item is O;
+/** @hidden */
 export type ObjectIteratee<T, O> = <K extends keyof T>(
   item: T[K],
   key: T extends NumberKeyedObject ? string : K,
 ) => O;
+/** @hidden */
+export type NarrowingObjectIteratee<I, O extends I[keyof I]> = (
+  item: I[keyof I],
+  key: I extends NumberKeyedObject ? string : keyof I,
+) => item is O;
 // export type ObjectIteratee<T, O> = (item: T[keyof T], key: string) => O;
 /** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;

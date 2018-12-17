@@ -1,3 +1,4 @@
+import { Nil } from "../interfaces";
 import { clone } from "../lang/clone";
 
 /**
@@ -11,7 +12,7 @@ import { clone } from "../lang/clone";
  * - Lodash: 15,624 bytes
  * - Micro-dash: 329 bytes
  */
-export function omit<T extends object | null | undefined>(
+export function omit<T extends object | Nil>(
   object: T,
   ...paths: Array<keyof T>
 ): Partial<T> {

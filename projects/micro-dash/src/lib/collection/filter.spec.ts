@@ -1,4 +1,5 @@
 import { stub } from "sinon";
+import { isString } from "../lang";
 import { filter } from "./filter";
 
 describe("filter()", () => {
@@ -6,6 +7,16 @@ describe("filter()", () => {
     const object = { a: 1, b: 2, c: 3 };
     expect(filter(object, (item, key) => item === 2)).toEqual([2]);
     expect(filter(object, (item, key) => key === "b")).toEqual([2]);
+  });
+
+  it("fancily narrows types", () => {
+    let filtered: string[];
+
+    filtered = filter(["a", undefined, 3], isString);
+    expect(filtered).toEqual(["a"]);
+
+    filtered = filter({ a: "a", b: undefined, c: 3 }, isString);
+    expect(filtered).toEqual(["a"]);
   });
 
   //

@@ -1,3 +1,5 @@
+import { Nil } from "../interfaces";
+
 /**
  * Creates an object composed of the picked `object` properties.
  *
@@ -8,8 +10,11 @@
  * - Lodash: 7,778 bytes
  * - Micro-dash: 278 bytes
  */
-export function pick<T>(object: T, ...paths: Array<keyof T>) {
-  const result: Partial<T> = {};
+export function pick<T, K extends keyof T>(
+  object: T | Nil,
+  ...paths: K[]
+): T extends Nil ? {} : Pick<T, K> {
+  const result: any = {};
   if (object != null) {
     for (const path of paths) {
       result[path] = object[path];

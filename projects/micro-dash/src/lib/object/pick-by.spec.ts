@@ -1,7 +1,14 @@
-import { pickBy } from "./pick-by";
 import { stub } from "sinon";
+import { isString } from "../lang";
+import { pickBy } from "./pick-by";
 
 describe("pickBy()", () => {
+  it("fancily narrows types", () => {
+    let pickedFromObject: { b: string };
+    pickedFromObject = pickBy({ a: 1, b: "b", c: { d: 3 } }, isString);
+    expect(pickedFromObject).toEqual({ b: "b" });
+  });
+
   // lodash's test (and behavior) is the opposite
   it("does not treat sparse arrays as dense", () => {
     const array = [1];

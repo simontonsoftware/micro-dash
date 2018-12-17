@@ -1,6 +1,12 @@
+import { isString } from "../lang";
 import { remove } from "./remove";
 
 describe("remove()", () => {
+  it("fancily narrows types", () => {
+    const removed: string[] = remove(["a", undefined, 3], isString);
+    expect(removed).toEqual(["a"]);
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //

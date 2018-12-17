@@ -1,6 +1,12 @@
 import { pick } from "./pick";
 
 describe("pick()", () => {
+  it("fancily narrows types", () => {
+    let picked: { a: number; b: string };
+    picked = pick({ a: 1, b: "b", c: { d: 3 } }, "a", "b");
+    expect(picked).toEqual({ a: 1, b: "b" });
+  });
+
   //
   // stolen from https://github.com/healthiers/mini-dash
   //
@@ -36,12 +42,12 @@ describe("pick()", () => {
   });
 
   it("should return an empty object when `object` is nullish", () => {
-    expect(pick<any>(null, "valueOf")).toEqual({});
-    expect(pick<any>(undefined, "valueOf")).toEqual({});
+    expect(pick(null as any, "valueOf")).toEqual({});
+    expect(pick(undefined as any, "valueOf")).toEqual({});
   });
 
   it("should work with a primitive `object`", () => {
-    expect(pick<any>("", "slice")).toEqual({ slice: "".slice });
+    expect(pick("", "slice")).toEqual({ slice: "".slice });
   });
 
   it("should create an object of picked string keyed properties", () => {
@@ -52,6 +58,6 @@ describe("pick()", () => {
 
   it("should work with an array `object`", () => {
     let array = [1, 2, 3];
-    expect(pick<any>(array, "1")).toEqual({ 1: 2 });
+    expect(pick(array, 1)).toEqual({ 1: 2 });
   });
 });

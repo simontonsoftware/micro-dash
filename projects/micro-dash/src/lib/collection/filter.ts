@@ -1,4 +1,9 @@
-import { ArrayIteratee, ObjectIteratee } from "../interfaces";
+import {
+  ArrayIteratee,
+  NarrowingArrayIteratee,
+  NarrowingObjectIteratee,
+  ObjectIteratee,
+} from "../interfaces";
 import { forEach } from "./for-each";
 
 /**
@@ -9,10 +14,18 @@ import { forEach } from "./for-each";
  * - Micro-dash: 422 bytes
  */
 
+export function filter<I, O extends I>(
+  array: I[],
+  predicate: NarrowingArrayIteratee<I, O>,
+): O[];
 export function filter<T>(
   array: T[],
   predicate: ArrayIteratee<T, boolean>,
 ): T[];
+export function filter<I, O extends I[keyof I]>(
+  object: I,
+  predicate: NarrowingObjectIteratee<I, O>,
+): O[];
 export function filter<T>(
   object: T,
   predicate: ObjectIteratee<T, boolean>,

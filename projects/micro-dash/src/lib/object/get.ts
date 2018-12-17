@@ -1,3 +1,5 @@
+import { Nil } from "../interfaces";
+
 /**
  * Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.
  *
@@ -37,7 +39,7 @@ export function get<
   defaultValue: T[K1][K2][K3][K4],
 ): T[K1][K2][K3][K4];
 export function get(
-  object: object | null | undefined,
+  object: object | Nil,
   path: string[],
   defaultValue?: any,
 ): any;

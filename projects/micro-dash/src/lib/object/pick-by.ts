@@ -1,4 +1,8 @@
-import { NumberKeyedObject, ObjectIteratee } from "../interfaces";
+import {
+  NarrowingObjectIteratee, Nil,
+  NumberKeyedObject,
+  ObjectIteratee,
+} from "../interfaces";
 import { forOwn } from "./for-own";
 
 /**
@@ -15,17 +19,21 @@ import { forOwn } from "./for-own";
 export function pickBy<T>(
   object: T[],
   predicate: ObjectIteratee<T, boolean>,
-): T extends null | undefined ? {} : NumberKeyedObject<T>;
+): T extends Nil ? {} : NumberKeyedObject<T>;
+
+export function pickBy<I, O extends I[keyof I]>(
+  object: I,
+  predicate: NarrowingObjectIteratee<I, O>,
+): Pick<I, { [K in keyof I]: I[K] extends O ? K : never }[keyof I]>;
+export function pickBy<T>(
+  object: T,
+  predicate: ObjectIteratee<T, boolean>,
+): T extends Nil ? {} : Partial<T>;
 
 export function pickBy<T>(
   object: T,
   predicate: ObjectIteratee<T, boolean>,
-): T extends null | undefined ? {} : Partial<T>;
-
-export function pickBy<T>(
-  object: T,
-  predicate: ObjectIteratee<T, boolean>,
-): T extends null | undefined ? {} : Partial<T> {
+): T extends Nil ? {} : Partial<T> {
   const obj: any = {};
   forOwn(object, (item, key) => {
     if (predicate(item, key)) {

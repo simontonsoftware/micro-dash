@@ -1,3 +1,5 @@
+import { Nil } from "../interfaces";
+
 /**
  * Checks if value is `null` or `undefined`.
  *
@@ -5,6 +7,6 @@
  * - Lodash: 74 bytes
  * - Micro-dash: 29 bytes
  */
-export function isNil(value: any) {
+export function isNil(value: any): value is Nil {
   return value == null;
 }
