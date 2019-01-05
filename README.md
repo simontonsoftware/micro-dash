@@ -2,6 +2,16 @@ Micro-dash offers a subset of the functionality found in [lodash](https://github
 
 [![Build Status](https://travis-ci.org/simontonsoftware/micro-dash.svg?branch=master)](https://travis-ci.org/simontonsoftware/micro-dash) [![Coverage Status](https://coveralls.io/repos/github/simontonsoftware/micro-dash/badge.svg?branch=master)](https://coveralls.io/github/simontonsoftware/micro-dash?branch=master)
 
+## Simonton Software Typescript Utils
+
+Micro-dash is one library in a suite that is available from Simonton Software. Each one builds on the last, organized by their dependencies:
+
+1. **`micro-dash`: A much smaller Lodash**
+1. [`s-js-utils`](https://github.com/simontonsoftware/s-js-utils): Miscellaneous utilities written in TypeScript
+1. [`s-rxjs-utils`](https://github.com/simontonsoftware/s-rxjs-utils): Miscellaneous utilities for RxJS
+1. [`s-ng-utils`](https://github.com/simontonsoftware/s-ng-utils): Miscellaneous utilities for Angular
+1. [`ng-app-state`](https://github.com/simontonsoftware/ng-app-state): Object-oriented wrapper around `@ngrx/store`
+
 ## API Documentation
 
 To quickly see which functions are available, and any difference from Lodash beyond the overarching ones listed below, see the [api documentation](https://simontonsoftware.github.io/micro-dash/typedoc).
@@ -11,9 +21,12 @@ To quickly see which functions are available, and any difference from Lodash bey
 Install `micro-dash` from npm:
 
 ```
-npm install micro-dash --save
-# OR
-yarn add micro-dash
+npm install micro-dash --save
+
+# OR
+
+yarn add micro-dash
+
 ```
 
 ## Project goals
