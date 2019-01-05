@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.0"></a>
+
+# [5.4.0](https://github.com/simontonsoftware/micro-dash/compare/v5.3.0...v5.4.0) (2019-01-05)
+
+### Features
+
+- add `keys()` ([7668be8](https://github.com/simontonsoftware/micro-dash/commit/7668be8))
+
 <a name="5.3.0"></a>
 
 # [5.3.0](https://github.com/simontonsoftware/micro-dash/compare/v5.2.0...v5.3.0) (2018-12-17)
