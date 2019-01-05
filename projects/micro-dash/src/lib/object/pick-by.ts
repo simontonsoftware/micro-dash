@@ -1,5 +1,6 @@
 import {
-  NarrowingObjectIteratee, Nil,
+  NarrowingObjectIteratee,
+  Nil,
   NumberKeyedObject,
   ObjectIteratee,
 } from "../interfaces";
