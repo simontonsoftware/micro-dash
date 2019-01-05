@@ -1,6 +1,7 @@
 import "./for-own-right.lodash";
 import "./for-own.lodash";
 import "./get.lodash";
+import "./keys.lodash";
 import "./map-values.lodash";
 import "./merge.lodash";
 import "./omit-by.lodash";
