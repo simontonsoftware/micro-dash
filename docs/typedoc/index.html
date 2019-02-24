@@ -955,6 +955,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function">
 			<a href="index.html#inrange" class="tsd-kind-icon">in<wbr>Range</a>
 		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#includes" class="tsd-kind-icon">includes</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
 		</li>
@@ -1057,6 +1060,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#remove" class="tsd-kind-icon">remove</a>
 		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#round" class="tsd-kind-icon">round</a>
+		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#set" class="tsd-kind-icon">set</a>
 		</li>
@@ -1145,6 +1151,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#get" class="tsd-kind-icon">get</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#identity" class="tsd-kind-icon">identity</a></li>
 							<li class="tsd-kind-function"><a href="index.html#inrange" class="tsd-kind-icon">in<wbr>Range</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#includes" class="tsd-kind-icon">includes</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isfunction" class="tsd-kind-icon">is<wbr>Function</a></li>
@@ -1179,6 +1186,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#reduce" class="tsd-kind-icon">reduce</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#reduceright" class="tsd-kind-icon">reduce<wbr>Right</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#remove" class="tsd-kind-icon">remove</a></li>
+							<li class="tsd-kind-function"><a href="index.html#round" class="tsd-kind-icon">round</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#set" class="tsd-kind-icon">set</a></li>
 							<li class="tsd-kind-function"><a href="index.html#snakecase" class="tsd-kind-icon">snake<wbr>Case</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#sortby" class="tsd-kind-icon">sort<wbr>By</a></li>
@@ -2267,6 +2275,36 @@ img { max-width: 100%; }
 							<ul>
 								<li>Lodash: 1,374 bytes</li>
 								<li>Micro-dash: 59 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="includes" class="tsd-anchor"></a>
+				<h3>includes</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">includes&lt;T&gt;<span class="tsd-signature-symbol">(</span>collection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends any[] ? T[0] : T extends string ? string : T[keyof T]</span>, fromIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/includes.ts#L18">lib/collection/includes.ts:18</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if <code>value</code> is in <code>collection</code>. If <code>collection</code> is a string, it&#39;s checked for a substring of <code>value</code>, otherwise <code>SameValueZero</code> is used for equality comparisons. If <code>fromIndex</code> is negative, it&#39;s used as the offset from the end of <code>collection</code>.</p>
+							</div>
+							<pre><code class="language-ts">includes([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span>
+includes([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// false</span>
+includes({ a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span> }, <span class="hljs-number">1</span>); <span class="hljs-comment">// true</span>
+includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'</span>); <span class="hljs-comment">// true</span></code></pre>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 4,514 bytes</li>
+								<li>Micro-dash: 210 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3425,6 +3463,39 @@ img { max-width: 100%; }
 								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/array/remove.ts#L18">lib/array/remove.ts:18</a></li>
 							</ul>
 						</aside>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="round" class="tsd-anchor"></a>
+				<h3>round</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">round<span class="tsd-signature-symbol">(</span>number<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, precision<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/round.ts#L17">lib/math/round.ts:17</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Computes <code>number</code> rounded to <code>precision</code>.</p>
+							</div>
+							<pre><code class="language-ts">round(<span class="hljs-number">4.006</span>); <span class="hljs-comment">// 4</span>
+round(<span class="hljs-number">4.006</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// 4.01</span>
+round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>); <span class="hljs-comment">// 4100</span></code></pre>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>may return <code>NaN</code> with large <code>precision</code> values</li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 1,803 bytes</li>
+								<li>Micro-dash: 92 bytes</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</section>

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.0"></a>
+
+# [5.5.0](https://github.com/simontonsoftware/micro-dash/compare/v5.4.0...v5.5.0) (2019-02-24)
+
+### Features
+
+- add `includes()` ([a995528](https://github.com/simontonsoftware/micro-dash/commit/a995528))
+- add `round()` ([8368578](https://github.com/simontonsoftware/micro-dash/commit/8368578))
+
 <a name="5.4.0"></a>
 
 # [5.4.0](https://github.com/simontonsoftware/micro-dash/compare/v5.3.0...v5.4.0) (2019-01-05)
