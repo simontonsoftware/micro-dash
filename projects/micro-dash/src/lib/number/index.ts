@@ -1,2 +1,2 @@
-export * from "./clamp";
-export * from "./in-range";
+export { clamp } from "./clamp";
+export { inRange } from "./in-range";

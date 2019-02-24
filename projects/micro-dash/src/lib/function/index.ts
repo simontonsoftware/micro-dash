@@ -1,4 +1,4 @@
-export * from "./curry";
-export * from "./memoize";
-export * from "./once";
-export * from "./partial";
+export { curry } from "./curry";
+export { memoize } from "./memoize";
+export { once } from "./once";
+export { partial } from "./partial";
