@@ -3,5 +3,6 @@
   "dest": "../../dist/micro-dash",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["utility-types"]
 }

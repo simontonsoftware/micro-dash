@@ -1,5 +1,5 @@
+import { DeepPartial } from "utility-types";
 import { every } from "../collection/every";
-import { DeepPartial } from "../interfaces";
 import { isEmpty } from "./is-empty";
 
 /**
