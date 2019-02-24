@@ -9,9 +9,6 @@ export interface ObjectWith<T> {
 }
 
 /** @hidden */
-export type DeepPartial<T> = { [K in keyof T]?: DeepPartial<T[K]> };
-
-/** @hidden */
 export interface NumberKeyedObject<T = unknown> {
   [key: number]: T;
 }

@@ -1,2 +1,3 @@
-export * from "./min-by";
-export * from "./sum-by";
+export { minBy } from "./min-by";
+export { round } from "./round";
+export { sumBy } from "./sum-by";
