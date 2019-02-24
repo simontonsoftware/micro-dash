@@ -3,6 +3,7 @@ export { filter } from "./filter";
 export { find } from "./find";
 export { forEach } from "./for-each";
 export { forEachRight } from "./for-each-right";
+export { includes } from "./includes";
 export { keyBy } from "./key-by";
 export { map } from "./map";
 export { reduce, reduceRight } from "./reduce";

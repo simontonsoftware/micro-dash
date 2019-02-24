@@ -3,6 +3,7 @@ import "./find.microdash";
 import "./filter.microdash";
 import "./for-each.microdash";
 import "./for-each-right.microdash";
+import "./includes.microdash";
 import "./key-by.microdash";
 import "./map.microdash";
 import "./reduce.microdash";

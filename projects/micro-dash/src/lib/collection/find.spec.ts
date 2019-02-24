@@ -64,13 +64,18 @@ describe("find()", () => {
   });
 
   it("should work with an array and a `fromIndex` >= `length`", () => {
-    for (const key of [2, undefined, ""]) {
+    for (const key of [1, undefined, ""]) {
       for (const fromIndex of [4, 6, 2 ** 32, Infinity]) {
         expect(find(array, (n) => Object.is(n, key), fromIndex)).toBe(
           undefined,
         );
       }
     }
+  });
+
+  it("should work with an array and coerce `fromIndex` to an integer", () => {
+    expect(find(array, (n) => n === 1, 0.1)).toBe(1);
+    expect(find(array, (n) => n === 1, NaN)).toBe(1);
   });
 
   it("should work with an array and a negative `fromIndex`", () => {
