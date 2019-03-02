@@ -18,4 +18,19 @@ describe("compact()", () => {
   it("is OK with an empty array", () => {
     expect(compact([])).toEqual([]);
   });
+
+  it("fancily narrows the type", () => {
+    const before: Array<number | false | undefined | "" | null> = [
+      1,
+      2,
+      false,
+      null,
+      undefined,
+      0,
+      "",
+      3,
+    ];
+    const after: number[] = compact(before);
+    expect(after).toEqual([1, 2, 3]);
+  });
 });

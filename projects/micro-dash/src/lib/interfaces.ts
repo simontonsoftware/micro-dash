@@ -4,9 +4,7 @@ export interface ClassFor<T> {
 }
 
 /** @hidden */
-export interface ObjectWith<T> {
-  [key: string]: T;
-}
+export type ObjectWith<T> = Record<string, T>;
 
 /** @hidden */
 export interface NumberKeyedObject<T = unknown> {
