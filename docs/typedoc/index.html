@@ -959,6 +959,9 @@ img { max-width: 100%; }
 			<a href="index.html#includes" class="tsd-kind-icon">includes</a>
 		</li>
 		<li class=" tsd-kind-function">
+			<a href="index.html#isboolean" class="tsd-kind-icon">is<wbr>Boolean</a>
+		</li>
+		<li class=" tsd-kind-function">
 			<a href="index.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
 		</li>
 		<li class=" tsd-kind-function">
@@ -972,6 +975,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#isregexp" class="tsd-kind-icon">is<wbr>Reg<wbr>Exp</a>
@@ -1050,6 +1056,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#pullat" class="tsd-kind-icon">pull<wbr>At</a>
+		</li>
+		<li class=" tsd-kind-function">
+			<a href="index.html#random" class="tsd-kind-icon">random</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#reduce" class="tsd-kind-icon">reduce</a>
@@ -1152,11 +1161,13 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#identity" class="tsd-kind-icon">identity</a></li>
 							<li class="tsd-kind-function"><a href="index.html#inrange" class="tsd-kind-icon">in<wbr>Range</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#includes" class="tsd-kind-icon">includes</a></li>
+							<li class="tsd-kind-function"><a href="index.html#isboolean" class="tsd-kind-icon">is<wbr>Boolean</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isequal" class="tsd-kind-icon">is<wbr>Equal</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isfunction" class="tsd-kind-icon">is<wbr>Function</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#ismatch" class="tsd-kind-icon">is<wbr>Match</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isnil" class="tsd-kind-icon">is<wbr>Nil</a></li>
+							<li class="tsd-kind-function"><a href="index.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isregexp" class="tsd-kind-icon">is<wbr>Reg<wbr>Exp</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isstring" class="tsd-kind-icon">is<wbr>String</a></li>
 							<li class="tsd-kind-function"><a href="index.html#isundefined" class="tsd-kind-icon">is<wbr>Undefined</a></li>
@@ -1183,6 +1194,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#pickby" class="tsd-kind-icon">pick<wbr>By</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#pull" class="tsd-kind-icon">pull</a></li>
 							<li class="tsd-kind-function"><a href="index.html#pullat" class="tsd-kind-icon">pull<wbr>At</a></li>
+							<li class="tsd-kind-function"><a href="index.html#random" class="tsd-kind-icon">random</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#reduce" class="tsd-kind-icon">reduce</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#reduceright" class="tsd-kind-icon">reduce<wbr>Right</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#remove" class="tsd-kind-icon">remove</a></li>
@@ -1447,7 +1459,7 @@ img { max-width: 100%; }
 				<a name="compact" class="tsd-anchor"></a>
 				<h3>compact</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">compact&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Falsey</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+					<li class="tsd-signature tsd-kind-icon">compact&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Exclude&lt;T, Falsey&gt;</span><span class="tsd-signature-symbol">[]</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2311,6 +2323,32 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="isboolean" class="tsd-anchor"></a>
+				<h3>is<wbr>Boolean</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Boolean<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-boolean.ts#L8">lib/lang/is-boolean.ts:8</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if <code>value</code> is classified as a boolean primitive.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 674 bytes</li>
+								<li>Micro-dash: 35 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="isempty" class="tsd-anchor"></a>
 				<h3>is<wbr>Empty</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -2455,6 +2493,32 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="isnumber" class="tsd-anchor"></a>
+				<h3>is<wbr>Number</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Number<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/lang/is-number.ts#L8">lib/lang/is-number.ts:8</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if <code>value</code> is classified as a <code>Number</code> primitive.</p>
+							</div>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 676 bytes</li>
+								<li>Micro-dash: 39 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="isregexp" class="tsd-anchor"></a>
 				<h3>is<wbr>Reg<wbr>Exp</h3>
 				<ul class="tsd-signatures tsd-kind-function">
@@ -2499,7 +2563,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Checks if value is classified as a String primitive.</p>
+								<p>Checks if <code>value</code> is classified as a String primitive.</p>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -2690,7 +2754,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				<a name="mapvalues" class="tsd-anchor"></a>
 				<h3>map<wbr>Values</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">map<wbr>Values&lt;T, O&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, iteratee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectWith</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">map<wbr>Values&lt;T, O&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, iteratee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2865,7 +2929,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>This method is like <code>min</code> except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked.</p>
+								<p>This method is like <code>min</code> except that it accepts <code>iteratee</code> which is invoked for each element in <code>array</code> to generate the criterion by which the value is ranked.</p>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -3325,6 +3389,53 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 								<li>Micro-dash: 405 bytes</li>
 							</ul>
 						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function">
+				<a name="random" class="tsd-anchor"></a>
+				<h3>random</h3>
+				<ul class="tsd-signatures tsd-kind-function">
+					<li class="tsd-signature tsd-kind-icon">random<span class="tsd-signature-symbol">(</span>floating<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					<li class="tsd-signature tsd-kind-icon">random<span class="tsd-signature-symbol">(</span>upper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, floating<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					<li class="tsd-signature tsd-kind-icon">random<span class="tsd-signature-symbol">(</span>lower<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, upper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, floating<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/random.ts#L17">lib/math/random.ts:17</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Produces a random number between the inclusive <code>lower</code> and <code>upper</code> bounds. If only one argument is provided a number between <code>0</code> and the given number is returned. If <code>floating</code> is true, or either <code>lower</code> or <code>upper</code> are floats, a floating-point number is returned instead of an integer.</p>
+							</div>
+							<p><strong>Note:</strong> JavaScript follows the IEEE-754 standard for resolving floating-point values which can produce unexpected results.</p>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>does not coerce arguments into finite numbers. E.g. if you supply <code>NaN</code> or <code>Infinity</code>, results are not guaranteed.</li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 2,239 bytes</li>
+								<li>Micro-dash: 357 bytes</li>
+							</ul>
+						</div>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/random.ts#L18">lib/math/random.ts:18</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/random.ts#L19">lib/math/random.ts:19</a></li>
+							</ul>
+						</aside>
 					</li>
 				</ul>
 			</section>

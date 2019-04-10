@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.6.0"></a>
+
+# [5.6.0](https://github.com/simontonsoftware/micro-dash/compare/v5.5.0...v5.6.0) (2019-04-10)
+
+### Features
+
+- add `isBoolean()` ([c3cbcc2](https://github.com/simontonsoftware/micro-dash/commit/c3cbcc2))
+- add `isNumber()` ([c5faf27](https://github.com/simontonsoftware/micro-dash/commit/c5faf27))
+- add `random()` ([2267319](https://github.com/simontonsoftware/micro-dash/commit/2267319))
+
 <a name="5.5.0"></a>
 
 # [5.5.0](https://github.com/simontonsoftware/micro-dash/compare/v5.4.0...v5.5.0) (2019-02-24)
