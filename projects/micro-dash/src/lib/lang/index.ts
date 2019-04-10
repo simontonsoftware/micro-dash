@@ -6,6 +6,7 @@ export { isEqual } from "./is-equal";
 export { isFunction } from "./is-function";
 export { isMatch } from "./is-match";
 export { isNil } from "./is-nil";
+export { isNumber } from "./is-number";
 export { isRegExp } from "./is-reg-exp";
 export { isString } from "./is-string";
 export { isUndefined } from "./is-undefined";

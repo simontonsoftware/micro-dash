@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Tests" type="JavaScriptTestRunnerKarma">
+    <config-file value="$PROJECT_DIR$/projects/micro-dash/karma.conf.js" />
+    <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+    <working-directory value="$PROJECT_DIR$" />
+    <node-interpreter value="project" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

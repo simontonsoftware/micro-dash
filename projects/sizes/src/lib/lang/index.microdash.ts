@@ -6,6 +6,7 @@ import "./is-equal.microdash";
 import "./is-function.microdash";
 import "./is-match.microdash";
 import "./is-nil.microdash";
+import "./is-number.microdash";
 import "./is-reg-exp.microdash";
 import "./is-string.microdash";
 import "./is-undefined.microdash";
