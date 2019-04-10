@@ -1,6 +1,7 @@
 export { castArray } from "./cast-array";
 export { clone } from "./clone";
 export { cloneDeep } from "./clone-deep";
+export { isBoolean } from "./is-boolean";
 export { isEmpty } from "./is-empty";
 export { isEqual } from "./is-equal";
 export { isFunction } from "./is-function";

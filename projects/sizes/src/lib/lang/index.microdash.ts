@@ -1,6 +1,7 @@
 import "./cast-array.microdash";
 import "./clone-deep.microdash";
 import "./clone.microdash";
+import "./is-boolean.microdash";
 import "./is-empty.microdash";
 import "./is-equal.microdash";
 import "./is-function.microdash";

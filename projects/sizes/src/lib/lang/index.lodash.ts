@@ -1,6 +1,7 @@
 import "./cast-array.lodash";
 import "./clone-deep.lodash";
 import "./clone.lodash";
+import "./is-boolean.lodash";
 import "./is-empty.lodash";
 import "./is-equal.lodash";
 import "./is-function.lodash";
