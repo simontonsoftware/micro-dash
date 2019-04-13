@@ -81,4 +81,11 @@ describe("get()", () => {
   it("should return the default value when `path` is empty", () => {
     expect(get({}, [], "a")).toBe("a");
   });
+
+  it("should know that `get` cannot return `undefined` when a default value is given", () => {
+    const obj: { value?: number } = {};
+    const notUndefined = get(obj, ["value"], 1);
+
+    notUndefined.toString(); // does not give a typescript error
+  });
 });

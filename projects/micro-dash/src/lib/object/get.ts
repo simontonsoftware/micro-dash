@@ -11,6 +11,11 @@ import { Nil } from "../interfaces";
  * - Micro-dash: 65 bytes
  */
 
+export function get<T, K1 extends keyof T, R>(
+  object: T,
+  path: [K1],
+  defaultValue: R,
+): R;
 export function get<T, K1 extends keyof T>(
   object: T,
   path: [K1],
