@@ -11,11 +11,11 @@ import { Nil } from "../interfaces";
  * - Micro-dash: 65 bytes
  */
 
-export function get<T, K1 extends keyof T, R>(
+export function get<T, K1 extends keyof T, R extends T[K1]>(
   object: T,
   path: [K1],
   defaultValue: R,
-): R;
+): R extends undefined ? T[K1] : Exclude<T[K1], undefined>;
 export function get<T, K1 extends keyof T>(
   object: T,
   path: [K1],
