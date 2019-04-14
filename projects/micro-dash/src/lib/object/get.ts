@@ -16,6 +16,36 @@ export function get<T, K1 extends keyof T, R extends T[K1]>(
   path: [K1],
   defaultValue: R,
 ): R extends undefined ? T[K1] : Exclude<T[K1], undefined>;
+export function get<T, K1 extends keyof T, K2 extends keyof T[K1], R>(
+  object: T,
+  path: [K1, K2],
+  defaultValue: T[K1][K2],
+): R extends undefined ? T[K1][K2] : Exclude<T[K1][K2], undefined>;
+export function get<
+  T,
+  K1 extends keyof T,
+  K2 extends keyof T[K1],
+  K3 extends keyof T[K1][K2],
+  R
+>(
+  object: T,
+  path: [K1, K2, K3],
+  defaultValue: T[K1][K2][K3],
+): R extends undefined ? T[K1][K2][K3] : Exclude<T[K1][K2][K3], undefined>;
+export function get<
+  T,
+  K1 extends keyof T,
+  K2 extends keyof T[K1],
+  K3 extends keyof T[K1][K2],
+  K4 extends keyof T[K1][K2][K3],
+  R
+>(
+  object: T,
+  path: [K1, K2, K3, K4],
+  defaultValue: T[K1][K2][K3][K4],
+): R extends undefined
+  ? T[K1][K2][K3][K4]
+  : Exclude<T[K1][K2][K3][K4], undefined>;
 export function get<T, K1 extends keyof T>(
   object: T,
   path: [K1],
