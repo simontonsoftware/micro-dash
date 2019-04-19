@@ -11,26 +11,32 @@ import { Nil } from "../interfaces";
  * - Micro-dash: 65 bytes
  */
 
+export function get<D>(object: object, path: [], defaultValue?: D): D;
 export function get<T, K1 extends keyof T, D extends T[K1]>(
   object: T,
   path: [K1],
-  defaultValue: D,
+  defaultValue?: D,
 ): D extends undefined ? T[K1] : Exclude<T[K1], undefined>;
-export function get<T, K1 extends keyof T, K2 extends keyof T[K1], D>(
+export function get<
+  T,
+  K1 extends keyof T,
+  K2 extends keyof T[K1],
+  D extends T[K1][K2]
+>(
   object: T,
   path: [K1, K2],
-  defaultValue: T[K1][K2],
+  defaultValue?: D,
 ): D extends undefined ? T[K1][K2] : Exclude<T[K1][K2], undefined>;
 export function get<
   T,
   K1 extends keyof T,
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
-  D
+  D extends T[K1][K2][K3],
 >(
   object: T,
   path: [K1, K2, K3],
-  defaultValue: T[K1][K2][K3],
+  defaultValue?: D,
 ): D extends undefined ? T[K1][K2][K3] : Exclude<T[K1][K2][K3], undefined>;
 export function get<
   T,
@@ -38,41 +44,14 @@ export function get<
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
   K4 extends keyof T[K1][K2][K3],
-  D
+  D extends T[K1][K2][K3][K4],
 >(
   object: T,
   path: [K1, K2, K3, K4],
-  defaultValue: T[K1][K2][K3][K4],
+  defaultValue?: D,
 ): D extends undefined
   ? T[K1][K2][K3][K4]
   : Exclude<T[K1][K2][K3][K4], undefined>;
-export function get<T, K1 extends keyof T>(
-  object: T,
-  path: [K1],
-  defaultValue: T[K1],
-): T[K1];
-export function get<T, K1 extends keyof T, K2 extends keyof T[K1]>(
-  object: T,
-  path: [K1, K2],
-  defaultValue: T[K1][K2],
-): T[K1][K2];
-export function get<
-  T,
-  K1 extends keyof T,
-  K2 extends keyof T[K1],
-  K3 extends keyof T[K1][K2]
->(object: T, path: [K1, K2, K3], defaultValue: T[K1][K2][K3]): T[K1][K2][K3];
-export function get<
-  T,
-  K1 extends keyof T,
-  K2 extends keyof T[K1],
-  K3 extends keyof T[K1][K2],
-  K4 extends keyof T[K1][K2][K3]
->(
-  object: T,
-  path: [K1, K2, K3, K4],
-  defaultValue: T[K1][K2][K3][K4],
-): T[K1][K2][K3][K4];
 export function get(
   object: object | Nil,
   path: string[],
