@@ -1,6 +1,14 @@
 import { get } from "./get";
 
 describe("get()", () => {
+  it("should know that `get` cannot return `undefined` when a default value is given", () => {
+    let result: number;
+    result = get(new Wrap1(), ["value"], 1);
+    result = get(new Wrap2(), ["wrap1", "value"], 1);
+    result = get(new Wrap3(), ["wrap2", "wrap1", "value"], 1);
+    result = get(new Wrap4(), ["wrap3", "wrap2", "wrap1", "value"], 1);
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -14,7 +22,8 @@ describe("get()", () => {
   });
 
   it("should handle empty paths", () => {
-    expect(get({}, [])).toBeUndefined();
+    const result: undefined = get({}, []);
+    expect(result).toBeUndefined();
     expect(get({ "": 3 }, [""])).toBe(3);
   });
 
@@ -82,3 +91,19 @@ describe("get()", () => {
     expect(get({}, [], "a")).toBe("a");
   });
 });
+
+class Wrap1 {
+  value?: number;
+}
+
+class Wrap2 {
+  wrap1 = new Wrap1();
+}
+
+class Wrap3 {
+  wrap2 = new Wrap2();
+}
+
+class Wrap4 {
+  wrap3 = new Wrap3();
+}
