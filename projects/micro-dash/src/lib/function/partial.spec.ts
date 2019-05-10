@@ -21,6 +21,39 @@ describe("partial()", () => {
     expect(partial(fn, 1, 2, 3).length).toBe(0);
   });
 
+  it("has super fancy typing", () => {
+    const fn0 = () => "hi";
+    const p00: () => string = partial(fn0);
+
+    const fn1 = (str: string) => Number(str);
+    const p10: (a: string) => number = partial(fn1);
+    const p11: () => number = partial(fn1, "1");
+
+    const fn2 = (a: number, b: string) => a + b;
+    const p20: (a: number, b: string) => string = partial(fn2);
+    const p21: (b: string) => string = partial(fn2, 1);
+    const p22: (b: string) => string = partial(fn2, 1, "2");
+
+    const fn3 = (a: number, b: number, c: string) => a + b + c;
+    const p30: (a: number, b: number, c: string) => string = partial(fn3);
+    const p31: (b: number, c: string) => string = partial(fn3, 1);
+    const p32: (c: string) => string = partial(fn3, 1, 2);
+    const p33: () => string = partial(fn3, 1, 2, "3");
+
+    const fn4 = (a: number, b: number, c: number, d: string) => a + b + c + d;
+    const p40: (a: number, b: number, c: number, d: string) => string = partial(
+      fn4,
+    );
+    const p41: (b: number, c: number, d: string) => string = partial(fn4, 1);
+    const p42: (c: number, d: string) => string = partial(fn4, 1, 2);
+    const p43: (d: string) => string = partial(fn4, 1, 2, 3);
+    const p44: () => string = partial(fn4, 1, 2, 3, "4");
+
+    const fn5 = (a: number, b: number, c: number, d: number, e: string) =>
+      a + b + c + d + e;
+    const p55: () => string = partial(fn5, 1, 2, 3, 4, "5");
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //
