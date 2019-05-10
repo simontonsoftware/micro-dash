@@ -19,22 +19,20 @@ export function bindKey<
 export function bindKey<
   K extends keyof any,
   A1,
-  T extends { [key in K]: (arg1: A1, ...rest: any[]) => any }
+  T extends { [key in K]: (...args: [A1, ...any[]]) => any }
 >(object: T, key: K, arg1: A1): Drop1Arg<T[K]>;
 export function bindKey<
   K extends keyof any,
   A1,
   A2,
-  T extends { [key in K]: (arg1: A1, arg2: A2, ...rest: any[]) => any }
+  T extends { [key in K]: (...args: [A1, A2, ...any[]]) => any }
 >(object: T, key: K, arg1: A1, arg2: A2): Drop2Args<T[K]>;
 export function bindKey<
   K extends keyof any,
   A1,
   A2,
   A3,
-  T extends {
-    [key in K]: (arg1: A1, arg2: A2, arg3: A3, ...rest: any[]) => any
-  }
+  T extends { [key in K]: (...args: [A1, A2, A3, ...any[]]) => any }
 >(object: T, key: K, arg1: A1, arg2: A2, arg3: A3): Drop3Args<T[K]>;
 export function bindKey<
   K extends keyof any,
@@ -42,10 +40,22 @@ export function bindKey<
   A2,
   A3,
   A4,
-  T extends {
-    [key in K]: (arg1: A1, arg2: A2, arg3: A3, arg4: A4, ...rest: any[]) => any
-  }
+  T extends { [key in K]: (...args: [A1, A2, A3, A4, ...any[]]) => any }
 >(object: T, key: K, arg1: A1, arg2: A2, arg3: A3, arg4: A4): Drop4Args<T[K]>;
+
+// catch-all
+export function bindKey<
+  K extends keyof any,
+  A1,
+  A2,
+  A3,
+  A4,
+  T extends { [key in K]: (...args: [A1, A2, A3, A4, ...any[]]) => any }
+>(
+  object: T,
+  key: K,
+  ...args: [A1, A2, A3, A4, ...any[]]
+): (...args: any[]) => ReturnType<T[K]>;
 
 export function bindKey(object: any, key: any, ...partials: any[]) {
   return function() {

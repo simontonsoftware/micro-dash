@@ -39,6 +39,12 @@ describe("bindKey()", () => {
     const b42: (c: number, d: string) => string = bindKey(obj4, "fn", 1, 2);
     const b43: (d: string) => string = bindKey(obj4, "fn", 1, 2, 3);
     const b44: () => string = bindKey(obj4, "fn", 1, 2, 3, "4");
+
+    const obj5 = {
+      fn: (a: number, b: number, c: number, d: number, e: string) =>
+        a + b + c + d + e,
+    };
+    const b55: () => string = bindKey(obj5, "fn", 1, 2, 3, 4, "5");
   });
 
   //
