@@ -3,25 +3,25 @@ import { partial } from "./partial";
 // type definitions from @types/lodash
 
 /** @hidden */
-export interface CurriedFunction1<T1, R> {
+interface CurriedFunction1<T1, R> {
   (): CurriedFunction1<T1, R>;
   (t1: T1): R;
 }
 /** @hidden */
-export interface CurriedFunction2<T1, T2, R> {
+interface CurriedFunction2<T1, T2, R> {
   (): CurriedFunction2<T1, T2, R>;
   (t1: T1): CurriedFunction1<T2, R>;
   (t1: T1, t2: T2): R;
 }
 /** @hidden */
-export interface CurriedFunction3<T1, T2, T3, R> {
+interface CurriedFunction3<T1, T2, T3, R> {
   (): CurriedFunction3<T1, T2, T3, R>;
   (t1: T1): CurriedFunction2<T2, T3, R>;
   (t1: T1, t2: T2): CurriedFunction1<T3, R>;
   (t1: T1, t2: T2, t3: T3): R;
 }
 /** @hidden */
-export interface CurriedFunction4<T1, T2, T3, T4, R> {
+interface CurriedFunction4<T1, T2, T3, T4, R> {
   (): CurriedFunction4<T1, T2, T3, T4, R>;
   (t1: T1): CurriedFunction3<T2, T3, T4, R>;
   (t1: T1, t2: T2): CurriedFunction2<T3, T4, R>;
@@ -71,7 +71,8 @@ export function curry<T1, T2, T3, T4, R>(
 export function curry(func: (...args: any[]) => any, arity = func.length) {
   return function(this: any, ...args: any[]) {
     if (args.length < arity) {
-      return curry(partial(func, ...args), (arity - args.length) as any);
+      return curry((partial as any)(func, ...args), (arity -
+        args.length) as any);
     } else {
       return func.apply(this, args);
     }
