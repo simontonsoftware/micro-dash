@@ -6094,6 +6094,13 @@ rxjs@^6.0.0:
   dependencies:
     tslib "^1.9.0"
 
+s-ng-test-utils@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/s-ng-test-utils/-/s-ng-test-utils-0.1.0.tgz#7d4d8eb03eac8e6b483fc3598ba81e10d858d210"
+  integrity sha512-GJE4EdiNPfe2VjdjLnUVS7biOZyPKFrUVFZkBzH+CYWpNi5uTZvS8LM46e7a3r5xOQpJBmfgHuOIAAkXO8DYPg==
+  dependencies:
+    tslib "^1.9.0"
+
 safe-buffer@5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"

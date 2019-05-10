@@ -59,3 +59,38 @@ export type NarrowingObjectIteratee<I, O extends I[keyof I]> = (
 // export type ObjectIteratee<T, O> = (item: T[keyof T], key: string) => O;
 /** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;
+
+/** @hidden */
+export type Drop1Arg<T extends Function> = T extends (
+  arg1: any,
+  ...rest: infer A
+) => infer R
+  ? (...rest: A) => R
+  : never;
+/** @hidden */
+export type Drop2Args<T extends Function> = T extends (
+  arg1: any,
+  arg2: any,
+  ...rest: infer A
+) => infer R
+  ? (...rest: A) => R
+  : never;
+/** @hidden */
+export type Drop3Args<T extends Function> = T extends (
+  arg1: any,
+  arg2: any,
+  arg3: any,
+  ...rest: infer A
+) => infer R
+  ? (...rest: A) => R
+  : never;
+/** @hidden */
+export type Drop4Args<T extends Function> = T extends (
+  arg1: any,
+  arg2: any,
+  arg3: any,
+  arg4: any,
+  ...rest: infer A
+) => infer R
+  ? (...rest: A) => R
+  : never;
