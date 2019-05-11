@@ -20,7 +20,7 @@ const bundleDir = path.join(__dirname, "bundle/");
 const rollupConfig: RollupOptions = {
   input: "thiswillchange",
   inlineDynamicImports: false,
-  onwarn: function(warning) {
+  onwarn(warning) {
     console.warn(warning);
   },
   plugins: [
