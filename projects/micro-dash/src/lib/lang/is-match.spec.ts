@@ -1,5 +1,5 @@
 import { isMatch } from "./is-match";
-import { Falsey } from "../interfaces";
+import { Falsey, ObjectWith } from "../interfaces";
 
 describe("isMatch()", () => {
   it("should perform a deep comparison between `source` and `object`", () => {
@@ -98,7 +98,7 @@ describe("isMatch()", () => {
   });
 
   it("should return `true` when comparing a `source` of empty arrays and objects", () => {
-    const source = { a: [], b: {} };
+    const source: { a: number[]; b: ObjectWith<number> } = { a: [], b: {} };
     expect(isMatch({ a: [1], b: { c: 1 } }, source)).toBe(true);
     expect(isMatch({ a: [2, 3], b: { d: 2 } }, source)).toBe(true);
   });
