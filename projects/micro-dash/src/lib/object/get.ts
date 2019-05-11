@@ -32,7 +32,7 @@ export function get<
   K1 extends keyof T,
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
-  D extends T[K1][K2][K3],
+  D extends T[K1][K2][K3]
 >(
   object: T,
   path: [K1, K2, K3],
@@ -44,7 +44,7 @@ export function get<
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
   K4 extends keyof T[K1][K2][K3],
-  D extends T[K1][K2][K3][K4],
+  D extends T[K1][K2][K3][K4]
 >(
   object: T,
   path: [K1, K2, K3, K4],
