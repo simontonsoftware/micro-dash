@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as glob from "glob";
 import * as path from "path";
 import * as readline from "readline";
-import { rollup, RollupFileOptions } from "rollup";
+import { rollup, RollupOptions } from "rollup";
 import { forEach } from "../micro-dash/src/lib/collection/for-each";
 import { ObjectWith } from "../micro-dash/src/lib/interfaces";
 
@@ -17,7 +17,7 @@ const distDir = path.join(projectRootDir, "dist");
 const buildDir = path.join(distDir, "sizes", "esm5", "lib");
 const bundleDir = path.join(__dirname, "bundle/");
 
-const rollupConfig: RollupFileOptions = {
+const rollupConfig: RollupOptions = {
   input: "thiswillchange",
   inlineDynamicImports: false,
   onwarn: function(warning) {

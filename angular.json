@@ -114,11 +114,6 @@
           "options": {
             "tsConfig": "projects/micro-dash/tsconfig.lib.json",
             "project": "projects/micro-dash/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/micro-dash/ng-package.prod.json"
-            }
           }
         },
         "test": {
@@ -152,11 +147,6 @@
           "options": {
             "tsConfig": "projects/sizes/tsconfig.lib.json",
             "project": "projects/sizes/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/sizes/ng-package.prod.json"
-            }
           }
         },
         "test": {
