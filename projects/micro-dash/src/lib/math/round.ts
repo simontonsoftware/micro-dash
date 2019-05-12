@@ -11,7 +11,7 @@
  * - may return `NaN` with large `precision` values
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,803 bytes
+ * - Lodash: 1,858 bytes
  * - Micro-dash: 92 bytes
  */
 export function round(number: number, precision = 0) {

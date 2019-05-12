@@ -8,8 +8,8 @@ import { capitalize } from "./capitalize";
  * - requires `string` to be a string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,242 bytes
- * - Micro-dash: 308 bytes
+ * - Lodash: 5,436 bytes
+ * - Micro-dash: 333 bytes
  */
 export function camelCase(string: string) {
   return words(string)

@@ -7,7 +7,7 @@ import { Function1 } from "../interfaces";
  * - does not skip `undefined` values
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 13,873 bytes
+ * - Lodash: 14,046 bytes
  * - Micro-dash: 52 bytes
  */
 export function sumBy<T>(array: T[], iteratee: Function1<T, number>) {

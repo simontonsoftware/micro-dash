@@ -10,7 +10,7 @@ import { flatten } from "./flatten";
  * - does not support deep paths
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 7,723 bytes
+ * - Lodash: 7,819 bytes
  * - Micro-dash: 405 bytes
  */
 export function pullAt(array: any[], ...indexes: Array<number | number[]>) {

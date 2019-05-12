@@ -7,7 +7,7 @@ import { Nil } from "../interfaces";
  * - only accepts an array for `path`, not a dot-separated string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,092 bytes
+ * - Lodash: 5,186 bytes
  * - Micro-dash: 65 bytes
  */
 
