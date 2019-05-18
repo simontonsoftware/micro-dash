@@ -16,6 +16,13 @@ describe("debounce()", () => {
     expect(callCount).toBe(1);
   }));
 
+  it("has fancy typing", () => {
+    const debounced = debounce((s: string, n: number) => "hi");
+    const plastic: unknown = 0;
+    const params: [string, number] = plastic as Parameters<typeof debounced>;
+    const ret: void = plastic as ReturnType<typeof debounced>;
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //

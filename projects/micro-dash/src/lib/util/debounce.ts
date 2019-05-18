@@ -13,7 +13,10 @@
  * - Lodash: 2,078 bytes
  * - Micro-dash: 170 bytes
  */
-export function debounce(func: Function, wait = 0) {
+export function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait = 0,
+): (...args: Parameters<T>) => void {
   let timeoutId: number;
   return (...args: unknown[]) => {
     clearTimeout(timeoutId);
