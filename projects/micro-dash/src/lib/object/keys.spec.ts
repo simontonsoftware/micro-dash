@@ -3,7 +3,7 @@ import { keys } from "./keys";
 describe("keys()", () => {
   // tslint:disable-next-line:only-arrow-functions
   it("makes no special accommodations for `arguments` objects (unlike lodash)", function() {
-    expect(keys(arguments).sort()).toEqual(["0", "1", "2", "callee", "length"]);
+    expect(keys(arguments).sort()).toEqual(["callee", "length"]);
   });
 
   it("includes the `constructor` property on prototype objects (unlike lodash)", () => {

@@ -5,17 +5,17 @@
  * - Lodash: 1,493 bytes
  * - Micro-dash: 67 bytes
  */
-export function once<T extends Function>(func: T): T {
-  let result: any;
+export function once<T extends (...args: any[]) => any>(func: T) {
+  let result: ReturnType<T>;
   let needsCall = true;
-  return (function(this: any) {
+  return function(this: any, ...args: Parameters<T>) {
     if (needsCall) {
       needsCall = false;
-      result = func.apply(this, arguments);
+      result = func.apply(this, args);
 
       // allow func and any of its variables to be garbage collected
       (func as any) = null;
     }
     return result;
-  } as any) as T;
+  };
 }
