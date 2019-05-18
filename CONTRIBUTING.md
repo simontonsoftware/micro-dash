@@ -19,8 +19,7 @@ So you want to contribute to Micro-dash? That's great! This guide shows everythi
       1. `projects/sizes/src/lib/<category>/<function-name>.lodash.ts`
       1. `projects/sizes/src/lib/<category>/<function-name>.microdash.ts`
    1. Add simple uses of the function to both files. The files should be identical except for the import lines (where one imports from `lodash-es`, and the other from `micro-dash`).
-      - If the function returns a value, `console.log` the output to be sure tree shaking doesn't decide the whole thing is unnecessary)
+      - If the function returns a value, `console.log` the output to be sure tree shaking doesn't decide the whole thing is unnecessary.
    1. Add the files to their respective `index.<library>.ts` within their directory.
-   1. Run `yarn sizes` and enter the function name in dash-case.
-   1. Copy the resulting sizes to the function's documentation.
+   1. Run `yarn sizes` and enter the function name in kebab-case.
 1. **File the PR!**
