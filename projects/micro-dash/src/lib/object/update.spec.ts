@@ -3,6 +3,10 @@ import { stub } from "sinon";
 import { update } from "./update";
 
 describe("update()", () => {
+  const oldValue = 1;
+  const value = 2;
+  const updater = constant(value);
+
   it("creates an array (only) for missing integer keys", () => {
     const object: any[] = [];
     update(object, [1, "b", 3.7, 4], updater);
@@ -31,10 +35,6 @@ describe("update()", () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
-
-  const oldValue = 1;
-  const value = 2;
-  const updater = constant(value);
 
   it("should set property values", () => {
     const object = { a: oldValue };

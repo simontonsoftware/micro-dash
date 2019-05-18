@@ -5,8 +5,8 @@ import { set } from "./set";
 describe("set()", () => {
   it("creates an array (only) for missing integer keys", () => {
     const object: any[] = [];
-    set(object, [1, "b", 3.7, 4], value);
-    expect(object).toEqual([, { b: { "3.7": [, , , , value] } }]);
+    set(object, [1, "b", 3.7, 4], 2);
+    expect(object).toEqual([, { b: { "3.7": [, , , , 2] } }]);
   });
 
   /** documented difference from lodash */

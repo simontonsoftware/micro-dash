@@ -4,7 +4,7 @@ import { stub } from "sinon";
 describe("omitBy()", () => {
   // lodash's test (and behavior) is the opposite
   it("does not treat sparse arrays as dense", () => {
-    let array = [1];
+    const array = [1];
     array[2] = 3;
     const logger = stub();
 

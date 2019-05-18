@@ -1,5 +1,6 @@
 /** @hidden */
 export interface ClassFor<T> {
+  // tslint:disable-next-line:callable-types
   new (...args: unknown[]): T;
 }
 

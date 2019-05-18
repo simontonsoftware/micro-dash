@@ -17,8 +17,8 @@ describe("kebabCase()", () => {
       "__foo_bar__",
     ];
 
-    for (const string of strings) {
-      expect(kebabCase(string)).toBe("foo-bar");
+    for (const str of strings) {
+      expect(kebabCase(str)).toBe("foo-bar");
     }
   });
 
@@ -34,8 +34,8 @@ describe("kebabCase()", () => {
       "__foo_bar__",
     ];
 
-    for (const string of strings) {
-      expect(kebabCase(kebabCase(string))).toBe("foo-bar");
+    for (const str of strings) {
+      expect(kebabCase(kebabCase(str))).toBe("foo-bar");
     }
   });
 

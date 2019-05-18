@@ -1,3 +1,4 @@
+import { expectSingleCallAndReset } from "s-ng-dev-utils";
 import { debounce } from "./debounce";
 import { fakeAsync, tick } from "@angular/core/testing";
 
@@ -57,18 +58,13 @@ describe("debounce()", () => {
   }));
 
   it("should invoke the call with the correct arguments", fakeAsync(() => {
-    let actual: any[] | undefined;
-    let callCount = 0;
     const object = {};
-    const debounced = debounce(function(...args: any[]) {
-      actual = args;
-      ++callCount;
-    }, 32);
+    const spy = jasmine.createSpy();
+    const debounced = debounce(spy, 32);
 
     debounced.call(object, "a");
     debounced.call(object, "b", 3);
     tick(64);
-    expect(callCount).toBe(1);
-    expect(actual).toEqual(["b", 3]);
+    expectSingleCallAndReset(spy, "b", 3);
   }));
 });

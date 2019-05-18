@@ -17,6 +17,7 @@ describe("isRegExp()", () => {
     expect(isRegExp(RegExp("x"))).toBe(true);
   });
 
+  // tslint:disable-next-line:only-arrow-functions
   it("should return `false` for non-regexes", function() {
     expect(isRegExp(null)).toBe(false);
     expect(isRegExp(undefined)).toBe(false);

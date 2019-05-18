@@ -38,7 +38,7 @@ describe("every()", () => {
   });
 
   it("should treat sparse arrays as dense", () => {
-    let array = [1];
+    const array = [1];
     array[2] = 3;
     const logger = stub().returns(true);
 

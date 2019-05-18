@@ -13,7 +13,7 @@ describe("partial()", () => {
   });
 
   it("sets the `length` property", () => {
-    const fn = function(a: any, b: any, c: any) {};
+    const fn = (a: any, b: any, c: any) => {};
 
     expect(partial(fn).length).toBe(3);
     expect(partial(fn, 1).length).toBe(2);
@@ -63,9 +63,7 @@ describe("partial()", () => {
   });
 
   it("creates a function that can be invoked with additional arguments", () => {
-    const fn = function(a: string, b: string) {
-      return [a, b];
-    };
+    const fn = (a: string, b: string) => [a, b];
 
     const par = partial(fn, "a");
 
@@ -73,6 +71,7 @@ describe("partial()", () => {
   });
 
   it("works when there are no partially applied arguments and the created function is invoked without additional arguments", () => {
+    // tslint:disable-next-line:only-arrow-functions
     const fn = function() {
       return arguments.length;
     };
@@ -113,9 +112,7 @@ describe("partial()", () => {
   });
 
   it("should work with curried functions", () => {
-    const fn = function(a: number, b: number, c: number) {
-      return a + b + c;
-    };
+    const fn = (a: number, b: number, c: number) => a + b + c;
     const curried = curry(partial(fn, 1), 2);
 
     expect(curried(2, 3)).toBe(6);

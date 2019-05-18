@@ -8,6 +8,7 @@ import { toLower } from "./to-lower";
  * - Lodash: 4,386 bytes
  * - Micro-dash: 237 bytes
  */
+// tslint:disable-next-line:variable-name
 export function kebabCase(string: string) {
   return words(string)
     .map(toLower)

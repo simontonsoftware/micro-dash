@@ -5,12 +5,8 @@ describe("isUndefined", () => {
     expect(isUndefined(undefined)).toBe(true);
   });
 
-  it("should return `false` for non `undefined` values", () => {
-    // tslint:disable-next-line:only-arrow-functions
-    const args = (function() {
-      return arguments;
-    })();
-
+  // tslint:disable-next-line:only-arrow-functions
+  it("should return `false` for non `undefined` values", function() {
     // falsey values
     expect(isUndefined(null)).toBe(false);
     expect(isUndefined(false)).toBe(false);
@@ -19,7 +15,7 @@ describe("isUndefined", () => {
     expect(isUndefined("")).toBe(false);
 
     // all the other things
-    expect(isUndefined(args)).toBe(false);
+    expect(isUndefined(arguments)).toBe(false);
     expect(isUndefined([1, 2, 3])).toBe(false);
     expect(isUndefined(true)).toBe(false);
     expect(isUndefined(new Date())).toBe(false);

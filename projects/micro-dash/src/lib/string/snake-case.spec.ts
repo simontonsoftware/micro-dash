@@ -17,14 +17,14 @@ describe("snakeCase()", () => {
   ];
 
   it("should convert `string` to snake case", () => {
-    for (const string of strings) {
-      expect(snakeCase(string)).toBe("foo_bar");
+    for (const str of strings) {
+      expect(snakeCase(str)).toBe("foo_bar");
     }
   });
 
   it("should handle double-converting strings", () => {
-    for (const string of strings) {
-      expect(snakeCase(snakeCase(string))).toBe("foo_bar");
+    for (const str of strings) {
+      expect(snakeCase(snakeCase(str))).toBe("foo_bar");
     }
   });
 

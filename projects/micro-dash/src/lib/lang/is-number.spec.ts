@@ -10,16 +10,13 @@ describe("isNumber()", () => {
     expect(isNumber(NaN)).toBe(true);
   });
 
-  it("should return `false` for non-numbers", () => {
-    const args = (function(..._: any[]) {
-      return arguments;
-    })(1, 2, 3);
-
+  // tslint:disable-next-line:only-arrow-functions
+  it("should return `false` for non-numbers", function() {
     expect(isNumber(null)).toBe(false);
     expect(isNumber(undefined)).toBe(false);
     expect(isNumber(false)).toBe(false);
     expect(isNumber("")).toBe(false);
-    expect(isNumber(args)).toBe(false);
+    expect(isNumber(arguments)).toBe(false);
     expect(isNumber([1, 2, 3])).toBe(false);
     expect(isNumber(true)).toBe(false);
     expect(isNumber(new Date())).toBe(false);

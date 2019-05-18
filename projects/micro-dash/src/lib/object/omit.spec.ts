@@ -5,20 +5,20 @@ describe("omit()", () => {
   // stolen from https://github.com/healthiers/mini-dash
   //
 
-  it("should omit single field", function() {
+  it("should omit single field", () => {
     expect(omit({ a: 1, b: 2, c: 3 }, "a")).toEqual({ b: 2, c: 3 });
   });
 
-  it("should omit multiple fields", function() {
+  it("should omit multiple fields", () => {
     expect(omit({ a: 1, b: 2, c: 3 }, "a", "c")).toEqual({ b: 2 });
   });
 
-  it("should omit all fields", function() {
+  it("should omit all fields", () => {
     expect(omit({ a: 1, b: 2, c: 3 }, "a", "b", "c")).toEqual({});
   });
 
-  it("should not mutate original object", function() {
-    let object = { a: 1, b: 2, c: 3 };
+  it("should not mutate original object", () => {
+    const object = { a: 1, b: 2, c: 3 };
     expect(omit(object, "a", "b")).toEqual({ c: 3 });
     expect(object).toEqual({ a: 1, b: 2, c: 3 });
   });
@@ -38,7 +38,7 @@ describe("omit()", () => {
   });
 
   it("should not mutate `object`", () => {
-    let object = { a: { b: 2 } };
+    const object = { a: { b: 2 } };
     omit(object, "a");
     expect(object).toEqual({ a: { b: 2 } });
   });

@@ -19,7 +19,6 @@ describe("find()", () => {
   //
 
   const objects = [{ a: 0, b: 0 }, { a: 1, b: 1 }, { a: 2, b: 2 }];
-  const array = [1, 2, 3];
 
   it("should return the found value", () => {
     expect(find(objects, (object) => !!object.a)).toBe(objects[1]);
@@ -59,11 +58,13 @@ describe("find()", () => {
   });
 
   it("should work with an array and a positive `fromIndex`", () => {
+    const array = [1, 2, 3];
     expect(find(array, (n) => n === 3, 2)).toBe(3);
     expect(find(array, (n) => n === 2, 2)).toBe(undefined);
   });
 
   it("should work with an array and a `fromIndex` >= `length`", () => {
+    const array = [1, 2, 3];
     for (const key of [1, undefined, ""]) {
       for (const fromIndex of [4, 6, 2 ** 32, Infinity]) {
         expect(find(array, (n) => Object.is(n, key), fromIndex)).toBe(
@@ -74,22 +75,26 @@ describe("find()", () => {
   });
 
   it("should work with an array and coerce `fromIndex` to an integer", () => {
+    const array = [1, 2, 3];
     expect(find(array, (n) => n === 1, 0.1)).toBe(1);
     expect(find(array, (n) => n === 1, NaN)).toBe(1);
   });
 
   it("should work with an array and a negative `fromIndex`", () => {
+    const array = [1, 2, 3];
     expect(find(array, (n) => n === 3, -1)).toBe(3);
     expect(find(array, (n) => n === 2, -1)).toBe(undefined);
   });
 
   it("should work with an array and a negative `fromIndex` <= `-length`", () => {
+    const array = [1, 2, 3];
     for (const fromIndex of [-4, -6, -Infinity]) {
       expect(find(array, (n) => n === 1, fromIndex)).toBe(1);
     }
   });
 
   it("should provide correct iteratee arguments", () => {
+    const array = [1, 2, 3];
     const logger = stub();
 
     find(array, logger);

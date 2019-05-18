@@ -7,7 +7,7 @@ let nextId = 1;
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 1,118 bytes
  * - Micro-dash: 54 bytes
- * */
+ */
 export function uniqueId(prefix = "") {
   return prefix + nextId++;
 }

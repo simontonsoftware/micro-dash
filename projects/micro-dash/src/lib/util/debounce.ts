@@ -15,7 +15,7 @@
  */
 export function debounce(func: Function, wait = 0) {
   let timeoutId: number;
-  return function(...args: unknown[]) {
+  return (...args: unknown[]) => {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(func, wait, ...args);
   };

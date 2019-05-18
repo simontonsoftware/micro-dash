@@ -28,7 +28,7 @@ describe("pick()", () => {
   });
 
   it("should not mutate original object", () => {
-    let object = { a: 1, b: 2, c: 3 };
+    const object = { a: 1, b: 2, c: 3 };
     pick(object, "a", "b");
     expect(object).toEqual({ a: 1, b: 2, c: 3 });
   });
@@ -57,7 +57,7 @@ describe("pick()", () => {
   });
 
   it("should work with an array `object`", () => {
-    let array = [1, 2, 3];
+    const array = [1, 2, 3];
     expect(pick(array, 1)).toEqual({ 1: 2 });
   });
 });

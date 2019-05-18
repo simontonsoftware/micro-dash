@@ -8,17 +8,10 @@ import { forEach } from "./for-each";
  * - Lodash: 14,723 bytes
  * - Micro-dash: 429 bytes
  */
-
 export function keyBy<T>(
-  array: T[] | undefined,
+  collection: T[] | ObjectWith<T> | undefined,
   iteratee: ValueIteratee<T, string>,
-): ObjectWith<T>;
-export function keyBy<T>(
-  object: ObjectWith<T> | undefined,
-  iteratee: ValueIteratee<T, string>,
-): ObjectWith<T>;
-
-export function keyBy<T>(collection: any, iteratee: any) {
+) {
   const obj: ObjectWith<T> = {};
   forEach(collection, (value: T) => {
     obj[iteratee(value)] = value;

@@ -8,6 +8,7 @@
  * - Lodash: 2,009 bytes
  * - Micro-dash: 47 bytes
  */
+// tslint:disable-next-line:variable-name
 export function upperFirst(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }

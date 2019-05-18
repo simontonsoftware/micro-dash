@@ -6,16 +6,16 @@ describe("pull()", () => {
   //
 
   it("should modify and return the array", () => {
-    let argument = [1, 2, 3];
+    const argument = [1, 2, 3];
 
-    let returned = pull(argument, 1, 3);
+    const returned = pull(argument, 1, 3);
 
     expect(returned).toBe(argument);
     expect(returned).toEqual([2]);
   });
 
   it("should preserve holes in arrays", () => {
-    let array = [1, 2, 3, 4];
+    const array = [1, 2, 3, 4];
     delete array[1];
     delete array[3];
 
@@ -27,7 +27,7 @@ describe("pull()", () => {
   });
 
   it("should treat holes as `undefined`", () => {
-    let array = [1, 2, 3];
+    const array = [1, 2, 3];
     delete array[1];
 
     pull(array, undefined);
@@ -36,7 +36,7 @@ describe("pull()", () => {
   });
 
   it("should match `NaN`", () => {
-    let array = [1, NaN, 3, NaN];
+    const array = [1, NaN, 3, NaN];
 
     pull(array, NaN);
 

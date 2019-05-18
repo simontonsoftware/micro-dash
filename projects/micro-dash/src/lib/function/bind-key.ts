@@ -9,7 +9,7 @@ import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from "../interfaces";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 9,417 bytes
- * - Micro-dash: 156 bytes
+ * - Micro-dash: 178 bytes
  */
 
 export function bindKey<
@@ -58,7 +58,5 @@ export function bindKey<
 ): (...args: any[]) => ReturnType<T[K]>;
 
 export function bindKey(object: any, key: any, ...partials: any[]) {
-  return function() {
-    return object[key](...partials, ...Array.prototype.slice.call(arguments));
-  };
+  return (...args: any[]) => object[key](...partials, ...args);
 }

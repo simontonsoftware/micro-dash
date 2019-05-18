@@ -10,17 +10,14 @@ describe("isBoolean()", () => {
     expect(isBoolean(false)).toBe(true);
   });
 
-  it("should return `false` for non-booleans", () => {
-    const args = (function(..._: any[]) {
-      return arguments;
-    })(1, 2, 3);
-
+  // tslint:disable-next-line:only-arrow-functions
+  it("should return `false` for non-booleans", function() {
     expect(isBoolean(null)).toBe(false);
     expect(isBoolean(undefined)).toBe(false);
     expect(isBoolean(0)).toBe(false);
     expect(isBoolean(NaN)).toBe(false);
     expect(isBoolean("")).toBe(false);
-    expect(isBoolean(args)).toBe(false);
+    expect(isBoolean(arguments)).toBe(false);
     expect(isBoolean([1, 2, 3])).toBe(false);
     expect(isBoolean(new Date())).toBe(false);
     expect(isBoolean(new Error())).toBe(false);

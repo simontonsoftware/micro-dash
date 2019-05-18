@@ -8,6 +8,7 @@ import { words } from "./words";
  * - Lodash: 4,407 bytes
  * - Micro-dash: 237 bytes
  */
+// tslint:disable-next-line:variable-name
 export function snakeCase(string: string) {
   return words(string)
     .map(toLower)

@@ -8,9 +8,7 @@ describe("once()", () => {
   it("should invoke `func` once", () => {
     let count = 0;
 
-    const oncedFn = once(function() {
-      return ++count;
-    });
+    const oncedFn = once(() => ++count);
     oncedFn();
     expect(oncedFn()).toBe(1);
     expect(count).toBe(1);
@@ -19,7 +17,7 @@ describe("once()", () => {
   it("should ignore recursive calls", () => {
     let count = 0;
 
-    const oncedFn = once(function() {
+    const oncedFn = once(() => {
       oncedFn();
       return ++count;
     });
@@ -28,9 +26,7 @@ describe("once()", () => {
   });
 
   it("should not throw more than once", () => {
-    const oncedFn = once(function() {
-      throw new Error();
-    });
+    const oncedFn = once(() => new Error());
 
     expect(oncedFn).toThrowError();
     expect(oncedFn).not.toThrowError();

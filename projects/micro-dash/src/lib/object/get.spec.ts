@@ -1,5 +1,21 @@
 import { get } from "./get";
 
+class Wrap1 {
+  value?: number;
+}
+
+class Wrap2 {
+  wrap1 = new Wrap1();
+}
+
+class Wrap3 {
+  wrap2 = new Wrap2();
+}
+
+class Wrap4 {
+  wrap3 = new Wrap3();
+}
+
 describe("get()", () => {
   it("should know that `get` cannot return `undefined` when a default value is given", () => {
     let result: number;
@@ -91,19 +107,3 @@ describe("get()", () => {
     expect(get({}, [], "a")).toBe("a");
   });
 });
-
-class Wrap1 {
-  value?: number;
-}
-
-class Wrap2 {
-  wrap1 = new Wrap1();
-}
-
-class Wrap3 {
-  wrap2 = new Wrap2();
-}
-
-class Wrap4 {
-  wrap3 = new Wrap3();
-}

@@ -33,6 +33,7 @@ describe("isFunction()", () => {
     expect(isFunction(DataView)).toBe(true);
   });
 
+  // tslint:disable-next-line:only-arrow-functions
   it("should return `false` for non-functions", function() {
     expect(isFunction(undefined)).toBe(false);
     expect(isFunction(null)).toBe(false);

@@ -17,27 +17,27 @@ describe("isNil()", () => {
     const maybeUndefined: string | undefined = "b";
     const maybeBoth: string | Nil = "c";
 
-    let string: string;
+    let str: string;
 
     if (isNil(maybeNull)) {
       throw new Error("fail");
     } else {
-      string = maybeNull;
+      str = maybeNull;
     }
-    expect(string).toBe("a");
+    expect(str).toBe("a");
 
     if (isNil(maybeUndefined)) {
       throw new Error("fail");
     } else {
-      string = maybeUndefined;
+      str = maybeUndefined;
     }
-    expect(string).toBe("b");
+    expect(str).toBe("b");
 
     if (isNil(maybeBoth)) {
       throw new Error("fail");
     } else {
-      string = maybeBoth;
+      str = maybeBoth;
     }
-    expect(string).toBe("c");
+    expect(str).toBe("c");
   });
 });

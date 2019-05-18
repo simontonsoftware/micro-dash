@@ -137,7 +137,7 @@ describe("isEqual()", () => {
   it("is `false` for objects with custom `toString` methods", () => {
     let primitive: any;
     const object = {
-      toString: function() {
+      toString() {
         return primitive;
       },
     };

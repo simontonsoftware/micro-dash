@@ -7,14 +7,14 @@ describe("memoize()", () => {
   //
 
   it("should memoize results based on the first argument given", () => {
-    let memoized = memoize((a: number, b: number, c: number) => a + b + c);
+    const memoized = memoize((a: number, b: number, c: number) => a + b + c);
 
     expect(memoized(1, 2, 3)).toBe(6);
     expect(memoized(1, 3, 5)).toBe(6);
   });
 
   it("should support a `resolver`", () => {
-    let fn = (a: number, b: number, c: number) => a + b + c;
+    const fn = (a: number, b: number, c: number) => a + b + c;
 
     const memoized = memoize(fn, fn);
 
@@ -29,7 +29,7 @@ describe("memoize()", () => {
 
     const memoized = memoize(fn, fn);
 
-    let object = { memoized: memoized, b: 2, c: 3 };
+    const object = { memoized, b: 2, c: 3 };
     expect(object.memoized(1)).toBe(6);
 
     object.b = 3;
@@ -54,7 +54,7 @@ describe("memoize()", () => {
       "valueOf",
     ];
 
-    let memoized = memoize(identity);
+    const memoized = memoize(identity);
 
     for (const value of props) {
       expect(memoized(value)).toBe(value);
@@ -62,8 +62,8 @@ describe("memoize()", () => {
   });
 
   it("should cache the `__proto__` key", () => {
-    let array: any[] = [];
-    let key = "__proto__";
+    const array: any[] = [];
+    const key = "__proto__";
     let count = 0;
 
     function func(_arg: any) {

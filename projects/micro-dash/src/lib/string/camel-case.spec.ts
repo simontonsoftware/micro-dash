@@ -17,8 +17,8 @@ describe("camelCase()", () => {
       "__foo_bar__",
     ];
 
-    for (const string of strings) {
-      expect(camelCase(string)).toBe("fooBar");
+    for (const str of strings) {
+      expect(camelCase(str)).toBe("fooBar");
     }
   });
 
@@ -34,8 +34,8 @@ describe("camelCase()", () => {
       "__foo_bar__",
     ];
 
-    for (const string of strings) {
-      expect(camelCase(camelCase(string))).toBe("fooBar");
+    for (const str of strings) {
+      expect(camelCase(camelCase(str))).toBe("fooBar");
     }
   });
 

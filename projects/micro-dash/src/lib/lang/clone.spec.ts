@@ -1,20 +1,20 @@
 import { clone } from "./clone";
 import { forOwn, isObject } from "lodash";
 
-describe("clone()", function() {
+describe("clone()", () => {
   //
   // stolen from https://github.com/healthiers/mini-dash
   //
 
-  it("should return an empty object if empty given", function() {
+  it("should return an empty object if empty given", () => {
     expect(clone({})).toEqual({});
   });
 
-  it("should return an object with the same properties", function() {
+  it("should return an object with the same properties", () => {
     expect(clone({ a: 1, b: 2, c: 3 })).toEqual({ a: 1, b: 2, c: 3 });
   });
 
-  it("should return an object with nested properties", function() {
+  it("should return an object with nested properties", () => {
     expect(clone({ a: 1, b: { foo: "bar" }, c: { bar: "foo" } })).toEqual({
       a: 1,
       b: { foo: "bar" },
@@ -22,17 +22,17 @@ describe("clone()", function() {
     });
   });
 
-  it("should not mutate the original object", function() {
-    let object = { a: 1, b: 2, c: 3 };
-    let result = clone(object);
+  it("should not mutate the original object", () => {
+    const object = { a: 1, b: 2, c: 3 };
+    const result = clone(object);
 
     expect(result).toEqual(object);
     expect(result).not.toBe(object);
   });
 
-  it("should shallow clone", function() {
-    let object = { a: 1, b: { foo: "bar" }, c: { bar: "foo" } };
-    let result = clone(object);
+  it("should shallow clone", () => {
+    const object = { a: 1, b: { foo: "bar" }, c: { bar: "foo" } };
+    const result = clone(object);
 
     expect(result).toEqual(object);
     expect(result).not.toBe(object);
