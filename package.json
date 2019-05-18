@@ -58,7 +58,7 @@
     "rollup-plugin-node-resolve": "^4.2.4",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^6.0.2",
-    "s-ng-dev-utils": "^0.4.0",
+    "s-ng-dev-utils": "^0.6.0",
     "sinon": "^7.3.2",
     "source-map-explorer": "^1.8.0",
     "standard-version": "^6.0.1",

@@ -46,7 +46,7 @@ describe("omitBy()", () => {
 
   it("should create an object with omitted string keyed properties", () => {
     const object = { a: 1, b: 2, c: 3, d: 4 };
-    expect(omitBy(object, (item, key) => key === "a")).toEqual({
+    expect(omitBy(object, (_item, key) => key === "a")).toEqual({
       b: 2,
       c: 3,
       d: 4,

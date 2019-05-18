@@ -1,3 +1,4 @@
+import { expectType } from "s-ng-dev-utils";
 import { get } from "./get";
 
 class Wrap1 {
@@ -18,11 +19,12 @@ class Wrap4 {
 
 describe("get()", () => {
   it("should know that `get` cannot return `undefined` when a default value is given", () => {
-    let result: number;
-    result = get(new Wrap1(), ["value"], 1);
-    result = get(new Wrap2(), ["wrap1", "value"], 1);
-    result = get(new Wrap3(), ["wrap2", "wrap1", "value"], 1);
-    result = get(new Wrap4(), ["wrap3", "wrap2", "wrap1", "value"], 1);
+    expectType<number>(get(new Wrap1(), ["value"], 1));
+    expectType<number>(get(new Wrap2(), ["wrap1", "value"], 1));
+    expectType<number>(get(new Wrap3(), ["wrap2", "wrap1", "value"], 1));
+    expectType<number>(
+      get(new Wrap4(), ["wrap3", "wrap2", "wrap1", "value"], 1),
+    );
   });
 
   //

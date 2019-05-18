@@ -54,11 +54,11 @@ describe("pickBy()", () => {
   it("should create an object of picked string keyed properties", () => {
     const object = { a: 1, b: 2, c: 3, d: 4 };
 
-    expect(pickBy(object, (item, key) => key === "a")).toEqual({ a: 1 });
+    expect(pickBy(object, (_item, key) => key === "a")).toEqual({ a: 1 });
   });
 
   it("should work with an array `object`", () => {
     const array = [1, 2, 3];
-    expect(pickBy(array, (item, key) => key === "1")).toEqual({ 1: 2 });
+    expect(pickBy(array, (_item, key) => key === "1")).toEqual({ 1: 2 });
   });
 });

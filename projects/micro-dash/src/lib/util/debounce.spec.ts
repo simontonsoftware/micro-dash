@@ -1,5 +1,5 @@
 import { fakeAsync, tick } from "@angular/core/testing";
-import { expectSingleCallAndReset } from "s-ng-dev-utils";
+import { expectSingleCallAndReset, expectType } from "s-ng-dev-utils";
 import { debounce } from "./debounce";
 
 describe("debounce()", () => {
@@ -15,10 +15,9 @@ describe("debounce()", () => {
   }));
 
   it("has fancy typing", () => {
-    const debounced = debounce((s: string, n: number) => "hi");
-    const plastic: unknown = 0;
-    const params: [string, number] = plastic as Parameters<typeof debounced>;
-    const ret: void = plastic as ReturnType<typeof debounced>;
+    const debounced = debounce((_s: string, _n: number) => "hi");
+    expectType<[string, number], Parameters<typeof debounced>>();
+    expectType<void, ReturnType<typeof debounced>>();
   });
 
   //

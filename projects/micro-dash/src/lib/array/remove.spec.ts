@@ -56,7 +56,7 @@ describe("remove()", () => {
   it("should pass original indexes to `predicate`", () => {
     const array = [1, 2, 3];
 
-    remove(array, (n, index) => isEven(index));
+    remove(array, (_n, index) => isEven(index));
 
     expect(array).toEqual([2]);
   });

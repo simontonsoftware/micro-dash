@@ -1,11 +1,11 @@
+import { expectType } from "s-ng-dev-utils";
 import { once } from "./once";
 
 describe("once()", () => {
   it("has fancy typing", () => {
-    const a: any = 0;
-    const fn = once((a1: number, a2: string) => new Date());
-    const args: [number, string] = a as Parameters<typeof fn>;
-    const ret: Date = a as ReturnType<typeof fn>;
+    const fn = once((_a1: number, _a2: string) => new Date());
+    expectType<[number, string], Parameters<typeof fn>>();
+    expectType<Date, ReturnType<typeof fn>>();
   });
 
   //

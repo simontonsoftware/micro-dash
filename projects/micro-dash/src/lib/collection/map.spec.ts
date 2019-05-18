@@ -39,7 +39,7 @@ describe("forEach()", () => {
     const object = { a: 1 };
     const logger = stub();
 
-    const result = map(object, logger);
+    map(object, logger);
 
     expect(logger.args).toEqual([[1, "a"]]);
   });

@@ -1,50 +1,46 @@
-import { expectSingleCallAndReset } from "s-ng-dev-utils";
+import { expectSingleCallAndReset, expectType } from "s-ng-dev-utils";
 import { bindKey } from "./bind-key";
 
 describe("bindKey()", () => {
   it("has super fancy typing", () => {
     const obj0 = { fn: () => "hi" };
-    const b00: () => string = bindKey(obj0, "fn");
+    expectType<() => string>(bindKey(obj0, "fn"));
 
     const obj1 = { fn: (str: string) => Number(str) };
-    const b10: (a: string) => number = bindKey(obj1, "fn");
-    const b11: () => number = bindKey(obj1, "fn", "1");
+    expectType<(a: string) => number>(bindKey(obj1, "fn"));
+    expectType<() => number>(bindKey(obj1, "fn", "1"));
 
     const obj2 = { fn: (a: number, b: string) => a + b };
-    const b20: (a: number, b: string) => string = bindKey(obj2, "fn");
-    const b21: (b: string) => string = bindKey(obj2, "fn", 1);
-    const b22: (b: string) => string = bindKey(obj2, "fn", 1, "2");
+    expectType<(a: number, b: string) => string>(bindKey(obj2, "fn"));
+    expectType<(b: string) => string>(bindKey(obj2, "fn", 1));
+    expectType<(b: string) => string>(bindKey(obj2, "fn", 1, "2"));
 
     const obj3 = { fn: (a: number, b: number, c: string) => a + b + c };
-    const b30: (a: number, b: number, c: string) => string = bindKey(
-      obj3,
-      "fn",
+    expectType<(a: number, b: number, c: string) => string>(
+      bindKey(obj3, "fn"),
     );
-    const b31: (b: number, c: string) => string = bindKey(obj3, "fn", 1);
-    const b32: (c: string) => string = bindKey(obj3, "fn", 1, 2);
-    const b33: () => string = bindKey(obj3, "fn", 1, 2, "3");
+    expectType<(b: number, c: string) => string>(bindKey(obj3, "fn", 1));
+    expectType<(c: string) => string>(bindKey(obj3, "fn", 1, 2));
+    expectType<() => string>(bindKey(obj3, "fn", 1, 2, "3"));
 
     const obj4 = {
       fn: (a: number, b: number, c: number, d: string) => a + b + c + d,
     };
-    const b40: (a: number, b: number, c: number, d: string) => string = bindKey(
-      obj4,
-      "fn",
+    expectType<(a: number, b: number, c: number, d: string) => string>(
+      bindKey(obj4, "fn"),
     );
-    const b41: (b: number, c: number, d: string) => string = bindKey(
-      obj4,
-      "fn",
-      1,
+    expectType<(b: number, c: number, d: string) => string>(
+      bindKey(obj4, "fn", 1),
     );
-    const b42: (c: number, d: string) => string = bindKey(obj4, "fn", 1, 2);
-    const b43: (d: string) => string = bindKey(obj4, "fn", 1, 2, 3);
-    const b44: () => string = bindKey(obj4, "fn", 1, 2, 3, "4");
+    expectType<(c: number, d: string) => string>(bindKey(obj4, "fn", 1, 2));
+    expectType<(d: string) => string>(bindKey(obj4, "fn", 1, 2, 3));
+    expectType<() => string>(bindKey(obj4, "fn", 1, 2, 3, "4"));
 
     const obj5 = {
       fn: (a: number, b: number, c: number, d: number, e: string) =>
         a + b + c + d + e,
     };
-    const b55: () => string = bindKey(obj5, "fn", 1, 2, 3, 4, "5");
+    expectType<() => string>(bindKey(obj5, "fn", 1, 2, 3, 4, "5"));
   });
 
   //
@@ -98,7 +94,7 @@ describe("bindKey()", () => {
   });
 
   it("should create a function with a `length` of `0`", () => {
-    const obj = { fn(a: any, b: any, c: any) {} };
+    const obj = { fn(_a: any, _b: any, _c: any) {} };
     expect(bindKey(obj, "fn").length).toBe(0);
     expect(bindKey(obj, "fn", 1).length).toBe(0);
   });

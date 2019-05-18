@@ -1,4 +1,7 @@
 {
+  //
+  // from the Angular CLI
+  //
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
@@ -19,6 +22,14 @@
       "sizes": ["dist/sizes"],
       "sizes/*": ["dist/sizes/*"]
     },
+
+    //
+    // Simonton Software additions
+    //
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "strict": true
   }
 }

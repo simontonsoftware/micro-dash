@@ -18,7 +18,7 @@ export function forEachRight<T>(
   iteratee: ObjectIteratee<T, void | boolean>,
 ): T;
 
-export function forEachRight<T>(collection: any, iteratee: any) {
+export function forEachRight(collection: any, iteratee: any) {
   if (Array.isArray(collection)) {
     for (let i = collection.length; --i >= 0; ) {
       if (iteratee(collection[i], i) === false) {

@@ -8,7 +8,7 @@ describe("curry()", () => {
   //
 
   it("should curry based on the number of arguments given", () => {
-    function fn(a: number, b: number, c: number, d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -20,7 +20,7 @@ describe("curry()", () => {
   });
 
   it("should allow specifying `arity`", () => {
-    function fn(a: number, b: number, c: number, d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -32,7 +32,7 @@ describe("curry()", () => {
   });
 
   it("should provide additional arguments after reaching arity", () => {
-    function fn(a: number, b: number, c: number, d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -44,7 +44,7 @@ describe("curry()", () => {
   });
 
   it("should create a function with a `length` of `0`", () => {
-    function fn(a: number, b: number, c: number, d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
 

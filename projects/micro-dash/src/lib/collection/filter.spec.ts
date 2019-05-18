@@ -5,8 +5,8 @@ import { filter } from "./filter";
 describe("filter()", () => {
   it("works for objects", () => {
     const object = { a: 1, b: 2, c: 3 };
-    expect(filter(object, (item, key) => item === 2)).toEqual([2]);
-    expect(filter(object, (item, key) => key === "b")).toEqual([2]);
+    expect(filter(object, (item) => item === 2)).toEqual([2]);
+    expect(filter(object, (_item, key) => key === "b")).toEqual([2]);
   });
 
   it("fancily narrows types", () => {
