@@ -1,19 +1,17 @@
+import { fakeAsync, tick } from "@angular/core/testing";
 import { expectSingleCallAndReset } from "s-ng-dev-utils";
 import { debounce } from "./debounce";
-import { fakeAsync, tick } from "@angular/core/testing";
 
 describe("debounce()", () => {
   it("defaults `wait` to 0", fakeAsync(() => {
-    let callCount = 0;
-    const debounced = debounce(() => {
-      ++callCount;
-    });
+    const spy = jasmine.createSpy();
+    const debounced = debounce(spy);
 
     debounced();
-    expect(callCount).toBe(0);
+    expect(spy).not.toHaveBeenCalled();
 
     tick(0);
-    expect(callCount).toBe(1);
+    expectSingleCallAndReset(spy);
   }));
 
   it("has fancy typing", () => {
@@ -28,40 +26,36 @@ describe("debounce()", () => {
   //
 
   it("should debounce a function", fakeAsync(() => {
-    let callCount = 0;
-    const debounced = debounce(() => {
-      ++callCount;
-    }, 32);
+    const spy = jasmine.createSpy();
+    const debounced = debounce(spy, 32);
 
     debounced();
     debounced();
     debounced();
-    expect(callCount).toBe(0);
+    expect(spy).not.toHaveBeenCalled();
 
     tick(128);
-    expect(callCount).toBe(1);
+    expectSingleCallAndReset(spy);
 
     debounced();
     debounced();
     debounced();
-    expect(callCount).toBe(1);
+    expect(spy).not.toHaveBeenCalled();
 
     tick(256);
-    expect(callCount).toBe(2);
+    expectSingleCallAndReset(spy);
   }));
 
   it("should not immediately call `func` when `wait` is `0`", fakeAsync(() => {
-    let callCount = 0;
-    const debounced = debounce(() => {
-      ++callCount;
-    }, 0);
+    const spy = jasmine.createSpy();
+    const debounced = debounce(spy, 0);
 
     debounced();
     debounced();
-    expect(callCount).toBe(0);
+    expect(spy).not.toHaveBeenCalled();
 
     tick(5);
-    expect(callCount).toBe(1);
+    expectSingleCallAndReset(spy);
   }));
 
   it("should invoke the call with the correct arguments", fakeAsync(() => {

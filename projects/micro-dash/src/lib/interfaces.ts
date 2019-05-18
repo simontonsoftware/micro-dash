@@ -1,3 +1,5 @@
+// TODO: Unpublish these interfaces
+
 /** @hidden */
 export interface ClassFor<T> {
   // tslint:disable-next-line:callable-types
