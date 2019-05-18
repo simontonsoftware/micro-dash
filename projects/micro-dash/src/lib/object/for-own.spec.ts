@@ -1,6 +1,6 @@
-import { forOwn } from "./for-own";
-import { stub } from "sinon";
 import { noop } from "lodash";
+import { stub } from "sinon";
+import { forOwn } from "./for-own";
 
 describe("forOwn()", () => {
   // lodash's test (and behavior) is the opposite

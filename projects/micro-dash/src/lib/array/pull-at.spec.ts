@@ -1,4 +1,3 @@
-import { reject } from "lodash-es";
 import { pullAt } from "./pull-at";
 
 function expectToEq(x: any, y: any) {

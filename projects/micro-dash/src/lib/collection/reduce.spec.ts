@@ -1,6 +1,6 @@
 import { identity } from "lodash";
-import { reduce } from "./reduce";
 import { stub } from "sinon";
+import { reduce } from "./reduce";
 
 describe("reduce()", () => {
   it("works with `undefined`", () => {

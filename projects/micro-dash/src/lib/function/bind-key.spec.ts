@@ -1,4 +1,4 @@
-import { expectSingleCallAndReset } from "s-ng-test-utils";
+import { expectSingleCallAndReset } from "s-ng-dev-utils";
 import { bindKey } from "./bind-key";
 
 describe("bindKey()", () => {

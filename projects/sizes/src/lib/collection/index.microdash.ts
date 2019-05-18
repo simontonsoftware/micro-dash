@@ -1,11 +1,11 @@
 import "./every.microdash";
-import "./find.microdash";
 import "./filter.microdash";
-import "./for-each.microdash";
+import "./find.microdash";
 import "./for-each-right.microdash";
+import "./for-each.microdash";
 import "./includes.microdash";
 import "./key-by.microdash";
 import "./map.microdash";
-import "./reduce.microdash";
 import "./reduce-right.microdash";
+import "./reduce.microdash";
 import "./sort-by.microdash";

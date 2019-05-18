@@ -1,5 +1,5 @@
+import { curry, head, identity } from "lodash";
 import { flowRight } from "./flow-right";
-import { curry, head, identity, Function1 } from "lodash";
 
 describe("flowRight()", () => {
   //

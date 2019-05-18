@@ -1,7 +1,7 @@
 import "./constant.lodash";
 import "./debounce.lodash";
-import "./flow.lodash";
 import "./flow-right.lodash";
+import "./flow.lodash";
 import "./identity.lodash";
 import "./matches.lodash";
 import "./noop.lodash";

@@ -1,5 +1,5 @@
-import { mapValues } from "./map-values";
 import { stub } from "sinon";
+import { mapValues } from "./map-values";
 
 describe("mapValues()", () => {
   it("works for null & undefined", () => {

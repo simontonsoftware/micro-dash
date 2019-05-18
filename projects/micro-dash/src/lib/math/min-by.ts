@@ -1,5 +1,6 @@
+import { Existant, Primitive } from "s-ng-dev-utils";
 import { forEach } from "../collection/for-each";
-import { Existant, Primitive, ValueIteratee } from "../interfaces";
+import { ValueIteratee } from "../interfaces";
 
 /**
  * This method is like `min` except that it accepts `iteratee` which is invoked for each element in `array` to generate the criterion by which the value is ranked.

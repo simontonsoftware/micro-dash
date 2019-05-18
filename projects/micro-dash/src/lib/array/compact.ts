@@ -1,4 +1,4 @@
-import { Falsey } from "../interfaces";
+import { Falsey } from "s-ng-dev-utils";
 import { identity } from "../util/identity";
 
 /**

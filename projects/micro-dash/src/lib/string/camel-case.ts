@@ -1,5 +1,5 @@
-import { words } from "./words";
 import { capitalize } from "./capitalize";
+import { words } from "./words";
 
 /**
  * Converts `string` to camel case.

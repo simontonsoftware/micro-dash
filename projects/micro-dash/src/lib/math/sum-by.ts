@@ -1,4 +1,4 @@
-import { Function1 } from "../interfaces";
+import { Function1 } from "s-ng-dev-utils";
 
 /**
  * This method is like `sum` except that it accepts `iteratee` which is invoked for each element in `array` to generate the value to be summed. The iteratee is invoked with one argument: (value).

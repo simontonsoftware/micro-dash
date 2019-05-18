@@ -1,5 +1,5 @@
-import { words } from "./words";
 import { mapValues } from "../object/map-values";
+import { words } from "./words";
 
 describe("words()", () => {
   //

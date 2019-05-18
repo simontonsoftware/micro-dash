@@ -6558,10 +6558,10 @@ rxjs@^6.0.0, rxjs@^6.4.0:
   dependencies:
     tslib "^1.9.0"
 
-s-ng-dev-utils@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/s-ng-dev-utils/-/s-ng-dev-utils-0.3.0.tgz#a6947f4a0f17e003b3f1f3ac82c1e8d7384f9c99"
-  integrity sha512-J+8rVqtr81MnO9PLv1wJQTrnp7LaG2Ii6wXZcUn5OpmEeD3EwEHyOxttggXL1+UYg/r9udoKoqFwjP0rtLmkOg==
+s-ng-dev-utils@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/s-ng-dev-utils/-/s-ng-dev-utils-0.4.0.tgz#f924a2f4c96eab507d3237cc07f811cd3c8b1d9b"
+  integrity sha512-KvUbkz2tTsbqNKEwDVGUMiDEAI57m82KRytjp0cl8RurYcaGvG44rIADdqcF/LUd5WFuog8KcjATjaT/5JWrrA==
   dependencies:
     tslib "^1.9.0"
     tslint-config-prettier "^1.18.0"

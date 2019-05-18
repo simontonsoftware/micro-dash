@@ -1,6 +1,6 @@
 import { stub } from "sinon";
-import { map } from "./map";
 import { identity } from "../util/identity";
+import { map } from "./map";
 
 describe("forEach()", () => {
   //

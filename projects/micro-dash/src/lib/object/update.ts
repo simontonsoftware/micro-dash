@@ -1,4 +1,4 @@
-import { Function1 } from "../interfaces";
+import { Function1 } from "s-ng-dev-utils";
 
 /**
  * This method is like `set()` except that it accepts `updater` to produce the value to set.

@@ -1,5 +1,5 @@
-import { omitBy } from "./omit-by";
 import { stub } from "sinon";
+import { omitBy } from "./omit-by";
 
 describe("omitBy()", () => {
   // lodash's test (and behavior) is the opposite

@@ -1,4 +1,4 @@
-import { Transformer } from "../interfaces";
+import { Transformer } from "s-ng-dev-utils";
 import { identity } from "./identity";
 
 /**

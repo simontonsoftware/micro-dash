@@ -1,6 +1,6 @@
-import { minBy } from "./min-by";
-import { stub } from "sinon";
 import { identity, range } from "lodash";
+import { stub } from "sinon";
+import { minBy } from "./min-by";
 
 describe("minBy()", () => {
   //

@@ -1,6 +1,6 @@
-import { forEachRight } from "./for-each-right";
-import { stub } from "sinon";
 import { noop } from "lodash";
+import { stub } from "sinon";
+import { forEachRight } from "./for-each-right";
 
 describe("forEachRight()", () => {
   it("works for null & undefined", () => {

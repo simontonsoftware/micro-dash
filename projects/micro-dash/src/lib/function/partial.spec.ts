@@ -1,6 +1,6 @@
 import { identity } from "lodash";
-import { partial } from "./partial";
 import { curry } from "./curry";
+import { partial } from "./partial";
 
 describe("partial()", () => {
   it("does not alter the `this` binding", () => {

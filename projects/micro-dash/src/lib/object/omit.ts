@@ -1,4 +1,4 @@
-import { Nil } from "../interfaces";
+import { Nil } from "s-ng-dev-utils";
 import { clone } from "../lang/clone";
 
 /**

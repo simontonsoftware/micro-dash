@@ -1,9 +1,5 @@
-import {
-  NarrowingObjectIteratee,
-  Nil,
-  NumberKeyedObject,
-  ObjectIteratee,
-} from "../interfaces";
+import { Nil, NumberKeyedObject } from "s-ng-dev-utils";
+import { NarrowingObjectIteratee, ObjectIteratee } from "../interfaces";
 import { forOwn } from "./for-own";
 
 /**

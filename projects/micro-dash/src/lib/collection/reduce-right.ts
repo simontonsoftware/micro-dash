@@ -1,4 +1,4 @@
-import { ObjectWith } from "../interfaces";
+import { ObjectWith } from "s-ng-dev-utils";
 import { forEachRight } from "./for-each-right";
 import { doReduce } from "./reduce-utils";
 

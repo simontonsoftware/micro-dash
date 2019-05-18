@@ -1,6 +1,6 @@
-import { forOwnRight } from "./for-own-right";
-import { stub } from "sinon";
 import { noop } from "lodash";
+import { stub } from "sinon";
+import { forOwnRight } from "./for-own-right";
 
 describe("forOwnRight()", () => {
   //

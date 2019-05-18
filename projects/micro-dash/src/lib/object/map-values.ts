@@ -1,4 +1,5 @@
-import { ObjectIteratee, ObjectWith } from "../interfaces";
+import { ObjectWith } from "s-ng-dev-utils";
+import { ObjectIteratee } from "../interfaces";
 import { forOwn } from "./for-own";
 
 /**

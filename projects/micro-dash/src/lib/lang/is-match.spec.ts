@@ -1,5 +1,5 @@
+import { Falsey, ObjectWith } from "s-ng-dev-utils";
 import { isMatch } from "./is-match";
-import { Falsey, ObjectWith } from "../interfaces";
 
 describe("isMatch()", () => {
   // hits some code coverage missed by the lodash tests

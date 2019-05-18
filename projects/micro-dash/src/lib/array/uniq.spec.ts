@@ -1,5 +1,3 @@
-import * as assert from "assert";
-import { times } from "lodash-es";
 import { map } from "../collection/map";
 import { uniq } from "./uniq";
 

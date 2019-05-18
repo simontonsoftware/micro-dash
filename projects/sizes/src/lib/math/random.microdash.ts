@@ -1,4 +1,5 @@
 import { random } from "micro-dash";
+
 console.log(
   random(),
   random(true),

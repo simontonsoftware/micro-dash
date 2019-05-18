@@ -1,5 +1,5 @@
-import { cloneDeep } from "./clone-deep";
 import { forOwn, isObject } from "lodash";
+import { cloneDeep } from "./clone-deep";
 
 describe("cloneDeep()", () => {
   it("clones deeply", () => {

@@ -1,5 +1,5 @@
-import { clone } from "./clone";
 import { forOwn, isObject } from "lodash";
+import { clone } from "./clone";
 
 describe("clone()", () => {
   //

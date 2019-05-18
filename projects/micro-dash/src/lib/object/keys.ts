@@ -1,4 +1,4 @@
-import { NumberKeyedObject } from "../interfaces";
+import { NumberKeyedObject } from "s-ng-dev-utils";
 
 /**
  * Creates an array of the own enumerable property names of object.

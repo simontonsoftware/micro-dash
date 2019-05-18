@@ -1,6 +1,6 @@
-import { curry } from "./curry";
 import { bind } from "lodash";
-import { ObjectWith } from "../interfaces";
+import { ObjectWith } from "s-ng-dev-utils";
+import { curry } from "./curry";
 
 describe("curry()", () => {
   //

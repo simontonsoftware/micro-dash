@@ -1,4 +1,4 @@
-import { find, identity, isFunction, noop } from "lodash";
+import { identity, isFunction, noop } from "lodash";
 import { memoize } from "./memoize";
 
 describe("memoize()", () => {

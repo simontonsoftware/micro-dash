@@ -1,4 +1,4 @@
-import { ArrayIteratee, ObjectIteratee, ObjectWith } from "../interfaces";
+import { ArrayIteratee, ObjectIteratee } from "../interfaces";
 import { forEach } from "./for-each";
 
 /**
