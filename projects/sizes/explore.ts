@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as glob from "glob";
 import * as path from "path";
 import * as readline from "readline";
-import { rollup, RollupFileOptions } from "rollup";
+import { rollup, RollupOptions } from "rollup";
 import { forEach } from "../micro-dash/src/lib/collection/for-each";
 import { ObjectWith } from "../micro-dash/src/lib/interfaces";
 
@@ -13,14 +13,21 @@ const nodeResolve = require("rollup-plugin-node-resolve");
 const sourceMapExplorer = require("source-map-explorer");
 
 const projectRootDir = path.join(__dirname, "..", "..");
+const sourcDir = path.join(
+  projectRootDir,
+  "projects",
+  "micro-dash",
+  "src",
+  "lib",
+);
 const distDir = path.join(projectRootDir, "dist");
 const buildDir = path.join(distDir, "sizes", "esm5", "lib");
 const bundleDir = path.join(__dirname, "bundle/");
 
-const rollupConfig: RollupFileOptions = {
+const rollupConfig: RollupOptions = {
   input: "thiswillchange",
   inlineDynamicImports: false,
-  onwarn: function(warning) {
+  onwarn(warning) {
     console.warn(warning);
   },
   plugins: [
@@ -54,8 +61,6 @@ async function run() {
       default:
         await bundleAndExplore(`**/${input}.*.js`);
     }
-    if (!input) {
-    }
   }
 }
 
@@ -73,7 +78,10 @@ async function bundleAndExplore(fileGlob: string) {
   const inputPaths = await getPaths(fileGlob);
   for (const inputPath of inputPaths) {
     const outputPath = await bundle(inputPath);
-    explore(outputPath);
+    const summary = explore(outputPath);
+    if (summary && !inputPath.match("index")) {
+      updateComment(inputPath, summary);
+    }
   }
 }
 
@@ -107,7 +115,6 @@ async function bundle(inputPath: string) {
 }
 
 function explore(file: string) {
-  const basePath = file.substring(0, file.length - 2);
   const files: ObjectWith<number> = sourceMapExplorer(file).files;
 
   let lodash = 0;
@@ -126,7 +133,20 @@ function explore(file: string) {
     summary = ` * - Micro-dash: ${microdash.toLocaleString()} bytes`;
   }
   console.log(summary);
-  fs.writeFileSync(basePath + "txt", summary);
+  return summary;
+}
+
+function updateComment(inputPath: string, summary: string) {
+  const relativePath = path.relative(buildDir, inputPath);
+  const baseName = relativePath.replace(/lodash\.js|microdash\.js/, "ts");
+  const sourcePath = path.join(sourcDir, baseName);
+
+  const lib = summary.match(/ - (.*):/)![1];
+  const toReplace = new RegExp(` \\* - ${lib}:.*`);
+
+  let source = fs.readFileSync(sourcePath, "utf8");
+  source = source.replace(toReplace, summary);
+  fs.writeFileSync(sourcePath, source);
 }
 
 // Recursively create a dir.

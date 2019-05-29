@@ -11,8 +11,8 @@ import { cloneDeep, isMatch } from "../lang";
  * - does not match `0` to `-0`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 15,993 bytes
- * - Micro-dash: 1,264 bytes
+ * - Lodash: 16,234 bytes
+ * - Micro-dash: 1,299 bytes
  */
 export function matches(source: any) {
   source = cloneDeep(source);

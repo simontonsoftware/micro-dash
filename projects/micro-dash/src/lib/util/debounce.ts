@@ -10,7 +10,7 @@
  * - does not make any guarantees about the value of `this` in `func` is executed
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,988 bytes
+ * - Lodash: 2,078 bytes
  * - Micro-dash: 170 bytes
  */
 export function debounce(func: Function, wait = 0) {

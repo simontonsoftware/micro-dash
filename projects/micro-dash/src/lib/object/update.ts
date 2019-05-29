@@ -10,7 +10,7 @@ import { Function1 } from "../interfaces";
  * - does not handle `customizer` returning `undefined`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,946 bytes
+ * - Lodash: 6,044 bytes
  * - Micro-dash: 164 bytes
  */
 export function update<T>(

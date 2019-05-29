@@ -1,35 +1,39 @@
 import { ObjectWith } from "../interfaces";
-import { forEach } from "./for-each";
+import { forEachRight } from "./for-each-right";
 import { doReduce } from "./reduce-utils";
 
 /**
- * Reduces `collection` to a value which is the accumulated result of running each element in collection thru `iteratee`, where each successive invocation is supplied the return value of the previous. If accumulator is not given, the first element of collection is used as the initial value.
+ * This method is like `_.reduce` except that it iterates over elements of `collection` from right to left.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,517 bytes
- * - Micro-dash: 506 bytes
+ * - Lodash: 14,523 bytes
+ * - Micro-dash: 344 bytes
  */
-export function reduce<E>(
+export function reduceRight<E>(
   array: E[] | undefined,
   iteratee: (accumulator: E, value: E, index: number) => E,
 ): E;
-export function reduce<E, A>(
+export function reduceRight<E, A>(
   array: E[] | undefined,
   iteratee: (accumulator: A, value: E, index: number) => A,
-  accumulator?: A,
+  accumulator: A,
 ): A;
-export function reduce<E>(
+export function reduceRight<E>(
   array: ObjectWith<E> | undefined,
   iteratee: (accumulator: E, value: E, key: keyof E) => E,
 ): E;
-export function reduce<E, A>(
+export function reduceRight<E, A>(
   array: ObjectWith<E> | undefined,
   iteratee: (accumulator: A, value: E, key: keyof E) => A,
   accumulator: A,
 ): A;
-export function reduce(collection: any, iteratee: any, accumulator?: any) {
+export function reduceRight(
+  collection: any,
+  iteratee: Function,
+  accumulator?: any,
+) {
   return doReduce(
-    forEach,
+    forEachRight,
     collection,
     iteratee,
     accumulator,

@@ -5,7 +5,7 @@
  * - requires `string` to be a string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,887 bytes
+ * - Lodash: 2,009 bytes
  * - Micro-dash: 47 bytes
  */
 export function upperFirst(string: string) {

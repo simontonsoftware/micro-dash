@@ -10,8 +10,8 @@ import { keys } from "../object/keys";
  * Iterates over elements of `collection`, returning the first element `predicate` returns truthy for.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,699 bytes
- * - Micro-dash: 355 bytes
+ * - Lodash: 14,880 bytes
+ * - Micro-dash: 370 bytes
  */
 
 export function find<I, O extends I>(

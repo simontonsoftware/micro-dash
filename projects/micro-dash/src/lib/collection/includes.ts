@@ -12,8 +12,8 @@ import { values } from "../object";
  * ```
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 4,514 bytes
- * - Micro-dash: 210 bytes
+ * - Lodash: 4,630 bytes
+ * - Micro-dash: 234 bytes
  */
 export function includes<T extends any[] | object | string>(
   collection: T,

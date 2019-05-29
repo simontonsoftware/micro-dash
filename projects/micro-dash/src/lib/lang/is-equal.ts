@@ -9,8 +9,8 @@ import { keys } from "../object/keys";
  * - `isEqual(0, -0) === false`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 10,809 bytes
- * - Micro-dash: 536 bytes
+ * - Lodash: 10,928 bytes
+ * - Micro-dash: 559 bytes
  */
 export function isEqual(value: any, other: any) {
   if (Object.is(value, other)) {
