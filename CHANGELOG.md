@@ -1,6 +1,26 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [6.0.0](https://github.com/simontonsoftware/micro-dash/compare/v5.6.0...v6.0.0) (2019-05-30)
+
+### chore
+
+- Don't export undocumented utility types ([7090508](https://github.com/simontonsoftware/micro-dash/commit/7090508))
+
+### Features
+
+- add `bindKey()` ([f687060](https://github.com/simontonsoftware/micro-dash/commit/f687060))
+- better typing for `get()` ([0d2264a](https://github.com/simontonsoftware/micro-dash/commit/0d2264a))
+- improve typing of `debounce()` ([3918a43](https://github.com/simontonsoftware/micro-dash/commit/3918a43))
+- improve typing of `once()` ([61a35b8](https://github.com/simontonsoftware/micro-dash/commit/61a35b8))
+- improve typing of `partial()` ([c101492](https://github.com/simontonsoftware/micro-dash/commit/c101492))
+- upgrade typescript ([9e8a694](https://github.com/simontonsoftware/micro-dash/commit/9e8a694))
+
+### BREAKING CHANGES
+
+- A number of undocumented type definitions were previously available if you knew where to find them. They are no longer. Some moved to `s-ng-dev-utils`, so if you miss them check to see if they are still available there.
+- Upgrades typescript to 3.4
 
 <a name="5.6.0"></a>
 

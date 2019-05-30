@@ -883,6 +883,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="index.html#_makepadding" class="tsd-kind-icon">_make<wbr>Padding</a>
 		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#bindkey" class="tsd-kind-icon">bind<wbr>Key</a>
+		</li>
 		<li class=" tsd-kind-function">
 			<a href="index.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a>
 		</li>
@@ -913,7 +916,7 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#curry" class="tsd-kind-icon">curry</a>
 		</li>
-		<li class=" tsd-kind-function">
+		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#debounce" class="tsd-kind-icon">debounce</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
@@ -1136,6 +1139,7 @@ img { max-width: 100%; }
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-is-not-exported"><a href="index.html#_makepadding" class="tsd-kind-icon">_make<wbr>Padding</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#bindkey" class="tsd-kind-icon">bind<wbr>Key</a></li>
 							<li class="tsd-kind-function"><a href="index.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a></li>
 							<li class="tsd-kind-function"><a href="index.html#capitalize" class="tsd-kind-icon">capitalize</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#castarray" class="tsd-kind-icon">cast<wbr>Array</a></li>
@@ -1146,7 +1150,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#compact" class="tsd-kind-icon">compact</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#constant" class="tsd-kind-icon">constant</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#curry" class="tsd-kind-icon">curry</a></li>
-							<li class="tsd-kind-function"><a href="index.html#debounce" class="tsd-kind-icon">debounce</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#debounce" class="tsd-kind-icon">debounce</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#every" class="tsd-kind-icon">every</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#filter" class="tsd-kind-icon">filter</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#find" class="tsd-kind-icon">find</a></li>
@@ -1227,7 +1231,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;require.context(&quot;./&quot;, true, /\.spec\.ts$/)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L20">test.ts:20</a></li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L19">test.ts:19</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1237,7 +1241,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">require<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L12">test.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/test.ts#L11">test.ts:11</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1260,6 +1264,77 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="bindkey" class="tsd-anchor"></a>
+				<h3>bind<wbr>Key</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">bind<wbr>Key&lt;K, T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					<li class="tsd-signature tsd-kind-icon">bind<wbr>Key&lt;K, A1, T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop1Arg</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T[K]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">bind<wbr>Key&lt;K, A1, A2, T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop2Args</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T[K]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">bind<wbr>Key&lt;K, A1, A2, A3, T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop3Args</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T[K]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">bind<wbr>Key&lt;K, A1, A2, A3, A4, T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A3</span>, arg4<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A4</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop4Args</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T[K]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">bind<wbr>Key&lt;K, A1, A2, A3, A4, T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">A1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/bind-key.ts#L15">lib/function/bind-key.ts:15</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates a function that invokes the method at <code>object[key]</code> with <code>partials</code> prepended to the arguments it receives. Allows bound functions to reference methods that may be redefined or don&#39;t yet exist. See <a href="http://peter.michaux.ca/articles/lazy-function-definition-pattern">Peter Michaux&#39;s article</a> for more details.</p>
+							</div>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>there is no &quot;placeholder&quot; functionality</li>
+								<li>it will return plain functions; they will not inherit the prototype of <code>object[key]</code></li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 9,417 bytes</li>
+								<li>Micro-dash: 178 bytes</li>
+							</ul>
+						</div>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/bind-key.ts#L19">lib/function/bind-key.ts:19</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/bind-key.ts#L24">lib/function/bind-key.ts:24</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/bind-key.ts#L30">lib/function/bind-key.ts:30</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/bind-key.ts#L37">lib/function/bind-key.ts:37</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/bind-key.ts#L47">lib/function/bind-key.ts:47</a></li>
+							</ul>
+						</aside>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-function">
 				<a name="camelcase" class="tsd-anchor"></a>
 				<h3>camel<wbr>Case</h3>
@@ -1270,7 +1345,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/camel-case.ts#L14">lib/string/camel-case.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/camel-case.ts#L15">lib/string/camel-case.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1283,8 +1358,8 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 5,242 bytes</li>
-								<li>Micro-dash: 308 bytes</li>
+								<li>Lodash: 5,436 bytes</li>
+								<li>Micro-dash: 333 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -1300,7 +1375,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/capitalize.ts#L13">lib/string/capitalize.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/capitalize.ts#L14">lib/string/capitalize.ts:14</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1313,7 +1388,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,924 bytes</li>
+								<li>Lodash: 2,029 bytes</li>
 								<li>Micro-dash: 62 bytes</li>
 							</ul>
 						</div>
@@ -1365,7 +1440,7 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 2,176 bytes</li>
+								<li>Lodash: 2,288 bytes</li>
 								<li>Micro-dash: 139 bytes</li>
 							</ul>
 						</div>
@@ -1382,7 +1457,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/number/clamp.ts#L12">lib/number/clamp.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/number/clamp.ts#L13">lib/number/clamp.ts:13</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1396,7 +1471,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,334 bytes</li>
+								<li>Lodash: 1,398 bytes</li>
 								<li>Micro-dash: 51 bytes</li>
 							</ul>
 						</div>
@@ -1422,7 +1497,7 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 12,251 bytes</li>
+								<li>Lodash: 12,480 bytes</li>
 								<li>Micro-dash: 90 bytes</li>
 							</ul>
 						</div>
@@ -1448,8 +1523,8 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 12,251 bytes</li>
-								<li>Micro-dash: 412 bytes</li>
+								<li>Lodash: 12,480 bytes</li>
+								<li>Micro-dash: 440 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -1538,7 +1613,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 9,084 bytes</li>
+								<li>Lodash: 9,246 bytes</li>
 								<li>Micro-dash: 299 bytes</li>
 							</ul>
 						</div>
@@ -1594,11 +1669,11 @@ img { max-width: 100%; }
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 				<a name="debounce" class="tsd-anchor"></a>
 				<h3>debounce</h3>
-				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">debounce<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, wait<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">debounce&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, wait<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -1621,7 +1696,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,988 bytes</li>
+								<li>Lodash: 2,078 bytes</li>
 								<li>Micro-dash: 170 bytes</li>
 							</ul>
 						</div>
@@ -1649,8 +1724,8 @@ img { max-width: 100%; }
 							<p><strong>Note:</strong> This method returns <code>true</code> for <a href="https://en.wikipedia.org/wiki/Empty_set">empty collections</a> because <a href="https://en.wikipedia.org/wiki/Vacuous_truth">everything is true</a> of elements of empty collections.</p>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,455 bytes</li>
-								<li>Micro-dash: 422 bytes</li>
+								<li>Lodash: 14,632 bytes</li>
+								<li>Micro-dash: 439 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -1685,8 +1760,8 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,215 bytes</li>
-								<li>Micro-dash: 422 bytes</li>
+								<li>Lodash: 14,388 bytes</li>
+								<li>Micro-dash: 439 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -1735,8 +1810,8 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,699 bytes</li>
-								<li>Micro-dash: 355 bytes</li>
+								<li>Lodash: 14,880 bytes</li>
+								<li>Micro-dash: 370 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -1782,7 +1857,7 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,178 bytes</li>
+								<li>Lodash: 1,203 bytes</li>
 								<li>Micro-dash: 39 bytes</li>
 							</ul>
 						</div>
@@ -1826,7 +1901,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,952 bytes</li>
+								<li>Lodash: 5,005 bytes</li>
 								<li>Micro-dash: 172 bytes</li>
 							</ul>
 						</div>
@@ -1954,7 +2029,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,973 bytes</li>
+								<li>Lodash: 5,026 bytes</li>
 								<li>Micro-dash: 172 bytes</li>
 							</ul>
 						</div>
@@ -2065,8 +2140,8 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,758 bytes</li>
-								<li>Micro-dash: 362 bytes</li>
+								<li>Lodash: 3,839 bytes</li>
+								<li>Micro-dash: 379 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2099,8 +2174,8 @@ img { max-width: 100%; }
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,764 bytes</li>
-								<li>Micro-dash: 204 bytes</li>
+								<li>Lodash: 3,845 bytes</li>
+								<li>Micro-dash: 217 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2136,8 +2211,8 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,466 bytes</li>
-								<li>Micro-dash: 247 bytes</li>
+								<li>Lodash: 3,534 bytes</li>
+								<li>Micro-dash: 264 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2166,8 +2241,8 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,473 bytes</li>
-								<li>Micro-dash: 192 bytes</li>
+								<li>Lodash: 3,541 bytes</li>
+								<li>Micro-dash: 205 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2177,11 +2252,12 @@ img { max-width: 100%; }
 				<a name="get" class="tsd-anchor"></a>
 				<h3>get</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1]</span></li>
-					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, K2&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K2</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1][K2]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1][K2]</span></li>
-					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, K2, K3&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K3</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1][K2][K3]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1][K2][K3]</span></li>
-					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, K2, K3, K4&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K4</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1][K2][K3][K4]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T[K1][K2][K3][K4]</span></li>
-					<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Nil</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">get&lt;D&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">[]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">D</span></li>
+					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, D&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">D extends undefined ? T[K1] : Exclude&lt;T[K1], undefined&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, K2, D&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K2</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">D extends undefined ? T[K1][K2] : Exclude&lt;T[K1][K2], undefined&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, K2, K3, D&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K3</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">D extends undefined ? T[K1][K2][K3] : Exclude&lt;T[K1][K2][K3], undefined&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">get&lt;T, K1, K2, K3, K4, D&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K4</span><span class="tsd-signature-symbol">]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">D extends undefined ? T[K1][K2][K3][K4] : Exclude&lt;T[K1][K2][K3][K4], undefined&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Nil</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, defaultValue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2200,7 +2276,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 5,092 bytes</li>
+								<li>Lodash: 5,186 bytes</li>
 								<li>Micro-dash: 65 bytes</li>
 							</ul>
 						</div>
@@ -2208,14 +2284,14 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L19">lib/object/get.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L15">lib/object/get.ts:15</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L24">lib/object/get.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L20">lib/object/get.ts:20</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2230,6 +2306,13 @@ img { max-width: 100%; }
 						<aside class="tsd-sources">
 							<ul>
 								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L41">lib/object/get.ts:41</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/get.ts#L55">lib/object/get.ts:55</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -2271,7 +2354,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/number/in-range.ts#L12">lib/number/in-range.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/number/in-range.ts#L13">lib/number/in-range.ts:13</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2285,7 +2368,7 @@ img { max-width: 100%; }
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,374 bytes</li>
+								<li>Lodash: 1,440 bytes</li>
 								<li>Micro-dash: 59 bytes</li>
 							</ul>
 						</div>
@@ -2315,8 +2398,8 @@ includes({ a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2
 includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'</span>); <span class="hljs-comment">// true</span></code></pre>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,514 bytes</li>
-								<li>Micro-dash: 210 bytes</li>
+								<li>Lodash: 4,630 bytes</li>
+								<li>Micro-dash: 234 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2341,7 +2424,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 674 bytes</li>
+								<li>Lodash: 712 bytes</li>
 								<li>Micro-dash: 35 bytes</li>
 							</ul>
 						</div>
@@ -2369,8 +2452,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							<p>Arrays are considered empty if they have a <code>length</code> of <code>0</code>.</p>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,248 bytes</li>
-								<li>Micro-dash: 101 bytes</li>
+								<li>Lodash: 4,315 bytes</li>
+								<li>Micro-dash: 114 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2401,8 +2484,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 10,809 bytes</li>
-								<li>Micro-dash: 536 bytes</li>
+								<li>Lodash: 10,928 bytes</li>
+								<li>Micro-dash: 559 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2427,7 +2510,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 801 bytes</li>
+								<li>Lodash: 849 bytes</li>
 								<li>Micro-dash: 41 bytes</li>
 							</ul>
 						</div>
@@ -2459,7 +2542,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 11,235 bytes</li>
+								<li>Lodash: 11,354 bytes</li>
 								<li>Micro-dash: 1,048 bytes</li>
 							</ul>
 						</div>
@@ -2511,7 +2594,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 676 bytes</li>
+								<li>Lodash: 714 bytes</li>
 								<li>Micro-dash: 39 bytes</li>
 							</ul>
 						</div>
@@ -2541,7 +2624,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,003 bytes</li>
+								<li>Lodash: 1,041 bytes</li>
 								<li>Micro-dash: 41 bytes</li>
 							</ul>
 						</div>
@@ -2567,7 +2650,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 739 bytes</li>
+								<li>Lodash: 775 bytes</li>
 								<li>Micro-dash: 39 bytes</li>
 							</ul>
 						</div>
@@ -2610,7 +2693,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/kebab-case.ts#L11">lib/string/kebab-case.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/kebab-case.ts#L12">lib/string/kebab-case.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2619,8 +2702,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,261 bytes</li>
-								<li>Micro-dash: 247 bytes</li>
+								<li>Lodash: 4,386 bytes</li>
+								<li>Micro-dash: 237 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2630,8 +2713,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				<a name="keyby" class="tsd-anchor"></a>
 				<h3>key<wbr>By</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">key<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, iteratee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValueIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectWith</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">key<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectWith</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, iteratee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValueIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectWith</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">key<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>collection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ObjectWith</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, iteratee<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ValueIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2646,17 +2728,10 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,543 bytes</li>
-								<li>Micro-dash: 412 bytes</li>
+								<li>Lodash: 14,723 bytes</li>
+								<li>Micro-dash: 429 bytes</li>
 							</ul>
 						</div>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/key-by.ts#L16">lib/collection/key-by.ts:16</a></li>
-							</ul>
-						</aside>
 					</li>
 				</ul>
 			</section>
@@ -2664,7 +2739,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				<a name="keys" class="tsd-anchor"></a>
 				<h3>keys</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">keys&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T extends NumberKeyedObject&lt;unknown&gt; ? string : keyof T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">keys&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T extends Record&lt;number, unknown&gt; ? string : keyof T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -2736,8 +2811,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,219 bytes</li>
-								<li>Micro-dash: 419 bytes</li>
+								<li>Lodash: 14,392 bytes</li>
+								<li>Micro-dash: 436 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2760,7 +2835,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/map-values.ts#L11">lib/object/map-values.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/map-values.ts#L12">lib/object/map-values.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2769,8 +2844,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,120 bytes</li>
-								<li>Micro-dash: 302 bytes</li>
+								<li>Lodash: 14,298 bytes</li>
+								<li>Micro-dash: 322 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2801,8 +2876,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 15,993 bytes</li>
-								<li>Micro-dash: 1,264 bytes</li>
+								<li>Lodash: 16,234 bytes</li>
+								<li>Micro-dash: 1,299 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2833,7 +2908,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,920 bytes</li>
+								<li>Lodash: 3,988 bytes</li>
 								<li>Micro-dash: 218 bytes</li>
 							</ul>
 						</div>
@@ -2872,8 +2947,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 10,265 bytes</li>
-								<li>Micro-dash: 748 bytes</li>
+								<li>Lodash: 10,377 bytes</li>
+								<li>Micro-dash: 765 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2924,7 +2999,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/min-by.ts#L11">lib/math/min-by.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/min-by.ts#L12">lib/math/min-by.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2933,8 +3008,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 13,897 bytes</li>
-								<li>Micro-dash: 421 bytes</li>
+								<li>Lodash: 14,070 bytes</li>
+								<li>Micro-dash: 438 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -2990,8 +3065,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 15,624 bytes</li>
-								<li>Micro-dash: 329 bytes</li>
+								<li>Lodash: 15,883 bytes</li>
+								<li>Micro-dash: 342 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3020,8 +3095,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 15,380 bytes</li>
-								<li>Micro-dash: 375 bytes</li>
+								<li>Lodash: 15,528 bytes</li>
+								<li>Micro-dash: 399 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3031,7 +3106,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				<a name="once" class="tsd-anchor"></a>
 				<h3>once</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">once&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					<li class="tsd-signature tsd-kind-icon">once&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
@@ -3046,7 +3121,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,421 bytes</li>
+								<li>Lodash: 1,493 bytes</li>
 								<li>Micro-dash: 67 bytes</li>
 							</ul>
 						</div>
@@ -3088,7 +3163,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,373 bytes</li>
+								<li>Lodash: 3,493 bytes</li>
 								<li>Micro-dash: 191 bytes</li>
 							</ul>
 						</div>
@@ -3114,8 +3189,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,297 bytes</li>
-								<li>Micro-dash: 169 bytes</li>
+								<li>Lodash: 3,417 bytes</li>
+								<li>Micro-dash: 180 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3140,8 +3215,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,297 bytes</li>
-								<li>Micro-dash: 169 bytes</li>
+								<li>Lodash: 3,417 bytes</li>
+								<li>Micro-dash: 180 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3151,23 +3226,18 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				<a name="partial" class="tsd-anchor"></a>
 				<h3>partial</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function1</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function0</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function1</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function0</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function1</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function0</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, T4, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function4</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function3</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, T4, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function4</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function2</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, T4, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function4</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function1</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;T1, T2, T3, T4, R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function4</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T3</span>, arg4<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T4</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function0</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li class="tsd-signature tsd-kind-icon">partial&lt;R&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					<li class="tsd-signature tsd-kind-icon">partial&lt;F&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span></li>
+					<li class="tsd-signature tsd-kind-icon">partial&lt;A1, F&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop1Arg</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">F</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">partial&lt;A1, A2, F&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop2Args</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">F</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">partial&lt;A1, A2, A3, F&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A3</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop3Args</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">F</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">partial&lt;A1, A2, A3, A4, F&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span>, arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A2</span>, arg3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A3</span>, arg4<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">A4</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Drop4Args</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">F</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">partial&lt;A1, A2, A3, A4, F&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">F</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">A1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A2</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A3</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A4</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L24">lib/function/partial.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L15">lib/function/partial.ts:15</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3181,7 +3251,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 9,221 bytes</li>
+								<li>Lodash: 9,384 bytes</li>
 								<li>Micro-dash: 108 bytes</li>
 							</ul>
 						</div>
@@ -3189,7 +3259,21 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L27">lib/function/partial.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L16">lib/function/partial.ts:16</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L20">lib/function/partial.ts:20</a></li>
+							</ul>
+						</aside>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L25">lib/function/partial.ts:25</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3203,56 +3287,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L38">lib/function/partial.ts:38</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L42">lib/function/partial.ts:42</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L47">lib/function/partial.ts:47</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L55">lib/function/partial.ts:55</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L59">lib/function/partial.ts:59</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L64">lib/function/partial.ts:64</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L70">lib/function/partial.ts:70</a></li>
-							</ul>
-						</aside>
-					</li>
-					<li class="tsd-description">
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L79">lib/function/partial.ts:79</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/partial.ts#L40">lib/function/partial.ts:40</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3281,7 +3316,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 7,778 bytes</li>
+								<li>Lodash: 7,900 bytes</li>
 								<li>Micro-dash: 278 bytes</li>
 							</ul>
 						</div>
@@ -3292,7 +3327,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 				<a name="pickby" class="tsd-anchor"></a>
 				<h3>pick<wbr>By</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends Nil ? {} : NumberKeyedObject&lt;T&gt;</span></li>
+					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends Nil ? {} : Record&lt;number, T&gt;</span></li>
 					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;I, O&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">I</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NarrowingObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">I</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">I</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">{ [K in keyof I]: I[K] extends O ? K : never; }[keyof I]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					<li class="tsd-signature tsd-kind-icon">pick<wbr>By&lt;T&gt;<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ObjectIteratee</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T extends Nil ? {} : Partial&lt;T&gt;</span></li>
 				</ul>
@@ -3300,7 +3335,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L20">lib/object/pick-by.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L16">lib/object/pick-by.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3313,22 +3348,22 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 15,013 bytes</li>
-								<li>Micro-dash: 328 bytes</li>
+								<li>Lodash: 15,178 bytes</li>
+								<li>Micro-dash: 345 bytes</li>
 							</ul>
 						</div>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L25">lib/object/pick-by.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L21">lib/object/pick-by.ts:21</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L29">lib/object/pick-by.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/object/pick-by.ts#L25">lib/object/pick-by.ts:25</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3353,8 +3388,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,017 bytes</li>
-								<li>Micro-dash: 381 bytes</li>
+								<li>Lodash: 3,115 bytes</li>
+								<li>Micro-dash: 376 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3385,7 +3420,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 7,723 bytes</li>
+								<li>Lodash: 7,819 bytes</li>
 								<li>Micro-dash: 405 bytes</li>
 							</ul>
 						</div>
@@ -3417,8 +3452,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 2,239 bytes</li>
-								<li>Micro-dash: 357 bytes</li>
+								<li>Lodash: 2,345 bytes</li>
+								<li>Micro-dash: 391 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3460,8 +3495,8 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,340 bytes</li>
-								<li>Micro-dash: 484 bytes</li>
+								<li>Lodash: 14,517 bytes</li>
+								<li>Micro-dash: 506 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3501,7 +3536,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L47">lib/collection/reduce.ts:47</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce-right.ts#L12">lib/collection/reduce-right.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3510,29 +3545,29 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,346 bytes</li>
-								<li>Micro-dash: 326 bytes</li>
+								<li>Lodash: 14,523 bytes</li>
+								<li>Micro-dash: 344 bytes</li>
 							</ul>
 						</div>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L51">lib/collection/reduce.ts:51</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce-right.ts#L16">lib/collection/reduce-right.ts:16</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L56">lib/collection/reduce.ts:56</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce-right.ts#L21">lib/collection/reduce-right.ts:21</a></li>
 							</ul>
 						</aside>
 					</li>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce.ts#L60">lib/collection/reduce.ts:60</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/collection/reduce-right.ts#L25">lib/collection/reduce-right.ts:25</a></li>
 							</ul>
 						</aside>
 					</li>
@@ -3562,7 +3597,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 14,295 bytes</li>
+								<li>Lodash: 14,489 bytes</li>
 								<li>Micro-dash: 89 bytes</li>
 							</ul>
 						</div>
@@ -3586,7 +3621,7 @@ includes(<span class="hljs-string">'abcd'</span>, <span class="hljs-string">'bc'
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/round.ts#L17">lib/math/round.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/math/round.ts#L18">lib/math/round.ts:18</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3602,7 +3637,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,803 bytes</li>
+								<li>Lodash: 1,858 bytes</li>
 								<li>Micro-dash: 92 bytes</li>
 							</ul>
 						</div>
@@ -3634,7 +3669,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 5,716 bytes</li>
+								<li>Lodash: 5,814 bytes</li>
 								<li>Micro-dash: 201 bytes</li>
 							</ul>
 						</div>
@@ -3651,7 +3686,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/snake-case.ts#L11">lib/string/snake-case.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/snake-case.ts#L12">lib/string/snake-case.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3660,8 +3695,8 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,281 bytes</li>
-								<li>Micro-dash: 247 bytes</li>
+								<li>Lodash: 4,407 bytes</li>
+								<li>Micro-dash: 237 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3687,8 +3722,8 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 16,227 bytes</li>
-								<li>Micro-dash: 928 bytes</li>
+								<li>Lodash: 16,413 bytes</li>
+								<li>Micro-dash: 960 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3724,7 +3759,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 13,873 bytes</li>
+								<li>Lodash: 14,046 bytes</li>
 								<li>Micro-dash: 52 bytes</li>
 							</ul>
 						</div>
@@ -3755,7 +3790,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,489 bytes</li>
+								<li>Lodash: 1,580 bytes</li>
 								<li>Micro-dash: 49 bytes</li>
 							</ul>
 						</div>
@@ -3772,7 +3807,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/to-lower.ts#L11">lib/string/to-lower.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/to-lower.ts#L12">lib/string/to-lower.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3785,7 +3820,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 989 bytes</li>
+								<li>Lodash: 1,048 bytes</li>
 								<li>Micro-dash: 17 bytes</li>
 							</ul>
 						</div>
@@ -3815,7 +3850,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,026 bytes</li>
+								<li>Lodash: 1,085 bytes</li>
 								<li>Micro-dash: 35 bytes</li>
 							</ul>
 						</div>
@@ -3841,7 +3876,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 4,751 bytes</li>
+								<li>Lodash: 4,824 bytes</li>
 								<li>Micro-dash: 36 bytes</li>
 							</ul>
 						</div>
@@ -3867,7 +3902,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,043 bytes</li>
+								<li>Lodash: 1,118 bytes</li>
 								<li>Micro-dash: 54 bytes</li>
 							</ul>
 						</div>
@@ -3899,7 +3934,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 5,946 bytes</li>
+								<li>Lodash: 6,044 bytes</li>
 								<li>Micro-dash: 164 bytes</li>
 							</ul>
 						</div>
@@ -3916,7 +3951,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/upper-first.ts#L11">lib/string/upper-first.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/upper-first.ts#L12">lib/string/upper-first.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -3929,7 +3964,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 1,887 bytes</li>
+								<li>Lodash: 2,009 bytes</li>
 								<li>Micro-dash: 47 bytes</li>
 							</ul>
 						</div>
@@ -3955,8 +3990,8 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 3,368 bytes</li>
-								<li>Micro-dash: 82 bytes</li>
+								<li>Lodash: 3,436 bytes</li>
+								<li>Micro-dash: 81 bytes</li>
 							</ul>
 						</div>
 					</li>
@@ -3985,7 +4020,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 5,665 bytes</li>
+								<li>Lodash: 5,807 bytes</li>
 								<li>Micro-dash: 119 bytes</li>
 							</ul>
 						</div>
@@ -4002,7 +4037,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/words.ts#L11">lib/string/words.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/string/words.ts#L12">lib/string/words.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -4015,7 +4050,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 2,229 bytes</li>
+								<li>Lodash: 2,287 bytes</li>
 								<li>Micro-dash: 177 bytes</li>
 							</ul>
 						</div>
@@ -4044,7 +4079,7 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							</div>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
-								<li>Lodash: 2,862 bytes</li>
+								<li>Lodash: 2,999 bytes</li>
 								<li>Micro-dash: 266 bytes</li>
 							</ul>
 						</div>
