@@ -1,6 +1,7 @@
 export { forOwn } from "./for-own";
 export { forOwnRight } from "./for-own-right";
 export { get } from "./get";
+export { invoke } from "./invoke";
 export { keys } from "./keys";
 export { mapValues } from "./map-values";
 export { merge } from "./merge";

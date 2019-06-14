@@ -54,11 +54,11 @@ export function get<
   : Exclude<T[K1][K2][K3][K4], undefined>;
 export function get(
   object: object | Nil,
-  path: string[],
+  path: Array<keyof any>,
   defaultValue?: any,
 ): any;
 
-export function get(object: any, path: string[], defaultValue?: any) {
+export function get(object: any, path: Array<keyof any>, defaultValue?: any) {
   // const val = property(path)(object);
   // return isUndefined(val) ? defaultValue : val;
   const length = path.length;

@@ -1,6 +1,7 @@
 import "./for-own-right.microdash";
 import "./for-own.microdash";
 import "./get.microdash";
+import "./invoke.microdash";
 import "./keys.microdash";
 import "./map-values.microdash";
 import "./merge.microdash";
