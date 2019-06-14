@@ -67,4 +67,43 @@ describe("debounce()", () => {
     tick(64);
     expectSingleCallAndReset(spy, "b", 3);
   }));
+
+  it("supports recursive calls", fakeAsync(() => {
+    const queue = ["b", "c"];
+    const processed: string[] = [];
+    const debounced = debounce((item: string) => {
+      processed.push(item);
+
+      const next = queue.shift();
+      if (next) {
+        debounced(next);
+      }
+    }, 32);
+
+    debounced("a");
+
+    tick(256);
+    expect(processed).toEqual(["a", "b", "c"]);
+  }));
+
+  it("should support cancelling delayed calls", fakeAsync(() => {
+    const spy = jasmine.createSpy();
+    const debounced = debounce(spy, 32);
+
+    debounced();
+    debounced.cancel();
+
+    tick(64);
+    expect(spy).not.toHaveBeenCalled();
+  }));
+
+  it("should noop `cancel` when nothing is queued", fakeAsync(() => {
+    const spy = jasmine.createSpy();
+    const debounced = debounce(spy, 32);
+
+    debounced.cancel();
+
+    tick(64);
+    expect(spy).not.toHaveBeenCalled();
+  }));
 });
