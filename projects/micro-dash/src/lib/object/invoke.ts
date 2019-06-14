@@ -78,7 +78,7 @@ type DefinedPath4<
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 6,430 bytes
- * - Micro-dash: 261 bytes
+ * - Micro-dash: 276 bytes
  */
 
 // 4 element path
@@ -149,6 +149,9 @@ export function invoke<T extends object | Nil>(
 ) {
   const fn = get(object, path);
   if (isFunction(fn)) {
-    return fn.apply(get(object, path.slice(0, -1)), args);
+    return fn.apply(
+      path.length === 1 ? object : get(object, path.slice(0, -1)),
+      args,
+    );
   }
 }

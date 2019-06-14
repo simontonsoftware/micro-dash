@@ -2,6 +2,15 @@ import { expectType, Nil } from "s-ng-dev-utils";
 import { invoke } from "./invoke";
 
 describe("invoke()", () => {
+  it("sets the context correctly when only 1 deep", () => {
+    const spy = jasmine.createSpy();
+    const obj = { a: spy };
+
+    invoke(obj, ["a"]);
+
+    expect(spy.calls.first().object).toBe(obj);
+  });
+
   it("has fancy typing", () => {
     // empty path
     expectType<undefined>(invoke({ a: () => 1 }, []));
@@ -74,6 +83,8 @@ describe("invoke()", () => {
     // fallback: n element path
     const pathN: string[] = ["a"];
     expectType<any>(invoke({ a: () => 1 }, pathN));
+
+    expect().nothing();
   });
 
   //
