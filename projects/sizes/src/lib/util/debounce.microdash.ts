@@ -1,7 +1,6 @@
 import { debounce } from "micro-dash";
 
 debounce(() => {})();
-let lastValue;
 debounce((value: number) => {
-  lastValue = value;
+  console.log(value);
 }, 1)(1);

@@ -13,7 +13,7 @@ import { clone } from "../lang/clone";
  * - when merging an array onto a non-array, the result is a non-array
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 10,377 bytes
+ * - Lodash: 10,385 bytes
  * - Micro-dash: 765 bytes
  */
 

@@ -3,8 +3,8 @@ import * as glob from "glob";
 import * as path from "path";
 import * as readline from "readline";
 import { rollup, RollupOptions } from "rollup";
+import { ObjectWith } from "s-ng-dev-utils";
 import { forEach } from "../micro-dash/src/lib/collection/for-each";
-import { ObjectWith } from "../micro-dash/src/lib/interfaces";
 
 // no typings for these imports
 const uglify = require("rollup-plugin-uglify").uglify;
@@ -87,7 +87,7 @@ async function bundleAndExplore(fileGlob: string) {
 
 function getPaths(fileGlob: string) {
   return new Promise<string[]>((resolve) => {
-    glob(path.join(buildDir, fileGlob), { nodir: true }, (err, files) => {
+    glob(path.join(buildDir, fileGlob), { nodir: true }, (_err, files) => {
       resolve(files);
     });
   });

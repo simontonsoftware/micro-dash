@@ -7,8 +7,8 @@ import { Nil } from "s-ng-dev-utils";
  * - only accepts an array for `path`, not a dot-separated string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,186 bytes
- * - Micro-dash: 65 bytes
+ * - Lodash: 5,189 bytes
+ * - Micro-dash: 63 bytes
  */
 
 export function get<D>(object: object, path: [], defaultValue?: D): D;

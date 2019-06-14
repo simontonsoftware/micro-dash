@@ -7,8 +7,8 @@ import { Function1 } from "s-ng-dev-utils";
  * - does not skip `undefined` values
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,046 bytes
- * - Micro-dash: 52 bytes
+ * - Lodash: 14,047 bytes
+ * - Micro-dash: 63 bytes
  */
 export function sumBy<T>(array: T[], iteratee: Function1<T, number>) {
   return array.reduce((sum, element) => sum + iteratee(element), 0);

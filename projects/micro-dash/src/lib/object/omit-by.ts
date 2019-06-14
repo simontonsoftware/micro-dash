@@ -8,7 +8,7 @@ import { pickBy } from "./pick-by";
  * - does not treat sparse arrays as dense
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 15,528 bytes
+ * - Lodash: 15,529 bytes
  * - Micro-dash: 399 bytes
  */
 export function omitBy<T>(object: T, predicate: ObjectIteratee<T, boolean>) {
