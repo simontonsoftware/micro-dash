@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/simontonsoftware/micro-dash/compare/v6.0.0...v6.1.0) (2019-06-15)
+
+### Features
+
+- add `invoke()` ([6726c8e](https://github.com/simontonsoftware/micro-dash/commit/6726c8e))
+- add the ability to cancel a debounced function ([74ca209](https://github.com/simontonsoftware/micro-dash/commit/74ca209))
+
 ## [6.0.0](https://github.com/simontonsoftware/micro-dash/compare/v5.6.0...v6.0.0) (2019-05-30)
 
 ### chore
