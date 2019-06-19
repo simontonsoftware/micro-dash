@@ -8,4 +8,5 @@ import "./key-by.lodash";
 import "./map.lodash";
 import "./reduce-right.lodash";
 import "./reduce.lodash";
+import "./sample.lodash";
 import "./sort-by.lodash";

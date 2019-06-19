@@ -8,4 +8,5 @@ import "./key-by.microdash";
 import "./map.microdash";
 import "./reduce-right.microdash";
 import "./reduce.microdash";
+import "./sample.microdash";
 import "./sort-by.microdash";
