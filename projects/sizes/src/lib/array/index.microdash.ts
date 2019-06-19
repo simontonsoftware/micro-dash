@@ -6,5 +6,6 @@ import "./pull-at.microdash";
 import "./pull.microdash";
 import "./remove.microdash";
 import "./uniq.microdash";
+import "./uniq-by.microdash";
 import "./without.microdash";
 import "./zip.microdash";

@@ -6,5 +6,6 @@ import "./pull-at.lodash";
 import "./pull.lodash";
 import "./remove.lodash";
 import "./uniq.lodash";
+import "./uniq-by.lodash";
 import "./without.lodash";
 import "./zip.lodash";

@@ -6,5 +6,6 @@ export { pull } from "./pull";
 export { pullAt } from "./pull-at";
 export { remove } from "./remove";
 export { uniq } from "./uniq";
+export { uniqBy } from "./uniq-by";
 export { without } from "./without";
 export { zip } from "./zip";
