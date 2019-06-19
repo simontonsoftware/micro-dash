@@ -2,7 +2,7 @@ import { ArrayIteratee, ObjectIteratee } from "../interfaces";
 import { forOwn } from "../object/for-own";
 
 /**
- * Iterates over elements of `collection` and invokes `iteratee` for each element.
+ * Iterates over elements of `collection` and invokes `iteratee` for each element. Iteratee functions may exit iteration early by explicitly returning `false`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,839 bytes

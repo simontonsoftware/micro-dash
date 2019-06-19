@@ -10,5 +10,6 @@ export { omitBy } from "./omit-by";
 export { pick } from "./pick";
 export { pickBy } from "./pick-by";
 export { set } from "./set";
+export { transform } from "./transform";
 export { update } from "./update";
 export { values } from "./values";
