@@ -1,6 +1,16 @@
 import { zip } from "./zip";
 
 describe("zip()", () => {
+  // hits some code coverage missed by the lodash tests
+  it("can zip things with falsey values", () => {
+    expect(zip([1, 2], undefined)).toEqual([[1, undefined], [2, undefined]]);
+    expect(zip(null, [3, 4])).toEqual([[undefined, 3], [undefined, 4]]);
+  });
+
+  //
+  // stolen from https://github.com/lodash/lodash
+  //
+
   it("should work with no arguments", () => {
     expect(zip()).toEqual([]);
   });
