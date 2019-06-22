@@ -1,6 +1,6 @@
-import { pull } from "./pull";
+import { pullAll } from "./pull-all";
 
-describe("pull()", () => {
+describe("pullAll()", () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -8,7 +8,7 @@ describe("pull()", () => {
   it("should modify and return the array", () => {
     const argument = [1, 2, 3];
 
-    const returned = pull(argument, 1, 3);
+    const returned = pullAll(argument, [1, 3]);
 
     expect(returned).toBe(argument);
     expect(returned).toEqual([2]);
@@ -19,7 +19,7 @@ describe("pull()", () => {
     delete array[1];
     delete array[3];
 
-    pull(array, 1);
+    pullAll(array, [1]);
 
     expect("0" in array).toBeFalsy();
     expect("1" in array).toBeTruthy();
@@ -30,7 +30,7 @@ describe("pull()", () => {
     const array = [1, 2, 3];
     delete array[1];
 
-    pull(array, undefined);
+    pullAll(array, [undefined]);
 
     expect(array).toEqual([1, 3]);
   });
@@ -38,14 +38,19 @@ describe("pull()", () => {
   it("should match `NaN`", () => {
     const array = [1, NaN, 3, NaN];
 
-    pull(array, NaN);
+    pullAll(array, [NaN]);
 
     expect(array).toEqual([1, 3]);
   });
 
+  it("should work with the same value for `array` and `values`", () => {
+    const array = [{ a: 1 }, { b: 2 }];
+    expect(pullAll(array, array)).toEqual([]);
+  });
+
   it("should return an array", () => {
     const array = [1, 2, 3];
-    const actual = pull(array);
+    const actual = pullAll(array, []);
 
     expect(actual).toEqual(array);
     expect(actual).toBe(array);

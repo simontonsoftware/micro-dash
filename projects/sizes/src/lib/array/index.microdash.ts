@@ -3,6 +3,7 @@ import "./compact.microdash";
 import "./concat.microdash";
 import "./flatten.microdash";
 import "./last.microdash";
+import "./pull-all.microdash";
 import "./pull-at.microdash";
 import "./pull.microdash";
 import "./remove.microdash";
