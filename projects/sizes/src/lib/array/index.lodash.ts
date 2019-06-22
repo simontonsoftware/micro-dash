@@ -1,5 +1,6 @@
 import "./chunk.lodash";
 import "./compact.lodash";
+import "./concat.lodash";
 import "./flatten.lodash";
 import "./last.lodash";
 import "./pull-at.lodash";

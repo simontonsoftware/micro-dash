@@ -1,5 +1,6 @@
 export { chunk } from "./chunk";
 export { compact } from "./compact";
+export { concat } from "./concat";
 export { flatten } from "./flatten";
 export { last } from "./last";
 export { pull } from "./pull";
