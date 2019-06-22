@@ -1,6 +1,7 @@
 import "./chunk.microdash";
 import "./compact.microdash";
 import "./concat.microdash";
+import "./difference.microdash";
 import "./flatten.microdash";
 import "./last.microdash";
 import "./pull-all.microdash";

@@ -1,6 +1,7 @@
 import "./chunk.lodash";
 import "./compact.lodash";
 import "./concat.lodash";
+import "./difference.lodash";
 import "./flatten.lodash";
 import "./last.lodash";
 import "./pull-all.lodash";
