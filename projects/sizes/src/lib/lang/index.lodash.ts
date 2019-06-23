@@ -11,4 +11,5 @@ import "./is-number.lodash";
 import "./is-reg-exp.lodash";
 import "./is-string.lodash";
 import "./is-undefined.lodash";
+import "./to-array.lodash";
 import "./to-string.lodash";

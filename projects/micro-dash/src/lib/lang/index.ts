@@ -11,4 +11,5 @@ export { isNumber } from "./is-number";
 export { isRegExp } from "./is-reg-exp";
 export { isString } from "./is-string";
 export { isUndefined } from "./is-undefined";
+export { toArray } from "./to-array";
 export { toString } from "./to-string";

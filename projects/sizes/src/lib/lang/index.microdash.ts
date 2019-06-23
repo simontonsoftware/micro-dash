@@ -11,4 +11,5 @@ import "./is-number.microdash";
 import "./is-reg-exp.microdash";
 import "./is-string.microdash";
 import "./is-undefined.microdash";
+import "./to-array.microdash";
 import "./to-string.microdash";
