@@ -1,4 +1,3 @@
-import { isArray } from "lodash-es";
 import { chunk } from "./chunk";
 
 describe("chunk()", () => {
@@ -32,7 +31,8 @@ describe("chunk()", () => {
   it("should return an array", () => {
     const array = [1, 2, 3];
     const actual = chunk(array);
-    expect(isArray(actual)).toBe(true);
-    expect((actual as any) === array).toBe(false);
+
+    expect(actual).toEqual(jasmine.any(Array));
+    expect(actual).not.toBe(array as any);
   });
 });

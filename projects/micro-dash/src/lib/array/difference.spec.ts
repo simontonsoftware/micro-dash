@@ -56,7 +56,7 @@ describe("difference()", () => {
     const array = [1, 2, 3];
     const actual = difference(array);
 
-    expect(actual).toEqual(array);
+    expect(actual).toEqual(jasmine.any(Array));
     expect(actual).not.toBe(array);
   });
 });

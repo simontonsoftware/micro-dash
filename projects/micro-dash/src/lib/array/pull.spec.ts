@@ -47,7 +47,7 @@ describe("pull()", () => {
     const array = [1, 2, 3];
     const actual = pull(array);
 
-    expect(actual).toEqual(array);
+    expect(actual).toEqual(jasmine.any(Array));
     expect(actual).toBe(array);
   });
 });

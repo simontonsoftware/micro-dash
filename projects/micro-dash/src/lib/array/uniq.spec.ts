@@ -73,7 +73,8 @@ describe("uniq()", () => {
   it("should return an array", () => {
     const array = [1, 2, 3];
     const actual = uniq(array);
-    expect(Array.isArray(actual)).toBe(true);
+
+    expect(actual).toEqual(jasmine.any(Array));
     expect(actual).not.toBe(array);
   });
 });
