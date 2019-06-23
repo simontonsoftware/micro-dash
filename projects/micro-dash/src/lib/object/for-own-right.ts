@@ -1,4 +1,4 @@
-import { forEachRight } from "../collection/for-each-right";
+import { forEachRight } from "../collection";
 import { ObjectIteratee } from "../interfaces";
 import { keys } from "./keys";
 

@@ -1,5 +1,3 @@
-import { NumberKeyedObject } from "s-ng-dev-utils";
-
 /** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
 /** @hidden */
@@ -10,12 +8,12 @@ export type NarrowingArrayIteratee<I, O extends I> = (
 /** @hidden */
 export type ObjectIteratee<T, O> = <K extends keyof T>(
   item: T[K],
-  key: T extends NumberKeyedObject ? string : K,
+  key: number extends keyof T ? string : K,
 ) => O;
 /** @hidden */
 export type NarrowingObjectIteratee<I, O extends I[keyof I]> = (
   item: I[keyof I],
-  key: I extends NumberKeyedObject ? string : keyof I,
+  key: number extends keyof I ? string : keyof I,
 ) => item is O;
 /** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;

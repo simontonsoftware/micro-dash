@@ -1,4 +1,4 @@
-import { forOwn } from "../object/for-own";
+import { forOwn } from "../object";
 import { clone } from "./clone";
 
 /**
