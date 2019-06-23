@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.2.0](https://github.com/simontonsoftware/micro-dash/compare/v6.1.0...v6.2.0) (2019-06-23)
+
+### Bug Fixes
+
+- to match lodash, `includes()` now returns `false` for a string when `fromIndex` is greater than its length ([c81a920](https://github.com/simontonsoftware/micro-dash/commit/c81a920))
+
+### Features
+
+- add `concat()` ([bc4eec2](https://github.com/simontonsoftware/micro-dash/commit/bc4eec2))
+- add `difference()` ([341fbd1](https://github.com/simontonsoftware/micro-dash/commit/341fbd1))
+- add `initial()` ([1f6aece](https://github.com/simontonsoftware/micro-dash/commit/1f6aece))
+- add `pullAll()` ([950c42b](https://github.com/simontonsoftware/micro-dash/commit/950c42b))
+- add `sample()` ([2b1506c](https://github.com/simontonsoftware/micro-dash/commit/2b1506c))
+- add `toArray()` ([7d112e2](https://github.com/simontonsoftware/micro-dash/commit/7d112e2))
+- add `transform()` ([3cc721b](https://github.com/simontonsoftware/micro-dash/commit/3cc721b))
+- add `union()` ([2b28c0b](https://github.com/simontonsoftware/micro-dash/commit/2b28c0b))
+- add `uniqBy()` ([05995ba](https://github.com/simontonsoftware/micro-dash/commit/05995ba))
+
 ## [6.1.0](https://github.com/simontonsoftware/micro-dash/compare/v6.0.0...v6.1.0) (2019-06-15)
 
 ### Features
