@@ -1,6 +1,19 @@
+import { expectType } from "s-ng-dev-utils";
 import { toArray } from "./to-array";
 
 describe("toArray()", () => {
+  it("has fancy typing", () => {
+    expectType<string[]>(toArray("hi"));
+    expectType<number[]>(toArray([1, 2, 3]));
+    expectType<number[]>(toArray({ a: 1, b: 2 }));
+    expectType<[]>(toArray(1));
+    expectType<[]>(toArray(null));
+  });
+
+  it("works for primitives", () => {
+    expect(toArray(1)).toEqual([]);
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -24,7 +37,7 @@ describe("toArray()", () => {
 
   it("should work with a node list for `collection`", () => {
     const actual = toArray(document.getElementsByTagName("body"));
-    expect(actual).toEqual([document.body]);
+    expect(actual).toEqual([document.body as HTMLBodyElement]);
   });
 
   it("should accept falsey arguments", () => {

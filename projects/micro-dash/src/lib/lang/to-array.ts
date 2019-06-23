@@ -1,3 +1,5 @@
+import { Nil } from "s-ng-dev-utils";
+import { Primitive } from "utility-types";
 import { values } from "../object";
 
 /**
@@ -7,6 +9,13 @@ import { values } from "../object";
  * - Lodash: 6,042 bytes
  * - Micro-dash: 171 bytes
  */
+
+export function toArray(value: string): string[];
+export function toArray<T extends any[]>(value: T): T;
+export function toArray<T extends object>(value: T): Array<T[keyof T]>;
+export function toArray(value: Primitive | Nil): [];
+export function toArray(value: any): any[];
+
 export function toArray(value: any) {
   if (value && value[Symbol.iterator]) {
     return Array.from(value);

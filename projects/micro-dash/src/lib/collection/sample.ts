@@ -1,6 +1,6 @@
 import { ObjectWith } from "s-ng-dev-utils";
 import { toArray } from "../lang";
-import { random } from "../math/random";
+import { random } from "../math";
 
 /**
  * Gets a random element from `collection`.
@@ -10,6 +10,6 @@ import { random } from "../math/random";
  * - Micro-dash: 600 bytes
  */
 export function sample<T>(collection: T[] | ObjectWith<T>): T {
-  collection = toArray(collection);
-  return collection[random(collection.length - 1)];
+  collection = toArray(collection as any);
+  return (collection as any)[random((collection as any[]).length - 1)];
 }
