@@ -10,6 +10,7 @@ import "./omit.lodash";
 import "./pick-by.lodash";
 import "./pick.lodash";
 import "./set.lodash";
+import "./to-pairs.lodash";
 import "./transform.lodash";
 import "./update.lodash";
 import "./values.lodash";

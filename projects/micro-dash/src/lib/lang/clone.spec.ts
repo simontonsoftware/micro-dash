@@ -1,4 +1,5 @@
-import { forOwn, isObject } from "lodash";
+import { isObject } from "lodash";
+import { toPairs } from "lodash-es";
 import { clone } from "./clone";
 
 describe("clone()", () => {
@@ -65,7 +66,7 @@ describe("clone()", () => {
     "undefined values": undefined,
     "objects with object values": { b: ["B"], c: { C: 1 } },
   };
-  forOwn(clonable, (object, kind) => {
+  for (const [kind, object] of toPairs(clonable)) {
     it("should clone " + kind, () => {
       const actual = clone(object);
 
@@ -76,7 +77,7 @@ describe("clone()", () => {
         expect(actual).toBe(object);
       }
     });
-  });
+  }
 
   it("clones properties that shadow those on `Object.prototype`", () => {
     const object = {

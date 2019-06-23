@@ -10,6 +10,7 @@ import "./omit.microdash";
 import "./pick-by.microdash";
 import "./pick.microdash";
 import "./set.microdash";
+import "./to-pairs.microdash";
 import "./transform.microdash";
 import "./update.microdash";
 import "./values.microdash";
