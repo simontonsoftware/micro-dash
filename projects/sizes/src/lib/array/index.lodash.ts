@@ -3,6 +3,7 @@ import "./compact.lodash";
 import "./concat.lodash";
 import "./difference.lodash";
 import "./flatten.lodash";
+import "./initial.lodash";
 import "./last.lodash";
 import "./pull-all.lodash";
 import "./pull-at.lodash";

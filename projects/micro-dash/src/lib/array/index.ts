@@ -3,6 +3,7 @@ export { compact } from "./compact";
 export { concat } from "./concat";
 export { difference } from "./difference";
 export { flatten } from "./flatten";
+export { initial } from "./initial";
 export { last } from "./last";
 export { pull } from "./pull";
 export { pullAll } from "./pull-all";
