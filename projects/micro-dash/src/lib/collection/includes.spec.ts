@@ -1,3 +1,4 @@
+import { ObjectWith } from "s-ng-dev-utils";
 import { includes } from "./includes";
 
 describe("includes()", () => {
@@ -48,5 +49,27 @@ describe("includes()", () => {
 
   it("should floor `position` values", () => {
     expect(includes([1, 2, 3, 4], 2, 1.2)).toBe(true);
+  });
+
+  it("should work with a string for `collection`", () => {
+    expect(includes("abc", "bc")).toBe(true);
+    expect(includes("abc", "d")).toBe(false);
+  });
+
+  it("should return `false` for empty collections", () => {
+    expect(includes<number[]>([], 1)).toBe(false);
+    expect(includes<ObjectWith<number>>({}, 1)).toBe(false);
+    expect(includes("", "a")).toBe(false);
+  });
+
+  it("should work with a string and a `fromIndex` >= `length`", () => {
+    for (const fromIndex of [4, 6, 2 ** 32, Infinity]) {
+      expect(includes("1234", "1", fromIndex)).toBe(false);
+      expect(includes("1234", "", fromIndex)).toBe(fromIndex <= 4);
+    }
+  });
+
+  it("should match `NaN`", () => {
+    expect(includes([1, NaN, 3], NaN)).toBe(true);
   });
 });
