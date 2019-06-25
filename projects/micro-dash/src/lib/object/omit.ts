@@ -1,5 +1,5 @@
-import { Nil } from "s-ng-dev-utils";
-import { clone } from "../lang/clone";
+import { Nil } from "../interfaces";
+import { clone } from "../lang";
 
 /**
  * The opposite of `pick`; this method creates an object composed of the own enumerable string properties of object that are not omitted.

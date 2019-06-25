@@ -1,5 +1,5 @@
 import { bind } from "lodash";
-import { ObjectWith } from "s-ng-dev-utils";
+import { ObjectWith } from "../interfaces";
 import { curry } from "./curry";
 
 describe("curry()", () => {

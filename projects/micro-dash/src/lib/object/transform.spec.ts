@@ -1,5 +1,5 @@
 import { identity, noop } from "lodash-es";
-import { ObjectWith } from "s-ng-dev-utils";
+import { ObjectWith } from "../interfaces";
 import { transform } from "./transform";
 
 describe("transform", () => {

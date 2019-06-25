@@ -1,5 +1,4 @@
-import { Nil, NumberKeyedObject } from "s-ng-dev-utils";
-import { NarrowingObjectIteratee, ObjectIteratee } from "../interfaces";
+import { NarrowingObjectIteratee, Nil, ObjectIteratee } from "../interfaces";
 import { forOwn } from "./for-own";
 
 /**
@@ -16,7 +15,7 @@ import { forOwn } from "./for-own";
 export function pickBy<T>(
   object: T[],
   predicate: ObjectIteratee<T, boolean>,
-): T extends Nil ? {} : NumberKeyedObject<T>;
+): T extends Nil ? {} : { [index: number]: T };
 
 export function pickBy<I, O extends I[keyof I]>(
   object: I,

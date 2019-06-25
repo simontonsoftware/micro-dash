@@ -1,4 +1,4 @@
-import { ObjectWith } from "s-ng-dev-utils";
+import { ObjectWith } from "../interfaces";
 import { toArray } from "../lang";
 import { random } from "../math";
 

@@ -1,4 +1,5 @@
-import { expectType, Nil } from "s-ng-dev-utils";
+import { expectType } from "s-ng-dev-utils";
+import { Nil } from "../interfaces";
 import { invoke } from "./invoke";
 
 describe("invoke()", () => {

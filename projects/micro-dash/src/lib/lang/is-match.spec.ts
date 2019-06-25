@@ -1,4 +1,5 @@
-import { Falsey, ObjectWith } from "s-ng-dev-utils";
+import { Falsey } from "utility-types";
+import { ObjectWith } from "../interfaces";
 import { isMatch } from "./is-match";
 
 describe("isMatch()", () => {

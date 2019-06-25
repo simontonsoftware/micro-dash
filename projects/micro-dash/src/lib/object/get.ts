@@ -1,4 +1,4 @@
-import { Nil } from "s-ng-dev-utils";
+import { Nil } from "../interfaces";
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.

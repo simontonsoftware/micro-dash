@@ -1,5 +1,4 @@
-import { Nil } from "s-ng-dev-utils";
-import { Primitive } from "utility-types";
+import { Nil, Primitive } from "../interfaces";
 import { values } from "../object";
 
 /**

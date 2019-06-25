@@ -1,4 +1,4 @@
-import { Nil } from "s-ng-dev-utils";
+import { Nil } from "../interfaces";
 
 /**
  * Checks if value is `null` or `undefined`.

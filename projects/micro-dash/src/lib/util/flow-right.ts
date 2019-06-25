@@ -1,4 +1,3 @@
-import { Transformer } from "s-ng-dev-utils";
 import { identity } from "./identity";
 
 /**
@@ -97,7 +96,7 @@ export function flowRight<A1, R1, R2, R3, R4, R5, R6, R7>(
 // export function flowRight<TResult extends Function>(...funcs: Function[]): TResult;
 // export function flowRight<TResult extends Function>(funcs: Function[]): TResult;
 
-export function flowRight<T>(...funcs: Array<Transformer<T>>): Transformer<T>;
+export function flowRight<T>(...funcs: Array<(val: T) => T>): (val: T) => T;
 
 export function flowRight(...funcs: Function[]) {
   if (funcs.length) {

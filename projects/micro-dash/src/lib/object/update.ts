@@ -1,5 +1,3 @@
-import { Function1 } from "s-ng-dev-utils";
-
 /**
  * This method is like `set()` except that it accepts `updater` to produce the value to set.
  *
@@ -16,7 +14,7 @@ import { Function1 } from "s-ng-dev-utils";
 export function update<T>(
   object: T,
   path: Array<string | number>,
-  updater: Function1<any, any>,
+  updater: (val: any) => any,
 ): T {
   if (object && path.length) {
     let current: any = object;

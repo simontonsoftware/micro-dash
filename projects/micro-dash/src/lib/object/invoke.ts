@@ -1,5 +1,5 @@
-import { Existant, Nil } from "s-ng-dev-utils";
 import { NonUndefined } from "utility-types";
+import { Existant, Nil } from "../interfaces";
 import { isFunction } from "../lang";
 import { get } from "./get";
 

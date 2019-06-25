@@ -1,4 +1,13 @@
 /** @hidden */
+export type Nil = null | undefined;
+/** @hidden */
+export type Primitive = boolean | number | string;
+/** @hidden */
+export type Existant = Primitive | object;
+/** @hidden */
+export type ObjectWith<T> = Record<string, T>;
+
+/** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
 /** @hidden */
 export type NarrowingArrayIteratee<I, O extends I> = (

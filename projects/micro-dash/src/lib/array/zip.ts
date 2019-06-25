@@ -1,4 +1,4 @@
-import { Nil } from "s-ng-dev-utils";
+import { Nil } from "../interfaces";
 import { times } from "../util";
 
 /**
