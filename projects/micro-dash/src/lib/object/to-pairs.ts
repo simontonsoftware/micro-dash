@@ -13,5 +13,9 @@ import { keys } from "./keys";
 export function toPairs<T>(
   object: T,
 ): Array<[number extends keyof T ? string : keyof T, T[keyof T]]> {
-  return keys(object).map((key) => [key, object[key as keyof T]]);
+  // This casting should not be needed after typedoc can support typescript 3.4
+  // https://github.com/TypeStrong/typedoc/issues/1059
+  return keys(object).map((key) => [key, object[key as keyof T]]) as Array<
+    [number extends keyof T ? string : keyof T, T[keyof T]]
+  >;
 }
