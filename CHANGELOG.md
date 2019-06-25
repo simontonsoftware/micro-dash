@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/simontonsoftware/micro-dash/compare/v6.2.0...v6.3.0) (2019-06-25)
+
+### Bug Fixes
+
+- remove accidental dependency on `s-ng-dev-utils` ([c90d8ee](https://github.com/simontonsoftware/micro-dash/commit/c90d8ee))
+
+### Features
+
+- add `toPairs()` ([f2fac57](https://github.com/simontonsoftware/micro-dash/commit/f2fac57))
+- improve typing of `keys()` and object iteratees ([3ccaf48](https://github.com/simontonsoftware/micro-dash/commit/3ccaf48))
+
 ## [6.2.0](https://github.com/simontonsoftware/micro-dash/compare/v6.1.0...v6.2.0) (2019-06-23)
 
 ### Bug Fixes
