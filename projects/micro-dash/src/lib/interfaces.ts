@@ -5,7 +5,7 @@ export type Primitive = boolean | number | string;
 /** @hidden */
 export type Key = keyof any;
 /** @hidden */
-export type Existant = Primitive | object;
+export type Existent = Primitive | object;
 /** @hidden */
 export type ObjectWith<T> = Record<string, T>;
 
