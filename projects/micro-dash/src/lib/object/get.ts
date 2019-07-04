@@ -1,5 +1,17 @@
 import { Nil } from "../interfaces";
 
+type AtPath<T, P extends any[]> = undefined extends P[0]
+  ? undefined
+  : undefined extends P[1]
+  ? T[P[0]]
+  : undefined extends P[2]
+  ? T[P[0]][P[1]]
+  : undefined extends P[3]
+  ? T[P[0]][P[1]][P[2]]
+  : undefined extends P[4]
+  ? T[P[0]][P[1]][P[2]][P[3]]
+  : any;
+
 /**
  * Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.
  *
@@ -11,47 +23,25 @@ import { Nil } from "../interfaces";
  * - Micro-dash: 63 bytes
  */
 
-export function get<D>(object: object, path: [], defaultValue?: D): D;
-export function get<T, K1 extends keyof T, D extends T[K1]>(
-  object: T,
-  path: [K1],
-  defaultValue?: D,
-): D extends undefined ? T[K1] : Exclude<T[K1], undefined>;
 export function get<
   T,
-  K1 extends keyof T,
-  K2 extends keyof T[K1],
-  D extends T[K1][K2]
+  O extends Exclude<T, Nil> = Exclude<T, Nil>,
+  K1 extends keyof O = keyof O,
+  K2 extends keyof O[K1] = keyof O[K1],
+  K3 extends keyof O[K1][K2] = keyof O[K1][K2],
+  K4 extends keyof O[K1][K2][K3] = keyof O[K1][K2][K3],
+  P extends [K1?, K2?, K3?, K4?, ...any[]] = [K1?, K2?, K3?, K4?, ...any[]],
+  D = undefined
 >(
   object: T,
-  path: [K1, K2],
+  path: P,
   defaultValue?: D,
-): D extends undefined ? T[K1][K2] : Exclude<T[K1][K2], undefined>;
-export function get<
-  T,
-  K1 extends keyof T,
-  K2 extends keyof T[K1],
-  K3 extends keyof T[K1][K2],
-  D extends T[K1][K2][K3]
->(
-  object: T,
-  path: [K1, K2, K3],
-  defaultValue?: D,
-): D extends undefined ? T[K1][K2][K3] : Exclude<T[K1][K2][K3], undefined>;
-export function get<
-  T,
-  K1 extends keyof T,
-  K2 extends keyof T[K1],
-  K3 extends keyof T[K1][K2],
-  K4 extends keyof T[K1][K2][K3],
-  D extends T[K1][K2][K3][K4]
->(
-  object: T,
-  path: [K1, K2, K3, K4],
-  defaultValue?: D,
-): D extends undefined
-  ? T[K1][K2][K3][K4]
-  : Exclude<T[K1][K2][K3][K4], undefined>;
+): undefined extends T | AtPath<O, P>
+  ? undefined extends D
+    ? AtPath<O, P> | D
+    : Exclude<AtPath<O, P> | D, undefined>
+  : AtPath<O, P>;
+
 export function get(
   object: object | Nil,
   path: Array<keyof any>,
