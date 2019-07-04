@@ -1,4 +1,4 @@
-import { Nil } from "../interfaces";
+import { Key, Nil } from "../interfaces";
 
 type AtPath<T, P extends any[]> = undefined extends P[0]
   ? undefined
@@ -42,13 +42,9 @@ export function get<
     : Exclude<AtPath<O, P> | D, undefined>
   : AtPath<O, P>;
 
-export function get(
-  object: object | Nil,
-  path: Array<keyof any>,
-  defaultValue?: any,
-): any;
+export function get(object: object | Nil, path: Key[], defaultValue?: any): any;
 
-export function get(object: any, path: Array<keyof any>, defaultValue?: any) {
+export function get(object: any, path: Key[], defaultValue?: any) {
   // const val = property(path)(object);
   // return isUndefined(val) ? defaultValue : val;
   const length = path.length;

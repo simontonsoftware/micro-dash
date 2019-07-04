@@ -1,4 +1,4 @@
-import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from "../interfaces";
+import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args, Key } from "../interfaces";
 
 /**
  * Creates a function that invokes the method at `object[key]` with `partials` prepended to the arguments it receives. Allows bound functions to reference methods that may be redefined or don't yet exist. See [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern) for more details.
@@ -13,29 +13,29 @@ import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from "../interfaces";
  */
 
 export function bindKey<
-  K extends keyof any,
+  K extends Key,
   T extends { [key in K]: (...args: any[]) => any }
 >(object: T, key: K): (...args: Parameters<T[K]>) => ReturnType<T[K]>;
 export function bindKey<
-  K extends keyof any,
+  K extends Key,
   A1,
   T extends { [key in K]: (...args: [A1, ...any[]]) => any }
 >(object: T, key: K, arg1: A1): Drop1Arg<T[K]>;
 export function bindKey<
-  K extends keyof any,
+  K extends Key,
   A1,
   A2,
   T extends { [key in K]: (...args: [A1, A2, ...any[]]) => any }
 >(object: T, key: K, arg1: A1, arg2: A2): Drop2Args<T[K]>;
 export function bindKey<
-  K extends keyof any,
+  K extends Key,
   A1,
   A2,
   A3,
   T extends { [key in K]: (...args: [A1, A2, A3, ...any[]]) => any }
 >(object: T, key: K, arg1: A1, arg2: A2, arg3: A3): Drop3Args<T[K]>;
 export function bindKey<
-  K extends keyof any,
+  K extends Key,
   A1,
   A2,
   A3,
@@ -45,7 +45,7 @@ export function bindKey<
 
 // catch-all
 export function bindKey<
-  K extends keyof any,
+  K extends Key,
   A1,
   A2,
   A3,
