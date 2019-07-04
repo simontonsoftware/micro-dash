@@ -1,12 +1,12 @@
 import { NonUndefined } from "utility-types";
-import { Existant, Key, Nil } from "../interfaces";
+import { Existent, Key, Nil } from "../interfaces";
 import { isFunction } from "../lang";
 import { get } from "./get";
 
 type Fn = (...args: any[]) => any;
 
 type Obj1<K1 extends Key, V> = { [key in K1]?: V };
-type Path1<K1 extends Key, T extends Obj1<K1, any> | Nil> = T extends Existant
+type Path1<K1 extends Key, T extends Obj1<K1, any> | Nil> = T extends Existent
   ? T[K1]
   : NonNullable<T>[K1] | undefined;
 type DefinedPath1<K1 extends Key, T extends Obj1<K1, any> | Nil> = NonUndefined<

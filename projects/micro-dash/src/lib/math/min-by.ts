@@ -1,5 +1,5 @@
 import { forEach } from "../collection";
-import { Existant, Primitive, ValueIteratee } from "../interfaces";
+import { Existent, Primitive, ValueIteratee } from "../interfaces";
 
 /**
  * This method is like `min` except that it accepts `iteratee` which is invoked for each element in `array` to generate the criterion by which the value is ranked.
@@ -8,7 +8,7 @@ import { Existant, Primitive, ValueIteratee } from "../interfaces";
  * - Lodash: 14,071 bytes
  * - Micro-dash: 440 bytes
  */
-export function minBy<T extends Existant>(
+export function minBy<T extends Existent>(
   array: T[],
   iteratee: ValueIteratee<T, Primitive>,
 ) {
