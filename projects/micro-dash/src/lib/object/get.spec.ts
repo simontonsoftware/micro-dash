@@ -13,18 +13,45 @@ class Wrap3 {
   wrap2 = new Wrap2();
 }
 
-class Wrap4 {
-  wrap3 = new Wrap3();
+class Cycle {
+  next!: Cycle;
 }
 
 describe("get()", () => {
-  it("should know that `get` cannot return `undefined` when a default value is given", () => {
+  it("has fancy typing", () => {
+    expectType<number | undefined>(get(new Wrap1(), ["value"]));
     expectType<number>(get(new Wrap1(), ["value"], 1));
-    expectType<number>(get(new Wrap2(), ["wrap1", "value"], 1));
-    expectType<number>(get(new Wrap3(), ["wrap2", "wrap1", "value"], 1));
-    expectType<number>(
-      get(new Wrap4(), ["wrap3", "wrap2", "wrap1", "value"], 1),
+
+    expectType<Wrap1>(get(new Wrap2(), ["wrap1"]));
+    expectType<number | undefined>(get(new Wrap2(), ["wrap1", "value"]));
+
+    expectType<Wrap1>(get(new Wrap3(), ["wrap2", "wrap1"]));
+    expectType<number | undefined>(
+      get(new Wrap3(), ["wrap2", "wrap1", "value"]),
     );
+    expectType<number>(get(new Wrap3(), ["wrap2", "wrap1", "value"], 1));
+
+    expectType<Cycle>(get(new Cycle(), ["next", "next", "next", "next"]));
+    expectType<any>(get(new Cycle(), ["next", "next", "next", "next", "next"]));
+
+    // when D is a different type than at the path
+    expectType<Wrap1>(get(new Wrap3(), ["wrap2", "wrap1"], "hi"));
+    expectType<number | string>(get(new Wrap2(), ["wrap1", "value"], "hi"));
+
+    // when T can be undefined
+    const wOrU = undefined as Wrap3 | undefined;
+    expectType<Wrap1 | undefined>(get(wOrU, ["wrap2", "wrap1"]));
+
+    // fallback to `any` for e.g. a string array
+    const path = ["a", "b"];
+    expectType<any>(get(new Cycle(), path));
+
+    // passing a key instead of a path
+    expectType<number | undefined>(get(new Wrap1(), "value"));
+    expectType<number>(get(new Wrap1(), "value", 1));
+    expectType<Wrap1>(get(new Wrap2(), "wrap1", 1));
+    expectType<number | string>(get(new Wrap1(), "value", "hi"));
+    expectType<Wrap2 | undefined>(get(wOrU, "wrap2"));
   });
 
   //
@@ -32,6 +59,7 @@ describe("get()", () => {
   //
 
   it("should get string keyed property values", () => {
+    expect(get({ a: 1 }, "a")).toBe(1);
     expect(get({ a: 1 }, ["a"])).toBe(1);
   });
 
@@ -61,8 +89,10 @@ describe("get()", () => {
   });
 
   it("should return `undefined` when `object` is nullish", () => {
-    expect(get(undefined, ["constructor"])).toBeUndefined();
-    expect(get(null, ["constructor"])).toBeUndefined();
+    expect(get<any>(undefined, "constructor")).toBeUndefined();
+    expect(get<any>(undefined, ["constructor"])).toBeUndefined();
+    expect(get<any>(null, "constructor")).toBeUndefined();
+    expect(get<any>(null, ["constructor"])).toBeUndefined();
   });
 
   it("is `undefined` for deep paths when `object` is nullish", () => {
