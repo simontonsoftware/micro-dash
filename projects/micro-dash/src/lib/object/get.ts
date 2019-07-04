@@ -1,4 +1,5 @@
 import { Key, Nil } from "../interfaces";
+import { castArray } from "../lang";
 
 type AtPath<T, P extends any[]> = undefined extends P[0]
   ? undefined
@@ -16,12 +17,27 @@ type AtPath<T, P extends any[]> = undefined extends P[0]
  * Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.
  *
  * Differences from lodash:
- * - only accepts an array for `path`, not a dot-separated string
+ * - does not handle a dot-separated string for `path`
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 5,189 bytes
- * - Micro-dash: 63 bytes
+ * - Micro-dash: 111 bytes
  */
+
+export function get<
+  T,
+  O extends Exclude<T, Nil> = Exclude<T, Nil>,
+  K extends keyof O = keyof O,
+  D = undefined
+>(
+  object: T,
+  key: K,
+  defaultValue?: D,
+): undefined extends T | O[K]
+  ? undefined extends D
+    ? O[K] | D
+    : Exclude<O[K] | D, undefined>
+  : O[K];
 
 export function get<
   T,
@@ -44,9 +60,10 @@ export function get<
 
 export function get(object: object | Nil, path: Key[], defaultValue?: any): any;
 
-export function get(object: any, path: Key[], defaultValue?: any) {
+export function get(object: any, path: Key | Key[], defaultValue?: any) {
   // const val = property(path)(object);
   // return isUndefined(val) ? defaultValue : val;
+  path = castArray(path);
   const length = path.length;
   let index = 0;
   while (object != null && index < length) {

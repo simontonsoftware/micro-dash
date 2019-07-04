@@ -14,7 +14,7 @@ class Wrap3 {
 }
 
 class Cycle {
-  next = new Cycle();
+  next!: Cycle;
 }
 
 describe("get()", () => {
@@ -38,15 +38,20 @@ describe("get()", () => {
     expectType<Wrap1>(get(new Wrap3(), ["wrap2", "wrap1"], "hi"));
     expectType<number | string>(get(new Wrap2(), ["wrap1", "value"], "hi"));
 
-    // when T can be nil
+    // when T can be undefined
     const wOrU = undefined as Wrap3 | undefined;
-    const wOrN = null as Wrap3 | null;
     expectType<Wrap1 | undefined>(get(wOrU, ["wrap2", "wrap1"]));
-    expectType<Wrap1 | undefined>(get(wOrN, ["wrap2", "wrap1"]));
 
     // fallback to `any` for e.g. a string array
     const path = ["a", "b"];
     expectType<any>(get(new Cycle(), path));
+
+    // passing a key instead of a path
+    expectType<number | undefined>(get(new Wrap1(), "value"));
+    expectType<number>(get(new Wrap1(), "value", 1));
+    expectType<Wrap1>(get(new Wrap2(), "wrap1", 1));
+    expectType<number | string>(get(new Wrap1(), "value", "hi"));
+    expectType<Wrap2 | undefined>(get(wOrU, "wrap2"));
   });
 
   //
@@ -54,6 +59,7 @@ describe("get()", () => {
   //
 
   it("should get string keyed property values", () => {
+    expect(get({ a: 1 }, "a")).toBe(1);
     expect(get({ a: 1 }, ["a"])).toBe(1);
   });
 
@@ -83,7 +89,9 @@ describe("get()", () => {
   });
 
   it("should return `undefined` when `object` is nullish", () => {
+    expect(get<any>(undefined, "constructor")).toBeUndefined();
     expect(get<any>(undefined, ["constructor"])).toBeUndefined();
+    expect(get<any>(null, "constructor")).toBeUndefined();
     expect(get<any>(null, ["constructor"])).toBeUndefined();
   });
 
