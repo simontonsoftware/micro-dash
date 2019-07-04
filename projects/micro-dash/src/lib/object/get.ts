@@ -1,4 +1,4 @@
-import { Nil } from "../interfaces";
+import { Key, Nil } from "../interfaces";
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.
@@ -52,13 +52,9 @@ export function get<
 ): D extends undefined
   ? T[K1][K2][K3][K4]
   : Exclude<T[K1][K2][K3][K4], undefined>;
-export function get(
-  object: object | Nil,
-  path: Array<keyof any>,
-  defaultValue?: any,
-): any;
+export function get(object: object | Nil, path: Key[], defaultValue?: any): any;
 
-export function get(object: any, path: Array<keyof any>, defaultValue?: any) {
+export function get(object: any, path: Key[], defaultValue?: any) {
   // const val = property(path)(object);
   // return isUndefined(val) ? defaultValue : val;
   const length = path.length;
