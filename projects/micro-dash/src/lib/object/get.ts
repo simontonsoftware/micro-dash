@@ -26,7 +26,7 @@ type AtPath<T, P extends any[]> = undefined extends P[0]
 
 export function get<
   T,
-  O extends Exclude<T, Nil> = Exclude<T, Nil>,
+  O extends NonNullable<T> = NonNullable<T>,
   K extends keyof O = keyof O,
   D = undefined
 >(
@@ -41,7 +41,7 @@ export function get<
 
 export function get<
   T,
-  O extends Exclude<T, Nil> = Exclude<T, Nil>,
+  O extends NonNullable<T> = NonNullable<T>,
   K1 extends keyof O = keyof O,
   K2 extends keyof O[K1] = keyof O[K1],
   K3 extends keyof O[K1][K2] = keyof O[K1][K2],

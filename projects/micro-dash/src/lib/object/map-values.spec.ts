@@ -1,3 +1,4 @@
+import { expectType } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { mapValues } from "./map-values";
 
@@ -7,6 +8,34 @@ describe("mapValues()", () => {
     expect(mapValues(null, spy)).toEqual({});
     expect(mapValues(undefined, spy)).toEqual({});
     expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("has fancy typing", () => {
+    interface O {
+      a: number;
+      b: number;
+    }
+    type A = number[];
+    interface MappedO {
+      a: string;
+      b: string;
+    }
+    interface MappedA {
+      [index: number]: string;
+      length: string;
+    }
+
+    expectType<MappedO>(mapValues({ a: 1, b: 2 }, String));
+    expectType<MappedA>(mapValues([1, 2], String));
+
+    const oOrN = null as O | null;
+    const oOrU = undefined as O | undefined;
+    const aOrN = null as A | null;
+    const aOrU = undefined as A | undefined;
+    expectType<MappedO | {}>(mapValues(oOrN, String));
+    expectType<MappedO | {}>(mapValues(oOrU, String));
+    expectType<MappedA | {}>(mapValues(aOrN, String));
+    expectType<MappedA | {}>(mapValues(aOrU, String));
   });
 
   //
