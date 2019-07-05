@@ -93,13 +93,13 @@ describe("forEach()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    forEach(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
+      return true;
     });
 
-    expect(count).toEqual(1);
+    forEach(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });

@@ -70,14 +70,14 @@ describe("mapValues()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    mapValues(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
+      return true;
     });
 
-    expect(count).toEqual(1);
+    mapValues(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should map values in `object` to a new object", () => {

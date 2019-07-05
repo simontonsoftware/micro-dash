@@ -36,6 +36,18 @@ describe("keyBy()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
+  it("should ignore added `object` properties", () => {
+    const object: any = { a: 1 };
+    const spy = jasmine.createSpy().and.callFake(() => {
+      object.b = 2;
+      return true;
+    });
+
+    keyBy(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
   it("should transform keys by `iteratee`", () => {
     const array = [{ dir: "left", code: 97 }, { dir: "right", code: 100 }];
 

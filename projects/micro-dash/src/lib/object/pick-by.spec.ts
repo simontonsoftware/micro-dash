@@ -40,15 +40,14 @@ describe("pickBy()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    pickBy(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
-      return false;
+      return true;
     });
 
-    expect(count).toEqual(1);
+    pickBy(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should create an object of picked string keyed properties", () => {

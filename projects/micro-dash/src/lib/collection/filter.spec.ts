@@ -72,14 +72,13 @@ describe("filter()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    filter(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
-      return false;
+      return true;
     });
 
-    expect(count).toEqual(1);
+    filter(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });

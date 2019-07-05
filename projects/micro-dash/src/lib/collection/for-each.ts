@@ -1,5 +1,5 @@
 import { ArrayIteratee, ObjectIteratee } from "../interfaces";
-import { forOwn } from "../object/for-own";
+import { forOwn } from "../object";
 
 /**
  * Iterates over elements of `collection` and invokes `iteratee` for each element. Iteratee functions may exit iteration early by explicitly returning `false`.

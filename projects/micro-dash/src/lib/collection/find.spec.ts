@@ -148,14 +148,13 @@ describe("find()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    find(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
       return false;
     });
 
-    expect(count).toEqual(1);
+    find(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });

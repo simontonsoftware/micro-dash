@@ -35,4 +35,16 @@ describe("reduce()", () => {
     reduce({ a: 1, b: 2 }, logger);
     expect(logger.args).toEqual([[1, 2, "b"]]);
   });
+
+  it("should ignore added `object` properties", () => {
+    const object: any = { a: 1 };
+    const spy = jasmine.createSpy().and.callFake(() => {
+      object.b = 2;
+      return true;
+    });
+
+    reduce(object, spy, object);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
 });

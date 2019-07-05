@@ -33,15 +33,14 @@ describe("omitBy()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    omitBy(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
-      return false;
+      return true;
     });
 
-    expect(count).toEqual(1);
+    omitBy(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should create an object with omitted string keyed properties", () => {

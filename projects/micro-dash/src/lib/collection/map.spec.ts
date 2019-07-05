@@ -60,14 +60,14 @@ describe("forEach()", () => {
 
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
-    let count = 0;
-
-    map(object, () => {
+    const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      ++count;
+      return true;
     });
 
-    expect(count).toEqual(1);
+    map(object, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should map values in `collection` to a new array", () => {
