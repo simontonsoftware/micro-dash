@@ -1,5 +1,5 @@
 import { Nil, ObjectIteratee } from "../interfaces";
-import { forOwnExceptArrayLength } from "./_keys-except-array-length";
+import { forOwn } from "./for-own";
 
 type MappedObject<T, O> = { [key in keyof T]: O };
 type MappedNullableObject<T, O> = { [key in keyof NonNullable<T>]: O } | {};
@@ -12,7 +12,7 @@ type MappedNullableArray<O> = MappedArray<O> | {};
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,299 bytes
- * - Micro-dash: 334 bytes
+ * - Micro-dash: 316 bytes
  */
 
 export function mapValues<A extends any[] | Nil, O>(
@@ -35,7 +35,7 @@ export function mapValues<T, O>(
 
 export function mapValues(object: any, iteratee: Function) {
   const obj: any = {};
-  forOwnExceptArrayLength(object, (value, key) => {
+  forOwn(object, (value, key) => {
     obj[key] = iteratee(value, key);
   });
   return obj;

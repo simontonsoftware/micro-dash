@@ -57,13 +57,6 @@ describe("isEqual()", () => {
     expect(isEqual(array1, array2)).toBe(false);
   });
 
-  it("should compare sparse arrays", () => {
-    const array = Array(1);
-
-    expect(isEqual(array, Array(1))).toBe(true);
-    expect(isEqual(array, Array(2))).toBe(false);
-  });
-
   it("should compare plain objects", () => {
     let object1: object = { a: true, b: null, c: 1, d: "a", e: undefined };
     let object2: object = { a: true, b: null, c: 1, d: "a", e: undefined };

@@ -35,11 +35,9 @@ describe("forEachRight()", () => {
   });
 
   it("should provide correct iteratee arguments", () => {
-    const logger = stub();
-
-    forEachRight([1, 2, 3], logger);
-
-    expect(logger.args).toEqual([[3, 2], [2, 1], [1, 0]]);
+    const spy = jasmine.createSpy();
+    forEachRight([1, 2, 3], spy);
+    expect(spy.calls.first().args).toEqual([3, 2]);
   });
 
   it("should treat sparse arrays as dense", () => {

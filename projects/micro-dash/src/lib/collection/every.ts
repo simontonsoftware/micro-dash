@@ -8,7 +8,7 @@ import { forEach } from "./for-each";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,633 bytes
- * - Micro-dash: 439 bytes
+ * - Micro-dash: 310 bytes
  */
 
 export function every<T>(

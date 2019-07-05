@@ -10,7 +10,7 @@ import { ObjectWith } from "../interfaces";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,549 bytes
- * - Micro-dash: 432 bytes
+ * - Micro-dash: 303 bytes
  */
 
 export function transform<E, A>(

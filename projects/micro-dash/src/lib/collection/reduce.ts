@@ -7,7 +7,7 @@ import { doReduce } from "./reduce-utils";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,518 bytes
- * - Micro-dash: 506 bytes
+ * - Micro-dash: 365 bytes
  */
 export function reduce<E>(
   array: E[] | undefined,

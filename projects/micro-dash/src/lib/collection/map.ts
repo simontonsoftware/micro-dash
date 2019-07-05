@@ -6,7 +6,7 @@ import { forEach } from "./for-each";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,393 bytes
- * - Micro-dash: 436 bytes
+ * - Micro-dash: 307 bytes
  */
 
 export function map<I, O>(

@@ -9,7 +9,7 @@ import { pickBy } from "./pick-by";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 15,529 bytes
- * - Micro-dash: 399 bytes
+ * - Micro-dash: 407 bytes
  */
 export function omitBy<T>(object: T, predicate: ObjectIteratee<T, boolean>) {
   return pickBy(object, (item, key) => !predicate(item, key));

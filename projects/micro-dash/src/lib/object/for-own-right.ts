@@ -1,6 +1,6 @@
-import { forEachRight } from "../collection";
+import { forEachRightOfArray } from "../collection/for-each-right";
 import { ObjectIteratee } from "../interfaces";
-import { keys } from "./keys";
+import { keys, keysOfNonArray } from "./keys";
 
 /**
  * This method is like `forOwn` except that it iterates over properties of `object` in the opposite order.
@@ -10,12 +10,25 @@ import { keys } from "./keys";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,541 bytes
- * - Micro-dash: 205 bytes
+ * - Micro-dash: 274 bytes
  */
 export function forOwnRight<T>(
   object: T,
   iteratee: ObjectIteratee<T, void | boolean>,
 ) {
-  forEachRight(keys(object), (key) => iteratee(object[key as keyof T], key));
+  forEachRightOfArray(keys(object), (key) =>
+    iteratee(object[key as keyof T], key),
+  );
+  return object;
+}
+
+/** @hidden */
+export function forOwnRightOfNonArray<T>(
+  object: T,
+  iteratee: ObjectIteratee<T, void | boolean>,
+) {
+  forEachRightOfArray(keysOfNonArray(object), (key) =>
+    iteratee(object[key as keyof T], key),
+  );
   return object;
 }

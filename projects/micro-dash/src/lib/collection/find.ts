@@ -4,14 +4,14 @@ import {
   NarrowingObjectIteratee,
   ObjectIteratee,
 } from "../interfaces";
-import { keys } from "../object/keys";
+import { keysOfNonArray } from "../object/keys";
 
 /**
  * Iterates over elements of `collection`, returning the first element `predicate` returns truthy for.
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,881 bytes
- * - Micro-dash: 370 bytes
+ * - Micro-dash: 383 bytes
  */
 
 export function find<I, O extends I>(
@@ -41,7 +41,7 @@ export function find(collection: any, predicate: Function, fromIndex = 0) {
       .slice(fromIndex)
       .find((item, index) => predicate(item, index));
   } else {
-    for (const key of keys(collection).slice(fromIndex)) {
+    for (const key of keysOfNonArray(collection).slice(fromIndex)) {
       const item = collection[key];
       if (predicate(item, key)) {
         return item;

@@ -14,7 +14,7 @@ import { isEmpty } from "./is-empty";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 11,355 bytes
- * - Micro-dash: 1,048 bytes
+ * - Micro-dash: 917 bytes
  */
 export function isMatch<T>(object: T, source: DeepPartial<T>) {
   return isEmpty(source) || isMatch0(object, source);

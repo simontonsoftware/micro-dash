@@ -1,12 +1,12 @@
 import { ArrayIteratee, ObjectIteratee } from "../interfaces";
-import { forOwn } from "../object";
+import { forOwnOfNonArray } from "../object/for-own";
 
 /**
  * Iterates over elements of `collection` and invokes `iteratee` for each element. Iteratee functions may exit iteration early by explicitly returning `false`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,839 bytes
- * - Micro-dash: 379 bytes
+ * - Micro-dash: 238 bytes
  */
 
 export function forEach<T>(
@@ -20,13 +20,21 @@ export function forEach<T>(
 
 export function forEach(collection: any, iteratee: any) {
   if (Array.isArray(collection)) {
-    for (let i = 0, l = collection.length; i < l; ++i) {
-      if (iteratee(collection[i], i) === false) {
-        break;
-      }
-    }
+    forEachOfArray(collection, iteratee);
   } else {
-    forOwn(collection, iteratee);
+    forOwnOfNonArray(collection, iteratee);
   }
   return collection;
+}
+
+/** @hidden */
+export function forEachOfArray<T>(
+  array: T[],
+  iteratee: ArrayIteratee<T, void | boolean>,
+) {
+  for (let i = 0, len = array.length; i < len; ++i) {
+    if (iteratee(array[i], i) === false) {
+      break;
+    }
+  }
 }

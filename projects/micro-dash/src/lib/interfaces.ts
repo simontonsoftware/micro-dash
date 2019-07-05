@@ -19,12 +19,12 @@ export type NarrowingArrayIteratee<I, O extends I> = (
 /** @hidden */
 export type ObjectIteratee<T, O> = <K extends keyof T>(
   item: T[K],
-  key: number extends keyof T ? string : K,
+  key: Extract<keyof T, number> extends never ? K : string,
 ) => O;
 /** @hidden */
 export type NarrowingObjectIteratee<I, O extends I[keyof I]> = (
   item: I[keyof I],
-  key: number extends keyof I ? string : keyof I,
+  key: Extract<keyof I, number> extends never ? keyof I : string,
 ) => item is O;
 /** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;

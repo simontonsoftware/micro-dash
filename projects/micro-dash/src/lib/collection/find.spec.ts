@@ -94,12 +94,9 @@ describe("find()", () => {
   });
 
   it("should provide correct iteratee arguments", () => {
-    const array = [1, 2, 3];
-    const logger = stub();
-
-    find(array, logger);
-
-    expect(logger.args).toEqual([[1, 0], [2, 1], [3, 2]]);
+    const spy = jasmine.createSpy();
+    find([1, 2, 3], spy);
+    expect(spy.calls.first().args).toEqual([1, 0]);
   });
 
   it("should treat sparse arrays as dense", () => {

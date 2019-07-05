@@ -8,6 +8,10 @@ describe("toPairs()", () => {
     expectType<Array<[string, number[][keyof number[]]]>>(toPairs([1, 2]));
   });
 
+  it("does not consider `length` for an array", () => {
+    expect(toPairs([1, 2, 3])).toEqual([["0", 1], ["1", 2], ["2", 3]]);
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //

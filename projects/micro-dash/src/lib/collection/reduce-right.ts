@@ -7,7 +7,7 @@ import { doReduce } from "./reduce-utils";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 14,524 bytes
- * - Micro-dash: 344 bytes
+ * - Micro-dash: 361 bytes
  */
 export function reduceRight<E>(
   array: E[] | undefined,
@@ -27,6 +27,7 @@ export function reduceRight<E, A>(
   iteratee: (accumulator: A, value: E, key: keyof E) => A,
   accumulator: A,
 ): A;
+
 export function reduceRight(
   collection: any,
   iteratee: Function,

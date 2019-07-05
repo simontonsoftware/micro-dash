@@ -1,5 +1,6 @@
+import { forEachOfArray } from "../collection/for-each";
 import { ObjectIteratee } from "../interfaces";
-import { keys } from "./keys";
+import { keys, keysOfNonArray } from "./keys";
 
 /**
  * Iterates over own enumerable string keyed properties of an object and invokes `iteratee` for each property. Iteratee functions may exit iteration early by explicitly returning `false`.
@@ -9,16 +10,23 @@ import { keys } from "./keys";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 3,534 bytes
- * - Micro-dash: 264 bytes
+ * - Micro-dash: 278 bytes
  */
 export function forOwn<T>(
   object: T,
   iteratee: ObjectIteratee<T, void | boolean>,
 ) {
-  for (const key of keys(object)) {
-    if (iteratee(object[key as keyof T], key) === false) {
-      break;
-    }
-  }
+  forEachOfArray(keys(object), (key) => iteratee(object[key as keyof T], key));
+  return object;
+}
+
+/** @hidden */
+export function forOwnOfNonArray<T>(
+  object: T,
+  iteratee: ObjectIteratee<T, void | boolean>,
+) {
+  forEachOfArray(keysOfNonArray(object), (key) =>
+    iteratee(object[key as keyof T], key),
+  );
   return object;
 }

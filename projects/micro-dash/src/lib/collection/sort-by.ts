@@ -7,7 +7,7 @@ import { map } from "./map";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 16,414 bytes
- * - Micro-dash: 960 bytes
+ * - Micro-dash: 826 bytes
  */
 
 export function sortBy<T>(

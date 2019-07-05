@@ -6,7 +6,7 @@ import { clone } from "./clone";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 12,481 bytes
- * - Micro-dash: 440 bytes
+ * - Micro-dash: 445 bytes
  */
 export function cloneDeep<T>(value: T): T {
   if (value instanceof Object) {

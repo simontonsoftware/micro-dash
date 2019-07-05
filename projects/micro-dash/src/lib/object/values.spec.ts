@@ -6,6 +6,10 @@ describe("values()", () => {
     expect(values(undefined)).toEqual([]);
   });
 
+  it("does not consider `length` for an array", () => {
+    expect(values([1, 2, 3]).sort()).toEqual([1, 2, 3]);
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //

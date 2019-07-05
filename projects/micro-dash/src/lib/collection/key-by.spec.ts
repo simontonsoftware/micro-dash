@@ -36,6 +36,12 @@ describe("keyBy()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
+  it("should provide correct iteratee arguments", () => {
+    const spy = jasmine.createSpy();
+    keyBy([1, 2, 3], spy);
+    expect(spy.calls.first().args).toEqual([1]);
+  });
+
   it("should ignore changes to `length`", () => {
     const array = [1];
     const spy = jasmine.createSpy().and.callFake(() => {

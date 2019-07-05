@@ -1,4 +1,5 @@
 import { noop } from "lodash";
+import { expectSingleCallAndReset } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { forOwnRight } from "./for-own-right";
 
@@ -8,23 +9,15 @@ describe("forOwnRight()", () => {
   //
 
   it("can exit early when iterating arrays", () => {
-    const logger = stub();
-    logger.onCall(1).returns(true);
-    logger.onCall(2).returns(false);
-
-    forOwnRight([1, 2, 3, 4], logger);
-
-    expect(logger.args).toEqual([[4, "length"], [4, "3"], [3, "2"]]);
+    const spy = jasmine.createSpy().and.returnValue(false);
+    forOwnRight([1, 2, 3], spy);
+    expectSingleCallAndReset(spy, 3, "2");
   });
 
   it("can exit early when iterating objects", () => {
-    const logger = stub();
-    logger.onCall(1).returns(true);
-    logger.onCall(2).returns(false);
-
-    forOwnRight({ a: 1, b: 2, c: 3, d: 4 }, logger);
-
-    expect(logger.args).toEqual([[4, "d"], [3, "c"], [2, "b"]]);
+    const spy = jasmine.createSpy().and.returnValue(false);
+    forOwnRight({ a: 1, b: 2, c: 3 }, spy);
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should iterate over `length` properties", () => {
@@ -36,11 +29,9 @@ describe("forOwnRight()", () => {
   });
 
   it("should provide correct iteratee arguments", () => {
-    const logger = stub();
-
-    forOwnRight([1, 2, 3], logger);
-
-    expect(logger.args).toEqual([[3, "length"], [3, "2"], [2, "1"], [1, "0"]]);
+    const spy = jasmine.createSpy();
+    forOwnRight([1, 2, 3], spy);
+    expect(spy.calls.first().args).toEqual([3, "2"]);
   });
 
   it("should treat sparse arrays as dense", () => {
@@ -50,7 +41,7 @@ describe("forOwnRight()", () => {
 
     forOwnRight(array, logger);
 
-    expect(logger.args).toEqual([[3, "length"], [3, "2"], [1, "0"]]);
+    expect(logger.args).toEqual([[3, "2"], [1, "0"]]);
   });
 
   it("should return the collection", () => {

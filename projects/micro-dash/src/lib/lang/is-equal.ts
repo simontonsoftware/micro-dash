@@ -1,4 +1,4 @@
-import { keys } from "../object/keys";
+import { keysOfNonArray } from "../object/keys";
 
 /**
  * Performs a deep comparison between two values to determine if they are equivalent.
@@ -10,7 +10,7 @@ import { keys } from "../object/keys";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 10,929 bytes
- * - Micro-dash: 559 bytes
+ * - Micro-dash: 572 bytes
  */
 export function isEqual(value: any, other: any) {
   if (Object.is(value, other)) {
@@ -20,12 +20,12 @@ export function isEqual(value: any, other: any) {
   if (!(value instanceof Object && other instanceof Object)) {
     return false;
   }
-  for (const key of keys(value)) {
+  for (const key of keysOfNonArray(value)) {
     if (!other.hasOwnProperty(key)) {
       return false;
     }
   }
-  for (const key of keys(other)) {
+  for (const key of keysOfNonArray(other)) {
     if (!isEqual(value[key], other[key])) {
       return false;
     }

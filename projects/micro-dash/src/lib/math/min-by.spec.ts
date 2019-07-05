@@ -8,11 +8,9 @@ describe("minBy()", () => {
   //
 
   it("should provide correct iteratee arguments", () => {
-    const logger = stub();
-
-    minBy([1, 2, 3], logger);
-
-    expect(logger.args).toEqual([[1], [2], [3]]);
+    const spy = jasmine.createSpy();
+    minBy([1, 2, 3], spy);
+    expect(spy.calls.first().args).toEqual([1]);
   });
 
   it("should treat sparse arrays as dense", () => {

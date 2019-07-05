@@ -1,4 +1,4 @@
-import { keys } from "../object/keys";
+import { keysOfNonArray } from "../object/keys";
 
 /**
  * Checks if `value` is an empty object or collection.
@@ -9,11 +9,11 @@ import { keys } from "../object/keys";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 4,315 bytes
- * - Micro-dash: 114 bytes
+ * - Micro-dash: 127 bytes
  */
 export function isEmpty(value: any) {
   if (!Array.isArray(value)) {
-    value = keys(value);
+    value = keysOfNonArray(value);
   }
   return value.length === 0;
 }

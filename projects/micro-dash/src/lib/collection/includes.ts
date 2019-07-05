@@ -5,7 +5,7 @@ import { isString, toArray } from "../lang";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 4,630 bytes
- * - Micro-dash: 307 bytes
+ * - Micro-dash: 317 bytes
  */
 export function includes<T extends any[] | object | string>(
   collection: T,

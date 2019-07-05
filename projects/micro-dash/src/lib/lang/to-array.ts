@@ -1,12 +1,12 @@
 import { Nil, Primitive } from "../interfaces";
-import { values } from "../object";
+import { valuesOfNonArray } from "../object/values";
 
 /**
  * Converts `value` to an array.
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 6,042 bytes
- * - Micro-dash: 171 bytes
+ * - Micro-dash: 184 bytes
  */
 
 export function toArray(value: string): string[];
@@ -19,6 +19,6 @@ export function toArray(value: any) {
   if (value && value[Symbol.iterator]) {
     return Array.from(value);
   } else {
-    return values(value);
+    return valuesOfNonArray(value);
   }
 }

@@ -31,11 +31,9 @@ describe("pickBy()", () => {
   //
 
   it("should provide correct iteratee arguments", () => {
-    const logger = stub();
-
-    pickBy([1, 2, 3], logger);
-
-    expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"]]);
+    const spy = jasmine.createSpy();
+    pickBy([1, 2, 3], spy);
+    expect(spy.calls.first().args).toEqual([1, "0"]);
   });
 
   it("should ignore changes to `length`", () => {

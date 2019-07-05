@@ -48,7 +48,7 @@ async function run() {
 
   while (true) {
     const input = await getInput(
-      'Filename base, "full" for index, or "all" for all: ',
+      'Filename base (e.g. "map-values"), "full" for index, or "all" for all: ',
     );
 
     switch (input) {

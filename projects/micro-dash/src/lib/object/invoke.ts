@@ -67,7 +67,7 @@ type DefinedPath4<
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 6,430 bytes
- * - Micro-dash: 276 bytes
+ * - Micro-dash: 324 bytes
  */
 
 // 4 element path

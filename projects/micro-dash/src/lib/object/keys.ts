@@ -1,19 +1,33 @@
+import { Nil } from "../interfaces";
+
 /**
  * Creates an array of the own enumerable property names of object.
  *
  * Differences from lodash:
- * - does not give any special consideration for arrays, arguments objects, strings, or prototype objects (e.g. many will have `'length'` in the returned array)
+ * - does not give any special consideration for arguments objects, strings, or prototype objects (e.g. many will have `'length'` in the returned array)
  *
  * Contribution to minified bundle size, when it is the only function imported:
+ * - Lodash: 3,312 bytes
+ * - Micro-dash: 164 bytes
  */
+
 export function keys<T>(
-  object: T,
-): Array<number extends keyof T ? string : keyof T> {
-  if (object) {
-    return Object.getOwnPropertyNames(object) as Array<
-      number extends keyof T ? string : keyof T
-    >;
-  } else {
-    return [];
+  object: T | Nil,
+): Array<Extract<keyof T, number> extends never ? keyof T : string> {
+  let val = keysOfNonArray(object);
+  if (Array.isArray(object)) {
+    val = val.filter((item) => item !== "length");
   }
+  return val as any;
+}
+
+/** @hidden */
+export function keysOfNonArray<T>(
+  object: T | Nil,
+): Array<Extract<keyof T, number> extends never ? keyof T : string> {
+  let val: string[] = [];
+  if (object) {
+    val = Object.getOwnPropertyNames(object);
+  }
+  return val as any;
 }
