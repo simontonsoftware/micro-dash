@@ -1,4 +1,4 @@
-import { ObjectWith, ValueIteratee } from "../interfaces";
+import { Key, Nil, ValueIteratee } from "../interfaces";
 import { forEach } from "./for-each";
 
 /**
@@ -8,12 +8,19 @@ import { forEach } from "./for-each";
  * - Lodash: 14,724 bytes
  * - Micro-dash: 429 bytes
  */
-export function keyBy<T>(
-  collection: T[] | ObjectWith<T> | undefined,
-  iteratee: ValueIteratee<T, string>,
-) {
-  const obj: ObjectWith<T> = {};
-  forEach(collection, (value: T) => {
+
+export function keyBy<T, K extends Key>(
+  array: T[] | Nil,
+  iteratee: ValueIteratee<T, K>,
+): { [key in K]?: T };
+export function keyBy<T, K extends Key>(
+  object: T,
+  iteratee: ValueIteratee<T[keyof T], K>,
+): { [key in K]?: T[keyof T] };
+
+export function keyBy(collection: any, iteratee: Function) {
+  const obj: any = {};
+  forEach(collection, (value) => {
     obj[iteratee(value)] = value;
   });
   return obj;

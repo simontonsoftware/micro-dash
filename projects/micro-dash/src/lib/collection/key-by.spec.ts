@@ -1,8 +1,35 @@
+import { expectType } from "s-ng-dev-utils";
 import { keyBy } from "./key-by";
 
 describe("keyBy()", () => {
-  it("works with `undefined`", () => {
+  it("works with nil", () => {
+    expect(keyBy(null, () => "a")).toEqual({});
     expect(keyBy(undefined, () => "a")).toEqual({});
+  });
+
+  it("has fancy typing", () => {
+    const mapper = (value: number) => (value % 2 ? "odd" : "even");
+    interface O {
+      a: number;
+      b: number;
+    }
+    type A = number[];
+    interface Mapped {
+      odd?: number;
+      even?: number;
+    }
+
+    expectType<Mapped>(keyBy([1, 2], mapper));
+    expectType<Mapped>(keyBy({ a: 1, b: 2 }, mapper));
+
+    const oOrN = null as O | null;
+    const oOrU = undefined as O | undefined;
+    const aOrN = null as A | null;
+    const aOrU = undefined as A | undefined;
+    expectType<Mapped>(keyBy(oOrN, mapper));
+    expectType<Mapped>(keyBy(oOrU, mapper));
+    expectType<Mapped>(keyBy(aOrN, mapper));
+    expectType<Mapped>(keyBy(aOrU, mapper));
   });
 
   //
@@ -28,8 +55,9 @@ describe("keyBy()", () => {
   });
 
   it("should work with an object for `collection`", () => {
-    expect(
-      keyBy({ a: 6.1, b: 4.2, c: 6.3 }, (value) => Math.floor(value) + ""),
-    ).toEqual({ 4: 4.2, 6: 6.3 });
+    expect(keyBy({ a: 6.1, b: 4.2, c: 6.3 }, Math.floor)).toEqual({
+      4: 4.2,
+      6: 6.3,
+    });
   });
 });
