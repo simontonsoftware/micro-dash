@@ -10,7 +10,7 @@ describe("omitBy()", () => {
 
     omitBy(array, logger);
 
-    expect(logger.args).toEqual([[1, "0"], [3, "2"], [3, "length"]]);
+    expect(logger.args).toEqual([[1, "0"], [3, "2"]]);
   });
 
   // lodash's test for `omit`, but not `omitBy`, even though the behavior is the same
@@ -28,7 +28,7 @@ describe("omitBy()", () => {
 
     omitBy([1, 2, 3], logger);
 
-    expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"], [3, "length"]]);
+    expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"]]);
   });
 
   it("should ignore changes to `length`", () => {

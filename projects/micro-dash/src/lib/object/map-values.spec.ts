@@ -22,7 +22,6 @@ describe("mapValues()", () => {
     }
     interface MappedA {
       [index: number]: string;
-      length: string;
     }
 
     expectType<MappedO>(mapValues({ a: 1, b: 2 }, String));
@@ -42,20 +41,12 @@ describe("mapValues()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should iterate over `length` properties", () => {
-    const logger = stub();
-
-    mapValues({ 0: "zero", 1: "one", length: 2 }, logger);
-
-    expect(logger.args).toEqual([["zero", "0"], ["one", "1"], [2, "length"]]);
-  });
-
   it("should provide correct iteratee arguments", () => {
     const logger = stub();
 
     mapValues([1, 2, 3], logger);
 
-    expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"], [3, "length"]]);
+    expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"]]);
   });
 
   it("should treat sparse arrays as dense", () => {
@@ -65,7 +56,7 @@ describe("mapValues()", () => {
 
     mapValues(array, logger);
 
-    expect(logger.args).toEqual([[1, "0"], [3, "2"], [3, "length"]]);
+    expect(logger.args).toEqual([[1, "0"], [3, "2"]]);
   });
 
   it("should ignore changes to `length`", () => {
@@ -97,6 +88,6 @@ describe("mapValues()", () => {
   });
 
   it("should treat arrays like objects", () => {
-    expect(mapValues([1, 2], String)).toEqual({ 0: "1", 1: "2", length: "2" });
+    expect(mapValues([1, 2], String)).toEqual({ 0: "1", 1: "2" });
   });
 });

@@ -1,5 +1,5 @@
 import { NarrowingObjectIteratee, Nil, ObjectIteratee } from "../interfaces";
-import { forOwn } from "./for-own";
+import { forOwnExceptArrayLength } from "./_keys-except-array-length";
 
 /**
  * Creates an object composed of the `object` properties `predicate` returns truthy for.
@@ -9,7 +9,7 @@ import { forOwn } from "./for-own";
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 15,179 bytes
- * - Micro-dash: 345 bytes
+ * - Micro-dash: 355 bytes
  */
 
 export function pickBy<T>(
@@ -26,12 +26,9 @@ export function pickBy<T>(
   predicate: ObjectIteratee<T, boolean>,
 ): T extends Nil ? {} : Partial<T>;
 
-export function pickBy<T>(
-  object: T,
-  predicate: ObjectIteratee<T, boolean>,
-): T extends Nil ? {} : Partial<T> {
+export function pickBy<T>(object: T, predicate: ObjectIteratee<T, boolean>) {
   const obj: any = {};
-  forOwn(object, (item, key) => {
+  forOwnExceptArrayLength(object, (item, key) => {
     if (predicate(item, key)) {
       obj[key] = item;
     }
