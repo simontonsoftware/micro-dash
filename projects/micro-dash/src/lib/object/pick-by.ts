@@ -1,4 +1,11 @@
-import { NarrowingObjectIteratee, Nil, ObjectIteratee } from "../interfaces";
+import { PickByValue } from "utility-types";
+import {
+  KeyNarrowingIteratee,
+  NarrowingObjectIteratee,
+  Nil,
+  ObjectIteratee,
+  StringifiedKey,
+} from "../interfaces";
 import { forOwn } from "./for-own";
 
 /**
@@ -12,19 +19,33 @@ import { forOwn } from "./for-own";
  * - Micro-dash: 350 bytes
  */
 
+export function pickBy<T, O extends T>(
+  object: T[] | Nil,
+  predicate: NarrowingObjectIteratee<T[], O>,
+): { [index: number]: O };
 export function pickBy<T>(
-  object: T[],
+  object: T[] | Nil,
   predicate: ObjectIteratee<T, boolean>,
-): T extends Nil ? {} : { [index: number]: T };
+): { [index: number]: T };
 
-export function pickBy<I, O extends I[keyof I]>(
+export function pickBy<I, T extends NonNullable<I>, O extends T[keyof T]>(
   object: I,
-  predicate: NarrowingObjectIteratee<I, O>,
-): Pick<I, { [K in keyof I]: I[K] extends O ? K : never }[keyof I]>;
+  predicate: NarrowingObjectIteratee<T, O>,
+): PickByValue<T, O> | (Extract<I, Nil> extends never ? never : {});
+export function pickBy<
+  I,
+  T extends NonNullable<I>,
+  O extends StringifiedKey<T>
+>(
+  object: I,
+  predicate: KeyNarrowingIteratee<T, O>,
+):
+  | { [K in Extract<keyof T, O>]: T[K] }
+  | (Extract<I, Nil> extends never ? never : {});
 export function pickBy<T>(
   object: T,
   predicate: ObjectIteratee<T, boolean>,
-): T extends Nil ? {} : Partial<T>;
+): Partial<NonNullable<T>>;
 
 export function pickBy<T>(object: T, predicate: ObjectIteratee<T, boolean>) {
   const obj: any = {};

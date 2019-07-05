@@ -1,4 +1,4 @@
-import { Nil } from "../interfaces";
+import { Nil, StringifiedKey } from "../interfaces";
 
 /**
  * Creates an array of the own enumerable property names of object.
@@ -11,9 +11,7 @@ import { Nil } from "../interfaces";
  * - Micro-dash: 164 bytes
  */
 
-export function keys<T>(
-  object: T | Nil,
-): Array<Extract<keyof T, number> extends never ? keyof T : string> {
+export function keys<T>(object: T | Nil): Array<StringifiedKey<T>> {
   let val = keysOfNonArray(object);
   if (Array.isArray(object)) {
     val = val.filter((item) => item !== "length");
@@ -22,9 +20,7 @@ export function keys<T>(
 }
 
 /** @hidden */
-export function keysOfNonArray<T>(
-  object: T | Nil,
-): Array<Extract<keyof T, number> extends never ? keyof T : string> {
+export function keysOfNonArray<T>(object: T | Nil): Array<StringifiedKey<T>> {
   let val: string[] = [];
   if (object) {
     val = Object.getOwnPropertyNames(object);

@@ -1,3 +1,4 @@
+import { StringifiedKey } from "../interfaces";
 import { keys } from "./keys";
 
 /**
@@ -10,11 +11,7 @@ import { keys } from "./keys";
  * - Lodash: 5,004 bytes
  * - Micro-dash: 211 bytes
  */
-export function toPairs<T>(
-  object: T,
-): Array<
-  [Extract<keyof T, number> extends never ? keyof T : string, T[keyof T]]
-> {
+export function toPairs<T>(object: T): Array<[StringifiedKey<T>, T[keyof T]]> {
   // This casting should not be needed after typedoc can support typescript 3.4
   // https://github.com/TypeStrong/typedoc/issues/1059
   return keys(object).map((key) => [key, object[key as keyof T]]) as any;

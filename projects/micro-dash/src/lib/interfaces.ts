@@ -8,6 +8,8 @@ export type Key = keyof any;
 export type Existent = Primitive | object;
 /** @hidden */
 export type ObjectWith<T> = Record<string, T>;
+/** @hidden */
+export type StringifiedKey<T> = Cast<keyof T, string>;
 
 /** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
@@ -19,15 +21,23 @@ export type NarrowingArrayIteratee<I, O extends I> = (
 /** @hidden */
 export type ObjectIteratee<T, O> = <K extends keyof T>(
   item: T[K],
-  key: Extract<keyof T, number> extends never ? K : string,
+  key: StringifiedKey<T>,
 ) => O;
 /** @hidden */
 export type NarrowingObjectIteratee<I, O extends I[keyof I]> = (
   item: I[keyof I],
-  key: Extract<keyof I, number> extends never ? keyof I : string,
+  key: StringifiedKey<I>,
 ) => item is O;
 /** @hidden */
+export type KeyNarrowingIteratee<I, O extends StringifiedKey<I>> = (
+  item: I[keyof I],
+  key: StringifiedKey<I>,
+) => key is O;
+/** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;
+
+/** @hidden */
+export type Cast<I, O> = Exclude<I, O> extends never ? I : O;
 
 /** @hidden */
 export type Drop1Arg<T extends Function> = T extends (
