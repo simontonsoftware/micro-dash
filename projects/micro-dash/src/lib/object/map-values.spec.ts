@@ -68,6 +68,18 @@ describe("mapValues()", () => {
     expect(logger.args).toEqual([[1, "0"], [3, "2"], [3, "length"]]);
   });
 
+  it("should ignore changes to `length`", () => {
+    const array = [1];
+    const spy = jasmine.createSpy().and.callFake(() => {
+      array.push(2);
+      return false;
+    });
+
+    mapValues(array, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
     const spy = jasmine.createSpy().and.callFake(() => {

@@ -36,6 +36,18 @@ describe("keyBy()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
+  it("should ignore changes to `length`", () => {
+    const array = [1];
+    const spy = jasmine.createSpy().and.callFake(() => {
+      array.push(2);
+      return false;
+    });
+
+    keyBy(array, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
     const spy = jasmine.createSpy().and.callFake(() => {

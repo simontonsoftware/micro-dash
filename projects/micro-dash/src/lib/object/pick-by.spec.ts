@@ -38,6 +38,18 @@ describe("pickBy()", () => {
     expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"], [3, "length"]]);
   });
 
+  it("should ignore changes to `length`", () => {
+    const array = [1];
+    const spy = jasmine.createSpy().and.callFake(() => {
+      array.push(2);
+      return false;
+    });
+
+    pickBy(array, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
     const spy = jasmine.createSpy().and.callFake(() => {

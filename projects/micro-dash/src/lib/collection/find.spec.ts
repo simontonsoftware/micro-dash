@@ -133,17 +133,14 @@ describe("find()", () => {
 
   it("should ignore changes to `length`", () => {
     const array = [1];
-    let count = 0;
-
-    find(array, () => {
-      if (!count) {
-        array.push(2);
-      }
-      ++count;
+    const spy = jasmine.createSpy().and.callFake(() => {
+      array.push(2);
       return false;
     });
 
-    expect(count).toEqual(1);
+    find(array, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should ignore added `object` properties", () => {

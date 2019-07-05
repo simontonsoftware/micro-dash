@@ -59,6 +59,18 @@ describe("forOwnRight()", () => {
     expect(forOwnRight(array, noop)).toBe(array);
   });
 
+  it("should ignore changes to `length`", () => {
+    const array = [1];
+    const spy = jasmine.createSpy().and.callFake(() => {
+      array.push(2);
+      return false;
+    });
+
+    forOwnRight(array, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
   it("should ignore added `object` properties", () => {
     const object: any = { a: 1 };
     const spy = jasmine.createSpy().and.callFake(() => {

@@ -37,17 +37,14 @@ describe("minBy()", () => {
 
   it("should ignore changes to `length`", () => {
     const array = [1];
-    let count = 0;
-
-    minBy(array, () => {
-      if (!count) {
-        array.push(2);
-      }
-      ++count;
-      return 1;
+    const spy = jasmine.createSpy().and.callFake(() => {
+      array.push(2);
+      return false;
     });
 
-    expect(count).toEqual(1);
+    minBy(array, spy);
+
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it("should work with extremely large arrays", () => {
