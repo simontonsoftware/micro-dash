@@ -1,4 +1,4 @@
-import { ArrayIteratee, NarrowingArrayIteratee } from "../interfaces";
+import { ArrayIteratee, ArrayNarrowingIteratee } from "../interfaces";
 
 /**
  * Removes all elements from array for which `predicate` returns truthy, and returns an array of the removed elements.
@@ -11,10 +11,10 @@ import { ArrayIteratee, NarrowingArrayIteratee } from "../interfaces";
  * - Micro-dash: 89 bytes
  */
 
-export function remove<I, O extends I>(
+export function remove<I, O>(
   array: I[],
-  predicate: NarrowingArrayIteratee<I, O>,
-): O[];
+  predicate: ArrayNarrowingIteratee<O>,
+): O[]; // TODO: could be narrower?
 export function remove<T>(
   array: T[],
   predicate: ArrayIteratee<T, boolean>,

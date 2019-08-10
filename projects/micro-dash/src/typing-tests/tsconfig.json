@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "lib": ["es2018", "dom"],
+    "noEmit": true,
+    "target": "es2015",
+
+    "baseUrl": "../lib"
+  }
+}

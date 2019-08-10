@@ -1,8 +1,14 @@
 import {
   ArrayIteratee,
-  NarrowingArrayIteratee,
-  NarrowingObjectIteratee,
+  ArrayNarrowingIteratee,
+  Cast,
+  IfCouldBe,
+  IfHasIndexKey,
+  KeyNarrowingIteratee,
+  Nil,
   ObjectIteratee,
+  StringifiedKey,
+  ValueNarrowingIteratee,
 } from "../interfaces";
 import { keysOfNonArray } from "../object/keys";
 
@@ -14,23 +20,53 @@ import { keysOfNonArray } from "../object/keys";
  * - Micro-dash: 383 bytes
  */
 
-export function find<I, O extends I>(
-  array: I[],
-  predicate: NarrowingArrayIteratee<I, O>,
+export function find<I, O>(
+  array: I[] | Nil,
+  predicate: ArrayNarrowingIteratee<O>,
   fromIndex?: number,
-): O | undefined;
+): Extract<I, O> | Extract<O, I> | undefined;
 export function find<T>(
-  array: T[],
+  array: T[] | Nil,
   predicate: ArrayIteratee<T, boolean>,
   fromIndex?: number,
 ): T | undefined;
-export function find<I, O extends I[keyof I]>(
+
+export function find<
+  I,
+  T extends NonNullable<I>,
+  O,
+  F extends number | undefined = undefined
+>(
   object: I,
-  predicate: NarrowingObjectIteratee<I, O>,
-  fromIndex?: number,
-): O | undefined;
+  predicate: ValueNarrowingIteratee<T, O>,
+  fromIndex?: F,
+):
+  | {
+      [K in keyof T]: T[K] extends O
+        ? T[K]
+        : IfCouldBe<T[K], O, Extract<T[K], O> | Extract<O, T[K]> | undefined>
+    }[keyof T]
+  | IfCouldBe<T[keyof T], O, never, undefined>
+  | IfCouldBe<I, Nil, undefined>
+  | IfCouldBe<F, number, undefined>;
+export function find<
+  I,
+  T extends NonNullable<I>,
+  O,
+  F extends number | undefined = undefined
+>(
+  object: I,
+  predicate: KeyNarrowingIteratee<T, O>,
+  fromIndex?: F,
+):
+  | { [K in keyof T]: IfCouldBe<Cast<K, string>, O, T[K]> }[keyof T]
+  | IfCouldBe<I, Nil, undefined>
+  | IfCouldBe<StringifiedKey<T>, O, never, undefined>
+  | IfCouldBe<F, number, undefined>
+  | IfHasIndexKey<T, undefined>;
+
 export function find<T>(
-  object: T,
+  object: T | Nil,
   predicate: ObjectIteratee<T, boolean>,
   fromIndex?: number,
 ): T[keyof T] | undefined;

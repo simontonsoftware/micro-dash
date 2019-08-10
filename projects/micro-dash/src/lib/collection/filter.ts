@@ -1,8 +1,12 @@
 import {
   ArrayIteratee,
-  NarrowingArrayIteratee,
-  NarrowingObjectIteratee,
+  ArrayNarrowingIteratee,
+  Cast,
+  IfCouldBe,
+  KeyNarrowingIteratee,
+  Nil,
   ObjectIteratee,
+  ValueNarrowingIteratee,
 } from "../interfaces";
 import { forEach } from "./for-each";
 
@@ -14,20 +18,25 @@ import { forEach } from "./for-each";
  * - Micro-dash: 310 bytes
  */
 
-export function filter<I, O extends I>(
-  array: I[],
-  predicate: NarrowingArrayIteratee<I, O>,
-): O[];
+export function filter<I, O>(
+  array: I[] | Nil,
+  predicate: ArrayNarrowingIteratee<O>,
+): Array<Extract<I, O> | Extract<O, I>>;
 export function filter<T>(
-  array: T[],
+  array: T[] | Nil,
   predicate: ArrayIteratee<T, boolean>,
 ): T[];
-export function filter<I, O extends I[keyof I]>(
-  object: I,
-  predicate: NarrowingObjectIteratee<I, O>,
-): O[];
+
+export function filter<I, O>(
+  object: I | Nil,
+  predicate: ValueNarrowingIteratee<I, O>,
+): Array<Extract<I[keyof I], O> | Extract<O, I[keyof I]>>;
+export function filter<I, O>(
+  object: I | Nil,
+  predicate: KeyNarrowingIteratee<I, O>,
+): Array<{ [K in keyof I]: IfCouldBe<Cast<K, string>, O, I[K]> }[keyof I]>;
 export function filter<T>(
-  object: T,
+  object: T | Nil,
   predicate: ObjectIteratee<T, boolean>,
 ): Array<T[keyof T]>;
 

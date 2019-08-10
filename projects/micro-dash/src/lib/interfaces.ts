@@ -14,30 +14,46 @@ export type StringifiedKey<T> = Cast<keyof T, string>;
 /** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;
 /** @hidden */
-export type NarrowingArrayIteratee<I, O extends I> = (
-  item: I,
-  index: number,
-) => item is O;
+export type ArrayNarrowingIteratee<O> = (item: any, index: number) => item is O;
 /** @hidden */
-export type ObjectIteratee<T, O> = <K extends keyof T>(
-  item: T[K],
+export type ObjectIteratee<T, O> = (
+  item: T[keyof T],
   key: StringifiedKey<T>,
 ) => O;
 /** @hidden */
-export type NarrowingObjectIteratee<I, O extends I[keyof I]> = (
-  item: I[keyof I],
+export type ValueNarrowingIteratee<I, O> = (
+  item: any,
   key: StringifiedKey<I>,
 ) => item is O;
 /** @hidden */
-export type KeyNarrowingIteratee<I, O extends StringifiedKey<I>> = (
+export type KeyNarrowingIteratee<I, O> = (
   item: I[keyof I],
-  key: StringifiedKey<I>,
+  key: any,
 ) => key is O;
 /** @hidden */
 export type ValueIteratee<T, O> = (value: T) => O;
 
 /** @hidden */
 export type Cast<I, O> = Exclude<I, O> extends never ? I : O;
+/** @hidden */
+export type IfEqual<T1, T2, If, Else = never> = T1 extends T2
+  ? T2 extends T1
+    ? If
+    : Else
+  : Else;
+/** @hidden */
+export type IfCouldBe<T1, T2, If, Else = never> = Extract<T1, T2> extends never
+  ? Extract<T2, T1> extends never
+    ? Else
+    : If
+  : If;
+/** @hidden */
+export type IfHasIndexKey<T, If, Else = never> = Extract<
+  string | number,
+  keyof T
+> extends never
+  ? Else
+  : If;
 
 /** @hidden */
 export type Drop1Arg<T extends Function> = T extends (

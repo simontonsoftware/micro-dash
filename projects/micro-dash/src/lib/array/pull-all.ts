@@ -11,7 +11,8 @@ import { remove } from "./remove";
  */
 export function pullAll<T>(array: T[], values: T[]) {
   for (const value of values.slice()) {
-    remove(array, (item) => Object.is(item, value));
+    remove(array, (item: T) => Object.is(item, value));
   }
   return array;
 }
+// TODO: return type could be narrower?

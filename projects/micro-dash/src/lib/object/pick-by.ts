@@ -1,7 +1,7 @@
 import { PickByValue } from "utility-types";
 import {
   KeyNarrowingIteratee,
-  NarrowingObjectIteratee,
+  ValueNarrowingIteratee,
   Nil,
   ObjectIteratee,
   StringifiedKey,
@@ -21,7 +21,7 @@ import { forOwn } from "./for-own";
 
 export function pickBy<T, O extends T>(
   object: T[] | Nil,
-  predicate: NarrowingObjectIteratee<T[], O>,
+  predicate: ValueNarrowingIteratee<T[], O>,
 ): { [index: number]: O };
 export function pickBy<T>(
   object: T[] | Nil,
@@ -30,7 +30,7 @@ export function pickBy<T>(
 
 export function pickBy<I, T extends NonNullable<I>, O extends T[keyof T]>(
   object: I,
-  predicate: NarrowingObjectIteratee<T, O>,
+  predicate: ValueNarrowingIteratee<T, O>,
 ): PickByValue<T, O> | (Extract<I, Nil> extends never ? never : {});
 export function pickBy<
   I,

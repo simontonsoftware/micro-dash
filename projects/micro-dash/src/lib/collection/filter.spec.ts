@@ -1,5 +1,4 @@
 import { stub } from "sinon";
-import { isString } from "../lang";
 import { filter } from "./filter";
 
 describe("filter()", () => {
@@ -7,16 +6,6 @@ describe("filter()", () => {
     const object = { a: 1, b: 2, c: 3 };
     expect(filter(object, (item) => item === 2)).toEqual([2]);
     expect(filter(object, (_item, key) => key === "b")).toEqual([2]);
-  });
-
-  it("fancily narrows types", () => {
-    let filtered: string[];
-
-    filtered = filter(["a", undefined, 3], isString);
-    expect(filtered).toEqual(["a"]);
-
-    filtered = filter({ a: "a", b: undefined, c: 3 }, isString);
-    expect(filtered).toEqual(["a"]);
   });
 
   //
@@ -75,5 +64,18 @@ describe("filter()", () => {
     filter(object, spy);
 
     expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it("should accept falsey arguments", () => {
+    expect(filter(null, () => true)).toEqual([]);
+    expect(filter(undefined, () => true)).toEqual([]);
+  });
+
+  it("should return an array", () => {
+    const array = [1, 2, 3];
+    const actual = filter(array, () => true);
+
+    expect(actual).toEqual(jasmine.any(Array));
+    expect(actual).not.toBe(array);
   });
 });

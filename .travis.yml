@@ -21,6 +21,7 @@ install:
 
 script:
   - yarn test micro-dash --code-coverage --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - yarn dtslint
   - yarn build micro-dash
   - yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 
