@@ -1,6 +1,5 @@
-import { expectType } from "s-ng-dev-utils";
 import { stub } from "sinon";
-import { isString } from "../lang";
+import { keyIsString } from "../../test-helpers/test-utils";
 import { omitBy } from "./omit-by";
 
 describe("omitBy()", () => {
@@ -21,39 +20,8 @@ describe("omitBy()", () => {
     expect(omitBy<any>(undefined, () => false)).toEqual({});
   });
 
-  it("has fancy typing", () => {
-    interface O {
-      a: number;
-      2: string;
-    }
-    const o: O = { a: 1, 2: "b" };
-    const oOrU = undefined as O | undefined;
-    const oOrN = null as O | null;
-    expectType<Partial<O>>(omitBy(o, () => true));
-    expectType<Partial<O>>(omitBy(oOrU, () => true));
-    expectType<Partial<O>>(omitBy(oOrN, () => true));
-    expectType<{ a: number }>(omitBy(o, isString));
-    expectType<{ a: number } | {}>(omitBy(oOrU, isString));
-    expectType<{ a: number } | {}>(omitBy(oOrN, isString));
-    // TODO: this seems wrong?
-    // expectType<{ 2: string }>(omitBy(o, (_, k): k is string => isString(k)));
-    expectType<{ 2: string } | {}>(
-      omitBy(oOrU, (_, k): k is string => isString(k)),
-    );
-    expectType<{ 2: string } | {}>(
-      omitBy(oOrN, (_, k): k is string => isString(k)),
-    );
-
-    type A = [number, string];
-    const a = [1, "b"];
-    const aOrU = undefined as A | undefined;
-    const aOrN = null as A | null;
-    expectType<{ [index: number]: number | string }>(omitBy(a, () => true));
-    expectType<{ [index: number]: number | string }>(omitBy(aOrU, () => true));
-    expectType<{ [index: number]: number | string }>(omitBy(aOrN, () => true));
-    expectType<{ [index: number]: number }>(omitBy(a, isString));
-    expectType<{ [index: number]: number }>(omitBy(aOrU, isString));
-    expectType<{ [index: number]: number }>(omitBy(aOrN, isString));
+  it("passing number keys as strings", () => {
+    expect(omitBy({ a: 1, 2: "b" }, keyIsString)).toEqual({});
   });
 
   //

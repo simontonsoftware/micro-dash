@@ -7,14 +7,14 @@ import {
   isMapOrString,
   isNumberOrString,
   isStringOr2,
-  keyIs2,
-  keyIs3,
   keyIsA,
   keyIsAorC,
   keyIsAorNumber,
   keyIsC,
   keyIsNumber,
   keyIsString,
+  keyIsString2,
+  keyIsString3,
 } from "../test-helpers/test-utils";
 
 //
@@ -330,54 +330,54 @@ find(oOrN, keyIsA);
 find(oOrN, keyIsA, 1);
 
 // $ExpectType undefined
-find(s, keyIs2);
+find(s, keyIsString2);
 // $ExpectType undefined
-find(s, keyIs2, 1);
+find(s, keyIsString2, 1);
 // $ExpectType undefined
-find(sOrU, keyIs2);
+find(sOrU, keyIsString2);
 // $ExpectType undefined
-find(sOrU, keyIs2, 1);
+find(sOrU, keyIsString2, 1);
 // $ExpectType undefined
-find(sOrN, keyIs2);
+find(sOrN, keyIsString2);
 // $ExpectType undefined
-find(sOrN, keyIs2, 1);
+find(sOrN, keyIsString2, 1);
 // $ExpectType string
-find(o, keyIs2);
+find(o, keyIsString2);
 // $ExpectType string | undefined
-find(o, keyIs2, 1);
+find(o, keyIsString2, 1);
 // $ExpectType string | undefined
-find(oOrU, keyIs2);
+find(oOrU, keyIsString2);
 // $ExpectType string | undefined
-find(oOrU, keyIs2, 1);
+find(oOrU, keyIsString2, 1);
 // $ExpectType string | undefined
-find(oOrN, keyIs2);
+find(oOrN, keyIsString2);
 // $ExpectType string | undefined
-find(oOrN, keyIs2, 1);
+find(oOrN, keyIsString2, 1);
 
 // $ExpectType undefined
-find(s, keyIs3);
+find(s, keyIsString3);
 // $ExpectType undefined
-find(s, keyIs3, 1);
+find(s, keyIsString3, 1);
 // $ExpectType undefined
-find(sOrU, keyIs3);
+find(sOrU, keyIsString3);
 // $ExpectType undefined
-find(sOrU, keyIs3, 1);
+find(sOrU, keyIsString3, 1);
 // $ExpectType undefined
-find(sOrN, keyIs3);
+find(sOrN, keyIsString3);
 // $ExpectType undefined
-find(sOrN, keyIs3, 1);
+find(sOrN, keyIsString3, 1);
 // $ExpectType string
-find(o, keyIs3);
+find(o, keyIsString3);
 // $ExpectType string | undefined
-find(o, keyIs3, 1);
+find(o, keyIsString3, 1);
 // $ExpectType string | undefined
-find(oOrU, keyIs3);
+find(oOrU, keyIsString3);
 // $ExpectType string | undefined
-find(oOrU, keyIs3, 1);
+find(oOrU, keyIsString3, 1);
 // $ExpectType string | undefined
-find(oOrN, keyIs3);
+find(oOrN, keyIsString3);
 // $ExpectType string | undefined
-find(oOrN, keyIs3, 1);
+find(oOrN, keyIsString3, 1);
 
 // $ExpectType Date | Document
 find(s, keyIsC);

@@ -32,11 +32,11 @@ export function keyIsAorC(_: any, key: any): key is "a" | "c" {
   return key === "a" || key === "c";
 }
 
-export function keyIs2(_: any, key: any): key is "2" {
+export function keyIsString2(_: any, key: any): key is "2" {
   return key === "2";
 }
 
-export function keyIs3(_: any, key: any): key is "3" {
+export function keyIsString3(_: any, key: any): key is "3" {
   return key === "3";
 }
 

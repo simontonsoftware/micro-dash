@@ -4,15 +4,16 @@ import {
   isA,
   isDateOrString,
   isMapOrString,
+  isNumberOrString,
   isStringOr2,
-  keyIs2,
-  keyIs3,
   keyIsA,
   keyIsAorC,
   keyIsAorNumber,
   keyIsC,
   keyIsNumber,
   keyIsString,
+  keyIsString2,
+  keyIsString3,
 } from "../test-helpers/test-utils";
 
 //
@@ -20,7 +21,7 @@ import {
 //
 
 type A = Array<string | number>;
-const a: A = [1, "b"];
+const a = [1, "b"] as A;
 const aOrU = a as A | undefined;
 const aOrN = a as A | null;
 
@@ -67,8 +68,8 @@ filter(abOrN, isA);
 
 type AN = Array<"a" | number>;
 const an = ["a"] as AN;
-const anOrN = ["a"] as AN | null;
 const anOrU = ["a"] as AN | undefined;
+const anOrN = ["a"] as AN | null;
 // $ExpectType ("a" | 2)[]
 filter(an, isStringOr2);
 // $ExpectType ("a" | 2)[]
@@ -112,8 +113,6 @@ filter(oOrU, isDate);
 // $ExpectType Date[]
 filter(oOrN, isDate);
 
-const isNumberOrString = (value: any): value is number | string =>
-  isNumber(value) || isString(value);
 // $ExpectType (string | number)[]
 filter(o, isNumberOrString);
 // $ExpectType (string | number)[]
@@ -212,30 +211,30 @@ filter(oOrU, keyIsA);
 filter(oOrN, keyIsA);
 
 // $ExpectType never[]
-filter(s, keyIs2);
+filter(s, keyIsString2);
 // $ExpectType never[]
-filter(sOrU, keyIs2);
+filter(sOrU, keyIsString2);
 // $ExpectType never[]
-filter(sOrN, keyIs2);
+filter(sOrN, keyIsString2);
 // $ExpectType string[]
-filter(o, keyIs2);
+filter(o, keyIsString2);
 // $ExpectType string[]
-filter(oOrU, keyIs2);
+filter(oOrU, keyIsString2);
 // $ExpectType string[]
-filter(oOrN, keyIs2);
+filter(oOrN, keyIsString2);
 
 // $ExpectType never[]
-filter(s, keyIs3);
+filter(s, keyIsString3);
 // $ExpectType never[]
-filter(sOrU, keyIs3);
+filter(sOrU, keyIsString3);
 // $ExpectType never[]
-filter(sOrN, keyIs3);
+filter(sOrN, keyIsString3);
 // $ExpectType string[]
-filter(o, keyIs3);
+filter(o, keyIsString3);
 // $ExpectType string[]
-filter(oOrU, keyIs3);
+filter(oOrU, keyIsString3);
 // $ExpectType string[]
-filter(oOrN, keyIs3);
+filter(oOrN, keyIsString3);
 
 // $ExpectType (Date | Document)[]
 filter(s, keyIsC);
