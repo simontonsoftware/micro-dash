@@ -1,6 +1,4 @@
-import { expectType } from "s-ng-dev-utils";
 import { stub } from "sinon";
-import { isString } from "../lang";
 import { pickBy } from "./pick-by";
 
 describe("pickBy()", () => {
@@ -19,41 +17,6 @@ describe("pickBy()", () => {
   it("should return an empty object when `object` is nullish", () => {
     expect(pickBy(null, () => true)).toEqual({});
     expect(pickBy(undefined, () => false)).toEqual({});
-  });
-
-  it("has fancy typing", () => {
-    interface O {
-      a: number;
-      2: string;
-    }
-    const o: O = { a: 1, 2: "b" };
-    const oOrU = undefined as O | undefined;
-    const oOrN = null as O | null;
-    expectType<Partial<O>>(pickBy(o, () => true));
-    expectType<Partial<O>>(pickBy(oOrU, () => true));
-    expectType<Partial<O>>(pickBy(oOrN, () => true));
-    expectType<{ 2: string }>(pickBy(o, isString));
-    expectType<{ 2: string } | {}>(pickBy(oOrU, isString));
-    expectType<{ 2: string } | {}>(pickBy(oOrN, isString));
-    // TODO: this seems wrong?
-    // expectType<{ a: number }>(pickBy(o, (_, k): k is string => isString(k)));
-    expectType<{ a: number } | {}>(
-      pickBy(oOrU, (_, k): k is string => isString(k)),
-    );
-    expectType<{ a: number } | {}>(
-      pickBy(oOrN, (_, k): k is string => isString(k)),
-    );
-
-    type A = [number, string];
-    const a = [1, "b"];
-    const aOrU = undefined as A | undefined;
-    const aOrN = null as A | null;
-    expectType<{ [index: number]: number | string }>(pickBy(a, () => true));
-    expectType<{ [index: number]: number | string }>(pickBy(aOrU, () => true));
-    expectType<{ [index: number]: number | string }>(pickBy(aOrN, () => true));
-    expectType<{ [index: number]: string }>(pickBy(a, isString));
-    expectType<{ [index: number]: string }>(pickBy(aOrU, isString));
-    expectType<{ [index: number]: string }>(pickBy(aOrN, isString));
   });
 
   //
