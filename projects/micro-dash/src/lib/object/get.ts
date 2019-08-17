@@ -1,17 +1,9 @@
-import { Key, Nil } from "../interfaces";
+import { IfCouldBe, Key, Nil } from "../interfaces";
 import { castArray } from "../lang";
 
-type AtPath<T, P extends any[]> = undefined extends P[0]
-  ? undefined
-  : undefined extends P[1]
-  ? T[P[0]]
-  : undefined extends P[2]
-  ? T[P[0]][P[1]]
-  : undefined extends P[3]
-  ? T[P[0]][P[1]][P[2]]
-  : undefined extends P[4]
-  ? T[P[0]][P[1]][P[2]][P[3]]
-  : any;
+type WithDefault<V, D> =
+  | (undefined extends D ? V : Exclude<V, undefined>)
+  | (undefined extends V ? D : never);
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is `undefined`, the `defaultValue` is returned in its place.
@@ -24,39 +16,55 @@ type AtPath<T, P extends any[]> = undefined extends P[0]
  * - Micro-dash: 111 bytes
  */
 
-export function get<
-  T,
-  O extends NonNullable<T> = NonNullable<T>,
-  K extends keyof O = keyof O,
-  D = undefined
->(
+export function get<T, K extends keyof NonNullable<T>, D = undefined>(
   object: T,
   key: K,
   defaultValue?: D,
-): undefined extends T | O[K]
-  ? undefined extends D
-    ? O[K] | D
-    : Exclude<O[K] | D, undefined>
-  : O[K];
+): WithDefault<NonNullable<T>[K], D> | IfCouldBe<T, Nil, D>;
 
+export function get<D = undefined>(
+  object: object,
+  path: [],
+  defaultValue?: D,
+): D;
+export function get<T, K1 extends keyof NonNullable<T>, D = undefined>(
+  object: T,
+  path: [K1],
+  defaultValue?: D,
+): WithDefault<NonNullable<T>[K1], D> | IfCouldBe<T, Nil, D>;
 export function get<
   T,
-  O extends NonNullable<T> = NonNullable<T>,
-  K1 extends keyof O = keyof O,
-  K2 extends keyof O[K1] = keyof O[K1],
-  K3 extends keyof O[K1][K2] = keyof O[K1][K2],
-  K4 extends keyof O[K1][K2][K3] = keyof O[K1][K2][K3],
-  P extends [K1?, K2?, K3?, K4?, ...any[]] = [K1?, K2?, K3?, K4?, ...any[]],
+  K1 extends keyof NonNullable<T>,
+  K2 extends keyof NonNullable<T>[K1],
   D = undefined
 >(
   object: T,
-  path: P,
+  path: [K1, K2],
   defaultValue?: D,
-): undefined extends T | AtPath<O, P>
-  ? undefined extends D
-    ? AtPath<O, P> | D
-    : Exclude<AtPath<O, P> | D, undefined>
-  : AtPath<O, P>;
+): WithDefault<NonNullable<T>[K1][K2], D> | IfCouldBe<T, Nil, D>;
+export function get<
+  T,
+  K1 extends keyof NonNullable<T>,
+  K2 extends keyof NonNullable<T>[K1],
+  K3 extends keyof NonNullable<T>[K1][K2],
+  D = undefined
+>(
+  object: T,
+  path: [K1, K2, K3],
+  defaultValue?: D,
+): WithDefault<NonNullable<T>[K1][K2][K3], D> | IfCouldBe<T, Nil, D>;
+export function get<
+  T,
+  K1 extends keyof NonNullable<T>,
+  K2 extends keyof NonNullable<T>[K1],
+  K3 extends keyof NonNullable<T>[K1][K2],
+  K4 extends keyof NonNullable<T>[K1][K2][K3],
+  D = undefined
+>(
+  object: T,
+  path: [K1, K2, K3, K4],
+  defaultValue?: D,
+): WithDefault<NonNullable<T>[K1][K2][K3][K4], D> | IfCouldBe<T, Nil, D>;
 
 export function get(object: object | Nil, path: Key[], defaultValue?: any): any;
 

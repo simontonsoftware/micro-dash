@@ -283,7 +283,7 @@ pickBy(so, isNumber);
 pickBy(so, isDate);
 // $ExpectType { [x: string]: string | undefined; }
 pickBy(so, isDateOrString);
-// $ExpectType { [x: string]: number | string; }
+// $ExpectType { [x: string]: string | number; }
 pickBy(so, keyIsString);
 // $ExpectType { [x: string]: string | number | undefined; }
 pickBy(so, keyIsA);
