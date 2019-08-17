@@ -1,59 +1,6 @@
-import { expectType } from "s-ng-dev-utils";
 import { get } from "./get";
 
-class Wrap1 {
-  value?: number;
-}
-
-class Wrap2 {
-  wrap1 = new Wrap1();
-}
-
-class Wrap3 {
-  wrap2 = new Wrap2();
-}
-
-class Cycle {
-  next!: Cycle;
-}
-
 describe("get()", () => {
-  it("has fancy typing", () => {
-    expectType<number | undefined>(get(new Wrap1(), ["value"]));
-    expectType<number>(get(new Wrap1(), ["value"], 1));
-
-    expectType<Wrap1>(get(new Wrap2(), ["wrap1"]));
-    expectType<number | undefined>(get(new Wrap2(), ["wrap1", "value"]));
-
-    expectType<Wrap1>(get(new Wrap3(), ["wrap2", "wrap1"]));
-    expectType<number | undefined>(
-      get(new Wrap3(), ["wrap2", "wrap1", "value"]),
-    );
-    expectType<number>(get(new Wrap3(), ["wrap2", "wrap1", "value"], 1));
-
-    expectType<Cycle>(get(new Cycle(), ["next", "next", "next", "next"]));
-    expectType<any>(get(new Cycle(), ["next", "next", "next", "next", "next"]));
-
-    // when D is a different type than at the path
-    expectType<Wrap1>(get(new Wrap3(), ["wrap2", "wrap1"], "hi"));
-    expectType<number | string>(get(new Wrap2(), ["wrap1", "value"], "hi"));
-
-    // when T can be undefined
-    const wOrU = undefined as Wrap3 | undefined;
-    expectType<Wrap1 | undefined>(get(wOrU, ["wrap2", "wrap1"]));
-
-    // fallback to `any` for e.g. a string array
-    const path = ["a", "b"];
-    expectType<any>(get(new Cycle(), path));
-
-    // passing a key instead of a path
-    expectType<number | undefined>(get(new Wrap1(), "value"));
-    expectType<number>(get(new Wrap1(), "value", 1));
-    expectType<Wrap1>(get(new Wrap2(), "wrap1", 1));
-    expectType<number | string>(get(new Wrap1(), "value", "hi"));
-    expectType<Wrap2 | undefined>(get(wOrU, "wrap2"));
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //
