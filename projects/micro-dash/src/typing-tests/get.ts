@@ -6,14 +6,17 @@ class Wrap1 {
 
 class Wrap2 {
   wrap1 = new Wrap1();
+  value = "bye";
 }
 
 class Wrap3 {
   wrap2 = new Wrap2();
+  value?: Date;
 }
 
 class Cycle {
   next!: Cycle;
+  value!: number;
 }
 
 // $ExpectType number | undefined
