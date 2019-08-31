@@ -105,11 +105,11 @@ omitBy(oOrU, isString);
 // $ExpectType {} | { a: number; c: Date | Document; }
 omitBy(oOrN, isString);
 
-// $ExpectType { 2: string; a: number; c: Document | undefined; }
+// $ExpectType { a: number; 2: string; c: Document | undefined; }
 omitBy(o, isDate);
-// $ExpectType {} | { 2: string; a: number; c: Document | undefined; }
+// $ExpectType {} | { a: number; 2: string; c: Document | undefined; }
 omitBy(oOrU, isDate);
-// $ExpectType {} | { 2: string; a: number; c: Document | undefined; }
+// $ExpectType {} | { a: number; 2: string; c: Document | undefined; }
 omitBy(oOrN, isDate);
 
 // $ExpectType { c: Date | Document; }
@@ -126,11 +126,11 @@ omitBy(oOrU, isDateOrString);
 // $ExpectType {} | { a: number; c: Document | undefined; }
 omitBy(oOrN, isDateOrString);
 
-// $ExpectType { 2: string; a: number; c: Date | Document; }
+// $ExpectType { a: number; 2: string; c: Date | Document; }
 omitBy(o, isMap);
-// $ExpectType {} | { 2: string; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string; c: Date | Document; }
 omitBy(oOrU, isMap);
-// $ExpectType {} | { 2: string; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string; c: Date | Document; }
 omitBy(oOrN, isMap);
 
 // $ExpectType { a: number; c: Date | Document; }
@@ -189,11 +189,11 @@ omitBy(s, keyIsNumber);
 omitBy(sOrU, keyIsNumber);
 // $ExpectType {} | { a: number; b: string; c: Date | Document; }
 omitBy(sOrN, keyIsNumber);
-// $ExpectType { 2: string; a: number; c: Date | Document; }
+// $ExpectType { a: number; 2: string; c: Date | Document; }
 omitBy(o, keyIsNumber);
-// $ExpectType {} | { 2: string; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string; c: Date | Document; }
 omitBy(oOrU, keyIsNumber);
-// $ExpectType {} | { 2: string; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string; c: Date | Document; }
 omitBy(oOrN, keyIsNumber);
 
 // $ExpectType { b: string; c: Date | Document; }
@@ -215,11 +215,11 @@ omitBy(s, keyIsString2);
 omitBy(sOrU, keyIsString2);
 // $ExpectType {} | { a: number; b: string; c: Date | Document; }
 omitBy(sOrN, keyIsString2);
-// $ExpectType { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType { a: number; 2: string | undefined; c: Date | Document; }
 omitBy(o, keyIsString2);
-// $ExpectType {} | { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string | undefined; c: Date | Document; }
 omitBy(oOrU, keyIsString2);
-// $ExpectType {} | { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string | undefined; c: Date | Document; }
 omitBy(oOrN, keyIsString2);
 
 // $ExpectType { a: number; b: string; c: Date | Document; }
@@ -228,11 +228,11 @@ omitBy(s, keyIsString3);
 omitBy(sOrU, keyIsString3);
 // $ExpectType {} | { a: number; b: string; c: Date | Document; }
 omitBy(sOrN, keyIsString3);
-// $ExpectType { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType { a: number; 2: string | undefined; c: Date | Document; }
 omitBy(o, keyIsString3);
-// $ExpectType {} | { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string | undefined; c: Date | Document; }
 omitBy(oOrU, keyIsString3);
-// $ExpectType {} | { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string | undefined; c: Date | Document; }
 omitBy(oOrN, keyIsString3);
 
 // $ExpectType { a: number; b: string; }
@@ -241,11 +241,11 @@ omitBy(s, keyIsC);
 omitBy(sOrU, keyIsC);
 // $ExpectType {} | { a: number; b: string; }
 omitBy(sOrN, keyIsC);
-// $ExpectType { 2: string | undefined; a: number; }
+// $ExpectType { a: number; 2: string | undefined; }
 omitBy(o, keyIsC);
-// $ExpectType {} | { 2: string | undefined; a: number; }
+// $ExpectType {} | { a: number; 2: string | undefined; }
 omitBy(oOrU, keyIsC);
-// $ExpectType {} | { 2: string | undefined; a: number; }
+// $ExpectType {} | { a: number; 2: string | undefined; }
 omitBy(oOrN, keyIsC);
 
 // $ExpectType { b: string; }

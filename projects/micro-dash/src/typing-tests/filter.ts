@@ -70,11 +70,11 @@ type AN = Array<"a" | number>;
 const an = ["a"] as AN;
 const anOrU = ["a"] as AN | undefined;
 const anOrN = ["a"] as AN | null;
-// $ExpectType (2 | "a")[]
+// $ExpectType ("a" | 2)[]
 filter(an, isStringOr2);
-// $ExpectType (2 | "a")[]
+// $ExpectType ("a" | 2)[]
 filter(anOrU, isStringOr2);
-// $ExpectType (2 | "a")[]
+// $ExpectType ("a" | 2)[]
 filter(anOrN, isStringOr2);
 
 //
@@ -153,11 +153,11 @@ filter(s2, isA);
 filter(s2OrU, isA);
 // $ExpectType "a"[]
 filter(s2OrN, isA);
-// $ExpectType (2 | "a")[]
+// $ExpectType ("a" | 2)[]
 filter(s2, isStringOr2);
-// $ExpectType (2 | "a")[]
+// $ExpectType ("a" | 2)[]
 filter(s2OrU, isStringOr2);
-// $ExpectType (2 | "a")[]
+// $ExpectType ("a" | 2)[]
 filter(s2OrN, isStringOr2);
 
 // Key narrowing

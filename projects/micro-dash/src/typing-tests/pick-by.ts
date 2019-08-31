@@ -70,11 +70,11 @@ type AN = Array<"a" | number>;
 const an = ["a"] as AN;
 const anOrU = ["a"] as AN | undefined;
 const anOrN = ["a"] as AN | null;
-// $ExpectType { [index: number]: 2 | "a"; }
+// $ExpectType { [index: number]: "a" | 2; }
 pickBy(an, isStringOr2);
-// $ExpectType { [index: number]: 2 | "a"; }
+// $ExpectType { [index: number]: "a" | 2; }
 pickBy(anOrU, isStringOr2);
-// $ExpectType { [index: number]: 2 | "a"; }
+// $ExpectType { [index: number]: "a" | 2; }
 pickBy(anOrN, isStringOr2);
 
 //
@@ -112,11 +112,11 @@ pickBy(oOrU, isDate);
 // $ExpectType {} | { c: Date | undefined; }
 pickBy(oOrN, isDate);
 
-// $ExpectType { 2: string; a: number; }
+// $ExpectType { a: number; 2: string; }
 pickBy(o, isNumberOrString);
-// $ExpectType {} | { 2: string; a: number; }
+// $ExpectType {} | { a: number; 2: string; }
 pickBy(oOrU, isNumberOrString);
-// $ExpectType {} | { 2: string; a: number; }
+// $ExpectType {} | { a: number; 2: string; }
 pickBy(oOrN, isNumberOrString);
 
 // $ExpectType { 2: string; c: Date | undefined; }
@@ -152,11 +152,11 @@ pickBy(s2, isA);
 pickBy(s2OrU, isA);
 // $ExpectType {} | { a: "a" | undefined; }
 pickBy(s2OrN, isA);
-// $ExpectType { a: 2 | "a" | undefined; }
+// $ExpectType { a: "a" | 2 | undefined; }
 pickBy(s2, isStringOr2);
-// $ExpectType {} | { a: 2 | "a" | undefined; }
+// $ExpectType {} | { a: "a" | 2 | undefined; }
 pickBy(s2OrU, isStringOr2);
-// $ExpectType {} | { a: 2 | "a" | undefined; }
+// $ExpectType {} | { a: "a" | 2 | undefined; }
 pickBy(s2OrN, isStringOr2);
 
 // key narrowing
@@ -176,11 +176,11 @@ pickBy(s, keyIsString);
 pickBy(sOrU, keyIsString);
 // $ExpectType {} | { a: number; b: string; c: Date | Document; }
 pickBy(sOrN, keyIsString);
-// $ExpectType { 2: string; a: number; c: Date | Document; }
+// $ExpectType { a: number; 2: string; c: Date | Document; }
 pickBy(o, keyIsString);
-// $ExpectType {} | { 2: string; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string; c: Date | Document; }
 pickBy(oOrU, keyIsString);
-// $ExpectType {} | { 2: string; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string; c: Date | Document; }
 pickBy(oOrN, keyIsString);
 
 // $ExpectType {}
@@ -202,11 +202,11 @@ pickBy(s, keyIsA);
 pickBy(sOrU, keyIsA);
 // $ExpectType {} | { a: number; }
 pickBy(sOrN, keyIsA);
-// $ExpectType { 2: string | undefined; a: number; }
+// $ExpectType { a: number; 2: string | undefined; }
 pickBy(o, keyIsA);
-// $ExpectType {} | { 2: string | undefined; a: number; }
+// $ExpectType {} | { a: number; 2: string | undefined; }
 pickBy(oOrU, keyIsA);
-// $ExpectType {} | { 2: string | undefined; a: number; }
+// $ExpectType {} | { a: number; 2: string | undefined; }
 pickBy(oOrN, keyIsA);
 
 // $ExpectType {}
@@ -254,11 +254,11 @@ pickBy(s, keyIsAorC);
 pickBy(sOrU, keyIsAorC);
 // $ExpectType {} | { a: number; c: Date | Document; }
 pickBy(sOrN, keyIsAorC);
-// $ExpectType { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType { a: number; 2: string | undefined; c: Date | Document; }
 pickBy(o, keyIsAorC);
-// $ExpectType {} | { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string | undefined; c: Date | Document; }
 pickBy(oOrU, keyIsAorC);
-// $ExpectType {} | { 2: string | undefined; a: number; c: Date | Document; }
+// $ExpectType {} | { a: number; 2: string | undefined; c: Date | Document; }
 pickBy(oOrN, keyIsAorC);
 
 // $ExpectType { a: number; }
@@ -267,11 +267,11 @@ pickBy(s, keyIsAorNumber);
 pickBy(sOrU, keyIsAorNumber);
 // $ExpectType {} | { a: number; }
 pickBy(sOrN, keyIsAorNumber);
-// $ExpectType { 2: string | undefined; a: number; }
+// $ExpectType { a: number; 2: string | undefined; }
 pickBy(o, keyIsAorNumber);
-// $ExpectType {} | { 2: string | undefined; a: number; }
+// $ExpectType {} | { a: number; 2: string | undefined; }
 pickBy(oOrU, keyIsAorNumber);
-// $ExpectType {} | { 2: string | undefined; a: number; }
+// $ExpectType {} | { a: number; 2: string | undefined; }
 pickBy(oOrN, keyIsAorNumber);
 
 const so = {} as { [key: string]: number | string };
