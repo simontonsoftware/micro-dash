@@ -11,16 +11,20 @@ import {
 } from "../interfaces";
 import { forOwn } from "./for-own";
 
+/** @hidden */
 type DefiniteValueMatches<T, O> = {
   [K in keyof T]: T[K] extends O ? K : never;
 }[keyof T];
+/** @hidden */
 type PossibleValueMatches<T, O> = {
   [K in keyof T]: IfCouldBe<T[K], O, Cast<K, string>>;
 }[keyof T];
 
+/** @hidden */
 type DefiniteKeyMatch<T, O> = {
   [K in keyof T]: Cast<K, string> extends O ? K : never;
 }[keyof T];
+/** @hidden */
 type PossibleKeyMatch<T, O> = {
   [K in keyof T]: IfCouldBe<Cast<K, string>, O, Narrow<Cast<K, string>, O>>;
 }[keyof T];

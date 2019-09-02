@@ -3,37 +3,47 @@ import { Existent, Key, Nil } from "../interfaces";
 import { isFunction } from "../lang";
 import { get } from "./get";
 
+/** @hidden */
 type Fn = (...args: any[]) => any;
 
+/** @hidden */
 type Obj1<K1 extends Key, V> = { [key in K1]?: V };
+/** @hidden */
 type Path1<K1 extends Key, T extends Obj1<K1, any> | Nil> = T extends Existent
   ? T[K1]
   : NonNullable<T>[K1] | undefined;
+/** @hidden */
 type DefinedPath1<K1 extends Key, T extends Obj1<K1, any> | Nil> = NonUndefined<
   NonNullable<T>[K1]
 >;
 
+/** @hidden */
 type Obj2<K1 extends Key, K2 extends Key, V> = { [k1 in K1]?: Obj1<K2, V> };
+/** @hidden */
 type Path2<
   K1 extends Key,
   K2 extends Key,
   T extends Obj2<K1, K2, any> | Nil
 > = Path1<K2, Path1<K1, T>>;
+/** @hidden */
 type DefinedPath2<
   K1 extends Key,
   K2 extends Key,
   T extends Obj2<K1, K2, any> | Nil
 > = DefinedPath1<K2, DefinedPath1<K1, T>>;
 
+/** @hidden */
 type Obj3<K1 extends Key, K2 extends Key, K3 extends Key, V> = {
-  [k1 in K1]?: Obj2<K2, K3, V>
+  [k1 in K1]?: Obj2<K2, K3, V>;
 };
+/** @hidden */
 type Path3<
   K1 extends Key,
   K2 extends Key,
   K3 extends Key,
   T extends Obj3<K1, K2, K3, any> | Nil
 > = Path1<K3, Path2<K1, K2, T>>;
+/** @hidden */
 type DefinedPath3<
   K1 extends Key,
   K2 extends Key,
@@ -41,9 +51,11 @@ type DefinedPath3<
   T extends Obj3<K1, K2, K3, any> | Nil
 > = DefinedPath1<K3, DefinedPath2<K1, K2, T>>;
 
+/** @hidden */
 type Obj4<K1 extends Key, K2 extends Key, K3 extends Key, K4 extends Key, V> = {
-  [k1 in K1]?: Obj3<K2, K3, K4, V>
+  [k1 in K1]?: Obj3<K2, K3, K4, V>;
 };
+/** @hidden */
 type Path4<
   K1 extends Key,
   K2 extends Key,
@@ -51,6 +63,7 @@ type Path4<
   K4 extends Key,
   T extends Obj4<K1, K2, K3, K4, any> | Nil
 > = Path1<K4, Path3<K1, K2, K3, T>>;
+/** @hidden */
 type DefinedPath4<
   K1 extends Key,
   K2 extends Key,

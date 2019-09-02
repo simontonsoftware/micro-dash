@@ -11,16 +11,20 @@ import {
 } from "../interfaces";
 import { keysOfNonArray } from "../object/keys";
 
+/** @hidden */
 type DefiniteValueMatches<T, O> = {
   [K in keyof T]: T[K] extends O ? T[K] : never;
 }[keyof T];
+/** @hidden */
 type PossibleValueMatches<T, O> = {
   [K in keyof T]: IfCouldBe<T[K], O, Narrow<T[K], O>>;
 }[keyof T];
 
+/** @hidden */
 type DefiniteKeyMatches<T, O> = {
   [K in keyof T]: Cast<K, string> extends O ? T[K] : never;
 }[keyof T];
+/** @hidden */
 type PossibleKeyMatches<T, O> = {
   [K in keyof T]: IfCouldBe<Cast<K, string>, O, T[K]>;
 }[keyof T];

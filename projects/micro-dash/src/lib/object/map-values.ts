@@ -1,10 +1,14 @@
 import { Nil, ObjectIteratee } from "../interfaces";
 import { forOwn } from "./for-own";
 
+/** @hidden */
 type MappedObject<T, O> = { [key in keyof T]: O };
+/** @hidden */
 type MappedNullableObject<T, O> = { [key in keyof NonNullable<T>]: O } | {};
+/** @hidden */
 // tslint:disable-next-line:interface-over-type-literal
 type MappedArray<O> = { [index: number]: O };
+/** @hidden */
 type MappedNullableArray<O> = MappedArray<O> | {};
 
 /**

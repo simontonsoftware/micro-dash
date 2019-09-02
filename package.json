@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "dtslint": "dtslint --expectOnly --localTs node_modules/typescript/lib projects/micro-dash/src/typing-tests",
     "sizes": "ng build micro-dash && ng build sizes && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
-    "docs": "cd docs && typedoc ../projects/micro-dash/src",
+    "docs": "cd docs && typedoc ../projects/micro-dash/src/lib",
     "prettier-all": "prettier --write \"**/*.{html,js,json,md,scss,ts,yml}\"",
     "release": "yarn docs && git add docs/* && standard-version --commit-all && yarn build micro-dash"
   },
