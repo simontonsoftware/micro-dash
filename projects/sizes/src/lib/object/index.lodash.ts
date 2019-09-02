@@ -1,3 +1,4 @@
+import "./find-key.lodash";
 import "./for-own-right.lodash";
 import "./for-own.lodash";
 import "./get.lodash";

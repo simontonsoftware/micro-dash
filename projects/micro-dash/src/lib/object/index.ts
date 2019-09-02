@@ -1,3 +1,4 @@
+export { findKey } from "./find-key";
 export { forOwn } from "./for-own";
 export { forOwnRight } from "./for-own-right";
 export { get } from "./get";
