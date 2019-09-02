@@ -10,6 +10,8 @@ export type Existent = Primitive | object;
 export type ObjectWith<T> = Record<string, T>;
 /** @hidden */
 export type StringifiedKey<T> = Cast<keyof T, string>;
+/** @hidden */
+export type Values<T> = T[keyof T];
 
 /** @hidden */
 export type ArrayIteratee<I, O> = (item: I, index: number) => O;

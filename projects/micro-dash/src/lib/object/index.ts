@@ -1,3 +1,4 @@
+export { at } from "./at";
 export { forOwn } from "./for-own";
 export { forOwnRight } from "./for-own-right";
 export { get } from "./get";
