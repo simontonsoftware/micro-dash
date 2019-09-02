@@ -15,7 +15,7 @@ type DefiniteValueMatches<T, O> = {
   [K in keyof T]: T[K] extends O ? K : never;
 }[keyof T];
 type PossibleValueMatches<T, O> = {
-  [K in keyof T]: IfCouldBe<T[K], O, K>;
+  [K in keyof T]: IfCouldBe<T[K], O, Cast<K, string>>;
 }[keyof T];
 
 type DefiniteKeyMatch<T, O> = {
@@ -44,7 +44,7 @@ export function findKey<I, T extends NonNullable<I>, O>(
   object: I,
   predicate: ValueNarrowingIteratee<T, O>,
 ):
-  | Cast<PossibleValueMatches<T, O>, string>
+  | PossibleValueMatches<T, O>
   | (DefiniteValueMatches<T, O> extends never ? undefined : never)
   | IfCouldBe<I, Nil, undefined>;
 
@@ -53,7 +53,7 @@ export function findKey<I, T extends NonNullable<I>, O>(
   object: I,
   predicate: KeyNarrowingIteratee<T, O>,
 ):
-  | Cast<PossibleKeyMatch<T, O>, string>
+  | PossibleKeyMatch<T, O>
   | (DefiniteKeyMatch<T, O> extends never ? undefined : never)
   | IfCouldBe<I, Nil, undefined>;
 
