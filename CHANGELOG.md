@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/simontonsoftware/micro-dash/compare/v6.3.0...v6.4.0) (2019-09-02)
+
+### Bug Fixes
+
+- `mapValues()`, `pickBy()` and `omitBy` no longer iterate over the `length` property of arrays, to match lodash ([10f5a28](https://github.com/simontonsoftware/micro-dash/commit/10f5a28))
+- fix some return types for `find()` ([4a5d695](https://github.com/simontonsoftware/micro-dash/commit/4a5d695))
+
+### Features
+
+- `get()` can take a key, in addition to a path ([6e2353c](https://github.com/simontonsoftware/micro-dash/commit/6e2353c))
+- add `findKey()` ([c918fbe](https://github.com/simontonsoftware/micro-dash/commit/c918fbe))
+- improve typing for `get()` ([e631b62](https://github.com/simontonsoftware/micro-dash/commit/e631b62))
+- improve typing for `pickBy()` ([8cf7e65](https://github.com/simontonsoftware/micro-dash/commit/8cf7e65))
+- improve typing for `pickBy()` and `omitBy()` ([12b13bf](https://github.com/simontonsoftware/micro-dash/commit/12b13bf))
+- improve typing of `omitBy()` ([3303dc0](https://github.com/simontonsoftware/micro-dash/commit/3303dc0))
+- improve typing typing for `find()` and `filter()` ([b459505](https://github.com/simontonsoftware/micro-dash/commit/b459505))
+- improved typing for `keyBy()` ([11aa193](https://github.com/simontonsoftware/micro-dash/commit/11aa193))
+- improved typing for `mapValues()` ([950bbaa](https://github.com/simontonsoftware/micro-dash/commit/950bbaa))
+- object functions now treat arrays the same as lodash ([e657500](https://github.com/simontonsoftware/micro-dash/commit/e657500))
+
 ## [6.3.0](https://github.com/simontonsoftware/micro-dash/compare/v6.2.0...v6.3.0) (2019-06-25)
 
 ### Bug Fixes
