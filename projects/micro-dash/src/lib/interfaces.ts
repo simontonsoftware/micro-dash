@@ -36,23 +36,12 @@ export type ValueIteratee<T, O> = (value: T) => O;
 /** @hidden */
 export type Cast<I, O> = Exclude<I, O> extends never ? I : O;
 /** @hidden */
-export type IfEqual<T1, T2, If, Else = never> = T1 extends T2
-  ? T2 extends T1
-    ? If
-    : Else
-  : Else;
+export type Narrow<I, O> = Extract<I, O> | Extract<O, I>;
 /** @hidden */
 export type IfCouldBe<T1, T2, If, Else = never> = Extract<T1, T2> extends never
   ? Extract<T2, T1> extends never
     ? Else
     : If
-  : If;
-/** @hidden */
-export type IfHasIndexKey<T, If, Else = never> = Extract<
-  string | number,
-  keyof T
-> extends never
-  ? Else
   : If;
 
 /** @hidden */

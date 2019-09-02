@@ -3,14 +3,27 @@ import {
   ArrayNarrowingIteratee,
   Cast,
   IfCouldBe,
-  IfHasIndexKey,
   KeyNarrowingIteratee,
+  Narrow,
   Nil,
   ObjectIteratee,
-  StringifiedKey,
   ValueNarrowingIteratee,
 } from "../interfaces";
 import { keysOfNonArray } from "../object/keys";
+
+type DefiniteValueMatches<T, O> = {
+  [K in keyof T]: T[K] extends O ? T[K] : never;
+}[keyof T];
+type PossibleValueMatches<T, O> = {
+  [K in keyof T]: IfCouldBe<T[K], O, Narrow<T[K], O>>;
+}[keyof T];
+
+type DefiniteKeyMatches<T, O> = {
+  [K in keyof T]: Cast<K, string> extends O ? T[K] : never;
+}[keyof T];
+type PossibleKeyMatches<T, O> = {
+  [K in keyof T]: IfCouldBe<Cast<K, string>, O, T[K]>;
+}[keyof T];
 
 /**
  * Iterates over elements of `collection`, returning the first element `predicate` returns truthy for.
@@ -20,17 +33,21 @@ import { keysOfNonArray } from "../object/keys";
  * - Micro-dash: 383 bytes
  */
 
+// array: value narrowing
 export function find<I, O>(
   array: I[] | Nil,
   predicate: ArrayNarrowingIteratee<O>,
   fromIndex?: number,
 ): Extract<I, O> | Extract<O, I> | undefined;
+
+// array
 export function find<T>(
   array: T[] | Nil,
   predicate: ArrayIteratee<T, boolean>,
   fromIndex?: number,
 ): T | undefined;
 
+// object: value narrowing
 export function find<
   I,
   T extends NonNullable<I>,
@@ -41,14 +58,12 @@ export function find<
   predicate: ValueNarrowingIteratee<T, O>,
   fromIndex?: F,
 ):
-  | {
-      [K in keyof T]: T[K] extends O
-        ? T[K]
-        : IfCouldBe<T[K], O, Extract<T[K], O> | Extract<O, T[K]> | undefined>
-    }[keyof T]
-  | IfCouldBe<T[keyof T], O, never, undefined>
+  | PossibleValueMatches<T, O>
+  | (DefiniteValueMatches<T, O> extends never ? undefined : never)
   | IfCouldBe<I, Nil, undefined>
   | IfCouldBe<F, number, undefined>;
+
+// object: key narrowing
 export function find<
   I,
   T extends NonNullable<I>,
@@ -59,12 +74,12 @@ export function find<
   predicate: KeyNarrowingIteratee<T, O>,
   fromIndex?: F,
 ):
-  | { [K in keyof T]: IfCouldBe<Cast<K, string>, O, T[K]> }[keyof T]
+  | PossibleKeyMatches<T, O>
+  | (DefiniteKeyMatches<T, O> extends never ? undefined : never)
   | IfCouldBe<I, Nil, undefined>
-  | IfCouldBe<StringifiedKey<T>, O, never, undefined>
-  | IfCouldBe<F, number, undefined>
-  | IfHasIndexKey<T, undefined>;
+  | IfCouldBe<F, number, undefined>;
 
+// object
 export function find<T>(
   object: T | Nil,
   predicate: ObjectIteratee<T, boolean>,

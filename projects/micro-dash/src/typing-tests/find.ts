@@ -1,5 +1,4 @@
-import { isMap, isNumber } from "lodash-es";
-import { isDate, isString } from "util";
+import { isDate, isMap, isNumber, isString } from "lodash-es";
 import { find } from "../lib/collection";
 import {
   isA,
@@ -171,7 +170,7 @@ find(oOrN, isNumberOrString);
 // $ExpectType string | number | undefined
 find(oOrN, isNumberOrString, 1);
 
-// $ExpectType string | Date | undefined
+// $ExpectType string | Date
 find(o, isDateOrString);
 // $ExpectType string | Date | undefined
 find(o, isDateOrString, 1);
@@ -341,7 +340,7 @@ find(sOrU, keyIsString2, 1);
 find(sOrN, keyIsString2);
 // $ExpectType undefined
 find(sOrN, keyIsString2, 1);
-// $ExpectType string
+// $ExpectType string | undefined
 find(o, keyIsString2);
 // $ExpectType string | undefined
 find(o, keyIsString2, 1);
@@ -366,7 +365,7 @@ find(sOrU, keyIsString3, 1);
 find(sOrN, keyIsString3);
 // $ExpectType undefined
 find(sOrN, keyIsString3, 1);
-// $ExpectType string
+// $ExpectType string | undefined
 find(o, keyIsString3);
 // $ExpectType string | undefined
 find(o, keyIsString3, 1);
@@ -463,7 +462,7 @@ find(so, isNumber);
 find(so, isDate);
 // $ExpectType string | undefined
 find(so, isDateOrString);
-// $ExpectType string | number | undefined
+// $ExpectType string | number
 find(so, keyIsString);
 // $ExpectType string | number | undefined
 find(so, keyIsA);

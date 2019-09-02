@@ -1,4 +1,5 @@
 import { matches } from "lodash-es";
+import { expectSingleCallAndReset } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { find } from "./find";
 
@@ -42,8 +43,7 @@ describe("find()", () => {
   it("should provide correct `predicate` arguments for objects", () => {
     const spy = jasmine.createSpy();
     find({ a: 1 }, spy);
-    expect(spy).toHaveBeenCalledTimes(1);
-    expect(spy).toHaveBeenCalledWith(1, "a");
+    expectSingleCallAndReset(spy, 1, "a");
   });
 
   it("should work with an array and a positive `fromIndex`", () => {
