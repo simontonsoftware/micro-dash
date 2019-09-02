@@ -36,10 +36,10 @@ describe("get()", () => {
   });
 
   it("should return `undefined` when `object` is nullish", () => {
-    expect(get<any>(undefined, "constructor")).toBeUndefined();
-    expect(get<any>(undefined, ["constructor"])).toBeUndefined();
-    expect(get<any>(null, "constructor")).toBeUndefined();
-    expect(get<any>(null, ["constructor"])).toBeUndefined();
+    expect(get(undefined as any, "constructor")).toBeUndefined();
+    expect(get(undefined, ["constructor"])).toBeUndefined();
+    expect(get(null as any, "constructor")).toBeUndefined();
+    expect(get(null, ["constructor"])).toBeUndefined();
   });
 
   it("is `undefined` for deep paths when `object` is nullish", () => {
