@@ -83,7 +83,7 @@ describe("forEachRight()", () => {
     const array = [1];
     const spy = jasmine.createSpy().and.callFake(() => {
       array.push(2);
-      return false;
+      return true;
     });
 
     forEachRight(array, spy);

@@ -61,7 +61,6 @@ describe("forOwn()", () => {
 
   it("should return the collection", () => {
     const array = [1, 2, 3];
-
     expect(forOwn(array, noop)).toBe(array);
   });
 
@@ -69,7 +68,7 @@ describe("forOwn()", () => {
     const array = [1];
     const spy = jasmine.createSpy().and.callFake(() => {
       array.push(2);
-      return false;
+      return true;
     });
 
     forOwn(array, spy);
