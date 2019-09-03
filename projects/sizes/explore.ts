@@ -3,14 +3,14 @@ import * as glob from "glob";
 import * as path from "path";
 import * as readline from "readline";
 import { rollup, RollupOptions } from "rollup";
-import { forEach } from "../micro-dash/src/lib/collection/for-each";
+import { forEach } from "../micro-dash/src/lib/collection";
 import { ObjectWith } from "../micro-dash/src/lib/interfaces";
+import { explore as sourceMapExplore } from "source-map-explorer";
 
 // no typings for these imports
 const uglify = require("rollup-plugin-uglify").uglify;
 const commonjs = require("rollup-plugin-commonjs");
 const nodeResolve = require("rollup-plugin-node-resolve");
-const sourceMapExplorer = require("source-map-explorer");
 
 const projectRootDir = path.join(__dirname, "..", "..");
 const sourcDir = path.join(
@@ -78,7 +78,7 @@ async function bundleAndExplore(fileGlob: string) {
   const inputPaths = await getPaths(fileGlob);
   for (const inputPath of inputPaths) {
     const outputPath = await bundle(inputPath);
-    const summary = explore(outputPath);
+    const summary = await explore(outputPath);
     if (summary && !inputPath.match("index")) {
       updateComment(inputPath, summary);
     }
@@ -114,8 +114,9 @@ async function bundle(inputPath: string) {
   return dest;
 }
 
-function explore(file: string) {
-  const files: ObjectWith<number> = sourceMapExplorer(file).files;
+async function explore(file: string) {
+  const res = await sourceMapExplore(file);
+  const files: ObjectWith<number> = res.bundles[0].files;
 
   let lodash = 0;
   let microdash = 0;

@@ -5,7 +5,7 @@ import { valuesOfNonArray } from "../object/values";
  * Converts `value` to an array.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 6,042 bytes
+ * - Lodash: 6,040 bytes
  * - Micro-dash: 184 bytes
  */
 

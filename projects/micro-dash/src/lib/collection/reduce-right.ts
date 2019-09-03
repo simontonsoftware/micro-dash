@@ -6,7 +6,7 @@ import { doReduce } from "./reduce-utils";
  * This method is like `_.reduce` except that it iterates over elements of `collection` from right to left.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,524 bytes
+ * - Lodash: 14,494 bytes
  * - Micro-dash: 361 bytes
  */
 export function reduceRight<E>(

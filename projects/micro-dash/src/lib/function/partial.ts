@@ -8,7 +8,7 @@ import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from "../interfaces";
  * - sets the "length" property of partially applied functions
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 9,384 bytes
+ * - Lodash: 9,382 bytes
  * - Micro-dash: 108 bytes
  */
 
