@@ -36,7 +36,7 @@ export function pickBy<I, T extends NonNullable<I>, O>(
       [K in { [KK in keyof T]: IfCouldBe<T[KK], O, KK> }[keyof T]]:
         | Extract<T[K], O>
         | Extract<O, T[K]>
-        | (Exclude<T[K], O> extends never ? never : undefined)
+        | (Exclude<T[K], O> extends never ? never : undefined);
     }
   | IfCouldBe<I, Nil, {}>;
 export function pickBy<I, T extends NonNullable<I>, O>(
@@ -46,7 +46,7 @@ export function pickBy<I, T extends NonNullable<I>, O>(
   | {
       [K in { [KK in keyof T]: IfCouldBe<Cast<KK, string>, O, KK> }[keyof T]]:
         | T[K]
-        | (Cast<K, string> extends O ? never : undefined)
+        | (Cast<K, string> extends O ? never : undefined);
     }
   | IfCouldBe<I, Nil, {}>;
 export function pickBy<T>(

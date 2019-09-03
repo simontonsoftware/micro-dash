@@ -34,17 +34,15 @@ export function sortBy(collection: any, iteratees: Function | Function[]) {
     return meta;
   });
 
-  metas.sort(
-    (m1, m2): any => {
-      for (let i = 0; i < m1.length; ++i) {
-        if (m1[i] < m2[i]) {
-          return -1;
-        } else if (m1[i] > m2[i]) {
-          return 1;
-        }
+  metas.sort((m1, m2): any => {
+    for (let i = 0; i < m1.length; ++i) {
+      if (m1[i] < m2[i]) {
+        return -1;
+      } else if (m1[i] > m2[i]) {
+        return 1;
       }
-    },
-  );
+    }
+  });
 
   return metas.map((e) => e.value);
 }

@@ -1,4 +1,11 @@
-import { Cast, IfCouldBe, KeyNarrowingIteratee, Nil, ObjectIteratee, ValueNarrowingIteratee } from "../interfaces";
+import {
+  Cast,
+  IfCouldBe,
+  KeyNarrowingIteratee,
+  Nil,
+  ObjectIteratee,
+  ValueNarrowingIteratee,
+} from "../interfaces";
 import { pickBy } from "./pick-by";
 
 /**
@@ -27,8 +34,8 @@ export function omitBy<I, T extends NonNullable<I>, O>(
 ):
   | {
       [K in {
-        [KK in keyof T]: T[KK] extends O ? never : KK
-      }[keyof T]]: IfCouldBe<T[K], O, Exclude<T[K], O> | undefined, T[K]>
+        [KK in keyof T]: T[KK] extends O ? never : KK;
+      }[keyof T]]: IfCouldBe<T[K], O, Exclude<T[K], O> | undefined, T[K]>;
     }
   | IfCouldBe<I, Nil, {}>;
 export function omitBy<I, T extends NonNullable<I>, O>(
@@ -37,8 +44,8 @@ export function omitBy<I, T extends NonNullable<I>, O>(
 ):
   | {
       [K in {
-        [KK in keyof T]: Cast<KK, string> extends O ? never : KK
-      }[keyof T]]: T[K] | IfCouldBe<Cast<K, string>, O, undefined>
+        [KK in keyof T]: Cast<KK, string> extends O ? never : KK;
+      }[keyof T]]: T[K] | IfCouldBe<Cast<K, string>, O, undefined>;
     }
   | IfCouldBe<I, Nil, {}>;
 export function omitBy<T>(
