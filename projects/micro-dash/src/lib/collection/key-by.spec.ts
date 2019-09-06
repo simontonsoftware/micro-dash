@@ -1,4 +1,3 @@
-import { expectType } from "s-ng-dev-utils";
 import { keyBy } from "./key-by";
 
 describe("keyBy()", () => {

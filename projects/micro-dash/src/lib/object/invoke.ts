@@ -51,26 +51,26 @@ type DefinedPath3<
   T extends Obj3<K1, K2, K3, any> | Nil
 > = DefinedPath1<K3, DefinedPath2<K1, K2, T>>;
 
-/** @hidden */
-type Obj4<K1 extends Key, K2 extends Key, K3 extends Key, K4 extends Key, V> = {
-  [k1 in K1]?: Obj3<K2, K3, K4, V>;
-};
-/** @hidden */
-type Path4<
-  K1 extends Key,
-  K2 extends Key,
-  K3 extends Key,
-  K4 extends Key,
-  T extends Obj4<K1, K2, K3, K4, any> | Nil
-> = Path1<K4, Path3<K1, K2, K3, T>>;
-/** @hidden */
-type DefinedPath4<
-  K1 extends Key,
-  K2 extends Key,
-  K3 extends Key,
-  K4 extends Key,
-  T extends Obj4<K1, K2, K3, K4, any> | Nil
-> = DefinedPath1<K4, DefinedPath3<K1, K2, K3, T>>;
+// /** @hidden */
+// type Obj4<K1 extends Key, K2 extends Key, K3 extends Key, K4 extends Key, V> = {
+//   [k1 in K1]?: Obj3<K2, K3, K4, V>;
+// };
+// /** @hidden */
+// type Path4<
+//   K1 extends Key,
+//   K2 extends Key,
+//   K3 extends Key,
+//   K4 extends Key,
+//   T extends Obj4<K1, K2, K3, K4, any> | Nil
+// > = Path1<K4, Path3<K1, K2, K3, T>>;
+// /** @hidden */
+// type DefinedPath4<
+//   K1 extends Key,
+//   K2 extends Key,
+//   K3 extends Key,
+//   K4 extends Key,
+//   T extends Obj4<K1, K2, K3, K4, any> | Nil
+// > = DefinedPath1<K4, DefinedPath3<K1, K2, K3, T>>;
 
 /**
  * Invokes the method at `path` of `object`.
@@ -83,20 +83,21 @@ type DefinedPath4<
  * - Micro-dash: 324 bytes
  */
 
-// 4 element path
-export function invoke<
-  K1 extends Key,
-  K2 extends Key,
-  K3 extends Key,
-  K4 extends Key,
-  T extends Obj4<K1, K2, K3, K4, Fn> | Nil
->(
-  object: T,
-  path: [K1, K2, K3, K4],
-  ...args: Parameters<DefinedPath4<K1, K2, K3, K4, T>>
-): Path4<K1, K2, K3, K4, T> extends DefinedPath4<K1, K2, K3, K4, T>
-  ? ReturnType<DefinedPath4<K1, K2, K3, K4, T>>
-  : ReturnType<DefinedPath4<K1, K2, K3, K4, T>> | undefined;
+// Removed for https://github.com/simontonsoftware/micro-dash/issues/33
+// // 4 element path
+// export function invoke<
+//   K1 extends Key,
+//   K2 extends Key,
+//   K3 extends Key,
+//   K4 extends Key,
+//   T extends Obj4<K1, K2, K3, K4, Fn> | Nil
+// >(
+//   object: T,
+//   path: [K1, K2, K3, K4],
+//   ...args: Parameters<DefinedPath4<K1, K2, K3, K4, T>>
+// ): Path4<K1, K2, K3, K4, T> extends DefinedPath4<K1, K2, K3, K4, T>
+//   ? ReturnType<DefinedPath4<K1, K2, K3, K4, T>>
+//   : ReturnType<DefinedPath4<K1, K2, K3, K4, T>> | undefined;
 
 // 3 element path
 export function invoke<
@@ -137,6 +138,7 @@ export function invoke<K1 extends Key, T extends Obj1<K1, Fn> | Nil>(
 // empty path
 export function invoke(object: object | Nil, path: []): undefined;
 
+// TODO: limit this so it doesn't apply to 1-4 element paths with bad parameters
 // fallback: n element path
 export function invoke(object: object | Nil, path: Key[], ...args: any[]): any;
 
