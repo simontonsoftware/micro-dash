@@ -14,7 +14,7 @@ export function keyBy<T, K extends Key>(
   iteratee: ValueIteratee<T, K>,
 ): { [key in K]?: T };
 export function keyBy<T, K extends Key>(
-  object: T,
+  object: T | Nil,
   iteratee: ValueIteratee<T[keyof T], K>,
 ): { [key in K]?: T[keyof T] };
 

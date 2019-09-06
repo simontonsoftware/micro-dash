@@ -7,31 +7,6 @@ describe("keyBy()", () => {
     expect(keyBy(undefined, () => "a")).toEqual({});
   });
 
-  it("has fancy typing", () => {
-    const mapper = (value: number) => (value % 2 ? "odd" : "even");
-    interface O {
-      a: number;
-      b: number;
-    }
-    type A = number[];
-    interface Mapped {
-      odd?: number;
-      even?: number;
-    }
-
-    expectType<Mapped>(keyBy([1, 2], mapper));
-    expectType<Mapped>(keyBy({ a: 1, b: 2 }, mapper));
-
-    const oOrN = null as O | null;
-    const oOrU = undefined as O | undefined;
-    const aOrN = null as A | null;
-    const aOrU = undefined as A | undefined;
-    expectType<Mapped>(keyBy(oOrN, mapper));
-    expectType<Mapped>(keyBy(oOrU, mapper));
-    expectType<Mapped>(keyBy(aOrN, mapper));
-    expectType<Mapped>(keyBy(aOrU, mapper));
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //
