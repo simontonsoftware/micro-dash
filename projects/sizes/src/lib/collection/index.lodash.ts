@@ -9,4 +9,5 @@ import "./map.lodash";
 import "./reduce-right.lodash";
 import "./reduce.lodash";
 import "./sample.lodash";
+import "./size.lodash";
 import "./sort-by.lodash";

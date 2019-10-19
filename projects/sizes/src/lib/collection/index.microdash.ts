@@ -9,4 +9,5 @@ import "./map.microdash";
 import "./reduce-right.microdash";
 import "./reduce.microdash";
 import "./sample.microdash";
+import "./size.microdash";
 import "./sort-by.microdash";

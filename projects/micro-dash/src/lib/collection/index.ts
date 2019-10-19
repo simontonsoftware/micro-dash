@@ -9,4 +9,5 @@ export { map } from "./map";
 export { reduce } from "./reduce";
 export { reduceRight } from "./reduce-right";
 export { sample } from "./sample";
+export { size } from "./size";
 export { sortBy } from "./sort-by";
