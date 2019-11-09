@@ -1,4 +1,4 @@
-import { Key, Nil, ValueIteratee } from "../interfaces";
+import { IfIndexType, Key, Nil, ValueIteratee } from "../interfaces";
 import { forEach } from "./for-each";
 
 /**
@@ -12,11 +12,11 @@ import { forEach } from "./for-each";
 export function keyBy<T, K extends Key>(
   array: T[] | Nil,
   iteratee: ValueIteratee<T, K>,
-): { [key in K]?: T };
+): IfIndexType<K, { [key in K]: T }, { [key in K]?: T }>;
 export function keyBy<T, K extends Key>(
   object: T | Nil,
   iteratee: ValueIteratee<T[keyof T], K>,
-): { [key in K]?: T[keyof T] };
+): IfIndexType<K, { [key in K]: T[keyof T] }, { [key in K]?: T[keyof T] }>;
 
 export function keyBy(collection: any, iteratee: Function) {
   const obj: any = {};

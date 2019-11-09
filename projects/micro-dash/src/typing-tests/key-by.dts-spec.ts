@@ -1,4 +1,5 @@
 import { keyBy } from "../lib/collection";
+import { ObjectWith } from "../lib/interfaces";
 
 const mapper = (value: number) => (value % 2 ? "odd" : "even");
 interface O {
@@ -30,3 +31,14 @@ type City = "Nairobi" | "Gulu";
 const chooseMany: City[] = ["Nairobi", "Gulu"];
 // $ExpectType { Nairobi?: "Nairobi" | "Gulu" | undefined; Gulu?: "Nairobi" | "Gulu" | undefined; }
 keyBy(chooseMany, (city) => city);
+
+// https://github.com/simontonsoftware/micro-dash/issues/35
+interface Named {
+  name: string;
+}
+const namedArray: Named[] = [{ name: "Jimmy" }];
+const namedObject: ObjectWith<Named> = { a: { name: "Jimmy" } };
+// $ExpectType { [x: string]: Named; }
+keyBy(namedArray, (e) => e.name);
+// $ExpectType { [x: string]: Named; }
+keyBy(namedObject, (e) => e.name);

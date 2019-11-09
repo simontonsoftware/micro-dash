@@ -7,6 +7,7 @@ import { keys } from "../object";
  * - Lodash: 3,501 bytes
  * - Micro-dash: 197 bytes
  */
+
 export function size(collection: object): number;
 // tslint:disable-next-line:unified-signatures
 export function size(collection: any[] | string): number;
