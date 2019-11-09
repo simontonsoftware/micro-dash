@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.5.0](https://github.com/simontonsoftware/micro-dash/compare/v6.4.0...v6.5.0) (2019-11-09)
+
+### Bug Fixes
+
+- `invoke()` no longer causes error TS2589. closes [#33](https://github.com/simontonsoftware/micro-dash/issues/33) ([4bee4ae](https://github.com/simontonsoftware/micro-dash/commit/4bee4ae))
+- fix typing of `keyBy` when passed a nullable object ([50630c2](https://github.com/simontonsoftware/micro-dash/commit/50630c2))
+
+### Features
+
+- add `size()` ([3939e41](https://github.com/simontonsoftware/micro-dash/commit/3939e41))
+- improve typing of `keyBy()`. Closes [#35](https://github.com/simontonsoftware/micro-dash/issues/35) ([f68f5e3](https://github.com/simontonsoftware/micro-dash/commit/f68f5e3))
+
 ## [6.4.0](https://github.com/simontonsoftware/micro-dash/compare/v6.3.0...v6.4.0) (2019-09-02)
 
 ### Bug Fixes
