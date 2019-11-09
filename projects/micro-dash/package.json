@@ -6,7 +6,7 @@
   "repository": "simontonsoftware/micro-dash",
   "license": "MIT",
   "dependencies": {
-    "utility-types": "^3.7.0"
+    "utility-types": "~3.10.0"
   },
   "peerDependencies": {
     "tslib": "^1.10.0"
