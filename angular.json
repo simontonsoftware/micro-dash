@@ -18,9 +18,14 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -36,7 +41,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -79,8 +83,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "scripts": []
           }
         },
@@ -92,7 +101,9 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -120,6 +131,11 @@
           "options": {
             "tsConfig": "projects/micro-dash/tsconfig.lib.json",
             "project": "projects/micro-dash/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/the-library/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -137,7 +153,9 @@
               "projects/micro-dash/tsconfig.lib.json",
               "projects/micro-dash/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -153,6 +171,11 @@
           "options": {
             "tsConfig": "projects/sizes/tsconfig.lib.json",
             "project": "projects/sizes/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/the-library/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -170,11 +193,16 @@
               "projects/sizes/tsconfig.lib.json",
               "projects/sizes/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "micro-dash-platform"
+  "defaultProject": "micro-dash-platform",
+  "cli": {
+    "analytics": "cb18b4bb-bcb7-41cd-9b06-adb77d12b3c4"
+  }
 }
