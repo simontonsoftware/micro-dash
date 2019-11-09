@@ -44,7 +44,7 @@ get(new Cycle(), ["next", "next", "next", "next", "next"]);
 // when D is a different type than at the path
 // $ExpectType Wrap1
 get(new Wrap3(), ["wrap2", "wrap1"], "hi");
-// $ExpectType string | number
+// $ExpectType number | "hi"
 get(new Wrap2(), ["wrap1", "value"], "hi");
 
 // when T can be undefined
@@ -64,7 +64,7 @@ get(new Wrap1(), "value");
 get(new Wrap1(), "value", 1);
 // $ExpectType Wrap1
 get(new Wrap2(), "wrap1", 1);
-// $ExpectType string | number
+// $ExpectType number | "hi"
 get(new Wrap1(), "value", "hi");
 // $ExpectType Wrap2 | undefined
 get(wOrU, "wrap2");

@@ -14,8 +14,8 @@ describe("transform", () => {
     const squareAndPush = (result: number[], value: number) => {
       result.push(value ** 2);
     };
-    expect(transform(array, squareAndPush, [])).toEqual([1, 4, 9]);
-    expect(transform(object, squareAndPush, [])).toEqual([1, 4, 9]);
+    expect(transform(array, squareAndPush, [] as number[])).toEqual([1, 4, 9]);
+    expect(transform(object, squareAndPush, [] as number[])).toEqual([1, 4, 9]);
 
     const squareAndSet = (
       result: ObjectWith<number>,

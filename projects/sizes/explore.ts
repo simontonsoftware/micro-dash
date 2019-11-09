@@ -142,6 +142,7 @@ function updateComment(inputPath: string, summary: string) {
   const baseName = relativePath.replace(/lodash\.js|microdash\.js/, "ts");
   const sourcePath = path.join(sourcDir, baseName);
 
+  // tslint:disable-next-line:no-non-null-assertion
   const lib = summary.match(/ - (.*):/)![1];
   const toReplace = new RegExp(` \\* - ${lib}:.*`);
 

@@ -21,5 +21,6 @@ export function minBy<T extends Existent>(
       minCriterion = criterion;
     }
   });
+  // tslint:disable-next-line:no-non-null-assertion
   return min!;
 }
