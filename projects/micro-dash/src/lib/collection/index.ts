@@ -1,6 +1,7 @@
 export { every } from "./every";
 export { filter } from "./filter";
 export { find } from "./find";
+export { flatMap } from "./flat-map";
 export { forEach } from "./for-each";
 export { forEachRight } from "./for-each-right";
 export { includes } from "./includes";

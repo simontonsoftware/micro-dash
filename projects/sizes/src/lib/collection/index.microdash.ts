@@ -1,6 +1,7 @@
 import "./every.microdash";
 import "./filter.microdash";
 import "./find.microdash";
+import "./flat-map.microdash";
 import "./for-each-right.microdash";
 import "./for-each.microdash";
 import "./includes.microdash";

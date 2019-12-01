@@ -1,6 +1,7 @@
 import "./every.lodash";
 import "./filter.lodash";
 import "./find.lodash";
+import "./flat-map.lodash";
 import "./for-each-right.lodash";
 import "./for-each.lodash";
 import "./includes.lodash";
