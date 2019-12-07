@@ -1,6 +1,7 @@
 export { camelCase } from "./camel-case";
 export { capitalize } from "./capitalize";
 export { kebabCase } from "./kebab-case";
+export { lowerFirst } from "./lower-first";
 export { pad } from "./pad";
 export { padStart } from "./pad-start";
 export { padEnd } from "./pad-end";
