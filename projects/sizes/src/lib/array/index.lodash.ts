@@ -14,3 +14,4 @@ import "./uniq.lodash";
 import "./uniq-by.lodash";
 import "./without.lodash";
 import "./zip.lodash";
+import "./zip-object.lodash";

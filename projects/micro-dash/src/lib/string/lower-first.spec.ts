@@ -1,6 +1,10 @@
 import { lowerFirst } from "./lower-first";
 
 describe("lowerFirst()", () => {
+  //
+  // stolen from https://github.com/lodash/lodash
+  //
+
   it("should lowercase only the first character", () => {
     expect(lowerFirst("fred")).toBe("fred");
     expect(lowerFirst("Fred")).toBe("fred");

@@ -14,3 +14,4 @@ export { uniq } from "./uniq";
 export { uniqBy } from "./uniq-by";
 export { without } from "./without";
 export { zip } from "./zip";
+export { zipObject } from "./zip-object";

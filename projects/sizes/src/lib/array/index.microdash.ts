@@ -14,3 +14,4 @@ import "./uniq.microdash";
 import "./uniq-by.microdash";
 import "./without.microdash";
 import "./zip.microdash";
+import "./zip-object.microdash";
