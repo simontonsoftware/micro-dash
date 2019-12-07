@@ -1,3 +1,3 @@
 import upperFirst from "lodash-es/upperFirst";
 
-upperFirst("a string");
+console.log(upperFirst("a string"), upperFirst(undefined));

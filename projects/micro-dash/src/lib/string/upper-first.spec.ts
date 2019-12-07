@@ -8,6 +8,8 @@ describe("upperFirst()", () => {
   });
 
   it("should return an empty string for empty values", () => {
+    expect(upperFirst(null)).toBe("");
+    expect(upperFirst(undefined)).toBe("");
     expect(upperFirst("")).toBe("");
   });
 });

@@ -1,3 +1,3 @@
 import { upperFirst } from "micro-dash";
 
-upperFirst("a string");
+console.log(upperFirst("a string"), upperFirst(undefined));
