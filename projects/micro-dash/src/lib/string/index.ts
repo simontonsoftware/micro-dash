@@ -5,6 +5,7 @@ export { lowerFirst } from "./lower-first";
 export { pad } from "./pad";
 export { padStart } from "./pad-start";
 export { padEnd } from "./pad-end";
+export { repeat } from "./repeat";
 export { snakeCase } from "./snake-case";
 export { toLower } from "./to-lower";
 export { upperFirst } from "./upper-first";

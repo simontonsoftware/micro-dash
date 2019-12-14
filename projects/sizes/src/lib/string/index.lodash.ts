@@ -5,6 +5,7 @@ import "./lower-first.lodash";
 import "./pad-end.lodash";
 import "./pad-start.lodash";
 import "./pad.lodash";
+import "./repeat.lodash";
 import "./snake-case.lodash";
 import "./to-lower.lodash";
 import "./upper-first.lodash";
