@@ -19,6 +19,7 @@ export function makePadding(s: string, length: number, chars: string) {
   return _makePadding(length - s.length, chars);
 }
 
+/** @hidden */
 function _makePadding(needed: number, chars: string) {
   return needed > 0 && chars.length > 0
     ? chars.repeat(Math.ceil(needed / chars.length)).substr(0, needed)
