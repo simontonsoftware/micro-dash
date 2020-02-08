@@ -6,7 +6,7 @@
  * - does not coerce falsey bounds to `0`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,440 bytes
+ * - Lodash: 1,388 bytes
  * - Micro-dash: 59 bytes
  */
 // tslint:disable-next-line:variable-name

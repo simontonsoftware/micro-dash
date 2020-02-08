@@ -9,8 +9,8 @@ import { identity } from "./identity";
  * - might not construct a new function when it is not needed
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 4,999 bytes
- * - Micro-dash: 181 bytes
+ * - Lodash: 4,885 bytes
+ * - Micro-dash: 172 bytes
  */
 
 // types are from DefinitelyTyped/lodash

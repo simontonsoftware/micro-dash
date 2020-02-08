@@ -2,7 +2,7 @@
  * Creates an array of elements split into groups the length of `size`. If `array` can't be split evenly, the final chunk will be the remaining elements.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 2,288 bytes
+ * - Lodash: 2,172 bytes
  * - Micro-dash: 139 bytes
  */
 export function chunk<T>(array: T[], size = 1): T[][] {

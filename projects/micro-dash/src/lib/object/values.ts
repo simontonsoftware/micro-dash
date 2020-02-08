@@ -4,7 +4,7 @@ import { keys, keysOfNonArray } from "./keys";
  * Creates an array of the own enumerable string keyed property values of `object`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 3,436 bytes
+ * - Lodash: 3,370 bytes
  * - Micro-dash: 207 bytes
  */
 export function values<T>(object: T) {

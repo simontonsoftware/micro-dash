@@ -7,8 +7,8 @@ import { upperFirst } from "./upper-first";
  * - requires `string` to be a string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 2,029 bytes
- * - Micro-dash: 62 bytes
+ * - Lodash: 1,938 bytes
+ * - Micro-dash: 67 bytes
  */
 // tslint:disable-next-line:variable-name
 export function capitalize(string: string) {

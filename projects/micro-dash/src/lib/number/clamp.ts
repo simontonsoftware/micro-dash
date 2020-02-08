@@ -6,7 +6,7 @@
  * - does not coerce bounds that are `NaN` to be `0`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,398 bytes
+ * - Lodash: 1,348 bytes
  * - Micro-dash: 51 bytes
  */
 // tslint:disable-next-line:variable-name

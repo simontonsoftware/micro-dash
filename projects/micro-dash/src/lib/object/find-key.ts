@@ -33,8 +33,8 @@ type PossibleKeyMatch<T, O> = {
  * This method is like `find` except that it returns the key of the first element `predicate` returns truthy for instead of the element itself.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,215 bytes
- * - Micro-dash: 354 bytes
+ * - Lodash: 14,016 bytes
+ * - Micro-dash: 364 bytes
  */
 
 // array

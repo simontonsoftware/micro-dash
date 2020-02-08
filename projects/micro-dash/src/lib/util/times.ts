@@ -6,7 +6,7 @@
  * - does not provide a default for `iteratee`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,580 bytes
+ * - Lodash: 1,503 bytes
  * - Micro-dash: 49 bytes
  */
 export function times<T>(n: number, iteratee: (index: number) => T) {

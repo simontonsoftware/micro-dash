@@ -2,7 +2,7 @@
  * Checks if `value` is classified as a `Number` primitive.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 714 bytes
+ * - Lodash: 688 bytes
  * - Micro-dash: 39 bytes
  */
 export function isNumber(value: any): value is number {

@@ -5,7 +5,7 @@
  * - `null` and `undefined` array references are blank
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,085 bytes
+ * - Lodash: 1,033 bytes
  * - Micro-dash: 35 bytes
  */
 export function toString(value: any) {
