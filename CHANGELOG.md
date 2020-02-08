@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/simontonsoftware/micro-dash/compare/v6.5.0...v7.0.0) (2020-02-08)
+
+### ⚠ BREAKING CHANGES
+
+- Requires typescript 3.7
+
+### Features
+
+- `upperFirst()` accepts nullish values ([c2fbff9](https://github.com/simontonsoftware/micro-dash/commit/c2fbff9b3e21799f871a45f3af1bb2ecd0221407))
+- add `flatMap()`. Closes [#36](https://github.com/simontonsoftware/micro-dash/issues/36) ([d7cc777](https://github.com/simontonsoftware/micro-dash/commit/d7cc777664dd5a2ec830c5b728a1ae94adba6c30))
+- add `lowerFirst()`. Closes [#37](https://github.com/simontonsoftware/micro-dash/issues/37). ([5d16ffc](https://github.com/simontonsoftware/micro-dash/commit/5d16ffc56579df8049d5a41d57624bc0d2b90c79))
+- add `repeat()` ([b170193](https://github.com/simontonsoftware/micro-dash/commit/b1701930e19d06bb49a67f074256655e72455f53))
+- add `zipObject()`. Closes [#38](https://github.com/simontonsoftware/micro-dash/issues/38). ([c17369a](https://github.com/simontonsoftware/micro-dash/commit/c17369ad83802f13744f2628fca2b3196a16dbc1))
+
+* upgrade buildchain ([0d2e6ea](https://github.com/simontonsoftware/micro-dash/commit/0d2e6eab69cac0be093a9abddcdb082d06505d66))
+
 ## [6.5.0](https://github.com/simontonsoftware/micro-dash/compare/v6.4.0...v6.5.0) (2019-11-09)
 
 ### Bug Fixes
