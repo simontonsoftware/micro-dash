@@ -12,7 +12,7 @@
     "sizes": "ng build micro-dash && ng build sizes && cd projects/sizes && ts-node -O \"{\\\"module\\\": \\\"commonjs\\\"}\" explore",
     "docs": "cd docs && typedoc ../projects/micro-dash/src/lib",
     "prettier-all": "prettier --write \"**/*.{html,js,json,md,scss,ts,yml}\"",
-    "release": "yarn docs && git add docs/* && standard-version --commit-all && yarn build micro-dash"
+    "release": "yarn docs && git add docs/* && standard-version --commit-all && yarn build --prod micro-dash"
   },
   "private": true,
   "dependencies": {
@@ -58,15 +58,15 @@
     "rollup": "^1.20.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-sourcemaps": "^0.5.0",
     "rollup-plugin-uglify": "^6.0.3",
-    "s-ng-dev-utils": "^0.8.0",
-    "sinon": "^7.4.2",
+    "s-ng-dev-utils": "^1.0.0",
+    "sinon": "^8.1.1",
     "source-map-explorer": "^2.0.1",
     "standard-version": "^7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typedoc": "^0.15.0",
+    "typedoc": "^0.16.9",
     "typescript": "~3.7.5"
   },
   "prettier": {

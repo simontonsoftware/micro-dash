@@ -3,6 +3,7 @@ import * as glob from "glob";
 import * as path from "path";
 import * as readline from "readline";
 import { rollup, RollupOptions } from "rollup";
+import { FileData } from "source-map-explorer/dist";
 import { forEach } from "../micro-dash/src/lib/collection";
 import { ObjectWith } from "../micro-dash/src/lib/interfaces";
 import { explore as sourceMapExplore } from "source-map-explorer";
@@ -116,15 +117,15 @@ async function bundle(inputPath: string) {
 
 async function explore(file: string) {
   const res = await sourceMapExplore(file);
-  const files: ObjectWith<number> = res.bundles[0].files;
+  const files: ObjectWith<FileData> = res.bundles[0].files;
 
   let lodash = 0;
   let microdash = 0;
-  forEach(files, (bytes, sourceFile) => {
+  forEach(files, ({ size }, sourceFile) => {
     if (sourceFile.includes("lodash")) {
-      lodash += bytes;
+      lodash += size;
     } else if (sourceFile.includes("micro-dash")) {
-      microdash += bytes;
+      microdash += size;
     }
   });
   let summary;

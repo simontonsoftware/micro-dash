@@ -11,7 +11,12 @@
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+
+    //
+    // Simonton Software additions
+    //
+    "strictTemplates": true
   },
   "exclude": ["src/test.ts", "**/*.spec.ts"]
 }

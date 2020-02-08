@@ -5,7 +5,7 @@
     <scripts>
       <script value="build" />
     </scripts>
-    <arguments value="micro-dash" />
+    <arguments value="--prod micro-dash" />
     <node-interpreter value="project" />
     <envs />
     <method v="2" />
