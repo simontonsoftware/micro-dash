@@ -1,69 +1,72 @@
-import { identity } from "lodash";
+import { identity } from "lodash-es";
 import { expectCallsAndReset } from "s-ng-dev-utils";
 import { every } from "./every";
+import { some } from "./some";
 
-describe("every()", () => {
+describe("some()", () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("returns `true` if `predicate` returns truthy for all elements", () => {
-    expect(every([true, 1, "a"], identity)).toBe(true);
+  it("should return `true` if `predicate` returns truthy for any element", () => {
+    expect(some([false, 1, ""], identity)).toBe(true);
+    expect(some([null, "a", 0], identity)).toBe(true);
   });
 
-  it("should return `true` for empty collections", () => {
+  it("should return `false` for empty collections", () => {
     for (const empty of [[], {}, null, undefined, false, 0, NaN, ""]) {
-      expect(every(empty, identity)).toBe(true);
+      expect(some(empty, identity)).toBe(false);
     }
   });
 
-  it("should return `false` as soon as `predicate` returns falsey", () => {
+  it("should return `true` as soon as `predicate` returns truthy", () => {
     let count = 0;
 
-    const result = every([true, null, true], (value) => {
+    const result = some([null, true, null], (value) => {
       ++count;
       return value;
     });
 
-    expect(result).toBe(false);
+    expect(result).toBe(true);
     expect(count).toBe(2);
   });
 
-  it("should work with collections of `undefined` values", () => {
-    expect(every([undefined, undefined, undefined], identity)).toBe(false);
+  it("should return `false` if `predicate` returns falsey for all elements", () => {
+    expect(some([false, false, false], identity)).toBe(false);
+    expect(some([null, 0, ""], identity)).toBe(false);
   });
 
   it("should provide correct iteratee arguments", () => {
     const spy = jasmine.createSpy();
-    every([1, 2, 3], spy);
+    some([1, 2, 3], spy);
     expect(spy.calls.first().args).toEqual([1, 0]);
   });
 
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const spy = jasmine.createSpy().and.returnValue(true);
+    const spy = jasmine.createSpy();
 
-    every(array, spy);
+    some(array, spy);
 
     expectCallsAndReset(spy, [1, 0], [undefined, 1], [3, 2]);
   });
 
-  it("should not iterate custom properties of arrays", () => {
+  it("should not iterate custom properties on arrays", () => {
     const array = [1];
     (array as any).a = 1;
-    const spy = jasmine.createSpy().and.returnValue(true);
+    const spy = jasmine.createSpy();
 
-    every(array, spy);
+    some(array, spy);
 
     expectCallsAndReset(spy, [1, 0]);
   });
 
   it("iterates over own string keyed properties of objects", () => {
     const object = { a: 1 };
-    const spy = jasmine.createSpy().and.returnValue(true);
+    const spy = jasmine.createSpy();
 
-    every(object, spy);
+    some(object, spy);
 
     expectCallsAndReset(spy, [1, "a"]);
   });
@@ -72,10 +75,10 @@ describe("every()", () => {
     const array = [1];
     const spy = jasmine.createSpy().and.callFake(() => {
       array.push(2);
-      return true;
+      return false;
     });
 
-    every(array, spy);
+    some(array, spy);
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
@@ -84,7 +87,7 @@ describe("every()", () => {
     const object: any = { a: 1 };
     const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;
-      return true;
+      return false;
     });
 
     every(object, spy);

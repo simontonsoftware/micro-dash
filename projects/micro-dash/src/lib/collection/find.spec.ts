@@ -1,6 +1,5 @@
 import { matches } from "lodash-es";
-import { expectSingleCallAndReset } from "s-ng-dev-utils";
-import { stub } from "sinon";
+import { expectCallsAndReset, expectSingleCallAndReset } from "s-ng-dev-utils";
 import { find } from "./find";
 
 describe("find()", () => {
@@ -8,7 +7,11 @@ describe("find()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  const objects = [{ a: 0, b: 0 }, { a: 1, b: 1 }, { a: 2, b: 2 }];
+  const objects = [
+    { a: 0, b: 0 },
+    { a: 1, b: 1 },
+    { a: 2, b: 2 },
+  ];
 
   it("should return the found value", () => {
     expect(find(objects, (object) => !!object.a)).toBe(objects[1]);
@@ -91,30 +94,30 @@ describe("find()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    find(array, logger);
+    find(array, spy);
 
-    expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
+    expectCallsAndReset(spy, [1, 0], [undefined, 1], [3, 2]);
   });
 
   it("should not iterate custom properties of arrays", () => {
     const array = [1];
     (array as any).a = 1;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    find(array, logger);
+    find(array, spy);
 
-    expect(logger.args).toEqual([[1, 0]]);
+    expectCallsAndReset(spy, [1, 0]);
   });
 
   it("iterates over own string keyed properties of objects", () => {
     const object = { a: 1 };
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    find(object, logger);
+    find(object, spy);
 
-    expect(logger.args).toEqual([[1, "a"]]);
+    expectCallsAndReset(spy, [1, "a"]);
   });
 
   it("should ignore changes to `length`", () => {

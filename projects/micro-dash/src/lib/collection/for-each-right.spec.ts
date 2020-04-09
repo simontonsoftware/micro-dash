@@ -1,4 +1,5 @@
 import { noop } from "lodash";
+import { expectCallsAndReset } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { forEachRight } from "./for-each-right";
 
@@ -21,7 +22,11 @@ describe("forEachRight()", () => {
 
     forEachRight([1, 2, 3, 4], logger);
 
-    expect(logger.args).toEqual([[4, 3], [3, 2], [2, 1]]);
+    expect(logger.args).toEqual([
+      [4, 3],
+      [3, 2],
+      [2, 1],
+    ]);
   });
 
   it("can exit early when iterating objects", () => {
@@ -31,7 +36,11 @@ describe("forEachRight()", () => {
 
     forEachRight({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
-    expect(logger.args).toEqual([[4, "d"], [3, "c"], [2, "b"]]);
+    expect(logger.args).toEqual([
+      [4, "d"],
+      [3, "c"],
+      [2, "b"],
+    ]);
   });
 
   it("should provide correct iteratee arguments", () => {
@@ -43,11 +52,11 @@ describe("forEachRight()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    forEachRight(array, logger);
+    forEachRight(array, spy);
 
-    expect(logger.args).toEqual([[3, 2], [undefined, 1], [1, 0]]);
+    expectCallsAndReset(spy, [3, 2], [undefined, 1], [1, 0]);
   });
 
   it("should not iterate custom properties", () => {
@@ -61,16 +70,12 @@ describe("forEachRight()", () => {
   });
 
   it("iterates over own string keyed properties of objects", () => {
-    function Foo(this: any) {
-      this.a = 1;
-    }
+    const object = { a: 1 };
+    const spy = jasmine.createSpy();
 
-    Foo.prototype.b = 2;
-    const logger = stub();
+    forEachRight(object, spy);
 
-    forEachRight(new (Foo as any)(), logger);
-
-    expect(logger.args).toEqual([[1, "a"]]);
+    expectCallsAndReset(spy, [1, "a"]);
   });
 
   it("should return the collection", () => {

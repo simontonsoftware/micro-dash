@@ -1,3 +1,4 @@
+import { expectCallsAndReset } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { identity } from "../util";
 import { map } from "./map";
@@ -16,30 +17,30 @@ describe("forEach()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    map(array, logger);
+    map(array, spy);
 
-    expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
+    expectCallsAndReset(spy, [1, 0], [undefined, 1], [3, 2]);
   });
 
   it("should not iterate custom properties of arrays", () => {
     const array = [1];
     (array as any).a = 1;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    map(array, logger);
+    map(array, spy);
 
-    expect(logger.args).toEqual([[1, 0]]);
+    expectCallsAndReset(spy, [1, 0]);
   });
 
   it("iterates over own string keyed properties of objects", () => {
     const object = { a: 1 };
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    map(object, logger);
+    map(object, spy);
 
-    expect(logger.args).toEqual([[1, "a"]]);
+    expectCallsAndReset(spy, [1, "a"]);
   });
 
   it("should ignore changes to `length`", () => {

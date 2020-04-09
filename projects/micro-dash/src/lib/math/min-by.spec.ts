@@ -1,5 +1,5 @@
 import { identity, range } from "lodash";
-import { stub } from "sinon";
+import { expectCallsAndReset } from "s-ng-dev-utils";
 import { minBy } from "./min-by";
 
 describe("minBy()", () => {
@@ -16,21 +16,21 @@ describe("minBy()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy().and.returnValue(true);
 
-    minBy(array, logger);
+    minBy(array, spy);
 
-    expect(logger.args).toEqual([[1], [undefined], [3]]);
+    expectCallsAndReset(spy, [1], [undefined], [3]);
   });
 
   it("should not iterate custom properties of arrays", () => {
     const array = [1];
     (array as any).a = 1;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    minBy(array, logger);
+    minBy(array, spy);
 
-    expect(logger.args).toEqual([[1]]);
+    expectCallsAndReset(spy, [1]);
   });
 
   it("should ignore changes to `length`", () => {

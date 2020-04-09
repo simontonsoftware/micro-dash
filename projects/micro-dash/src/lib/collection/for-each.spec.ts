@@ -1,4 +1,5 @@
 import { noop } from "lodash";
+import { expectCallsAndReset } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { forEach } from "./for-each";
 
@@ -21,7 +22,11 @@ describe("forEach()", () => {
 
     forEach([1, 2, 3, 4], logger);
 
-    expect(logger.args).toEqual([[1, 0], [2, 1], [3, 2]]);
+    expect(logger.args).toEqual([
+      [1, 0],
+      [2, 1],
+      [3, 2],
+    ]);
   });
 
   it("can exit early when iterating objects", () => {
@@ -31,7 +36,11 @@ describe("forEach()", () => {
 
     forEach({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
-    expect(logger.args).toEqual([[1, "a"], [2, "b"], [3, "c"]]);
+    expect(logger.args).toEqual([
+      [1, "a"],
+      [2, "b"],
+      [3, "c"],
+    ]);
   });
 
   it("should provide correct iteratee arguments", () => {
@@ -43,30 +52,30 @@ describe("forEach()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    forEach(array, logger);
+    forEach(array, spy);
 
-    expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
+    expectCallsAndReset(spy, [1, 0], [undefined, 1], [3, 2]);
   });
 
   it("should not iterate custom properties of arrays", () => {
     const array = [1];
     (array as any).a = 1;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    forEach(array, logger);
+    forEach(array, spy);
 
-    expect(logger.args).toEqual([[1, 0]]);
+    expectCallsAndReset(spy, [1, 0]);
   });
 
   it("iterates over own string keyed properties of objects", () => {
     const object = { a: 1 };
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    forEach(object, logger);
+    forEach(object, spy);
 
-    expect(logger.args).toEqual([[1, "a"]]);
+    expectCallsAndReset(spy, [1, "a"]);
   });
 
   it("should return the collection", () => {

@@ -1,5 +1,5 @@
 import { noop } from "lodash";
-import { expectSingleCallAndReset } from "s-ng-dev-utils";
+import { expectCallsAndReset, expectSingleCallAndReset } from "s-ng-dev-utils";
 import { stub } from "sinon";
 import { forOwnRight } from "./for-own-right";
 
@@ -37,11 +37,11 @@ describe("forOwnRight()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    forOwnRight(array, logger);
+    forOwnRight(array, spy);
 
-    expect(logger.args).toEqual([[3, "2"], [1, "0"]]);
+    expectCallsAndReset(spy, [3, "2"], [1, "0"]);
   });
 
   it("should return the collection", () => {

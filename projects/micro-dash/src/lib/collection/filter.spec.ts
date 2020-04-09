@@ -1,4 +1,4 @@
-import { stub } from "sinon";
+import { expectCallsAndReset } from "s-ng-dev-utils";
 import { filter } from "./filter";
 
 describe("filter()", () => {
@@ -25,21 +25,21 @@ describe("filter()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    filter(array, logger);
+    filter(array, spy);
 
-    expect(logger.args).toEqual([[1, 0], [undefined, 1], [3, 2]]);
+    expectCallsAndReset(spy, [1, 0], [undefined, 1], [3, 2]);
   });
 
   it("should not iterate custom properties of arrays", () => {
     const array = [1];
     (array as any).a = 1;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    filter(array, logger);
+    filter(array, spy);
 
-    expect(logger.args).toEqual([[1, 0]]);
+    expectCallsAndReset(spy, [1, 0]);
   });
 
   it("should ignore changes to `length`", () => {

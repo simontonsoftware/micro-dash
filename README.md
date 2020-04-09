@@ -2,7 +2,7 @@ Micro-dash offers a subset of the functionality found in [lodash](https://github
 
 [![Build Status](https://travis-ci.org/simontonsoftware/micro-dash.svg?branch=master)](https://travis-ci.org/simontonsoftware/micro-dash) [![Coverage Status](https://coveralls.io/repos/github/simontonsoftware/micro-dash/badge.svg?branch=master)](https://coveralls.io/github/simontonsoftware/micro-dash?branch=master)
 
-## Simonton Software Typescript Utils
+## Simonton Software Typescript Libraries
 
 Micro-dash is one library in a suite that is available from Simonton Software. Each one builds on the last, organized by their dependencies:
 
@@ -18,15 +18,14 @@ To quickly see which functions are available, and any difference from Lodash bey
 
 ## Installation
 
-Install `micro-dash` from npm:
+Install using:
 
-```
+```shell script
 npm install micro-dash --save
 
 # OR
 
 yarn add micro-dash
-
 ```
 
 ## Project goals

@@ -1,4 +1,4 @@
-import { stub } from "sinon";
+import { expectCallsAndReset } from "s-ng-dev-utils";
 import { mapValues } from "./map-values";
 
 describe("mapValues()", () => {
@@ -22,11 +22,11 @@ describe("mapValues()", () => {
   it("should treat sparse arrays as dense", () => {
     const array = [1];
     array[2] = 3;
-    const logger = stub();
+    const spy = jasmine.createSpy();
 
-    mapValues(array, logger);
+    mapValues(array, spy);
 
-    expect(logger.args).toEqual([[1, "0"], [3, "2"]]);
+    expectCallsAndReset(spy, [1, "0"], [3, "2"]);
   });
 
   it("should ignore changes to `length`", () => {
