@@ -19,17 +19,27 @@ describe("reduce()", () => {
   it("should provide correct `iteratee` arguments for an array", () => {
     const logger = stub().returns(7);
     reduce([1, 2, 3], logger, 0);
-    expect(logger.args).toEqual([[0, 1, 0], [7, 2, 1], [7, 3, 2]]);
+    expect(logger.args).toEqual([
+      [0, 1, 0],
+      [7, 2, 1],
+      [7, 3, 2],
+    ]);
 
     logger.resetHistory();
     reduce([1, 2, 3], logger);
-    expect(logger.args).toEqual([[1, 2, 1], [7, 3, 2]]);
+    expect(logger.args).toEqual([
+      [1, 2, 1],
+      [7, 3, 2],
+    ]);
   });
 
   it("should provide correct `iteratee` arguments for an object", () => {
     const logger = stub().returns(7);
     reduce({ a: 1, b: 2 }, logger, 0);
-    expect(logger.args).toEqual([[0, 1, "a"], [7, 2, "b"]]);
+    expect(logger.args).toEqual([
+      [0, 1, "a"],
+      [7, 2, "b"],
+    ]);
 
     logger.resetHistory();
     reduce({ a: 1, b: 2 }, logger);

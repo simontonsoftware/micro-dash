@@ -41,7 +41,10 @@ describe("keyBy()", () => {
   });
 
   it("should transform keys by `iteratee`", () => {
-    const array = [{ dir: "left", code: 97 }, { dir: "right", code: 100 }];
+    const array = [
+      { dir: "left", code: 97 },
+      { dir: "right", code: 100 },
+    ];
 
     expect(keyBy(array, (object) => String.fromCharCode(object.code))).toEqual({
       a: { dir: "left", code: 97 },

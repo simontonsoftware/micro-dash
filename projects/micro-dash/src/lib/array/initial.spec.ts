@@ -20,8 +20,19 @@ describe("initial", () => {
   });
 
   it("should work as an iteratee for methods like `_.map`", () => {
-    const actual = map([[1, 2, 3], [4, 5, 6], [7, 8, 9]], initial);
-    expect(actual).toEqual([[1, 2], [4, 5], [7, 8]]);
+    const actual = map(
+      [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ],
+      initial,
+    );
+    expect(actual).toEqual([
+      [1, 2],
+      [4, 5],
+      [7, 8],
+    ]);
   });
 
   it("should return an array", () => {

@@ -7,12 +7,18 @@ describe("chunk()", () => {
 
   it("should return chunked arrays", () => {
     const array = [0, 1, 2, 3, 4, 5];
-    expect(chunk(array, 3)).toEqual([[0, 1, 2], [3, 4, 5]]);
+    expect(chunk(array, 3)).toEqual([
+      [0, 1, 2],
+      [3, 4, 5],
+    ]);
   });
 
   it("should return the last chunk as remaining elements", () => {
     const array = [0, 1, 2, 3, 4, 5];
-    expect(chunk(array, 4)).toEqual([[0, 1, 2, 3], [4, 5]]);
+    expect(chunk(array, 4)).toEqual([
+      [0, 1, 2, 3],
+      [4, 5],
+    ]);
   });
 
   it("should ensure the minimum `size` is `0`", () => {

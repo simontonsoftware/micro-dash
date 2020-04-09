@@ -7,7 +7,11 @@ describe("findKey()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  const objects = [{ a: 0, b: 0 }, { a: 1, b: 1 }, { a: 2, b: 2 }];
+  const objects = [
+    { a: 0, b: 0 },
+    { a: 1, b: 1 },
+    { a: 2, b: 2 },
+  ];
 
   it("should return the found value", () => {
     expect(findKey(objects, (object) => !!object.a)).toBe("1");

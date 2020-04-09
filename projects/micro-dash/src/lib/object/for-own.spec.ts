@@ -11,7 +11,10 @@ describe("forOwn()", () => {
 
     forOwn(array, logger);
 
-    expect(logger.args).toEqual([[1, "0"], [3, "2"]]);
+    expect(logger.args).toEqual([
+      [1, "0"],
+      [3, "2"],
+    ]);
   });
 
   it("works for null & undefined", () => {
@@ -32,7 +35,11 @@ describe("forOwn()", () => {
 
     forOwn([1, 2, 3, 4], logger);
 
-    expect(logger.args).toEqual([[1, "0"], [2, "1"], [3, "2"]]);
+    expect(logger.args).toEqual([
+      [1, "0"],
+      [2, "1"],
+      [3, "2"],
+    ]);
   });
 
   it("can exit early when iterating objects", () => {
@@ -42,7 +49,11 @@ describe("forOwn()", () => {
 
     forOwn({ a: 1, b: 2, c: 3, d: 4 }, logger);
 
-    expect(logger.args).toEqual([[1, "a"], [2, "b"], [3, "c"]]);
+    expect(logger.args).toEqual([
+      [1, "a"],
+      [2, "b"],
+      [3, "c"],
+    ]);
   });
 
   it("should iterate over `length` properties", () => {
@@ -50,7 +61,11 @@ describe("forOwn()", () => {
 
     forOwn({ 0: "zero", 1: "one", length: 2 }, logger);
 
-    expect(logger.args).toEqual([["zero", "0"], ["one", "1"], [2, "length"]]);
+    expect(logger.args).toEqual([
+      ["zero", "0"],
+      ["one", "1"],
+      [2, "length"],
+    ]);
   });
 
   it("should provide correct iteratee arguments", () => {

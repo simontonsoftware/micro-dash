@@ -11,13 +11,7 @@ describe("flowRight()", () => {
     const square = (x: number) => x * x;
     const fixed = (n: number) => n.toFixed(1);
 
-    expect(
-      flowRight(
-        fixed,
-        square,
-        increment,
-      )(2),
-    ).toBe("9.0");
+    expect(flowRight(fixed, square, increment)(2)).toBe("9.0");
   });
 
   it("should return an identity function when no arguments are given", () => {
@@ -26,10 +20,7 @@ describe("flowRight()", () => {
 
   it("should work with a curried function and `_.head`", () => {
     const curried: any = curry(identity);
-    const combined: any = flowRight(
-      head as any,
-      curried,
-    );
+    const combined: any = flowRight(head as any, curried);
 
     expect(combined([1])).toBe(1);
   });

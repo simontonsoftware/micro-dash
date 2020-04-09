@@ -10,7 +10,10 @@ describe("pickBy()", () => {
 
     pickBy(array, logger);
 
-    expect(logger.args).toEqual([[1, "0"], [3, "2"]]);
+    expect(logger.args).toEqual([
+      [1, "0"],
+      [3, "2"],
+    ]);
   });
 
   // lodash's test for `pick`, but not `pickBy`, even though the behavior is the same

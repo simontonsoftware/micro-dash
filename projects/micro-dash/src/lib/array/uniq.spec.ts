@@ -67,7 +67,18 @@ describe("uniq()", () => {
   });
 
   it("should perform an unsorted uniq when used as an iteratee for methods like `_.map`", () => {
-    expect(map([[2, 1, 2], [1, 2, 1]], uniq)).toEqual([[2, 1], [1, 2]]);
+    expect(
+      map(
+        [
+          [2, 1, 2],
+          [1, 2, 1],
+        ],
+        uniq,
+      ),
+    ).toEqual([
+      [2, 1],
+      [1, 2],
+    ]);
   });
 
   it("should return an array", () => {

@@ -29,7 +29,11 @@ describe("remove()", () => {
       return isEven(value);
     });
 
-    expect(log).toEqual([[3, 2], [2, 1], [1, 0]]);
+    expect(log).toEqual([
+      [3, 2],
+      [2, 1],
+      [1, 0],
+    ]);
   });
 
   it("should preserve holes in arrays", () => {

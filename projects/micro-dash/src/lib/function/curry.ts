@@ -71,8 +71,10 @@ export function curry<T1, T2, T3, T4, R>(
 export function curry(func: (...args: any[]) => any, arity = func.length) {
   return function(this: any, ...args: any[]) {
     if (args.length < arity) {
-      return curry((partial as any)(func, ...args), (arity -
-        args.length) as any);
+      return curry(
+        (partial as any)(func, ...args),
+        (arity - args.length) as any,
+      );
     } else {
       return func.apply(this, args);
     }

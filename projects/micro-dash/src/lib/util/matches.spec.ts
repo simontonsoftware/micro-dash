@@ -4,7 +4,11 @@ import { matches } from "./matches";
 
 describe("matches()", () => {
   it("works as a predicate for `find()`", () => {
-    const objects = [{ a: 0, b: 0 }, { a: 1, b: 1 }, { a: 2, b: 2 }];
+    const objects = [
+      { a: 0, b: 0 },
+      { a: 1, b: 1 },
+      { a: 2, b: 2 },
+    ];
     expect(find(objects, matches({ a: 1 }))).toBe(objects[1]);
   });
 
@@ -93,8 +97,18 @@ describe("matches()", () => {
   });
 
   it("should partial match arrays of objects", () => {
-    const object1 = { a: [{ b: 1, c: 2 }, { b: 4, c: 5, d: 6 }] };
-    const object2 = { a: [{ b: 1, c: 2 }, { b: 4, c: 6, d: 7 }] };
+    const object1 = {
+      a: [
+        { b: 1, c: 2 },
+        { b: 4, c: 5, d: 6 },
+      ],
+    };
+    const object2 = {
+      a: [
+        { b: 1, c: 2 },
+        { b: 4, c: 6, d: 7 },
+      ],
+    };
     const par = matches({ a: [{ b: 1 }, { b: 4, c: 5 }] });
     expect(par(object1)).toEqual(true);
     expect(par(object2)).toEqual(false);
