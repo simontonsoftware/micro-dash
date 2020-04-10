@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Sizes" type="js.build_tools.npm" factoryName="npm">
+  <configuration default="false" name="Calc Sizes" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="sizes" />
+      <script value="calc-sizes" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

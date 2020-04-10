@@ -146,40 +146,54 @@
         }
       }
     },
-    "sizes": {
-      "projectType": "library",
-      "root": "projects/sizes",
-      "sourceRoot": "projects/sizes/src",
-      "prefix": "lib",
+    "calc-sizes": {
+      "projectType": "application",
+      "root": "projects/calc-sizes",
+      "sourceRoot": "projects/calc-sizes/src",
+      "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "tsConfig": "projects/sizes/tsconfig.lib.json",
-            "project": "projects/sizes/ng-package.json"
+            "outputPath": "dist/calc-sizes",
+            "index": "projects/calc-sizes/src/index.html",
+            "main": "projects/calc-sizes/src/main.ts",
+            "tsConfig": "projects/calc-sizes/tsconfig.app.json",
+            "aot": true,
+            "assets": [],
+            "styles": [],
+            "scripts": []
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/micro-dash/tsconfig.lib.prod.json"
+              "fileReplacements": [],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": []
             }
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "main": "projects/sizes/src/test.ts",
-            "tsConfig": "projects/sizes/tsconfig.spec.json",
-            "karmaConfig": "projects/sizes/karma.conf.js"
+            "browserTarget": "calc-sizes:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "calc-sizes:build:production"
+            }
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "tsConfig": [
-              "projects/sizes/tsconfig.lib.json",
-              "projects/sizes/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
+            "browserTarget": "calc-sizes:build"
           }
         }
       }

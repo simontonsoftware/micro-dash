@@ -1,2 +1,1 @@
-- build sizes with the CLI
 - remove sinon
