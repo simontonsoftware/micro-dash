@@ -5,8 +5,8 @@
  * - requires `string` to be a string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,003 bytes
- * - Micro-dash: 17 bytes
+ * - Lodash: 1,001 bytes
+ * - Micro-dash: 16 bytes
  */
 // tslint:disable-next-line:variable-name
 export function toLower(string: string) {

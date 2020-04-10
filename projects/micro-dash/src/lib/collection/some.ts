@@ -5,8 +5,8 @@ import { forEach } from "./for-each";
  * Checks if `predicate` returns truthy for **any** element of `collection`. Iteration is stopped once `predicate` returns truthy.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,355 bytes
- * - Micro-dash: 306 bytes
+ * - Lodash: 14,154 bytes
+ * - Micro-dash: 266 bytes
  */
 
 export function some<T>(

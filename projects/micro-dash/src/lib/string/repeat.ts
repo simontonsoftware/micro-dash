@@ -5,7 +5,7 @@
  * - does not work as an iteratee for methods like `map`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 2,351 bytes
+ * - Lodash: 2,357 bytes
  * - Micro-dash: 62 bytes
  */
 // tslint:disable-next-line:variable-name

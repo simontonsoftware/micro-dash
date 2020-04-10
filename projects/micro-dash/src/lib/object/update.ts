@@ -8,8 +8,8 @@
  * - does not handle `customizer` returning `undefined`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 5,945 bytes
- * - Micro-dash: 164 bytes
+ * - Lodash: 5,842 bytes
+ * - Micro-dash: 178 bytes
  */
 export function update<T>(
   object: T,

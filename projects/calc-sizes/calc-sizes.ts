@@ -65,7 +65,7 @@ async function build(inputPath: string) {
   const importPath = "./" + importFile.replace(/\\/g, "/").replace(".ts", "");
 
   // lodash files come first, so print only on those
-  const lodashIndex = importPath.indexOf(".lodash.ts");
+  const lodashIndex = importPath.indexOf(".lodash");
   if (lodashIndex > 0) {
     console.log(importPath.substr(0, lodashIndex));
   }

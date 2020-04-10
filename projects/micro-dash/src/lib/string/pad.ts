@@ -2,8 +2,8 @@
  * Pads `string` on the left and right sides if it's shorter than `length`. Padding characters are truncated if they can't be evenly divided by `length`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 3,385 bytes
- * - Micro-dash: 191 bytes
+ * - Lodash: 3,359 bytes
+ * - Micro-dash: 177 bytes
  */
 export function pad(s: string, length: number, chars = " ") {
   const needed = (length - s.length) / 2;

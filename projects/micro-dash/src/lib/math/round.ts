@@ -11,8 +11,8 @@
  * - may return `NaN` with large `precision` values
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,843 bytes
- * - Micro-dash: 92 bytes
+ * - Lodash: 1,822 bytes
+ * - Micro-dash: 78 bytes
  */
 // tslint:disable-next-line:variable-name
 export function round(number: number, precision = 0) {

@@ -5,8 +5,8 @@
  * - does not accept a `pattern` argument
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 2,246 bytes
- * - Micro-dash: 177 bytes
+ * - Lodash: 2,361 bytes
+ * - Micro-dash: 176 bytes
  */
 // tslint:disable-next-line:variable-name
 export function words(string: string): string[] {

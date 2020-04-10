@@ -9,8 +9,8 @@ import { clone } from "../lang";
  * - does not work with arrays
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 15,551 bytes
- * - Micro-dash: 331 bytes
+ * - Lodash: 15,576 bytes
+ * - Micro-dash: 139 bytes
  */
 export function omit<T extends object | Nil>(
   object: T,

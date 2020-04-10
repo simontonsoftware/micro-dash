@@ -79,8 +79,8 @@ type DefinedPath3<
  * - only accepts an array for `path`, not a dot-separated string
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 6,301 bytes
- * - Micro-dash: 287 bytes
+ * - Lodash: 6,253 bytes
+ * - Micro-dash: 241 bytes
  */
 
 // Removed for https://github.com/simontonsoftware/micro-dash/issues/33

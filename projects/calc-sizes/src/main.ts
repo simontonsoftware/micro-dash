@@ -1,1 +1,1 @@
-import "./app/collection/some.microdash"
+import "./app/util/unique-id.microdash"

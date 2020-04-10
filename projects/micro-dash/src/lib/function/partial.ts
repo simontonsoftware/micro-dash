@@ -8,8 +8,8 @@ import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from "../interfaces";
  * - sets the "length" property of partially applied functions
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 9,242 bytes
- * - Micro-dash: 108 bytes
+ * - Lodash: 9,103 bytes
+ * - Micro-dash: 12 bytes
  */
 
 export function partial<F extends (...args: any[]) => any>(func: F): F;

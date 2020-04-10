@@ -5,7 +5,7 @@
  * - returns `true` for subclasses of `RegExp`
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 1,018 bytes
+ * - Lodash: 1,031 bytes
  * - Micro-dash: 41 bytes
  */
 export function isRegExp(value: any): value is RegExp {
