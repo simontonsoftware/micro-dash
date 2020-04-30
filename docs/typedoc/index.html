@@ -1115,6 +1115,9 @@ img { max-width: 100%; }
 			<a href="index.html#sumby" class="tsd-kind-icon">sum<wbr>By</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
+			<a href="index.html#throttle" class="tsd-kind-icon">throttle</a>
+		</li>
+		<li class=" tsd-kind-function tsd-has-type-parameter">
 			<a href="index.html#times" class="tsd-kind-icon">times</a>
 		</li>
 		<li class=" tsd-kind-function tsd-has-type-parameter">
@@ -1256,6 +1259,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#some" class="tsd-kind-icon">some</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#sortby" class="tsd-kind-icon">sort<wbr>By</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#sumby" class="tsd-kind-icon">sum<wbr>By</a></li>
+							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#throttle" class="tsd-kind-icon">throttle</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#times" class="tsd-kind-icon">times</a></li>
 							<li class="tsd-kind-function tsd-has-type-parameter"><a href="index.html#toarray" class="tsd-kind-icon">to<wbr>Array</a></li>
 							<li class="tsd-kind-function"><a href="index.html#tolower" class="tsd-kind-icon">to<wbr>Lower</a></li>
@@ -1721,7 +1725,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/util/debounce.ts#L16">projects/micro-dash/src/lib/util/debounce.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/debounce.ts#L16">projects/micro-dash/src/lib/function/debounce.ts:16</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1731,10 +1735,10 @@ img { max-width: 100%; }
 							<p>If <code>wait</code> is 0, <code>func</code> invocation is deferred until to the next tick, similar to <code>setTimeout</code> with a timeout of <code>0</code>.</p>
 							<p>Differences from lodash:</p>
 							<ul>
-								<li>the debounced function does not come a <code>flush</code> method</li>
+								<li>the debounced function does not come with a <code>flush</code> method</li>
 								<li>does not accept options</li>
 								<li>does not return the results of the last invocation</li>
-								<li>does not make any guarantees about the value of <code>this</code> in <code>func</code> is executed</li>
+								<li>does not make any guarantees about the value of <code>this</code> in <code>func</code></li>
 							</ul>
 							<p>Contribution to minified bundle size, when it is the only function imported:</p>
 							<ul>
@@ -4266,6 +4270,39 @@ round(<span class="hljs-number">4060</span>, <span class="hljs-number">-2</span>
 							<ul>
 								<li>Lodash: 8,274 bytes</li>
 								<li>Micro-dash: 22 bytes</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+				<a name="throttle" class="tsd-anchor"></a>
+				<h3>throttle</h3>
+				<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">throttle&lt;T&gt;<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, wait<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/simontonsoftware/micro-dash/blob/master/projects/micro-dash/src/lib/function/throttle.ts#L16">projects/micro-dash/src/lib/function/throttle.ts:16</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Creates a throttled function that only invokes <code>func</code> at most once per every <code>wait</code> milliseconds. The throttled function comes with a <code>cancel</code> method to cancel delayed <code>func</code> invocations and a <code>flush</code> method to immediately invoke them. Provide <code>options</code> to indicate whether <code>func</code> should be invoked on the leading and/or trailing edge of the <code>wait</code> timeout. The <code>func</code> is invoked with the last arguments provided to the throttled function.</p>
+							</div>
+							<p> <strong>Note</strong>: If <code>leading</code> and <code>trailing</code> options are <code>true</code>, <code>func</code> is invoked on the trailing edge of the timeout only if the throttled function is invoked more than once during the <code>wait</code> timeout.</p>
+							<p>If <code>wait</code> is 0 and <code>leading</code> is <code>false</code>, <code>func</code> invocation is deferred until to the next tick, similar to <code>setTimeout</code> with a timeout of 0.</p>
+							<p>Differences from lodash:</p>
+							<ul>
+								<li>does not return the results of the last invocation</li>
+								<li>does not make any guarantees about the value of <code>this</code> in <code>func</code></li>
+							</ul>
+							<p>Contribution to minified bundle size, when it is the only function imported:</p>
+							<ul>
+								<li>Lodash: 2,290 bytes</li>
+								<li>Micro-dash: 339 bytes</li>
 							</ul>
 						</div>
 					</li>

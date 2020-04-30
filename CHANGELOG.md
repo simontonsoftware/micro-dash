@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.2.0](https://github.com/simontonsoftware/micro-dash/compare/v7.1.0...v7.2.0) (2020-04-30)
+
+### Features
+
+- add `throttle()`. Closes [#42](https://github.com/simontonsoftware/micro-dash/issues/42) ([914a1fd](https://github.com/simontonsoftware/micro-dash/commit/914a1fd1038e355580a13148fdcade331e8e515c))
+
 ## [7.1.0](https://github.com/simontonsoftware/micro-dash/compare/v7.0.0...v7.1.0) (2020-04-10)
 
 ### Features
