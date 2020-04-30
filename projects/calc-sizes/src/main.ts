@@ -1,1 +1,1 @@
-import "./app/util/unique-id.microdash"
+import "./app/function/throttle.microdash"

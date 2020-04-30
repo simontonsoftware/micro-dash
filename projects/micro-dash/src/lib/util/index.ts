@@ -1,5 +1,4 @@
 export { constant } from "./constant";
-export { debounce } from "./debounce";
 export { flow } from "./flow";
 export { flowRight } from "./flow-right";
 export { identity } from "./identity";
