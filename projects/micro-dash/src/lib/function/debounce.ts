@@ -4,10 +4,10 @@
  * If `wait` is 0, `func` invocation is deferred until to the next tick, similar to `setTimeout` with a timeout of `0`.
  *
  * Differences from lodash:
- * - the debounced function does not come a `flush` method
+ * - the debounced function does not come with a `flush` method
  * - does not accept options
  * - does not return the results of the last invocation
- * - does not make any guarantees about the value of `this` in `func` is executed
+ * - does not make any guarantees about the value of `this` in `func`
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 2,064 bytes
@@ -16,7 +16,7 @@
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait = 0,
-): ((...args: Parameters<T>) => void) & { cancel: () => void } {
+): ((...args: Parameters<T>) => void) & { cancel(): void } {
   let timeoutId: ReturnType<typeof setTimeout>;
   const cancel = () => {
     clearTimeout(timeoutId);
