@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.3.0](https://github.com/simontonsoftware/micro-dash/compare/v7.2.0...v7.3.0) (2020-05-09)
+
+### Features
+
+- add `fuctions()` ([9a41dd2](https://github.com/simontonsoftware/micro-dash/commit/9a41dd2a7169defb2f134cbf14e4f39cb7b7b288))
+
 ## [7.2.0](https://github.com/simontonsoftware/micro-dash/compare/v7.1.0...v7.2.0) (2020-04-30)
 
 ### Features
