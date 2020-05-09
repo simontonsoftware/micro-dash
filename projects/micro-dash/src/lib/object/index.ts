@@ -1,6 +1,7 @@
 export { findKey } from "./find-key";
 export { forOwn } from "./for-own";
 export { forOwnRight } from "./for-own-right";
+export { functions } from "./functions";
 export { get } from "./get";
 export { invoke } from "./invoke";
 export { keys } from "./keys";

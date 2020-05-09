@@ -20,7 +20,7 @@ export function throttle<T extends (...args: any[]) => any>(
 ): ((...args: Parameters<T>) => void) & { cancel(): void; flush(): void } {
   let tail = 0;
   let nextArgs: Parameters<T> | undefined;
-  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  let timeoutId: any;
 
   // helpers to save some bytes
   const now = () => performance.now();
