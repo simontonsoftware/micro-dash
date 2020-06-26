@@ -1,3 +1,3 @@
-import { bindKey } from "micro-dash";
+import { bindKey } from 'micro-dash';
 
-bindKey({ fn() {} }, "fn")();
+bindKey({ fn() {} }, 'fn')();

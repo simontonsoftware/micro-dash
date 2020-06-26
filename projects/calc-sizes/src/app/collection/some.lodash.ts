@@ -1,4 +1,4 @@
-import some from "lodash-es/some";
+import some from 'lodash-es/some';
 
 console.log(
   some([1], () => true),

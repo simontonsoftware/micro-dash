@@ -1,6 +1,6 @@
-import { ObjectWith } from "../interfaces";
-import { forEachRight } from "./for-each-right";
-import { doReduce } from "./reduce-utils";
+import { ObjectWith } from '../interfaces';
+import { forEachRight } from './for-each-right';
+import { doReduce } from './reduce-utils';
 
 /**
  * This method is like `_.reduce` except that it iterates over elements of `collection` from right to left.

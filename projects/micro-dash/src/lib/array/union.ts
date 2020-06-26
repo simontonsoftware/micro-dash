@@ -1,4 +1,4 @@
-import { flatten } from "./flatten";
+import { flatten } from './flatten';
 
 /**
  * Creates an array of unique values, in order, from all given `arrays`.

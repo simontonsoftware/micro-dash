@@ -1,5 +1,5 @@
-import { ArrayIteratee, ObjectIteratee } from "../interfaces";
-import { forOwnRightOfNonArray } from "../object/for-own-right";
+import { ArrayIteratee, ObjectIteratee } from '../interfaces';
+import { forOwnRightOfNonArray } from '../object/for-own-right';
 
 /**
  * This method is like `forEach` except that it iterates over elements of `collection` from right to left.

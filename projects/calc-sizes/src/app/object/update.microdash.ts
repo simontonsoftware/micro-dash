@@ -1,3 +1,3 @@
-import { update } from "micro-dash";
+import { update } from 'micro-dash';
 
-update({}, ["a"], () => 1);
+update({}, ['a'], () => 1);

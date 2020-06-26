@@ -1,6 +1,6 @@
-import { ObjectWith } from "../interfaces";
-import { toArray } from "../lang";
-import { random } from "../math";
+import { ObjectWith } from '../interfaces';
+import { toArray } from '../lang';
+import { random } from '../math';
 
 /**
  * Gets a random element from `collection`.

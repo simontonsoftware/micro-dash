@@ -1,4 +1,4 @@
-import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args, Key } from "../interfaces";
+import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args, Key } from '../interfaces';
 
 /**
  * Creates a function that invokes the method at `object[key]` with `partials` prepended to the arguments it receives. Allows bound functions to reference methods that may be redefined or don't yet exist. See [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern) for more details.

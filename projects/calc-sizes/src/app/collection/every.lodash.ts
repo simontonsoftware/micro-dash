@@ -1,4 +1,4 @@
-import every from "lodash-es/every";
+import every from 'lodash-es/every';
 
 console.log(
   every([1], () => true),

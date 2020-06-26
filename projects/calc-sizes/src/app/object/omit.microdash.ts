@@ -1,3 +1,3 @@
-import { omit } from "micro-dash";
+import { omit } from 'micro-dash';
 
-omit({ a: 1 }, "a");
+omit({ a: 1 }, 'a');

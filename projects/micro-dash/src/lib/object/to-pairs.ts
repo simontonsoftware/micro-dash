@@ -1,5 +1,5 @@
-import { StringifiedKey } from "../interfaces";
-import { keys } from "./keys";
+import { StringifiedKey } from '../interfaces';
+import { keys } from './keys';
 
 /**
  * Creates an array of own enumerable string keyed-value pairs for `object` which can be consumed by `fromPairs`.

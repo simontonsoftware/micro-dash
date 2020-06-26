@@ -1,3 +1,3 @@
-import { set } from "micro-dash";
+import { set } from 'micro-dash';
 
-set({}, ["a"], 1);
+set({}, ['a'], 1);

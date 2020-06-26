@@ -1,5 +1,5 @@
-import { toLower } from "./to-lower";
-import { words } from "./words";
+import { toLower } from './to-lower';
+import { words } from './words';
 
 /**
  * Converts `string` to [snake case](https://en.wikipedia.org/wiki/Snake_case)
@@ -10,7 +10,5 @@ import { words } from "./words";
  */
 // tslint:disable-next-line:variable-name
 export function snakeCase(string: string) {
-  return words(string)
-    .map(toLower)
-    .join("_");
+  return words(string).map(toLower).join('_');
 }

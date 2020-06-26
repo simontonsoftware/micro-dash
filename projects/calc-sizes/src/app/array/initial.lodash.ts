@@ -1,3 +1,3 @@
-import initial from "lodash-es/initial";
+import initial from 'lodash-es/initial';
 
 console.log(initial([1, 2]));

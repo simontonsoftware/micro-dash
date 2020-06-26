@@ -1,4 +1,4 @@
-import { keysOfNonArray } from "../object/keys";
+import { keysOfNonArray } from '../object/keys';
 
 /**
  * Checks if `value` is an empty object or collection.

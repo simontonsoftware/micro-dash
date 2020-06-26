@@ -1,4 +1,4 @@
-import { pullAll } from "./pull-all";
+import { pullAll } from './pull-all';
 
 /**
  * Removes all given values from array using `SameValueZero` for equality comparisons.

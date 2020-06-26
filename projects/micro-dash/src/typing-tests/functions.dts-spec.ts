@@ -1,6 +1,6 @@
-import { functions } from "../public-api";
+import { functions } from '../public-api';
 
 // $ExpectType string[]
-functions(["a", "b"]);
+functions(['a', 'b']);
 // $ExpectType ("a" | "b")[]
-functions({ a: 1, b: "hi " });
+functions({ a: 1, b: 'hi ' });

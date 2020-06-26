@@ -1,19 +1,19 @@
-import { identity, isFunction, noop } from "lodash";
-import { memoize } from "./memoize";
+import { identity, isFunction, noop } from 'lodash';
+import { memoize } from './memoize';
 
-describe("memoize()", () => {
+describe('memoize()', () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should memoize results based on the first argument given", () => {
+  it('should memoize results based on the first argument given', () => {
     const memoized = memoize((a: number, b: number, c: number) => a + b + c);
 
     expect(memoized(1, 2, 3)).toBe(6);
     expect(memoized(1, 3, 5)).toBe(6);
   });
 
-  it("should support a `resolver`", () => {
+  it('should support a `resolver`', () => {
     const fn = (a: number, b: number, c: number) => a + b + c;
 
     const memoized = memoize(fn, fn);
@@ -22,7 +22,7 @@ describe("memoize()", () => {
     expect(memoized(1, 3, 5)).toBe(9);
   });
 
-  it("should use `this` binding of function for `resolver`", () => {
+  it('should use `this` binding of function for `resolver`', () => {
     function fn(this: any, a: number) {
       return a + this.b + this.c;
     }
@@ -37,21 +37,21 @@ describe("memoize()", () => {
     expect(object.memoized(1)).toBe(9);
   });
 
-  it("should not error if `resolver` is nullish", () => {
+  it('should not error if `resolver` is nullish', () => {
     expect(isFunction(memoize(noop))).toBeTruthy();
     expect(isFunction(memoize(noop, null as any))).toBeTruthy();
     expect(isFunction(memoize(noop, undefined))).toBeTruthy();
   });
 
-  it("should check cache for own properties", () => {
+  it('should check cache for own properties', () => {
     const props = [
-      "constructor",
-      "hasOwnProperty",
-      "isPrototypeOf",
-      "propertyIsEnumerable",
-      "toLocaleString",
-      "toString",
-      "valueOf",
+      'constructor',
+      'hasOwnProperty',
+      'isPrototypeOf',
+      'propertyIsEnumerable',
+      'toLocaleString',
+      'toString',
+      'valueOf',
     ];
 
     const memoized = memoize(identity);
@@ -61,9 +61,9 @@ describe("memoize()", () => {
     }
   });
 
-  it("should cache the `__proto__` key", () => {
+  it('should cache the `__proto__` key', () => {
     const array: any[] = [];
-    const key = "__proto__";
+    const key = '__proto__';
     let count = 0;
 
     function func(_arg: any) {

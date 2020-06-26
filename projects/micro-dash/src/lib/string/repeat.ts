@@ -11,5 +11,5 @@
 // tslint:disable-next-line:variable-name
 export function repeat(string: string, n: number) {
   // tslint:disable-next-line:no-bitwise
-  return n < 0 ? "" : new Array(n | 0).fill(string).join("");
+  return n < 0 ? '' : new Array(n | 0).fill(string).join('');
 }

@@ -1,13 +1,13 @@
-import { bind } from "lodash";
-import { ObjectWith } from "../interfaces";
-import { curry } from "./curry";
+import { bind } from 'lodash';
+import { ObjectWith } from '../interfaces';
+import { curry } from './curry';
 
-describe("curry()", () => {
+describe('curry()', () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should curry based on the number of arguments given", () => {
+  it('should curry based on the number of arguments given', () => {
     function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
@@ -19,7 +19,7 @@ describe("curry()", () => {
     expect(curried(1, 2, 3, 4)).toEqual([1, 2, 3, 4]);
   });
 
-  it("should allow specifying `arity`", () => {
+  it('should allow specifying `arity`', () => {
     function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
@@ -31,7 +31,7 @@ describe("curry()", () => {
     expect(curried(1, 2, 3)).toEqual([1, 2, 3]);
   });
 
-  it("should provide additional arguments after reaching arity", () => {
+  it('should provide additional arguments after reaching arity', () => {
     function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
@@ -43,7 +43,7 @@ describe("curry()", () => {
     expect(curried(1, 2, 3, 4, 5, 6)).toEqual([1, 2, 3, 4, 5, 6]);
   });
 
-  it("should create a function with a `length` of `0`", () => {
+  it('should create a function with a `length` of `0`', () => {
     function fn(_a: number, _b: number, _c: number, _d: number) {
       return Array.prototype.slice.call(arguments);
     }
@@ -55,7 +55,7 @@ describe("curry()", () => {
     expect(curried(1, 2).length).toEqual(0);
   });
 
-  it("should use `this` binding of function", () => {
+  it('should use `this` binding of function', () => {
     const object = { a: 1, b: 2, c: 3 };
     const expected = [1, 2, 3];
     type Fn = (a: string, b: string, c: string) => number[];
@@ -70,16 +70,16 @@ describe("curry()", () => {
       return [value[a], value[b], value[c]];
     }
 
-    expect(curry(bind(fn, object) as Fn, 3)("a")("b")("c")).toEqual(expected);
-    expect(curry(bind(fn, object) as Fn, 3)("a", "b")("c")).toEqual(expected);
-    expect(curry(bind(fn, object) as Fn, 3)("a", "b", "c")).toEqual(expected);
+    expect(curry(bind(fn, object) as Fn, 3)('a')('b')('c')).toEqual(expected);
+    expect(curry(bind(fn, object) as Fn, 3)('a', 'b')('c')).toEqual(expected);
+    expect(curry(bind(fn, object) as Fn, 3)('a', 'b', 'c')).toEqual(expected);
 
-    expect(bind(curry(fn), object)("a")("b")("c")).toEqual(Array(3));
-    expect(bind(curry(fn), object)("a", "b")("c")).toEqual(Array(3));
-    expect(bind(curry(fn), object)("a", "b", "c")).toEqual(expected);
+    expect(bind(curry(fn), object)('a')('b')('c')).toEqual(Array(3));
+    expect(bind(curry(fn), object)('a', 'b')('c')).toEqual(Array(3));
+    expect(bind(curry(fn), object)('a', 'b', 'c')).toEqual(expected);
   });
 
-  it("should work for names that shadow `Object.prototype`", () => {
+  it('should work for names that shadow `Object.prototype`', () => {
     const curried = curry(function hasOwnProperty(
       a: number,
       b: number,

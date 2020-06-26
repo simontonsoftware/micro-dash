@@ -1,4 +1,4 @@
-import { Nil } from "../interfaces";
+import { Nil } from '../interfaces';
 
 /**
  * Converts the first character of `string` to upper case.
@@ -9,5 +9,5 @@ import { Nil } from "../interfaces";
  */
 // tslint:disable-next-line:variable-name
 export function upperFirst(string: string | Nil) {
-  return string ? string.charAt(0).toUpperCase() + string.slice(1) : "";
+  return string ? string.charAt(0).toUpperCase() + string.slice(1) : '';
 }

@@ -1,4 +1,4 @@
-import forEach from "lodash-es/forEach";
+import forEach from 'lodash-es/forEach';
 
 forEach([], () => {});
 forEach({}, () => {});

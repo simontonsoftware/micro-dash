@@ -1,4 +1,4 @@
-import { Nil, StringifiedKey } from "../interfaces";
+import { Nil, StringifiedKey } from '../interfaces';
 
 /**
  * Creates an array of the own enumerable property names of object.
@@ -14,7 +14,7 @@ import { Nil, StringifiedKey } from "../interfaces";
 export function keys<T>(object: T | Nil): Array<StringifiedKey<T>> {
   let val = keysOfNonArray(object);
   if (Array.isArray(object)) {
-    val = val.filter((item) => item !== "length");
+    val = val.filter((item) => item !== 'length');
   }
   return val as any;
 }

@@ -1,9 +1,9 @@
-import { identity } from "lodash";
-import { stub } from "sinon";
-import { reduce } from "./reduce";
+import { identity } from 'lodash';
+import { stub } from 'sinon';
+import { reduce } from './reduce';
 
-describe("reduce()", () => {
-  it("works with `undefined`", () => {
+describe('reduce()', () => {
+  it('works with `undefined`', () => {
     expect(reduce(undefined, () => 1, 2)).toEqual(2);
     expect(reduce(undefined, () => 1)).toBeUndefined();
   });
@@ -12,11 +12,11 @@ describe("reduce()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should use the first element as the `accumulator`", () => {
+  it('should use the first element as the `accumulator`', () => {
     expect(reduce([1, 2, 3], identity)).toEqual(1);
   });
 
-  it("should provide correct `iteratee` arguments for an array", () => {
+  it('should provide correct `iteratee` arguments for an array', () => {
     const logger = stub().returns(7);
     reduce([1, 2, 3], logger, 0);
     expect(logger.args).toEqual([
@@ -33,20 +33,20 @@ describe("reduce()", () => {
     ]);
   });
 
-  it("should provide correct `iteratee` arguments for an object", () => {
+  it('should provide correct `iteratee` arguments for an object', () => {
     const logger = stub().returns(7);
     reduce({ a: 1, b: 2 }, logger, 0);
     expect(logger.args).toEqual([
-      [0, 1, "a"],
-      [7, 2, "b"],
+      [0, 1, 'a'],
+      [7, 2, 'b'],
     ]);
 
     logger.resetHistory();
     reduce({ a: 1, b: 2 }, logger);
-    expect(logger.args).toEqual([[1, 2, "b"]]);
+    expect(logger.args).toEqual([[1, 2, 'b']]);
   });
 
-  it("should ignore changes to `length`", () => {
+  it('should ignore changes to `length`', () => {
     const array = [1];
     const spy = jasmine.createSpy().and.callFake(() => {
       array.push(2);
@@ -58,7 +58,7 @@ describe("reduce()", () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it("should ignore added `object` properties", () => {
+  it('should ignore added `object` properties', () => {
     const object: any = { a: 1 };
     const spy = jasmine.createSpy().and.callFake(() => {
       object.b = 2;

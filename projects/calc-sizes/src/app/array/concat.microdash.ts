@@ -1,3 +1,3 @@
-import { concat } from "micro-dash";
+import { concat } from 'micro-dash';
 
 console.log(concat([], 1, [2], [3]));

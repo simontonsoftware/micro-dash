@@ -1,5 +1,5 @@
-import { Falsey } from "utility-types";
-import { identity } from "../util";
+import { Falsey } from 'utility-types';
+import { identity } from '../util';
 
 /**
  * Creates an array with all falsey values removed. The values `false`, `null`, `0`, `""`, `undefined`, and `NaN` are falsey.

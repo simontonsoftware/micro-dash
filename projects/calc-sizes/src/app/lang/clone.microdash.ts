@@ -1,5 +1,5 @@
-import { clone } from "micro-dash";
+import { clone } from 'micro-dash';
 
-clone("a");
+clone('a');
 clone({});
 clone([]);

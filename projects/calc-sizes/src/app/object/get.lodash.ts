@@ -1,3 +1,3 @@
-import get from "lodash-es/get";
+import get from 'lodash-es/get';
 
-get({ a: 1 }, ["a"], 0);
+get({ a: 1 }, ['a'], 0);

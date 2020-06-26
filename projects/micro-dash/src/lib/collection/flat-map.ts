@@ -1,6 +1,6 @@
-import { flatten } from "../array";
-import { ArrayIteratee, Nil, ObjectIteratee } from "../interfaces";
-import { map } from "./map";
+import { flatten } from '../array';
+import { ArrayIteratee, Nil, ObjectIteratee } from '../interfaces';
+import { map } from './map';
 
 /**
  * Creates a flattened array of values by running each element in `collection` thru `iteratee` and flattening the mapped results.

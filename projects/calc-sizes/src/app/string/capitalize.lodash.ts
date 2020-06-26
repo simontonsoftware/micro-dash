@@ -1,3 +1,3 @@
-import capitalize from "lodash-es/capitalize";
+import capitalize from 'lodash-es/capitalize';
 
-capitalize("a string");
+capitalize('a string');

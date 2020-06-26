@@ -1,5 +1,5 @@
-import { isEqual } from "micro-dash";
+import { isEqual } from 'micro-dash';
 
-isEqual("a", []);
+isEqual('a', []);
 isEqual({}, {});
-isEqual([], "a");
+isEqual([], 'a');

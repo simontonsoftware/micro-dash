@@ -1,4 +1,4 @@
-import throttle from "lodash-es/throttle";
+import throttle from 'lodash-es/throttle';
 
 throttle(() => {})();
 throttle(

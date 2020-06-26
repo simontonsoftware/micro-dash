@@ -1,4 +1,4 @@
-import flatMap from "lodash-es/flatMap";
+import flatMap from 'lodash-es/flatMap';
 
 console.log(
   flatMap([1, 2, 3], (n) => [n, n]),

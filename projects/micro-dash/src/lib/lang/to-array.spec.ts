@@ -1,16 +1,16 @@
-import { expectType } from "s-ng-dev-utils";
-import { toArray } from "./to-array";
+import { expectType } from 's-ng-dev-utils';
+import { toArray } from './to-array';
 
-describe("toArray()", () => {
-  it("has fancy typing", () => {
-    expectType<string[]>(toArray("hi"));
+describe('toArray()', () => {
+  it('has fancy typing', () => {
+    expectType<string[]>(toArray('hi'));
     expectType<number[]>(toArray([1, 2, 3]));
     expectType<number[]>(toArray({ a: 1, b: 2 }));
     expectType<[]>(toArray(1));
     expectType<[]>(toArray(null));
   });
 
-  it("works for primitives", () => {
+  it('works for primitives', () => {
     expect(toArray(1)).toEqual([]);
   });
 
@@ -18,16 +18,16 @@ describe("toArray()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should convert objects to arrays", () => {
+  it('should convert objects to arrays', () => {
     expect(toArray({ a: 1, b: 2 })).toEqual([1, 2]);
   });
 
-  it("should convert strings to arrays", () => {
-    expect(toArray("")).toEqual([]);
-    expect(toArray("ab")).toEqual(["a", "b"]);
+  it('should convert strings to arrays', () => {
+    expect(toArray('')).toEqual([]);
+    expect(toArray('ab')).toEqual(['a', 'b']);
   });
 
-  it("should return a shallow clone of arrays", () => {
+  it('should return a shallow clone of arrays', () => {
     const array = [1, 2, 3];
     const actual = toArray(array);
 
@@ -35,21 +35,21 @@ describe("toArray()", () => {
     expect(actual).not.toBe(array);
   });
 
-  it("should work with a node list for `collection`", () => {
-    const actual = toArray(document.getElementsByTagName("body"));
+  it('should work with a node list for `collection`', () => {
+    const actual = toArray(document.getElementsByTagName('body'));
     expect(actual).toEqual([document.body as HTMLBodyElement]);
   });
 
-  it("should accept falsey arguments", () => {
+  it('should accept falsey arguments', () => {
     expect(toArray(null)).toEqual([]);
     expect(toArray(undefined)).toEqual([]);
     expect(toArray(false)).toEqual([]);
     expect(toArray(0)).toEqual([]);
     expect(toArray(NaN)).toEqual([]);
-    expect(toArray("")).toEqual([]);
+    expect(toArray('')).toEqual([]);
   });
 
-  it("should return an array", () => {
+  it('should return an array', () => {
     const array = [1, 2, 3];
     const actual = toArray(array);
 

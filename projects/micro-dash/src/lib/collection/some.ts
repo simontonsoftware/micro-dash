@@ -1,5 +1,5 @@
-import { ArrayIteratee, ObjectIteratee } from "../interfaces";
-import { forEach } from "./for-each";
+import { ArrayIteratee, ObjectIteratee } from '../interfaces';
+import { forEach } from './for-each';
 
 /**
  * Checks if `predicate` returns truthy for **any** element of `collection`. Iteration is stopped once `predicate` returns truthy.

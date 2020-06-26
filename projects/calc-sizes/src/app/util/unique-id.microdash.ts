@@ -1,4 +1,4 @@
-import { uniqueId } from "micro-dash";
+import { uniqueId } from 'micro-dash';
 
 console.log(uniqueId());
-console.log(uniqueId("a"));
+console.log(uniqueId('a'));

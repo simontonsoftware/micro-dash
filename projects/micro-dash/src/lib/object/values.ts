@@ -1,4 +1,4 @@
-import { keys, keysOfNonArray } from "./keys";
+import { keys, keysOfNonArray } from './keys';
 
 /**
  * Creates an array of the own enumerable string keyed property values of `object`.

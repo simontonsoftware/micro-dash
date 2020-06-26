@@ -6,5 +6,5 @@
  * - Micro-dash: 39 bytes
  */
 export function isNumber(value: any): value is number {
-  return typeof value === "number";
+  return typeof value === 'number';
 }

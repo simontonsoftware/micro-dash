@@ -1,3 +1,3 @@
-import toLower from "lodash-es/toLower";
+import toLower from 'lodash-es/toLower';
 
-toLower("a string");
+toLower('a string');

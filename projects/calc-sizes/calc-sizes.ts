@@ -1,19 +1,19 @@
-import { execSync } from "child_process";
-import * as fs from "fs";
-import { writeFileSync } from "fs";
-import * as glob from "glob";
-import * as path from "path";
-import * as readline from "readline";
-import { explore } from "source-map-explorer";
-import { FileData } from "source-map-explorer/dist";
-import { forEach } from "../micro-dash/src/lib/collection";
-import { ObjectWith } from "../micro-dash/src/lib/interfaces";
+import { execSync } from 'child_process';
+import * as fs from 'fs';
+import { writeFileSync } from 'fs';
+import * as glob from 'glob';
+import * as path from 'path';
+import * as readline from 'readline';
+import { explore } from 'source-map-explorer';
+import { FileData } from 'source-map-explorer/dist';
+import { forEach } from '../micro-dash/src/lib/collection';
+import { ObjectWith } from '../micro-dash/src/lib/interfaces';
 
-const appDir = path.join(__dirname, "src", "app");
-const mainDir = path.join(__dirname, "src");
-const rootDir = path.join(__dirname, "..", "..");
-const bundleDir = path.join(rootDir, "dist", "calc-sizes");
-const sourceDir = path.join(rootDir, "projects", "micro-dash", "src", "lib");
+const appDir = path.join(__dirname, 'src', 'app');
+const mainDir = path.join(__dirname, 'src');
+const rootDir = path.join(__dirname, '..', '..');
+const bundleDir = path.join(rootDir, 'dist', 'calc-sizes');
+const sourceDir = path.join(rootDir, 'projects', 'micro-dash', 'src', 'lib');
 
 run();
 
@@ -23,7 +23,7 @@ async function run() {
       'Filename base (e.g. "map-values"), or "all" for all: ',
     );
 
-    if (input === "all") {
+    if (input === 'all') {
       await buildAndExplore(`**/*.ts`);
     } else {
       await buildAndExplore(`**/${input}.*.ts`);
@@ -62,28 +62,28 @@ function getPaths(fileGlob: string) {
 
 async function build(inputPath: string) {
   const importFile = path.relative(mainDir, inputPath);
-  const importPath = "./" + importFile.replace(/\\/g, "/").replace(".ts", "");
+  const importPath = './' + importFile.replace(/\\/g, '/').replace('.ts', '');
 
   // lodash files come first, so print only on those
-  const lodashIndex = importPath.indexOf(".lodash");
+  const lodashIndex = importPath.indexOf('.lodash');
   if (lodashIndex > 0) {
     console.log(importPath.substr(0, lodashIndex));
   }
 
-  writeFileSync(path.join(mainDir, "main.ts"), `import "${importPath}"`);
-  execSync("ng build --prod --sourceMap=true calc-sizes", { cwd: rootDir });
+  writeFileSync(path.join(mainDir, 'main.ts'), `import "${importPath}"`);
+  execSync('ng build --prod --sourceMap=true calc-sizes', { cwd: rootDir });
 }
 
 async function inspect() {
-  const res = await explore(path.join(bundleDir, "main-es2015.*.js"));
+  const res = await explore(path.join(bundleDir, 'main-es2015.*.js'));
   const files: ObjectWith<FileData> = res.bundles[0].files;
 
   let lodash = 0;
   let microdash = 0;
   forEach(files, ({ size }, sourceFile) => {
-    if (sourceFile.includes("lodash")) {
+    if (sourceFile.includes('lodash')) {
       lodash += size;
-    } else if (sourceFile.includes("micro-dash")) {
+    } else if (sourceFile.includes('micro-dash')) {
       microdash += size;
     }
   });
@@ -102,10 +102,10 @@ function updateComment(inputPath: string, summary: string) {
   const lib = summary.match(/ - (.*):/)![1];
 
   const relativePath = path.relative(appDir, inputPath);
-  const baseName = relativePath.replace(/\.lodash|\.microdash/, "");
+  const baseName = relativePath.replace(/\.lodash|\.microdash/, '');
   const sourcePath = path.join(sourceDir, baseName);
 
-  let source = fs.readFileSync(sourcePath, "utf8");
+  let source = fs.readFileSync(sourcePath, 'utf8');
   source = source.replace(new RegExp(` \\* - ${lib}:.*`), summary);
   fs.writeFileSync(sourcePath, source);
 }

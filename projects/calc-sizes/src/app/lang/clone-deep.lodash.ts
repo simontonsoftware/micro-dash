@@ -1,5 +1,5 @@
-import cloneDeep from "lodash-es/cloneDeep";
+import cloneDeep from 'lodash-es/cloneDeep';
 
-cloneDeep("a");
+cloneDeep('a');
 cloneDeep({});
 cloneDeep([]);

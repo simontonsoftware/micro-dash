@@ -1,4 +1,4 @@
-import { isFunction } from "micro-dash";
+import { isFunction } from 'micro-dash';
 
-console.log(isFunction("a"));
+console.log(isFunction('a'));
 console.log(isFunction(() => {}));

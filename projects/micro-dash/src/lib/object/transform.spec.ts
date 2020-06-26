@@ -1,13 +1,13 @@
-import { identity, noop } from "lodash-es";
-import { ObjectWith } from "../interfaces";
-import { transform } from "./transform";
+import { identity, noop } from 'lodash-es';
+import { ObjectWith } from '../interfaces';
+import { transform } from './transform';
 
-describe("transform", () => {
+describe('transform', () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should support an `accumulator` value", () => {
+  it('should support an `accumulator` value', () => {
     const array = [1, 2, 3];
     const object = { a: 1, b: 2, c: 3 };
 
@@ -38,25 +38,25 @@ describe("transform", () => {
     }
   });
 
-  it("should create an empty object when given a falsey `object`", () => {
+  it('should create an empty object when given a falsey `object`', () => {
     expect(transform(undefined, identity)).toEqual({});
   });
 
-  it("should provide correct `iteratee` arguments when transforming an array", () => {
+  it('should provide correct `iteratee` arguments when transforming an array', () => {
     const spy = jasmine.createSpy();
     const object = [1, 2, 3];
     expect(transform(object, spy)).not.toBe(object);
     expect(spy.calls.first().args).toEqual([jasmine.anything(), 1, 0]);
   });
 
-  it("should provide correct `iteratee` arguments when transforming an object", () => {
+  it('should provide correct `iteratee` arguments when transforming an object', () => {
     const spy = jasmine.createSpy();
     const object = { a: 1, b: 2, c: 3 };
     expect(transform(object, spy)).not.toBe(object);
-    expect(spy.calls.first().args).toEqual([jasmine.anything(), 1, "a"]);
+    expect(spy.calls.first().args).toEqual([jasmine.anything(), 1, 'a']);
   });
 
-  it("can exit early when iterating arrays", () => {
+  it('can exit early when iterating arrays', () => {
     const array = [1, 2, 3];
     const values: number[] = [];
 
@@ -68,7 +68,7 @@ describe("transform", () => {
     expect(values).toEqual([1]);
   });
 
-  it("can exit early when iterating arrays", () => {
+  it('can exit early when iterating arrays', () => {
     const object = { a: 1, b: 2, c: 3 };
     const values: number[] = [];
 

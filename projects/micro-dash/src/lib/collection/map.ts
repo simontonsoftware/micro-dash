@@ -1,5 +1,5 @@
-import { ArrayIteratee, ObjectIteratee } from "../interfaces";
-import { forEach } from "./for-each";
+import { ArrayIteratee, ObjectIteratee } from '../interfaces';
+import { forEach } from './for-each';
 
 /**
  * Creates an array of values by running each element in `collection` thru `iteratee`.

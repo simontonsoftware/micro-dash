@@ -1,4 +1,4 @@
-import { mapValues } from "../lib/object";
+import { mapValues } from '../lib/object';
 
 type A = number[];
 const a = (null as unknown) as A;

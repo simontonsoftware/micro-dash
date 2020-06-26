@@ -5,8 +5,8 @@ import {
   Nil,
   ObjectIteratee,
   ValueNarrowingIteratee,
-} from "../interfaces";
-import { pickBy } from "./pick-by";
+} from '../interfaces';
+import { pickBy } from './pick-by';
 
 /**
  * The opposite of `pickBy`; this method creates an object composed of the own enumerable string keyed properties of `object` that `predicate` doesn't return truthy for.

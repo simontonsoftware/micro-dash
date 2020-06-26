@@ -1,6 +1,6 @@
-import { forEachRightOfArray } from "../collection/for-each-right";
-import { ObjectIteratee } from "../interfaces";
-import { keys, keysOfNonArray } from "./keys";
+import { forEachRightOfArray } from '../collection/for-each-right';
+import { ObjectIteratee } from '../interfaces';
+import { keys, keysOfNonArray } from './keys';
 
 /**
  * This method is like `forOwn` except that it iterates over properties of `object` in the opposite order.

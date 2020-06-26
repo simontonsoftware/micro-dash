@@ -1,25 +1,25 @@
-import { omit } from "./";
+import { omit } from './';
 
-describe("omit()", () => {
+describe('omit()', () => {
   //
   // stolen from https://github.com/healthiers/mini-dash
   //
 
-  it("should omit single field", () => {
-    expect(omit({ a: 1, b: 2, c: 3 }, "a")).toEqual({ b: 2, c: 3 });
+  it('should omit single field', () => {
+    expect(omit({ a: 1, b: 2, c: 3 }, 'a')).toEqual({ b: 2, c: 3 });
   });
 
-  it("should omit multiple fields", () => {
-    expect(omit({ a: 1, b: 2, c: 3 }, "a", "c")).toEqual({ b: 2 });
+  it('should omit multiple fields', () => {
+    expect(omit({ a: 1, b: 2, c: 3 }, 'a', 'c')).toEqual({ b: 2 });
   });
 
-  it("should omit all fields", () => {
-    expect(omit({ a: 1, b: 2, c: 3 }, "a", "b", "c")).toEqual({});
+  it('should omit all fields', () => {
+    expect(omit({ a: 1, b: 2, c: 3 }, 'a', 'b', 'c')).toEqual({});
   });
 
-  it("should not mutate original object", () => {
+  it('should not mutate original object', () => {
     const object = { a: 1, b: 2, c: 3 };
-    expect(omit(object, "a", "b")).toEqual({ c: 3 });
+    expect(omit(object, 'a', 'b')).toEqual({ c: 3 });
     expect(object).toEqual({ a: 1, b: 2, c: 3 });
   });
 
@@ -27,24 +27,24 @@ describe("omit()", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should flatten `paths`", () => {
+  it('should flatten `paths`', () => {
     const object = { a: 1, b: 2, c: 3, d: 4 };
-    expect(omit(object, "a", "c")).toEqual({ b: 2, d: 4 });
+    expect(omit(object, 'a', 'c')).toEqual({ b: 2, d: 4 });
   });
 
-  it("should return an empty object when `object` is nullish", () => {
-    expect(omit<any>(null, "valueOf")).toEqual({});
-    expect(omit<any>(undefined, "valueOf")).toEqual({});
+  it('should return an empty object when `object` is nullish', () => {
+    expect(omit<any>(null, 'valueOf')).toEqual({});
+    expect(omit<any>(undefined, 'valueOf')).toEqual({});
   });
 
-  it("should not mutate `object`", () => {
+  it('should not mutate `object`', () => {
     const object = { a: { b: 2 } };
-    omit(object, "a");
+    omit(object, 'a');
     expect(object).toEqual({ a: { b: 2 } });
   });
 
-  it("should create an object with omitted string keyed properties", () => {
+  it('should create an object with omitted string keyed properties', () => {
     const object = { a: 1, b: 2, c: 3, d: 4 };
-    expect(omit(object, "a")).toEqual({ b: 2, c: 3, d: 4 });
+    expect(omit(object, 'a')).toEqual({ b: 2, c: 3, d: 4 });
   });
 });

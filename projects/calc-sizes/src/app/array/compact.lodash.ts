@@ -1,3 +1,3 @@
-import compact from "lodash-es/compact";
+import compact from 'lodash-es/compact';
 
 compact([]);

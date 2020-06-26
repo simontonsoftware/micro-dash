@@ -1,5 +1,5 @@
-import { forOwn } from "../object";
-import { clone } from "./clone";
+import { forOwn } from '../object';
+import { clone } from './clone';
 
 /**
  * This method is like `clone` except that it recursively clones `value`.

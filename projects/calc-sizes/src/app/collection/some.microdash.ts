@@ -1,4 +1,4 @@
-import { some } from "micro-dash";
+import { some } from 'micro-dash';
 
 console.log(
   some([1], () => true),

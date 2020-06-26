@@ -1,5 +1,5 @@
-import { forEach } from "../collection/for-each";
-import { clone } from "../lang/clone";
+import { forEach } from '../collection/for-each';
+import { clone } from '../lang/clone';
 
 /**
  * Recursively merges own enumerable string keyed properties of source objects into the destination object. Object properties are merged recursively. Source objects are applied from left to right. Subsequent sources overwrite property assignments of previous sources.

@@ -8,7 +8,7 @@
 export function once<T extends (...args: any[]) => any>(func: T) {
   let result: ReturnType<T>;
   let needsCall = true;
-  return function(this: any, ...args: Parameters<T>) {
+  return function (this: any, ...args: Parameters<T>) {
     if (needsCall) {
       needsCall = false;
       result = func.apply(this, args);

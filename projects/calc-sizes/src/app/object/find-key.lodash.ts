@@ -1,4 +1,4 @@
-import findKey from "lodash-es/findKey";
+import findKey from 'lodash-es/findKey';
 
 console.log(
   findKey([1, 2, 3], (n) => n === 2),

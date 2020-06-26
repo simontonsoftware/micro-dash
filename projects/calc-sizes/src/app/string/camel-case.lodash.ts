@@ -1,3 +1,3 @@
-import camelCase from "lodash-es/camelCase";
+import camelCase from 'lodash-es/camelCase';
 
-camelCase("a string");
+camelCase('a string');

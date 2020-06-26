@@ -1,7 +1,7 @@
-import { NonUndefined } from "utility-types";
-import { Existent, Key, Nil } from "../interfaces";
-import { isFunction } from "../lang";
-import { get } from "./get";
+import { NonUndefined } from 'utility-types';
+import { Existent, Key, Nil } from '../interfaces';
+import { isFunction } from '../lang';
+import { get } from './get';
 
 /** @hidden */
 type Fn = (...args: any[]) => any;

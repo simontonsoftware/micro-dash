@@ -1,5 +1,5 @@
-import { Key } from "../interfaces";
-import { transform } from "../object";
+import { Key } from '../interfaces';
+import { transform } from '../object';
 
 /**
  * This method is like `fromPairs` except that it accepts two arrays, one of property identifiers and one of corresponding values.

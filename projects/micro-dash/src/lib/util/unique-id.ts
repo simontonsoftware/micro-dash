@@ -8,6 +8,6 @@ let nextId = 1;
  * - Lodash: 1,062 bytes
  * - Micro-dash: 38 bytes
  */
-export function uniqueId(prefix = "") {
+export function uniqueId(prefix = '') {
   return prefix + nextId++;
 }

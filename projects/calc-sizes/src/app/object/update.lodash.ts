@@ -1,3 +1,3 @@
-import update from "lodash-es/update";
+import update from 'lodash-es/update';
 
-update({}, ["a"], () => 1);
+update({}, ['a'], () => 1);

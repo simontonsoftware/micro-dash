@@ -1,3 +1,3 @@
-import bindKey from "lodash-es/bindKey";
+import bindKey from 'lodash-es/bindKey';
 
-bindKey({ fn() {} }, "fn")();
+bindKey({ fn() {} }, 'fn')();

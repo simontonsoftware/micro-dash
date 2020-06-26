@@ -1,20 +1,20 @@
-import { map } from "../collection/map";
-import { uniq } from "./uniq";
+import { map } from '../collection/map';
+import { uniq } from './uniq';
 
-describe("uniq()", () => {
+describe('uniq()', () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should return unique values of an unsorted array", () => {
+  it('should return unique values of an unsorted array', () => {
     expect(uniq([2, 1, 2])).toEqual([2, 1]);
   });
 
-  it("should return unique values of a sorted array", () => {
+  it('should return unique values of a sorted array', () => {
     expect(uniq([1, 2, 2])).toEqual([1, 2]);
   });
 
-  it("should treat object instances as unique", () => {
+  it('should treat object instances as unique', () => {
     const objects = [
       { a: 2 },
       { a: 3 },
@@ -26,13 +26,13 @@ describe("uniq()", () => {
     expect(uniq(objects)).toEqual(objects);
   });
 
-  it("should match `NaN`", () => {
+  it('should match `NaN`', () => {
     expect(uniq([NaN, NaN])).toEqual([NaN]);
   });
 
-  it("should work with large arrays", () => {
+  it('should work with large arrays', () => {
     const largeArray: any[] = [];
-    const expected = [0, {}, "a"];
+    const expected = [0, {}, 'a'];
     for (const value of expected) {
       for (let i = 100; --i >= 0; ) {
         largeArray.push(value);
@@ -42,7 +42,7 @@ describe("uniq()", () => {
     expect(uniq(largeArray)).toEqual(expected);
   });
 
-  it("should work with large arrays of boolean, `NaN`, and nullish values", () => {
+  it('should work with large arrays of boolean, `NaN`, and nullish values', () => {
     const largeArray: any[] = [];
     const expected = [null, undefined, false, true, NaN];
     for (const value of expected) {
@@ -54,9 +54,9 @@ describe("uniq()", () => {
     expect(uniq(largeArray)).toEqual(expected);
   });
 
-  it("should distinguish between numbers and numeric strings", () => {
+  it('should distinguish between numbers and numeric strings', () => {
     const largeArray: any[] = [];
-    const expected = ["2", 2];
+    const expected = ['2', 2];
     for (const value of expected) {
       for (let i = 100; --i >= 0; ) {
         largeArray.push(value);
@@ -66,7 +66,7 @@ describe("uniq()", () => {
     expect(uniq(largeArray)).toEqual(expected);
   });
 
-  it("should perform an unsorted uniq when used as an iteratee for methods like `_.map`", () => {
+  it('should perform an unsorted uniq when used as an iteratee for methods like `_.map`', () => {
     expect(
       map(
         [
@@ -81,7 +81,7 @@ describe("uniq()", () => {
     ]);
   });
 
-  it("should return an array", () => {
+  it('should return an array', () => {
     const array = [1, 2, 3];
     const actual = uniq(array);
 

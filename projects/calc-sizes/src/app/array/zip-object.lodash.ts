@@ -1,3 +1,3 @@
-import zipObject from "lodash-es/zipObject";
+import zipObject from 'lodash-es/zipObject';
 
-console.log(zipObject(["a"], [1]));
+console.log(zipObject(['a'], [1]));

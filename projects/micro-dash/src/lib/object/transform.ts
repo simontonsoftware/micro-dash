@@ -1,5 +1,5 @@
-import { forEach } from "../collection";
-import { ObjectWith } from "../interfaces";
+import { forEach } from '../collection';
+import { ObjectWith } from '../interfaces';
 
 /**
  * An alternative to `reduce`; this method transforms `object` to a new `accumulator` object which is the result of running each of its own enumerable string keyed properties thru `iteratee`, with each invocation potentially mutating the `accumulator` object. If `accumulator` is not provided, a new plain object (`{}`) will be used. Iteratee functions may exit iteration early by explicitly returning `false`.

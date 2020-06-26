@@ -1,3 +1,3 @@
-import { camelCase } from "micro-dash";
+import { camelCase } from 'micro-dash';
 
-camelCase("a string");
+camelCase('a string');

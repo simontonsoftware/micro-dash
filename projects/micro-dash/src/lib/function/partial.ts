@@ -1,4 +1,4 @@
-import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from "../interfaces";
+import { Drop1Arg, Drop2Args, Drop3Args, Drop4Args } from '../interfaces';
 
 /**
  * Creates a function that invokes `func` with `partials` prepended to the arguments it receives. This method is like `bind` except it does not alter the `this` binding.

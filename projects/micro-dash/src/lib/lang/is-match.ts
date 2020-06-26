@@ -1,6 +1,6 @@
-import { DeepPartial } from "utility-types";
-import { every } from "../collection/every";
-import { isEmpty } from "./is-empty";
+import { DeepPartial } from 'utility-types';
+import { every } from '../collection/every';
+import { isEmpty } from './is-empty';
 
 /**
  * Performs a partial deep comparison between `object` and `source` to determine if `object` contains equivalent property values.

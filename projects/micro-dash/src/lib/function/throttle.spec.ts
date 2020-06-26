@@ -1,10 +1,10 @@
-import { fakeAsync, tick } from "@angular/core/testing";
-import { expectSingleCallAndReset } from "s-ng-dev-utils";
-import { throttle } from "./throttle";
+import { fakeAsync, tick } from '@angular/core/testing';
+import { expectSingleCallAndReset } from 's-ng-dev-utils';
+import { throttle } from './throttle';
 
-describe("throttle", () => {
+describe('throttle', () => {
   beforeEach(() => {
-    spyOn(performance, "now").and.callFake(() => Date.now());
+    spyOn(performance, 'now').and.callFake(() => Date.now());
   });
 
   function expectCallIn(millis: number, spy: jasmine.Spy) {
@@ -19,7 +19,7 @@ describe("throttle", () => {
     expect(spy).not.toHaveBeenCalled();
   }
 
-  it("respects `leading: false` after a cooldown", fakeAsync(() => {
+  it('respects `leading: false` after a cooldown', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, { leading: false });
 
@@ -31,7 +31,7 @@ describe("throttle", () => {
     expectCallIn(32, spy);
   }));
 
-  it("keeps a deadline when `leading: false`", fakeAsync(() => {
+  it('keeps a deadline when `leading: false`', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, { leading: false });
 
@@ -47,7 +47,7 @@ describe("throttle", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should throttle a function", fakeAsync(() => {
+  it('should throttle a function', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32);
 
@@ -60,7 +60,7 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBeGreaterThan(lastCount);
   }));
 
-  it("should clear timeout when `func` is called", fakeAsync(() => {
+  it('should clear timeout when `func` is called', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32);
 
@@ -71,7 +71,7 @@ describe("throttle", () => {
     expect(spy).toHaveBeenCalledTimes(2);
   }));
 
-  it("should not trigger a trailing call when invoked once", fakeAsync(() => {
+  it('should not trigger a trailing call when invoked once', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32);
 
@@ -82,7 +82,7 @@ describe("throttle", () => {
     expect(spy).toHaveBeenCalledTimes(1);
   }));
 
-  it("should trigger a call when invoked repeatedly", () => {
+  it('should trigger a call when invoked repeatedly', () => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32);
     const start = Date.now();
@@ -94,7 +94,7 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBeGreaterThan(1);
   });
 
-  it("should trigger a call when invoked repeatedly and `leading` is false", () => {
+  it('should trigger a call when invoked repeatedly and `leading` is false', () => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, { leading: false });
     const start = performance.now();
@@ -106,7 +106,7 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBeGreaterThan(1);
   });
 
-  it("should trigger a second throttled call as soon as possible", fakeAsync(() => {
+  it('should trigger a second throttled call as soon as possible', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 128, { leading: false });
 
@@ -124,7 +124,7 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBe(2);
   }));
 
-  it("should apply default options", fakeAsync(() => {
+  it('should apply default options', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, {});
 
@@ -135,7 +135,7 @@ describe("throttle", () => {
     expect(spy).toHaveBeenCalledTimes(2);
   }));
 
-  it("should support a `leading` option", () => {
+  it('should support a `leading` option', () => {
     const spy = jasmine.createSpy();
     throttle(spy, 32, { leading: true })();
     expectSingleCallAndReset(spy);
@@ -144,7 +144,7 @@ describe("throttle", () => {
     expect(spy).not.toHaveBeenCalled();
   });
 
-  it("should support a `trailing` option", fakeAsync(() => {
+  it('should support a `trailing` option', fakeAsync(() => {
     let spy = jasmine.createSpy();
     let throttled = throttle(spy, 64, { trailing: true });
     throttled();
@@ -160,7 +160,7 @@ describe("throttle", () => {
     expect(spy).toHaveBeenCalledTimes(1);
   }));
 
-  it("should not update `lastCalled`, at the end of the timeout, when `trailing` is `false`", fakeAsync(() => {
+  it('should not update `lastCalled`, at the end of the timeout, when `trailing` is `false`', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 64, { trailing: false });
 
@@ -175,8 +175,8 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBeGreaterThan(1);
   }));
 
-  it("should work with a system time of `0`", fakeAsync(() => {
-    const nowSpy = spyOn(Date, "now").and.returnValue(0);
+  it('should work with a system time of `0`', fakeAsync(() => {
+    const nowSpy = spyOn(Date, 'now').and.returnValue(0);
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32);
 
@@ -190,7 +190,7 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBe(2);
   }));
 
-  it("should use a default `wait` of `0`", fakeAsync(() => {
+  it('should use a default `wait` of `0`', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy);
 
@@ -201,8 +201,8 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBe(2);
   }));
 
-  it("supports recursive calls", fakeAsync(() => {
-    const queue = ["b", "c"];
+  it('supports recursive calls', fakeAsync(() => {
+    const queue = ['b', 'c'];
     const processed: string[] = [];
     const throttled = throttle((item: string) => {
       processed.push(item);
@@ -213,13 +213,13 @@ describe("throttle", () => {
       }
     }, 32);
 
-    throttled("a");
+    throttled('a');
 
     tick(256);
-    expect(processed).toEqual(["a", "b", "c"]);
+    expect(processed).toEqual(['a', 'b', 'c']);
   }));
 
-  it("should support cancelling delayed calls", fakeAsync(() => {
+  it('should support cancelling delayed calls', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, { leading: false });
 
@@ -230,7 +230,7 @@ describe("throttle", () => {
     expect(spy).not.toHaveBeenCalled();
   }));
 
-  it("should reset `lastCalled` after cancelling", fakeAsync(() => {
+  it('should reset `lastCalled` after cancelling', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, { leading: true });
 
@@ -246,7 +246,7 @@ describe("throttle", () => {
     expect(spy.calls.count()).toBe(3);
   }));
 
-  it("should support flushing delayed calls", fakeAsync(() => {
+  it('should support flushing delayed calls', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32, { leading: false });
 
@@ -257,7 +257,7 @@ describe("throttle", () => {
     expectNoCallIn(64, spy);
   }));
 
-  it("should noop `cancel` and `flush` when nothing is queued", fakeAsync(() => {
+  it('should noop `cancel` and `flush` when nothing is queued', fakeAsync(() => {
     const spy = jasmine.createSpy();
     const throttled = throttle(spy, 32);
 

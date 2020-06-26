@@ -1,3 +1,3 @@
-import snakeCase from "lodash-es/snakeCase";
+import snakeCase from 'lodash-es/snakeCase';
 
-console.log(snakeCase("a string"));
+console.log(snakeCase('a string'));

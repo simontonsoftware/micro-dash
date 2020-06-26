@@ -1,9 +1,9 @@
-import { expectType } from "s-ng-dev-utils";
-import { map } from "../collection/map";
-import { initial } from "./initial";
+import { expectType } from 's-ng-dev-utils';
+import { map } from '../collection/map';
+import { initial } from './initial';
 
-describe("initial", () => {
-  it("has fancy typing", () => {
+describe('initial', () => {
+  it('has fancy typing', () => {
     expectType<number[]>(initial([1]));
   });
 
@@ -11,15 +11,15 @@ describe("initial", () => {
   // stolen from https://github.com/lodash/lodash
   //
 
-  it("should exclude last element", () => {
+  it('should exclude last element', () => {
     expect(initial([1, 2, 3])).toEqual([1, 2]);
   });
 
-  it("should return an empty when querying empty arrays", () => {
+  it('should return an empty when querying empty arrays', () => {
     expect(initial([])).toEqual([]);
   });
 
-  it("should work as an iteratee for methods like `_.map`", () => {
+  it('should work as an iteratee for methods like `_.map`', () => {
     const actual = map(
       [
         [1, 2, 3],
@@ -35,7 +35,7 @@ describe("initial", () => {
     ]);
   });
 
-  it("should return an array", () => {
+  it('should return an array', () => {
     const array = [1, 2, 3];
     const actual = initial(array);
 

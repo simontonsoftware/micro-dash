@@ -1,5 +1,5 @@
-import isEqual from "lodash-es/isEqual";
+import isEqual from 'lodash-es/isEqual';
 
-isEqual("a", []);
+isEqual('a', []);
 isEqual({}, {});
-isEqual([], "a");
+isEqual([], 'a');

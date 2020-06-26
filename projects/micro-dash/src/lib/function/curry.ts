@@ -1,4 +1,4 @@
-import { partial } from "./partial";
+import { partial } from './partial';
 
 // type definitions from @types/lodash
 
@@ -69,7 +69,7 @@ export function curry<T1, T2, T3, T4, R>(
 ): CurriedFunction4<T1, T2, T3, T4, R>;
 
 export function curry(func: (...args: any[]) => any, arity = func.length) {
-  return function(this: any, ...args: any[]) {
+  return function (this: any, ...args: any[]) {
     if (args.length < arity) {
       return curry(
         (partial as any)(func, ...args),

@@ -1,4 +1,4 @@
-import { keysOfNonArray } from "../object/keys";
+import { keysOfNonArray } from '../object/keys';
 
 /**
  * Performs a deep comparison between two values to determine if they are equivalent.

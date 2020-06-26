@@ -1,3 +1,3 @@
-import set from "lodash-es/set";
+import set from 'lodash-es/set';
 
-set({}, ["a"], 1);
+set({}, ['a'], 1);

@@ -1,5 +1,5 @@
-import { Nil, Primitive } from "../interfaces";
-import { valuesOfNonArray } from "../object/values";
+import { Nil, Primitive } from '../interfaces';
+import { valuesOfNonArray } from '../object/values';
 
 /**
  * Converts `value` to an array.

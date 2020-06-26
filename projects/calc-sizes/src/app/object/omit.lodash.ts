@@ -1,3 +1,3 @@
-import omit from "lodash-es/omit";
+import omit from 'lodash-es/omit';
 
-omit({ a: 1 }, "a");
+omit({ a: 1 }, 'a');

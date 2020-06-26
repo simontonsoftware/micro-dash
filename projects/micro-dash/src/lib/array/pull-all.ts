@@ -1,4 +1,4 @@
-import { remove } from "./remove";
+import { remove } from './remove';
 
 /**
  * This method is like `pull` except that it accepts an array of values to remove.

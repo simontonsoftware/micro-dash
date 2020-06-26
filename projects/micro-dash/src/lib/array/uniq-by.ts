@@ -1,4 +1,4 @@
-import { ValueIteratee } from "../interfaces";
+import { ValueIteratee } from '../interfaces';
 
 /**
  * This method is like `_.uniq` except that it accepts `iteratee` which is invoked for each element in `array` to generate the criterion by which uniqueness is computed. The order of result values is determined by the order they occur in the array.

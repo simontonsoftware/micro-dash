@@ -1,7 +1,7 @@
-import { memoize } from "micro-dash";
+import { memoize } from 'micro-dash';
 
-memoize((a: any) => a)("a");
+memoize((a: any) => a)('a');
 memoize(
   (a: any) => a,
   (b: any) => b,
-)("a");
+)('a');

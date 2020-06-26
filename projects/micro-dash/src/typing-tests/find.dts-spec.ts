@@ -1,5 +1,5 @@
-import { isDate, isMap, isNumber, isString } from "lodash-es";
-import { find } from "../lib/collection";
+import { isDate, isMap, isNumber, isString } from 'lodash-es';
+import { find } from '../lib/collection';
 import {
   isA,
   isDateOrString,
@@ -14,14 +14,14 @@ import {
   keyIsString,
   keyIsString2,
   keyIsString3,
-} from "../test-helpers/test-utils";
+} from '../test-helpers/test-utils';
 
 //
 // Array
 //
 
 type A = Array<string | number>;
-const a = [1, "b"] as A;
+const a = [1, 'b'] as A;
 const aOrU = a as A | undefined;
 const aOrN = a as A | null;
 
@@ -73,10 +73,10 @@ find(aOrU, isA);
 // $ExpectType "a" | undefined
 find(aOrN, isA);
 
-type AB = Array<"a" | "b">;
-const ab = ["a"] as AB;
-const abOrU = ["a"] as AB | undefined;
-const abOrN = ["a"] as AB | null;
+type AB = Array<'a' | 'b'>;
+const ab = ['a'] as AB;
+const abOrU = ['a'] as AB | undefined;
+const abOrN = ['a'] as AB | null;
 // $ExpectType "a" | undefined
 find(ab, isA);
 // $ExpectType "a" | undefined
@@ -90,10 +90,10 @@ find(abOrU, isString);
 // $ExpectType "a" | "b" | undefined
 find(abOrN, isString);
 
-type AN = Array<"a" | number>;
-const an = ["a"] as AN;
-const anOrN = ["a"] as AN | null;
-const anOrU = ["a"] as AN | undefined;
+type AN = Array<'a' | number>;
+const an = ['a'] as AN;
+const anOrN = ['a'] as AN | null;
+const anOrU = ['a'] as AN | undefined;
 // $ExpectType "a" | 2 | undefined
 find(an, isStringOr2);
 // $ExpectType "a" | 2 | undefined
@@ -110,7 +110,7 @@ interface O {
   2: string;
   c: Date | Document;
 }
-const o = { a: 1, 2: "b", c: document } as O;
+const o = { a: 1, 2: 'b', c: document } as O;
 const oOrU = o as O | undefined;
 const oOrN = o as O | null;
 
@@ -212,7 +212,7 @@ find(oOrN, isMapOrString);
 find(oOrN, isMapOrString, 1);
 
 interface S2 {
-  a: "a" | number;
+  a: 'a' | number;
 }
 const s2 = { a: 2 } as S2;
 const s2OrU = { a: 2 } as S2 | undefined;
@@ -249,7 +249,7 @@ interface S {
   b: string;
   c: Date | Document;
 }
-const s = { a: 1, b: "2", c: document } as S;
+const s = { a: 1, b: '2', c: document } as S;
 const sOrU = s as S | undefined;
 const sOrN = s as S | null;
 

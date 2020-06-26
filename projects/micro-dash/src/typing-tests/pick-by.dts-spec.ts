@@ -1,5 +1,5 @@
-import { isDate, isMap, isNumber, isString } from "lodash-es";
-import { pickBy } from "object";
+import { isDate, isMap, isNumber, isString } from 'lodash-es';
+import { pickBy } from 'object';
 import {
   isA,
   isDateOrString,
@@ -14,16 +14,16 @@ import {
   keyIsString,
   keyIsString2,
   keyIsString3,
-} from "../test-helpers/test-utils";
+} from '../test-helpers/test-utils';
 
 //
 // Array
 //
 
 type A = Array<string | number>;
-const a = [1, "b"] as A;
-const aOrU = [1, "b"] as A | undefined;
-const aOrN = [1, "b"] as A | null;
+const a = [1, 'b'] as A;
+const aOrU = [1, 'b'] as A | undefined;
+const aOrN = [1, 'b'] as A | null;
 
 // $ExpectType { [index: number]: string | number; }
 pickBy(a, () => true);
@@ -55,10 +55,10 @@ pickBy(aOrU, isA);
 // $ExpectType { [index: number]: "a"; }
 pickBy(aOrN, isA);
 
-type AB = Array<"a" | "b">;
-const ab = ["a"] as AB;
-const abOrU = ["a"] as AB | undefined;
-const abOrN = ["a"] as AB | null;
+type AB = Array<'a' | 'b'>;
+const ab = ['a'] as AB;
+const abOrU = ['a'] as AB | undefined;
+const abOrN = ['a'] as AB | null;
 // $ExpectType { [index: number]: "a"; }
 pickBy(ab, isA);
 // $ExpectType { [index: number]: "a"; }
@@ -66,10 +66,10 @@ pickBy(abOrU, isA);
 // $ExpectType { [index: number]: "a"; }
 pickBy(abOrN, isA);
 
-type AN = Array<"a" | number>;
-const an = ["a"] as AN;
-const anOrU = ["a"] as AN | undefined;
-const anOrN = ["a"] as AN | null;
+type AN = Array<'a' | number>;
+const an = ['a'] as AN;
+const anOrU = ['a'] as AN | undefined;
+const anOrN = ['a'] as AN | null;
 // $ExpectType { [index: number]: "a" | 2; }
 pickBy(an, isStringOr2);
 // $ExpectType { [index: number]: "a" | 2; }
@@ -86,7 +86,7 @@ interface O {
   2: string;
   c: Date | Document;
 }
-const o = { a: 1, 2: "b", c: document } as O;
+const o = { a: 1, 2: 'b', c: document } as O;
 const oOrU = o as O | undefined;
 const oOrN = o as O | null;
 // $ExpectType Partial<O>
@@ -141,7 +141,7 @@ pickBy(oOrU, isMapOrString);
 pickBy(oOrN, isMapOrString);
 
 interface S2 {
-  a: "a" | number;
+  a: 'a' | number;
 }
 const s2 = { a: 2 } as S2;
 const s2OrU = { a: 2 } as S2 | undefined;
@@ -166,7 +166,7 @@ interface S {
   b: string;
   c: Date | Document;
 }
-const s = { a: 1, b: "2", c: document } as S;
+const s = { a: 1, b: '2', c: document } as S;
 const sOrU = s as S | undefined;
 const sOrN = s as S | null;
 

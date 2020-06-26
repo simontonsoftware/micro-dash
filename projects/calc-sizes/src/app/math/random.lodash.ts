@@ -1,4 +1,4 @@
-import random from "lodash-es/random";
+import random from 'lodash-es/random';
 
 console.log(
   random(),

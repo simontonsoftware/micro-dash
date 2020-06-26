@@ -1,6 +1,6 @@
-import { forEachOfArray } from "../collection/for-each";
-import { ObjectIteratee } from "../interfaces";
-import { keys, keysOfNonArray } from "./keys";
+import { forEachOfArray } from '../collection/for-each';
+import { ObjectIteratee } from '../interfaces';
+import { keys, keysOfNonArray } from './keys';
 
 /**
  * Iterates over own enumerable string keyed properties of an object and invokes `iteratee` for each property. Iteratee functions may exit iteration early by explicitly returning `false`.

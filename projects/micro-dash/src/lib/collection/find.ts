@@ -8,8 +8,8 @@ import {
   Nil,
   ObjectIteratee,
   ValueNarrowingIteratee,
-} from "../interfaces";
-import { keysOfNonArray } from "../object/keys";
+} from '../interfaces';
+import { keysOfNonArray } from '../object/keys';
 
 /** @hidden */
 type DefiniteValueMatches<T, O> = {

@@ -1,5 +1,5 @@
-import { isDate, isMap, isNumber, isString } from "lodash-es";
-import { findKey } from "../lib/object";
+import { isDate, isMap, isNumber, isString } from 'lodash-es';
+import { findKey } from '../lib/object';
 import {
   isA,
   isDateOrString,
@@ -14,13 +14,13 @@ import {
   keyIsString,
   keyIsString2,
   keyIsString3,
-} from "../test-helpers/test-utils";
+} from '../test-helpers/test-utils';
 
 //
 // Array
 //
 type A = Array<string | number>;
-const a = [1, "b"] as A;
+const a = [1, 'b'] as A;
 const aOrU = a as A | undefined;
 const aOrN = a as A | null;
 
@@ -40,7 +40,7 @@ interface O {
   2: string;
   c: Date | Document;
 }
-const o = { a: 1, 2: "b", c: document } as O;
+const o = { a: 1, 2: 'b', c: document } as O;
 const oOrU = o as O | undefined;
 const oOrN = o as O | null;
 
@@ -49,7 +49,7 @@ interface S {
   b: string;
   c: Date | Document;
 }
-const s = { a: 1, b: "2", c: document } as S;
+const s = { a: 1, b: '2', c: document } as S;
 const sOrU = s as S | undefined;
 const sOrN = s as S | null;
 
@@ -124,7 +124,7 @@ findKey(sOrU, isMapOrString);
 findKey(sOrN, isMapOrString);
 
 interface S2 {
-  b: "a" | number;
+  b: 'a' | number;
 }
 const s2 = { b: 2 } as S2;
 const s2OrU = s2 as S2 | undefined;

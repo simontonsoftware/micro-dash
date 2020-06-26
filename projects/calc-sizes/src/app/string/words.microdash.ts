@@ -1,3 +1,3 @@
-import { words } from "micro-dash";
+import { words } from 'micro-dash';
 
-words("a string");
+words('a string');

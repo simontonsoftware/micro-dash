@@ -1,4 +1,4 @@
-import { throttle } from "micro-dash";
+import { throttle } from 'micro-dash';
 
 throttle(() => {})();
 throttle(

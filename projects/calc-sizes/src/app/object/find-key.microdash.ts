@@ -1,4 +1,4 @@
-import { findKey } from "micro-dash";
+import { findKey } from 'micro-dash';
 
 console.log(
   findKey([1, 2, 3], (n) => n === 2),

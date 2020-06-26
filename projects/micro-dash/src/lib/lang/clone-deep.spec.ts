@@ -1,9 +1,9 @@
-import { isObject } from "lodash";
-import { toPairs } from "lodash-es";
-import { cloneDeep } from "./clone-deep";
+import { isObject } from 'lodash';
+import { toPairs } from 'lodash-es';
+import { cloneDeep } from './clone-deep';
 
-describe("cloneDeep()", () => {
-  it("clones deeply", () => {
+describe('cloneDeep()', () => {
+  it('clones deeply', () => {
     const object = {
       a: { b: [{ c: 3 }, [{ d: 4 }]] as [{ c: 3 }, [{ d: 4 }]] },
     };
@@ -22,18 +22,18 @@ describe("cloneDeep()", () => {
   //
 
   const clonable = {
-    arrays: ["a", ""],
-    "array-like objects": { "0": "a", length: 1 },
+    arrays: ['a', ''],
+    'array-like objects': { '0': 'a', length: 1 },
     booleans: false,
-    "null values": null,
+    'null values': null,
     numbers: 0,
     objects: { a: 0, b: 1, c: 2 },
-    strings: "a",
-    "undefined values": undefined,
-    "objects with object values": { b: ["B"], c: { C: 1 } },
+    strings: 'a',
+    'undefined values': undefined,
+    'objects with object values': { b: ['B'], c: { C: 1 } },
   };
   for (const [kind, object] of toPairs(clonable)) {
-    it("should clone " + kind, () => {
+    it('should clone ' + kind, () => {
       const actual = cloneDeep(object);
 
       expect(actual).toEqual(object);
@@ -45,7 +45,7 @@ describe("cloneDeep()", () => {
     });
   }
 
-  it("clones properties that shadow those on `Object.prototype`", () => {
+  it('clones properties that shadow those on `Object.prototype`', () => {
     const object = {
       constructor: 1,
       hasOwnProperty: 2,
@@ -62,7 +62,7 @@ describe("cloneDeep()", () => {
     expect(actual).not.toBe(object);
   });
 
-  it("works for methods like `map`", () => {
+  it('works for methods like `map`', () => {
     const expected: any[] = [{ a: [0] }, { b: [1] }];
 
     const actual = expected.map(cloneDeep);

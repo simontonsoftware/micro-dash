@@ -1,5 +1,5 @@
-import { Nil } from "../lib/interfaces";
-import { invoke } from "../lib/object";
+import { Nil } from '../lib/interfaces';
+import { invoke } from '../lib/object';
 
 //
 // empty path
@@ -15,34 +15,34 @@ invoke({} as { a: () => string } | undefined, []);
 //
 
 // $ExpectType number
-invoke({ a: () => 1 }, ["a"]);
+invoke({ a: () => 1 }, ['a']);
 // $ExpectType boolean
-invoke({ a: (a: boolean) => a }, ["a"], true);
+invoke({ a: (a: boolean) => a }, ['a'], true);
 // $ExpectType string | undefined
-invoke({} as { a?: () => string }, ["a"]);
+invoke({} as { a?: () => string }, ['a']);
 // $ExpectType string | undefined
-invoke({} as { a: () => string } | Nil, ["a"]);
+invoke({} as { a: () => string } | Nil, ['a']);
 
 //
 // 2 element path
 //
 
 // $ExpectType number
-invoke({ a: { b: () => 1 } }, ["a", "b"]);
+invoke({ a: { b: () => 1 } }, ['a', 'b']);
 // $ExpectType boolean
-invoke({ a: { b: (a: boolean) => a } }, ["a", "b"], true);
+invoke({ a: { b: (a: boolean) => a } }, ['a', 'b'], true);
 // $ExpecType string | undefined
-invoke({} as { a: { b?: () => string } }, ["a", "b"]);
+invoke({} as { a: { b?: () => string } }, ['a', 'b']);
 // $ExpecType string | undefined
-invoke({} as { a?: { b: () => string } }, ["a", "b"]);
+invoke({} as { a?: { b: () => string } }, ['a', 'b']);
 // $ExpecType string | undefined
-invoke({} as { a: { b: () => string } } | Nil, ["a", "b"]);
+invoke({} as { a: { b: () => string } } | Nil, ['a', 'b']);
 
 //
 // 3 element path
 //
 
-const path3: ["a", "b", "c"] = ["a", "b", "c"];
+const path3: ['a', 'b', 'c'] = ['a', 'b', 'c'];
 // $ExpectType number
 invoke({ a: { b: { c: () => 1 } } }, path3);
 // $ExpecType boolean
@@ -80,6 +80,6 @@ invoke({} as { a: { b: { c: () => string } } } | Nil, path3);
 // fallback: n element path
 //
 
-const pathN: string[] = ["a"];
+const pathN: string[] = ['a'];
 // $ExpectType any
 invoke({ a: () => 1 }, pathN);

@@ -8,8 +8,8 @@ import {
   Nil,
   ObjectIteratee,
   ValueNarrowingIteratee,
-} from "../interfaces";
-import { forOwn } from "./for-own";
+} from '../interfaces';
+import { forOwn } from './for-own';
 
 /** @hidden */
 type DefiniteValueMatches<T, O> = {

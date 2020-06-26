@@ -1,4 +1,4 @@
-import { isFunction, keys } from "../../public-api";
+import { isFunction, keys } from '../../public-api';
 
 /**
  * Creates an array of function property names from own enumerable properties of `object`.
@@ -9,6 +9,6 @@ import { isFunction, keys } from "../../public-api";
  */
 export function functions<T extends object>(obj: T) {
   return keys(obj).filter(
-    (key) => key !== "constructor" && isFunction(obj[key as keyof T]),
+    (key) => key !== 'constructor' && isFunction(obj[key as keyof T]),
   );
 }

@@ -6,5 +6,5 @@
  * - Micro-dash: 41 bytes
  */
 export function isFunction(value: any): value is (...args: any[]) => any {
-  return typeof value === "function";
+  return typeof value === 'function';
 }

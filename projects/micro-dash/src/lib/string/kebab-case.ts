@@ -1,5 +1,5 @@
-import { toLower } from "./to-lower";
-import { words } from "./words";
+import { toLower } from './to-lower';
+import { words } from './words';
 
 /**
  * Converts `string` to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
@@ -10,7 +10,5 @@ import { words } from "./words";
  */
 // tslint:disable-next-line:variable-name
 export function kebabCase(string: string) {
-  return words(string)
-    .map(toLower)
-    .join("-");
+  return words(string).map(toLower).join('-');
 }

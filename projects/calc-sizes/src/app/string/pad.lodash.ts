@@ -1,4 +1,4 @@
-import pad from "lodash-es/pad";
+import pad from 'lodash-es/pad';
 
-pad("a string", 12);
-pad("a string", 12, "0");
+pad('a string', 12);
+pad('a string', 12, '0');

@@ -1,5 +1,5 @@
-import { last } from "../array";
-import { isBoolean } from "../lang";
+import { last } from '../array';
+import { isBoolean } from '../lang';
 
 /**
  * Produces a random number between the inclusive `lower` and `upper` bounds. If only one argument is provided a number between `0` and the given number is returned. If `floating` is true, or either `lower` or `upper` are floats, a floating-point number is returned instead of an integer.

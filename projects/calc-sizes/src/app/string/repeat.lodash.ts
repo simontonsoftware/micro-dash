@@ -1,3 +1,3 @@
-import repeat from "lodash-es/repeat";
+import repeat from 'lodash-es/repeat';
 
-console.log(repeat("hi", 3), repeat("", -1));
+console.log(repeat('hi', 3), repeat('', -1));

@@ -1,7 +1,7 @@
-import { keyBy } from "../lib/collection";
-import { ObjectWith } from "../lib/interfaces";
+import { keyBy } from '../lib/collection';
+import { ObjectWith } from '../lib/interfaces';
 
-const mapper = (value: number) => (value % 2 ? "odd" : "even");
+const mapper = (value: number) => (value % 2 ? 'odd' : 'even');
 interface O {
   a: number;
   b: number;
@@ -27,8 +27,8 @@ keyBy(aOrN, mapper);
 // $ExpectType { odd?: number | undefined; even?: number | undefined; }
 keyBy(aOrU, mapper);
 
-type City = "Nairobi" | "Gulu";
-const chooseMany: City[] = ["Nairobi", "Gulu"];
+type City = 'Nairobi' | 'Gulu';
+const chooseMany: City[] = ['Nairobi', 'Gulu'];
 // $ExpectType { Nairobi?: "Nairobi" | "Gulu" | undefined; Gulu?: "Nairobi" | "Gulu" | undefined; }
 keyBy(chooseMany, (city) => city);
 
@@ -36,8 +36,8 @@ keyBy(chooseMany, (city) => city);
 interface Named {
   name: string;
 }
-const namedArray: Named[] = [{ name: "Jimmy" }];
-const namedObject: ObjectWith<Named> = { a: { name: "Jimmy" } };
+const namedArray: Named[] = [{ name: 'Jimmy' }];
+const namedObject: ObjectWith<Named> = { a: { name: 'Jimmy' } };
 // $ExpectType { [x: string]: Named; }
 keyBy(namedArray, (e) => e.name);
 // $ExpectType { [x: string]: Named; }

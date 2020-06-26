@@ -1,5 +1,5 @@
-import { cloneDeep } from "micro-dash";
+import { cloneDeep } from 'micro-dash';
 
-cloneDeep("a");
+cloneDeep('a');
 cloneDeep({});
 cloneDeep([]);
