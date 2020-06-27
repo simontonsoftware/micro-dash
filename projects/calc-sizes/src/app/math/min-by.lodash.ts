@@ -1,3 +1,3 @@
 import minBy from 'lodash-es/minBy';
 
-minBy([], () => 1);
+console.log(minBy([], () => 1));

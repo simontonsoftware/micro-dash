@@ -1,1 +1,1 @@
-import './app/function/throttle.microdash';
+import "./app/math/min-by.microdash";

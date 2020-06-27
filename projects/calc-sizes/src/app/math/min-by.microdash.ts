@@ -1,3 +1,3 @@
 import { minBy } from 'micro-dash';
 
-minBy([], () => 1);
+console.log(minBy([], () => 1));

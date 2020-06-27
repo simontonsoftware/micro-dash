@@ -1,12 +1,12 @@
 import { identity, range } from 'lodash';
 import { expectCallsAndReset } from 's-ng-dev-utils';
-import { minBy } from './min-by';
+import { maxBy } from './max-by';
 
-describe('minBy()', () => {
+describe('maxBy()', () => {
   it('can sort by any primitive', () => {
-    expect(minBy([0, -1, 1], identity)).toBe(-1);
-    expect(minBy([true, false, true], identity)).toBe(false);
-    expect(minBy(['b', 'a', 'c'], identity)).toBe('a');
+    expect(maxBy([0, 1, -1], identity)).toBe(1);
+    expect(maxBy([false, true, false], identity)).toBe(true);
+    expect(maxBy(['b', 'c', 'a'], identity)).toBe('c');
   });
 
   //
@@ -15,7 +15,7 @@ describe('minBy()', () => {
 
   it('should provide correct iteratee arguments', () => {
     const spy = jasmine.createSpy();
-    minBy([1, 2, 3], spy);
+    maxBy([1, 2, 3], spy);
     expect(spy.calls.first().args).toEqual([1]);
   });
 
@@ -24,7 +24,7 @@ describe('minBy()', () => {
     array[2] = 3;
     const spy = jasmine.createSpy().and.returnValue(true);
 
-    minBy(array, spy);
+    maxBy(array, spy);
 
     expectCallsAndReset(spy, [1], [undefined], [3]);
   });
@@ -34,7 +34,7 @@ describe('minBy()', () => {
     (array as any).a = 1;
     const spy = jasmine.createSpy();
 
-    minBy(array, spy);
+    maxBy(array, spy);
 
     expectCallsAndReset(spy, [1]);
   });
@@ -46,24 +46,24 @@ describe('minBy()', () => {
       return true;
     });
 
-    minBy(array, spy);
+    maxBy(array, spy);
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it('should work with extremely large arrays', () => {
-    expect(minBy(range(0, 5e5), identity)).toBe(0);
+    expect(maxBy(range(0, 5e5), identity)).toBe(499999);
   });
 
   it('should work with an `iteratee`', () => {
-    expect(minBy([1, 2, 3], (n) => -n)).toBe(3);
+    expect(maxBy([1, 2, 3], (n) => -n)).toBe(1);
   });
 
   it('should work when `iteratee` returns +/-Infinity', () => {
-    const value = Infinity;
+    const value = -Infinity;
     const object = { a: value };
 
-    const actual = minBy([object, { a: value }], (obj: { a: number }) => obj.a);
+    const actual = maxBy([object, { a: value }], (obj: { a: number }) => obj.a);
 
     expect(actual).toBe(object);
   });
