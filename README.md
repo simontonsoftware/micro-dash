@@ -46,7 +46,7 @@ yarn add micro-dash
 
 Below are the main differences between the implementations in this library compared to lodash. Other differences, when they exist, are listed in the [documentation](https://simontonsoftware.github.io/micro-dash/typedoc) for each function.
 
-- Only designed to work with primitives, plain objects, and arrays. It it not designed or tested to handle inherited properties, symbol keys, `arguments` objects, primitive objects (e.g. `Object(1)`), Dates, Maps, Sets, etc.
+- Only designed to work with primitives, plain objects, and arrays. It is not designed or tested to handle inherited properties, symbol keys, `arguments` objects, primitive objects (e.g. `Object(1)`), Dates, Maps, Sets, etc.
 - Makes no special attempt to coerce arguments to the expected type, nor to check the type of arguments. Behavior is undefined in such cases.
 - There is no shorthand for "iteratees"; functions that accept one require you to provide an actual function.
 - Does not pass the iterated object to iteratee functions. This allows simplifications, e.g. methods like `merge` can be used as an iteratee for `reduce` without being guarded.
