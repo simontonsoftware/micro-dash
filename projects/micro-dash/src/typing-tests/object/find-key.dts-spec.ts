@@ -1,5 +1,5 @@
 import { isDate, isMap, isNumber, isString } from 'lodash-es';
-import { findKey } from '../lib/object';
+import { findKey } from '../../lib/object';
 import {
   isA,
   isDateOrString,
@@ -14,7 +14,7 @@ import {
   keyIsString,
   keyIsString2,
   keyIsString3,
-} from '../test-helpers/test-utils';
+} from '../../test-helpers/test-utils';
 
 //
 // Array

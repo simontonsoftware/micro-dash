@@ -1,4 +1,4 @@
-import { functions } from '../public-api';
+import { functions } from '../../public-api';
 
 // $ExpectType string[]
 functions(['a', 'b']);

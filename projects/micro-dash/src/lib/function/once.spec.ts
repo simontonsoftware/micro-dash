@@ -1,13 +1,6 @@
-import { expectType } from 's-ng-dev-utils';
 import { once } from './once';
 
 describe('once()', () => {
-  it('has fancy typing', () => {
-    const fn = once((_a1: number, _a2: string) => new Date());
-    expectType<[number, string], Parameters<typeof fn>>();
-    expectType<Date, ReturnType<typeof fn>>();
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //

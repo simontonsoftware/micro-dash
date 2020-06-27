@@ -1,4 +1,4 @@
-import { flatMap } from '../lib/collection/flat-map';
+import { flatMap } from '../../lib/collection/flat-map';
 
 const a = [1, 2];
 const aOrN = a as number[] | null;

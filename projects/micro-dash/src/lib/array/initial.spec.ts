@@ -1,12 +1,7 @@
-import { expectType } from 's-ng-dev-utils';
 import { map } from '../collection/map';
 import { initial } from './initial';
 
 describe('initial', () => {
-  it('has fancy typing', () => {
-    expectType<number[]>(initial([1]));
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //

@@ -1,4 +1,4 @@
-import { zipObject } from '../lib/array';
+import { zipObject } from '../../lib/array';
 
 // $ExpectType { [x: string]: string; }
 zipObject(['a'], ['yes']);

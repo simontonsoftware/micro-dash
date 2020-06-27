@@ -1,5 +1,5 @@
-import { Nil } from '../lib/interfaces';
-import { invoke } from '../lib/object';
+import { Nil } from '../../lib/interfaces';
+import { invoke } from '../../lib/object';
 
 //
 // empty path

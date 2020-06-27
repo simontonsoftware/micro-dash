@@ -1,14 +1,6 @@
-import { expectType } from 's-ng-dev-utils';
 import { concat } from './concat';
 
 describe('concat()', () => {
-  it('has fancy typing', () => {
-    expectType<number[]>(concat([1], 2));
-    expectType<number[]>(concat([1], [2]));
-    expectType<number[]>(concat([1], [2], 3));
-    expectType<number[]>(concat<number>([], 1));
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //

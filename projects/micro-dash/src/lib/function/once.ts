@@ -8,13 +8,13 @@
 export function once<T extends (...args: any[]) => any>(func: T) {
   let result: ReturnType<T>;
   let needsCall = true;
-  return function (this: any, ...args: Parameters<T>) {
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     if (needsCall) {
       needsCall = false;
       result = func.apply(this, args);
 
       // allow func and any of its variables to be garbage collected
-      (func as any) = null;
+      (func as any) = 0;
     }
     return result;
   };

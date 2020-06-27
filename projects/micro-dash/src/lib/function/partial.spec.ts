@@ -1,5 +1,4 @@
 import { identity } from 'lodash';
-import { expectType } from 's-ng-dev-utils';
 import { curry } from './curry';
 import { partial } from './partial';
 
@@ -20,39 +19,6 @@ describe('partial()', () => {
     expect(partial(fn, 1).length).toBe(2);
     expect(partial(fn, 1, 2).length).toBe(1);
     expect(partial(fn, 1, 2, 3).length).toBe(0);
-  });
-
-  it('has super fancy typing', () => {
-    const fn0 = () => 'hi';
-    expectType<() => string>(partial(fn0));
-
-    const fn1 = (str: string) => Number(str);
-    expectType<(a: string) => number>(partial(fn1));
-    expectType<() => number>(partial(fn1, '1'));
-
-    const fn2 = (a: number, b: string) => a + b;
-    expectType<(a: number, b: string) => string>(partial(fn2));
-    expectType<(b: string) => string>(partial(fn2, 1));
-    expectType<(b: string) => string>(partial(fn2, 1, '2'));
-
-    const fn3 = (a: number, b: number, c: string) => a + b + c;
-    expectType<(a: number, b: number, c: string) => string>(partial(fn3));
-    expectType<(b: number, c: string) => string>(partial(fn3, 1));
-    expectType<(c: string) => string>(partial(fn3, 1, 2));
-    expectType<() => string>(partial(fn3, 1, 2, '3'));
-
-    const fn4 = (a: number, b: number, c: number, d: string) => a + b + c + d;
-    expectType<(a: number, b: number, c: number, d: string) => string>(
-      partial(fn4),
-    );
-    expectType<(b: number, c: number, d: string) => string>(partial(fn4, 1));
-    expectType<(c: number, d: string) => string>(partial(fn4, 1, 2));
-    expectType<(d: string) => string>(partial(fn4, 1, 2, 3));
-    expectType<() => string>(partial(fn4, 1, 2, 3, '4'));
-
-    const fn5 = (a: number, b: number, c: number, d: number, e: string) =>
-      a + b + c + d + e;
-    expectType<() => string>(partial(fn5, 1, 2, 3, 4, '5'));
   });
 
   //

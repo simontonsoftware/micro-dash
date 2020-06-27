@@ -1,15 +1,6 @@
-import { expectType } from 's-ng-dev-utils';
 import { toArray } from './to-array';
 
 describe('toArray()', () => {
-  it('has fancy typing', () => {
-    expectType<string[]>(toArray('hi'));
-    expectType<number[]>(toArray([1, 2, 3]));
-    expectType<number[]>(toArray({ a: 1, b: 2 }));
-    expectType<[]>(toArray(1));
-    expectType<[]>(toArray(null));
-  });
-
   it('works for primitives', () => {
     expect(toArray(1)).toEqual([]);
   });

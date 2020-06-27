@@ -1,14 +1,7 @@
 import { sortBy } from 'lodash-es';
-import { expectType } from 's-ng-dev-utils';
 import { toPairs } from './to-pairs';
 
 describe('toPairs()', () => {
-  it('has fancy typing', () => {
-    expectType<Array<['a' | 'b', number]>>(toPairs({ a: 1, b: 2 }));
-    expectType<Array<[string, number[][keyof number[]]]>>(toPairs([1, 2]));
-    // todo: fancier typing for arrays
-  });
-
   it('does not consider `length` for an array', () => {
     expect(toPairs([1, 2, 3])).toEqual([
       ['0', 1],

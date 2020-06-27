@@ -1,4 +1,4 @@
-import { get } from '../lib/object';
+import { get } from '../../lib/object';
 
 class Wrap1 {
   value?: number;

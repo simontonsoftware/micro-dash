@@ -1,5 +1,5 @@
 import { isDate, isMap, isNumber, isString } from 'lodash-es';
-import { find } from '../lib/collection';
+import { find } from '../../lib/collection';
 import {
   isA,
   isDateOrString,
@@ -14,7 +14,7 @@ import {
   keyIsString,
   keyIsString2,
   keyIsString3,
-} from '../test-helpers/test-utils';
+} from '../../test-helpers/test-utils';
 
 //
 // Array
@@ -94,11 +94,11 @@ type AN = Array<'a' | number>;
 const an = ['a'] as AN;
 const anOrN = ['a'] as AN | null;
 const anOrU = ['a'] as AN | undefined;
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(an, isStringOr2);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(anOrU, isStringOr2);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(anOrN, isStringOr2);
 
 //
@@ -229,17 +229,17 @@ find(s2OrU, isA, 1);
 find(s2OrN, isA);
 // $ExpectType "a" | undefined
 find(s2OrN, isA, 1);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(s2, isStringOr2);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(s2, isStringOr2, 1);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(s2OrU, isStringOr2);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(s2OrU, isStringOr2, 1);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(s2OrN, isStringOr2);
-// $ExpectType "a" | 2 | undefined
+// $ExpectType 2 | "a" | undefined
 find(s2OrN, isStringOr2, 1);
 
 // Key narrowing

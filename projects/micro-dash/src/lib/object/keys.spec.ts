@@ -1,4 +1,3 @@
-import { expectType } from 's-ng-dev-utils';
 import { keys } from './keys';
 
 describe('keys()', () => {
@@ -12,34 +11,6 @@ describe('keys()', () => {
     Foo.prototype.a = 1;
 
     expect(keys(Foo.prototype)).toEqual(['constructor', 'a']);
-  });
-
-  it('has fancy typing', () => {
-    interface O {
-      a: number;
-      b: number;
-    }
-    interface W {
-      a: number;
-      2: string;
-    }
-    type A = number[];
-    const oOrU = undefined as undefined | O;
-    const oOrN = null as null | O;
-    const wOrU = undefined as undefined | W;
-    const wOrN = null as null | W;
-    const aOrU = undefined as undefined | A;
-    const aOrN = null as null | A;
-
-    expectType<Array<'a' | 'b'>>(keys({ a: 1, b: 2 }));
-    expectType<Array<'a' | 'b'>>(keys(oOrU));
-    expectType<Array<'a' | 'b'>>(keys(oOrN));
-    expectType<string[]>(keys({ a: 2, 2: 'b' }));
-    expectType<string[]>(keys(wOrU));
-    expectType<string[]>(keys(wOrN));
-    expectType<string[]>(keys([1, 2]));
-    expectType<string[]>(keys(aOrU));
-    expectType<string[]>(keys(aOrN));
   });
 
   //

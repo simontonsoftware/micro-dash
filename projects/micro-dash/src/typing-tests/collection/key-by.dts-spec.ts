@@ -1,5 +1,5 @@
-import { keyBy } from '../lib/collection';
-import { ObjectWith } from '../lib/interfaces';
+import { keyBy } from '../../lib/collection';
+import { ObjectWith } from '../../lib/interfaces';
 
 const mapper = (value: number) => (value % 2 ? 'odd' : 'even');
 interface O {

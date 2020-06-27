@@ -1,13 +1,6 @@
-import { expectType } from 's-ng-dev-utils';
 import { union } from './union';
 
 describe('union()', () => {
-  it('has fancy typing', () => {
-    expectType<number[]>(union([1]));
-    expectType<string[]>(union(['hi'], ['mom']));
-    expectType<Array<string | number>>(union<string | number>([1], ['hi']));
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //

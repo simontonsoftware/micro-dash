@@ -1,16 +1,7 @@
 import { range, times } from 'lodash-es';
-import { expectType } from 's-ng-dev-utils';
 import { difference } from './difference';
 
 describe('difference()', () => {
-  it('has fancy typing', () => {
-    expectType<number[]>(difference([1]));
-    expectType<string[]>(difference(['hi'], ['mom']));
-    expectType<Array<string | number>>(
-      difference<string | number>([1], ['hi']),
-    );
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //

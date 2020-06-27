@@ -1,5 +1,5 @@
 import { fakeAsync, tick } from '@angular/core/testing';
-import { expectSingleCallAndReset, expectType } from 's-ng-dev-utils';
+import { expectSingleCallAndReset } from 's-ng-dev-utils';
 import { debounce } from './debounce';
 
 describe('debounce()', () => {
@@ -13,12 +13,6 @@ describe('debounce()', () => {
     tick(0);
     expectSingleCallAndReset(spy);
   }));
-
-  it('has fancy typing', () => {
-    const debounced = debounce((_s: string, _n: number) => 'hi');
-    expectType<[string, number], Parameters<typeof debounced>>();
-    expectType<void, ReturnType<typeof debounced>>();
-  });
 
   //
   // stolen from https://github.com/lodash/lodash

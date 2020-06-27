@@ -1,48 +1,7 @@
-import { expectSingleCallAndReset, expectType } from 's-ng-dev-utils';
+import { expectSingleCallAndReset } from 's-ng-dev-utils';
 import { bindKey } from './bind-key';
 
 describe('bindKey()', () => {
-  it('has super fancy typing', () => {
-    const obj0 = { fn: () => 'hi' };
-    expectType<() => string>(bindKey(obj0, 'fn'));
-
-    const obj1 = { fn: (str: string) => Number(str) };
-    expectType<(a: string) => number>(bindKey(obj1, 'fn'));
-    expectType<() => number>(bindKey(obj1, 'fn', '1'));
-
-    const obj2 = { fn: (a: number, b: string) => a + b };
-    expectType<(a: number, b: string) => string>(bindKey(obj2, 'fn'));
-    expectType<(b: string) => string>(bindKey(obj2, 'fn', 1));
-    expectType<(b: string) => string>(bindKey(obj2, 'fn', 1, '2'));
-
-    const obj3 = { fn: (a: number, b: number, c: string) => a + b + c };
-    expectType<(a: number, b: number, c: string) => string>(
-      bindKey(obj3, 'fn'),
-    );
-    expectType<(b: number, c: string) => string>(bindKey(obj3, 'fn', 1));
-    expectType<(c: string) => string>(bindKey(obj3, 'fn', 1, 2));
-    expectType<() => string>(bindKey(obj3, 'fn', 1, 2, '3'));
-
-    const obj4 = {
-      fn: (a: number, b: number, c: number, d: string) => a + b + c + d,
-    };
-    expectType<(a: number, b: number, c: number, d: string) => string>(
-      bindKey(obj4, 'fn'),
-    );
-    expectType<(b: number, c: number, d: string) => string>(
-      bindKey(obj4, 'fn', 1),
-    );
-    expectType<(c: number, d: string) => string>(bindKey(obj4, 'fn', 1, 2));
-    expectType<(d: string) => string>(bindKey(obj4, 'fn', 1, 2, 3));
-    expectType<() => string>(bindKey(obj4, 'fn', 1, 2, 3, '4'));
-
-    const obj5 = {
-      fn: (a: number, b: number, c: number, d: number, e: string) =>
-        a + b + c + d + e,
-    };
-    expectType<() => string>(bindKey(obj5, 'fn', 1, 2, 3, 4, '5'));
-  });
-
   //
   // stolen from https://github.com/lodash/lodash
   //
