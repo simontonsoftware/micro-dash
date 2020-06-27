@@ -4,7 +4,7 @@ import { isString, toArray } from '../lang';
  * Checks if `value` is in `collection`. If `collection` is a string, it's checked for a substring of `value`. If `fromIndex` is negative, it's used as the offset from the end of `collection`.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 4,529 bytes
+ * - Lodash: 4,547 bytes
  * - Micro-dash: 269 bytes
  */
 export function includes<T extends any[] | object | string>(

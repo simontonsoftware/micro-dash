@@ -15,7 +15,7 @@ import { pickBy } from './pick-by';
  * - does not treat sparse arrays as dense
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 15,205 bytes
+ * - Lodash: 15,226 bytes
  * - Micro-dash: 347 bytes
  */
 

@@ -3,7 +3,7 @@
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 1,423 bytes
- * - Micro-dash: 96 bytes
+ * - Micro-dash: 87 bytes
  */
 export function once<T extends (...args: any[]) => any>(
   func: T,

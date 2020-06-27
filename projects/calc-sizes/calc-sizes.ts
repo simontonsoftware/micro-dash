@@ -5,7 +5,7 @@ import * as glob from 'glob';
 import * as path from 'path';
 import * as readline from 'readline';
 import { explore } from 'source-map-explorer';
-import { FileData } from 'source-map-explorer/dist';
+import { FileData } from 'source-map-explorer/dist/types';
 import { forEach } from '../micro-dash/src/lib/collection';
 import { ObjectWith } from '../micro-dash/src/lib/interfaces';
 
@@ -17,7 +17,7 @@ const sourceDir = path.join(rootDir, 'projects', 'micro-dash', 'src', 'lib');
 
 run();
 
-async function run() {
+async function run(): Promise<void> {
   while (true) {
     const input = await getInput(
       'Filename base (e.g. "map-values"), or "all" for all: ',
@@ -31,7 +31,7 @@ async function run() {
   }
 }
 
-function getInput(text: string) {
+function getInput(text: string): Promise<string> {
   return new Promise<string>((resolve) => {
     const reader = readline.createInterface(process.stdin, process.stdout);
     reader.question(text, (answer) => {
@@ -41,7 +41,7 @@ function getInput(text: string) {
   });
 }
 
-async function buildAndExplore(fileGlob: string) {
+async function buildAndExplore(fileGlob: string): Promise<void> {
   const inputPaths = await getPaths(fileGlob);
   for (const inputPath of inputPaths) {
     await build(inputPath);
@@ -52,7 +52,7 @@ async function buildAndExplore(fileGlob: string) {
   }
 }
 
-function getPaths(fileGlob: string) {
+function getPaths(fileGlob: string): Promise<string[]> {
   return new Promise<string[]>((resolve) => {
     glob(path.join(appDir, fileGlob), { nodir: true }, (_err, files) => {
       resolve(files);
@@ -60,7 +60,7 @@ function getPaths(fileGlob: string) {
   });
 }
 
-async function build(inputPath: string) {
+async function build(inputPath: string): Promise<void> {
   const importFile = path.relative(mainDir, inputPath);
   const importPath = './' + importFile.replace(/\\/g, '/').replace('.ts', '');
 
@@ -70,12 +70,12 @@ async function build(inputPath: string) {
     console.log(importPath.substr(0, lodashIndex));
   }
 
-  writeFileSync(path.join(mainDir, 'main.ts'), `import "${importPath}"`);
+  writeFileSync(path.join(mainDir, 'main.ts'), `import "${importPath}";`);
   execSync('ng build --prod --sourceMap=true calc-sizes', { cwd: rootDir });
 }
 
-async function inspect() {
-  const res = await explore(path.join(bundleDir, 'main-es2015.*.js'));
+async function inspect(): Promise<string> {
+  const res = await explore(path.join(bundleDir, 'main.*.js'));
   const files: ObjectWith<FileData> = res.bundles[0].files;
 
   let lodash = 0;
@@ -87,7 +87,7 @@ async function inspect() {
       microdash += size;
     }
   });
-  let summary;
+  let summary: string;
   if (lodash > 0) {
     summary = ` * - Lodash: ${lodash.toLocaleString()} bytes`;
   } else if (microdash > 0) {
@@ -97,7 +97,7 @@ async function inspect() {
   return summary;
 }
 
-function updateComment(inputPath: string, summary: string) {
+function updateComment(inputPath: string, summary: string): void {
   // tslint:disable-next-line:no-non-null-assertion
   const lib = summary.match(/ - (.*):/)![1];
 

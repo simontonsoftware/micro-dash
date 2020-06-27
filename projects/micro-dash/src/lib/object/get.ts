@@ -14,7 +14,7 @@ type WithDefault<V, D> =
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 5,049 bytes
- * - Micro-dash: 108 bytes
+ * - Micro-dash: 107 bytes
  */
 
 export function get<T, K extends keyof NonNullable<T>, D = undefined>(

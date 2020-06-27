@@ -7,7 +7,7 @@ import { remove } from './remove';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 815 bytes
- * - Micro-dash: 175 bytes
+ * - Micro-dash: 174 bytes
  */
 export function pullAll<T>(array: T[], values: T[]): T[] {
   for (const value of values.slice()) {

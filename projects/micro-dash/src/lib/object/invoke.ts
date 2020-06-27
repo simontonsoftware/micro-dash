@@ -80,7 +80,7 @@ type DefinedPath3<
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 6,253 bytes
- * - Micro-dash: 241 bytes
+ * - Micro-dash: 240 bytes
  */
 
 // Removed for https://github.com/simontonsoftware/micro-dash/issues/33

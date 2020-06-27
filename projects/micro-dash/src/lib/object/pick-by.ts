@@ -15,7 +15,7 @@ import { forOwn } from './for-own';
  * - does not treat sparse arrays as dense
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,853 bytes
+ * - Lodash: 14,874 bytes
  * - Micro-dash: 307 bytes
  */
 

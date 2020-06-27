@@ -38,7 +38,7 @@ interface CurriedFunction4<T1, T2, T3, T4, R> {
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 8,896 bytes
- * - Micro-dash: 155 bytes
+ * - Micro-dash: 149 bytes
  */
 
 export function curry<T1, R>(func: (t1: T1) => R): CurriedFunction1<T1, R>;

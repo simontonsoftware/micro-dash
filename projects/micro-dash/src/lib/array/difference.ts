@@ -6,7 +6,7 @@ import { flatten } from './flatten';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 6,258 bytes
- * - Micro-dash: 250 bytes
+ * - Micro-dash: 249 bytes
  */
 export function difference<T>(array: T[], ...values: T[][]): T[] {
   return pullAll(array.slice(), flatten(values));

@@ -5,7 +5,7 @@ import { forOwnRightOfNonArray } from '../object/for-own-right';
  * This method is like `forEach` except that it iterates over elements of `collection` from right to left.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 3,759 bytes
+ * - Lodash: 3,777 bytes
  * - Micro-dash: 217 bytes
  */
 

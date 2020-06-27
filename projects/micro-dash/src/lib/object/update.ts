@@ -9,7 +9,7 @@
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 5,842 bytes
- * - Micro-dash: 178 bytes
+ * - Micro-dash: 177 bytes
  */
 export function update<T>(
   object: T,

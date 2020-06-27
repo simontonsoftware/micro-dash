@@ -5,7 +5,7 @@
  * - does not skip `undefined` values
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 8,274 bytes
+ * - Lodash: 8,292 bytes
  * - Micro-dash: 22 bytes
  */
 export function sumBy<T>(array: T[], iteratee: (element: T) => number): number {

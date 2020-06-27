@@ -5,7 +5,7 @@ import { forEach } from './for-each';
  * Creates an object composed of keys generated from the results of running each element of `collection` thru `iteratee`. The corresponding value of each key is the last element responsible for generating the key.
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,302 bytes
+ * - Lodash: 14,323 bytes
  * - Micro-dash: 265 bytes
  */
 

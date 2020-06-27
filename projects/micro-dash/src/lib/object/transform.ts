@@ -9,8 +9,8 @@ import { ObjectWith } from '../interfaces';
  * - does not treat sparse arrays as dense
  *
  * Contribution to minified bundle size, when it is the only function imported:
- * - Lodash: 14,219 bytes
- * - Micro-dash: 257 bytes
+ * - Lodash: 14,240 bytes
+ * - Micro-dash: 256 bytes
  */
 
 export function transform<E, A>(
