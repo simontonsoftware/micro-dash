@@ -68,8 +68,8 @@ export function curry<T1, T2, T3, T4, R>(
   arity: 4,
 ): CurriedFunction4<T1, T2, T3, T4, R>;
 
-export function curry(func: (...args: any[]) => any, arity = func.length) {
-  return function (this: any, ...args: any[]) {
+export function curry(func: (...args: any[]) => any, arity = func.length): any {
+  return function (this: any, ...args: any[]): any {
     if (args.length < arity) {
       return curry(
         (partial as any)(func, ...args),

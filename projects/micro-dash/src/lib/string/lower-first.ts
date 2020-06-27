@@ -8,6 +8,6 @@ import { Nil } from '../interfaces';
  * - Micro-dash: 63 bytes
  */
 // tslint:disable-next-line:variable-name
-export function lowerFirst(string: string | Nil) {
+export function lowerFirst(string: string | Nil): string {
   return string ? string.charAt(0).toLowerCase() + string.slice(1) : '';
 }

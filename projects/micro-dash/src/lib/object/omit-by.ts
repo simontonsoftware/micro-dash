@@ -53,6 +53,6 @@ export function omitBy<T>(
   predicate: ObjectIteratee<T, boolean>,
 ): Partial<NonNullable<T>>;
 
-export function omitBy(object: any, predicate: Function) {
+export function omitBy(object: any, predicate: Function): any {
   return pickBy(object, (item, key) => !predicate(item, key));
 }

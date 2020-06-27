@@ -8,6 +8,6 @@ import { Nil } from '../interfaces';
  * - Micro-dash: 63 bytes
  */
 // tslint:disable-next-line:variable-name
-export function upperFirst(string: string | Nil) {
+export function upperFirst(string: string | Nil): string {
   return string ? string.charAt(0).toUpperCase() + string.slice(1) : '';
 }

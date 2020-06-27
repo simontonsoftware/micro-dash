@@ -4,7 +4,7 @@ import { partial } from './partial';
 
 describe('partial()', () => {
   it('does not alter the `this` binding', () => {
-    function fn(this: any) {
+    function fn(this: any): any {
       return this;
     }
 
@@ -39,7 +39,7 @@ describe('partial()', () => {
 
   it('works when there are no partially applied arguments and the created function is invoked without additional arguments', () => {
     // tslint:disable-next-line:only-arrow-functions
-    const fn = function () {
+    const fn = function (): number {
       return arguments.length;
     };
 
@@ -54,7 +54,7 @@ describe('partial()', () => {
 
   it('should ensure `new par` is an instance of `func`', () => {
     const object = {};
-    function Foo(value = false) {
+    function Foo(value = false): false | {} {
       return value && object;
     }
 
@@ -65,7 +65,7 @@ describe('partial()', () => {
   });
 
   it('should clone metadata for created functions', () => {
-    function greet(greeting: string, name: string) {
+    function greet(greeting: string, name: string): string {
       return greeting + ' ' + name;
     }
 

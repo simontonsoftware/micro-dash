@@ -20,7 +20,7 @@ export function every<T>(
   predicate: ObjectIteratee<T, any>,
 ): boolean;
 
-export function every(collection: any, predicate: any) {
+export function every(collection: any, predicate: any): boolean {
   let result = true;
   forEach(
     collection,

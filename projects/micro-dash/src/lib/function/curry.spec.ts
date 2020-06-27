@@ -8,7 +8,7 @@ describe('curry()', () => {
   //
 
   it('should curry based on the number of arguments given', () => {
-    function fn(_a: number, _b: number, _c: number, _d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number): any {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -20,7 +20,7 @@ describe('curry()', () => {
   });
 
   it('should allow specifying `arity`', () => {
-    function fn(_a: number, _b: number, _c: number, _d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number): any {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -32,7 +32,7 @@ describe('curry()', () => {
   });
 
   it('should provide additional arguments after reaching arity', () => {
-    function fn(_a: number, _b: number, _c: number, _d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number): any {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -44,7 +44,7 @@ describe('curry()', () => {
   });
 
   it('should create a function with a `length` of `0`', () => {
-    function fn(_a: number, _b: number, _c: number, _d: number) {
+    function fn(_a: number, _b: number, _c: number, _d: number): any {
       return Array.prototype.slice.call(arguments);
     }
 
@@ -65,7 +65,7 @@ describe('curry()', () => {
       a: string,
       b: string,
       c: string,
-    ) {
+    ): number[] {
       const value = this || {};
       return [value[a], value[b], value[c]];
     }
@@ -84,7 +84,7 @@ describe('curry()', () => {
       a: number,
       b: number,
       c: number,
-    ) {
+    ): number[] {
       return [a, b, c];
     });
 

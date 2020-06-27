@@ -24,7 +24,11 @@ export function transform<E, A>(
   accumulator?: A,
 ): A;
 
-export function transform(object: any, iteratee: Function, accumulator = {}) {
+export function transform(
+  object: any,
+  iteratee: Function,
+  accumulator = {},
+): any {
   forEach(object, (value, key) => iteratee(accumulator, value, key));
   return accumulator;
 }

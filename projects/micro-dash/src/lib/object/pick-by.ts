@@ -54,7 +54,10 @@ export function pickBy<T>(
   predicate: ObjectIteratee<T, boolean>,
 ): Partial<NonNullable<T>>;
 
-export function pickBy<T>(object: T, predicate: ObjectIteratee<T, boolean>) {
+export function pickBy<T>(
+  object: T,
+  predicate: ObjectIteratee<T, boolean>,
+): Partial<T> {
   const obj: any = {};
   forOwn(object, (item, key) => {
     if (predicate(item, key)) {

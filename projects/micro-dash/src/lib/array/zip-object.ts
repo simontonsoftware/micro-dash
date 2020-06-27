@@ -39,7 +39,7 @@ export function zipObject<K extends Key, V>(
   values: V[],
 ): { [k in K]: V | undefined };
 
-export function zipObject(props: Key[], values: any[]) {
+export function zipObject(props: Key[], values: any[]): any {
   return transform(props, (accumulator: any, prop, index) => {
     accumulator[prop] = values[index];
   });

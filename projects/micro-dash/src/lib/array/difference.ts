@@ -8,6 +8,6 @@ import { flatten } from './flatten';
  * - Lodash: 6,258 bytes
  * - Micro-dash: 250 bytes
  */
-export function difference<T>(array: T[], ...values: T[][]) {
+export function difference<T>(array: T[], ...values: T[][]): T[] {
   return pullAll(array.slice(), flatten(values));
 }

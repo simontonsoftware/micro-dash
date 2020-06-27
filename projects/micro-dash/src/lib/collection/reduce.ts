@@ -27,7 +27,7 @@ export function reduce<E, A>(
   iteratee: (accumulator: A, value: E, key: keyof E) => A,
   accumulator: A,
 ): A;
-export function reduce(collection: any, iteratee: any, accumulator?: any) {
+export function reduce(collection: any, iteratee: any, accumulator?: any): any {
   return doReduce(
     forEach,
     collection,

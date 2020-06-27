@@ -32,7 +32,7 @@ export function reduceRight(
   collection: any,
   iteratee: Function,
   accumulator?: any,
-) {
+): any {
   return doReduce(
     forEachRight,
     collection,

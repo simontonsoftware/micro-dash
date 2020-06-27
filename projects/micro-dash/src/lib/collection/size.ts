@@ -12,6 +12,6 @@ export function size(collection: object): number;
 // tslint:disable-next-line:unified-signatures
 export function size(collection: any[] | string): number;
 
-export function size(collection: object | any[] | string) {
+export function size(collection: object | any[] | string): number {
   return keys(collection).length;
 }

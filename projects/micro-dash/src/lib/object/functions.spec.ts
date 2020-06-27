@@ -6,7 +6,7 @@ describe('functions()', () => {
     class MyClass {
       a = 1;
 
-      b() {
+      b(): number {
         return 2;
       }
     }
@@ -23,7 +23,7 @@ describe('functions()', () => {
   });
 
   it('should not include inherited functions', () => {
-    function Foo(this: any) {
+    function Foo(this: any): void {
       this.a = identity;
       this.b = 'b';
     }

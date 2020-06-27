@@ -11,7 +11,7 @@ import { keysOfNonArray } from '../object/keys';
  * - Lodash: 4,303 bytes
  * - Micro-dash: 127 bytes
  */
-export function isEmpty(value: any) {
+export function isEmpty(value: any): boolean {
   if (!Array.isArray(value)) {
     value = keysOfNonArray(value);
   }

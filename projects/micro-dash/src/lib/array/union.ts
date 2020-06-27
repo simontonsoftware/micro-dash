@@ -7,6 +7,6 @@ import { flatten } from './flatten';
  * - Lodash: 6,197 bytes
  * - Micro-dash: 50 bytes
  */
-export function union<T>(...arrays: T[][]) {
+export function union<T>(...arrays: T[][]): T[] {
   return Array.from(new Set(flatten(arrays)));
 }

@@ -31,7 +31,7 @@ describe('transform', () => {
     testAccumulatorReturned({});
     testAccumulatorReturned(null);
 
-    function testAccumulatorReturned(accumulator: any) {
+    function testAccumulatorReturned(accumulator: any): void {
       expect(transform(array, noop, accumulator)).toBe(accumulator);
       expect(transform(object, noop, accumulator)).toBe(accumulator);
       expect(transform(undefined, identity, accumulator)).toBe(accumulator);

@@ -8,6 +8,6 @@
  * - Lodash: 1,049 bytes
  * - Micro-dash: 35 bytes
  */
-export function toString(value: any) {
+export function toString(value: any): string {
   return [value].toString();
 }

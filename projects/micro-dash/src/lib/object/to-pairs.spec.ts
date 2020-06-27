@@ -22,7 +22,7 @@ describe('toPairs()', () => {
   });
 
   it('should not include inherited string keyed property values', () => {
-    function Foo(this: any) {
+    function Foo(this: any): void {
       this.a = 1;
     }
     Foo.prototype.b = 2;

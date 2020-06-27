@@ -7,14 +7,14 @@ describe('throttle', () => {
     spyOn(performance, 'now').and.callFake(() => Date.now());
   });
 
-  function expectCallIn(millis: number, spy: jasmine.Spy) {
+  function expectCallIn(millis: number, spy: jasmine.Spy): void {
     tick(millis - 1);
     expect(spy).not.toHaveBeenCalled();
     tick(1);
     expectSingleCallAndReset(spy);
   }
 
-  function expectNoCallIn(millis: number, spy: jasmine.Spy) {
+  function expectNoCallIn(millis: number, spy: jasmine.Spy): void {
     tick(millis);
     expect(spy).not.toHaveBeenCalled();
   }

@@ -20,7 +20,10 @@ export function remove<T>(
   predicate: ArrayIteratee<T, boolean>,
 ): T[];
 
-export function remove<T>(array: T[], predicate: ArrayIteratee<T, boolean>) {
+export function remove<T>(
+  array: T[],
+  predicate: ArrayIteratee<T, boolean>,
+): T[] {
   const removed: T[] = [];
   for (let i = array.length; --i >= 0; ) {
     if (predicate(array[i], i)) {

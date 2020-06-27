@@ -5,7 +5,7 @@ export function doReduce(
   iteratee: Function,
   accumulator: any,
   initAccum: boolean,
-) {
+): any {
   iterationFn(collection, (value: any, indexOrKey: any) => {
     if (initAccum) {
       accumulator = value;

@@ -6,7 +6,7 @@ describe('isUndefined', () => {
   });
 
   // tslint:disable-next-line:only-arrow-functions
-  it('should return `false` for non `undefined` values', function () {
+  it('should return `false` for non `undefined` values', function (): void {
     // falsey values
     expect(isUndefined(null)).toBe(false);
     expect(isUndefined(false)).toBe(false);

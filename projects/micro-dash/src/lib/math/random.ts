@@ -20,7 +20,7 @@ export function random(
   floating?: boolean,
 ): number;
 
-export function random(...args: any[]) {
+export function random(...args: any[]): number {
   let lower = 0;
   let upper = 1;
   if (isFinite(args[1])) {

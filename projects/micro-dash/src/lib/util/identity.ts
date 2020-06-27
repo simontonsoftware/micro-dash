@@ -5,6 +5,6 @@
  * - Lodash: 41 bytes
  * - Micro-dash: 14 bytes
  */
-export function identity<T>(value: T) {
+export function identity<T>(value: T): T {
   return value;
 }

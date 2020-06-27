@@ -40,7 +40,7 @@ export function filter<T>(
   predicate: ObjectIteratee<T, boolean>,
 ): Array<T[keyof T]>;
 
-export function filter(collection: any, predicate: Function) {
+export function filter(collection: any, predicate: Function): any[] {
   const result: any[] = [];
   forEach(collection, (item, indexOrKey) => {
     if (predicate(item, indexOrKey)) {

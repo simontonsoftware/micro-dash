@@ -1,6 +1,6 @@
 import { pullAt } from './pull-at';
 
-function expectToEq(x: any, y: any) {
+function expectToEq(x: any, y: any): boolean {
   return expect(x).toEqual(y);
 }
 

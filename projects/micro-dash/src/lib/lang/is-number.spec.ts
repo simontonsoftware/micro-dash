@@ -11,7 +11,7 @@ describe('isNumber()', () => {
   });
 
   // tslint:disable-next-line:only-arrow-functions
-  it('should return `false` for non-numbers', function () {
+  it('should return `false` for non-numbers', function (): void {
     expect(isNumber(null)).toBe(false);
     expect(isNumber(undefined)).toBe(false);
     expect(isNumber(false)).toBe(false);

@@ -23,7 +23,7 @@ describe('values()', () => {
   });
 
   it('should not include inherited string keyed property values', () => {
-    function Foo(this: any) {
+    function Foo(this: any): void {
       this.a = 1;
     }
 

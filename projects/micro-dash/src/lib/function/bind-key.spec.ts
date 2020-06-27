@@ -9,7 +9,7 @@ describe('bindKey()', () => {
   it('should work when the target function is overwritten', () => {
     const object = {
       user: 'fred',
-      greet(greeting: string) {
+      greet(greeting: string): string {
         return this.user + ' says: ' + greeting;
       },
     };
@@ -17,7 +17,7 @@ describe('bindKey()', () => {
     const bound = bindKey(object, 'greet', 'hi');
     expect(bound()).toBe('fred says: hi');
 
-    object.greet = function (greeting) {
+    object.greet = function (greeting): string {
       return this.user + ' says: ' + greeting + '!';
     };
 
@@ -53,7 +53,7 @@ describe('bindKey()', () => {
   });
 
   it('should create a function with a `length` of `0`', () => {
-    const obj = { fn(_a: any, _b: any, _c: any) {} };
+    const obj = { fn(_a: any, _b: any, _c: any): void {} };
     expect(bindKey(obj, 'fn').length).toBe(0);
     expect(bindKey(obj, 'fn', 1).length).toBe(0);
   });

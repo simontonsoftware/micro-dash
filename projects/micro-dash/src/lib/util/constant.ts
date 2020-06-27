@@ -5,6 +5,6 @@
  * - Lodash: 48 bytes
  * - Micro-dash: 4 bytes
  */
-export function constant<T>(value: T) {
+export function constant<T>(value: T): () => T {
   return () => value;
 }

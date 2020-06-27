@@ -2,12 +2,12 @@ import { keys } from './keys';
 
 describe('keys()', () => {
   // tslint:disable-next-line:only-arrow-functions
-  it('makes no special accommodations for `arguments` objects (unlike lodash)', function () {
+  it('makes no special accommodations for `arguments` objects (unlike lodash)', function (): void {
     expect(keys(arguments).sort()).toEqual(['callee', 'length']);
   });
 
   it('includes the `constructor` property on prototype objects (unlike lodash)', () => {
-    function Foo() {}
+    function Foo(): void {}
     Foo.prototype.a = 1;
 
     expect(keys(Foo.prototype)).toEqual(['constructor', 'a']);
@@ -22,7 +22,7 @@ describe('keys()', () => {
   });
 
   it('should not include inherited string keyed properties', () => {
-    function Foo(this: any) {
+    function Foo(this: any): void {
       this.a = 1;
     }
     Foo.prototype.b = 2;
@@ -45,7 +45,7 @@ describe('keys()', () => {
 
   it('should return keys for custom properties on `arguments` objects', () => {
     // tslint:disable-next-line:only-arrow-functions
-    const args: any = (function (..._: any[]) {
+    const args: any = (function (..._: any[]): IArguments {
       return arguments;
     })(1, 2, 3);
     args.a = 1;
@@ -55,7 +55,7 @@ describe('keys()', () => {
   it('should not include inherited string keyed properties of `arguments` objects', () => {
     (Object.prototype as any).a = 1;
     // tslint:disable-next-line:only-arrow-functions
-    const args: any = (function (..._: any[]) {
+    const args: any = (function (..._: any[]): IArguments {
       return arguments;
     })(1, 2, 3);
 

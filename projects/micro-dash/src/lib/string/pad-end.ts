@@ -7,6 +7,6 @@ import { makePadding } from './pad';
  * - Lodash: 3,308 bytes
  * - Micro-dash: 161 bytes
  */
-export function padEnd(s: string, length: number, chars = ' ') {
+export function padEnd(s: string, length: number, chars = ' '): string {
   return s + makePadding(s, length, chars);
 }

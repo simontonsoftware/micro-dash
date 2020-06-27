@@ -9,7 +9,7 @@
  * - Lodash: 1,497 bytes
  * - Micro-dash: 52 bytes
  */
-export function times<T>(n: number, iteratee: (index: number) => T) {
+export function times<T>(n: number, iteratee: (index: number) => T): T[] {
   const result: T[] = [];
   for (let i = 0; i < n; ++i) {
     result[i] = iteratee(i);

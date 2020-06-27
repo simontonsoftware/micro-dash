@@ -13,7 +13,10 @@ import { flatten } from './flatten';
  * - Lodash: 7,672 bytes
  * - Micro-dash: 156 bytes
  */
-export function pullAt(array: any[], ...indexes: Array<number | number[]>) {
+export function pullAt(
+  array: any[],
+  ...indexes: Array<number | number[]>
+): any[] {
   const flattenedIndexes = flatten(indexes);
   const result = flattenedIndexes.map((i) => array[i]);
 

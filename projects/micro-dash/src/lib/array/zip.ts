@@ -26,7 +26,7 @@ export function zip<T1, T2, T3, T4>(
 ): Array<[T1 | undefined, T2 | undefined, T3 | undefined, T4 | undefined]>;
 export function zip<T>(...arrays: Array<T[] | Nil>): Array<Array<T | Nil>>;
 
-export function zip<T>(...arrays: Array<T[] | Nil>) {
+export function zip<T>(...arrays: Array<T[] | Nil>): Array<Array<T | Nil>> {
   const length = Math.max(0, ...arrays.map((a) => (a ? a.length : 0)));
   return times(length, (i) => arrays.map((a) => (a ? a[i] : undefined)));
 }

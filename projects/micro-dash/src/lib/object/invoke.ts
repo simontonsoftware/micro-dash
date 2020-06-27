@@ -146,7 +146,7 @@ export function invoke<T extends object | Nil>(
   object: T,
   path: Key[],
   ...args: any[]
-) {
+): any {
   const fn = get(object, path);
   if (isFunction(fn)) {
     return fn.apply(

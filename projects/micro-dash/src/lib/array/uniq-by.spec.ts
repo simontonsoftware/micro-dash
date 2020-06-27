@@ -77,7 +77,7 @@ describe('uniqBy()', () => {
   });
 });
 
-function testLargeArray(...values: any[]) {
+function testLargeArray(...values: any[]): void {
   const largeArray = flatten(
     values.map((value) => times(Math.ceil(200 / values.length), () => value)),
   );

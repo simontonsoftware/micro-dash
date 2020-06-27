@@ -34,7 +34,7 @@ describe('isFunction()', () => {
   });
 
   // tslint:disable-next-line:only-arrow-functions
-  it('should return `false` for non-functions', function () {
+  it('should return `false` for non-functions', function (): void {
     expect(isFunction(undefined)).toBe(false);
     expect(isFunction(null)).toBe(false);
     expect(isFunction(false)).toBe(false);
@@ -57,7 +57,7 @@ describe('isFunction()', () => {
   });
 
   it('should return `false` for subclassed values', () => {
-    function Foo() {}
+    function Foo(): void {}
     Foo.prototype = Function;
     expect(isFunction(new (Foo as any)())).toBe(false);
   });

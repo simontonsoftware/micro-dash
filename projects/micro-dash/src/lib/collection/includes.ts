@@ -11,7 +11,7 @@ export function includes<T extends any[] | object | string>(
   collection: T,
   value: T extends any[] ? T[0] : T extends string ? string : T[keyof T],
   fromIndex = 0,
-) {
+): boolean {
   if (isString(collection)) {
     if (fromIndex > collection.length) {
       return false;

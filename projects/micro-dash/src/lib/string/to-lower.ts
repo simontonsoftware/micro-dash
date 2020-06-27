@@ -9,6 +9,6 @@
  * - Micro-dash: 16 bytes
  */
 // tslint:disable-next-line:variable-name
-export function toLower(string: string) {
+export function toLower(string: string): string {
   return string.toLowerCase();
 }

@@ -8,6 +8,6 @@
  * - Lodash: 5,643 bytes
  * - Micro-dash: 47 bytes
  */
-export function without<T>(array: T[], ...values: T[]) {
+export function without<T>(array: T[], ...values: T[]): T[] {
   return array.filter((item) => values.indexOf(item) === -1);
 }

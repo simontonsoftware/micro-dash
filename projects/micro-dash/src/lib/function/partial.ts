@@ -48,6 +48,6 @@ export function partial<
   ...args: [A1, A2, A3, A4, ...any[]]
 ): (...args: any[]) => ReturnType<F>;
 
-export function partial(func: Function, ...partials: any[]) {
+export function partial(func: Function, ...partials: any[]): any {
   return func.bind(undefined, ...partials);
 }

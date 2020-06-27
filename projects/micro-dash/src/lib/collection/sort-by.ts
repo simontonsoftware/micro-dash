@@ -19,7 +19,7 @@ export function sortBy<T>(
   iteratees: ObjectIteratee<T, any> | Array<ObjectIteratee<T, any>>,
 ): Array<T[keyof T]>;
 
-export function sortBy(collection: any, iteratees: Function | Function[]) {
+export function sortBy(collection: any, iteratees: Function | Function[]): any {
   const fns = castArray(iteratees);
 
   let index = 0;
@@ -47,7 +47,8 @@ export function sortBy(collection: any, iteratees: Function | Function[]) {
   return metas.map((e) => e.value);
 }
 
-function ordinal(value: any) {
+/** @hidden */
+function ordinal(value: any): number {
   if (Number.isNaN(value)) {
     return 3;
   }

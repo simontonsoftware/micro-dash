@@ -5,4 +5,4 @@
  * - Lodash: 47 bytes
  * - Micro-dash: 14 bytes
  */
-export function noop() {}
+export function noop(): void {}

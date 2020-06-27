@@ -18,7 +18,7 @@ export function some<T>(
   predicate: ObjectIteratee<T, any>,
 ): boolean;
 
-export function some(collection: any, predicate: any) {
+export function some(collection: any, predicate: any): boolean {
   let none = true;
   forEach(
     collection,

@@ -100,7 +100,7 @@ export function flow<A1, R1, R2, R3, R4, R5, R6, R7>(
 
 export function flow<T>(...funcs: Array<(val: T) => T>): (val: T) => T;
 
-export function flow(...funcs: Function[]) {
+export function flow(...funcs: Function[]): Function {
   if (funcs.length) {
     return funcs.reduce((result, func) => (input: unknown) =>
       func(result(input)),

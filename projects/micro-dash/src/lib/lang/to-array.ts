@@ -15,7 +15,7 @@ export function toArray<T extends object>(value: T): Array<T[keyof T]>;
 export function toArray(value: Primitive | Nil): [];
 export function toArray(value: any): any[];
 
-export function toArray(value: any) {
+export function toArray(value: any): any[] {
   if (value && value[Symbol.iterator]) {
     return Array.from(value);
   } else {

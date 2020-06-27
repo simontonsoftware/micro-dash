@@ -5,7 +5,7 @@
  * - Lodash: 3,359 bytes
  * - Micro-dash: 177 bytes
  */
-export function pad(s: string, length: number, chars = ' ') {
+export function pad(s: string, length: number, chars = ' '): string {
   const needed = (length - s.length) / 2;
   return (
     _makePadding(Math.floor(needed), chars) +
@@ -15,12 +15,12 @@ export function pad(s: string, length: number, chars = ' ') {
 }
 
 /** @hidden */
-export function makePadding(s: string, length: number, chars: string) {
+export function makePadding(s: string, length: number, chars: string): string {
   return _makePadding(length - s.length, chars);
 }
 
 /** @hidden */
-function _makePadding(needed: number, chars: string) {
+function _makePadding(needed: number, chars: string): string {
   return needed > 0 && chars.length > 0
     ? chars.repeat(Math.ceil(needed / chars.length)).substr(0, needed)
     : '';

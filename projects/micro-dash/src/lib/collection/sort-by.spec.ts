@@ -46,7 +46,7 @@ describe('sortBy()', () => {
   it('should coerce arrays returned from `iteratee`', () => {
     const actual = sortBy(objects, (object) => {
       const result = [object.a, object.b];
-      result.toString = function () {
+      result.toString = function (): string {
         return String(this[0]);
       };
       return result;

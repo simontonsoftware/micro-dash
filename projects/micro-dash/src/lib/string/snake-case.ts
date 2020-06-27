@@ -9,6 +9,6 @@ import { words } from './words';
  * - Micro-dash: 235 bytes
  */
 // tslint:disable-next-line:variable-name
-export function snakeCase(string: string) {
+export function snakeCase(string: string): string {
   return words(string).map(toLower).join('_');
 }

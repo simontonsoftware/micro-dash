@@ -18,7 +18,7 @@ export function keyBy<T, K extends Key>(
   iteratee: ValueIteratee<T[keyof T], K>,
 ): IfIndexType<K, { [key in K]: T[keyof T] }, { [key in K]?: T[keyof T] }>;
 
-export function keyBy(collection: any, iteratee: Function) {
+export function keyBy(collection: any, iteratee: Function): any {
   const obj: any = {};
   forEach(collection, (value) => {
     obj[iteratee(value)] = value;

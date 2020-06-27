@@ -36,7 +36,7 @@ describe('invoke()', () => {
   it('should invoke deep property methods with the correct `this` binding', () => {
     const obj = {
       a: {
-        b() {
+        b(): number {
           return this.c;
         },
         c: 1,

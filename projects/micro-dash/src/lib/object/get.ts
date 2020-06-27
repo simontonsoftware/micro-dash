@@ -69,7 +69,7 @@ export function get<
 
 export function get(object: object | Nil, path: Key[], defaultValue?: any): any;
 
-export function get(object: any, path: Key | Key[], defaultValue?: any) {
+export function get(object: any, path: Key | Key[], defaultValue?: any): any {
   // const val = property(path)(object);
   // return isUndefined(val) ? defaultValue : val;
   path = castArray(path);

@@ -8,7 +8,7 @@ describe('flatMap()', () => {
 
   const array = [1, 2, 3, 4];
 
-  function duplicate(n: number) {
+  function duplicate(n: number): number[] {
     return [n, n];
   }
 

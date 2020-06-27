@@ -9,7 +9,7 @@ import { remove } from './remove';
  * - Lodash: 815 bytes
  * - Micro-dash: 175 bytes
  */
-export function pullAll<T>(array: T[], values: T[]) {
+export function pullAll<T>(array: T[], values: T[]): T[] {
   for (const value of values.slice()) {
     remove(array, (item: T) => Object.is(item, value));
   }

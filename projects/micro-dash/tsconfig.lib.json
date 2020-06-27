@@ -7,17 +7,15 @@
     "declaration": true,
     "inlineSources": true,
     "types": [],
-    "lib": ["dom", "es2018"]
+    "lib": ["dom", "es2018"],
+
+    // Special just for micro-dash library functions, to reduce bundle size
+    "noImplicitReturns": false
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "enableResourceInlining": true,
-
-    //
-    // Simonton Software additions
-    //
-    "strictTemplates": true
+    "enableResourceInlining": true
   },
   "exclude": ["src/test.ts", "**/*.spec.ts"]
 }

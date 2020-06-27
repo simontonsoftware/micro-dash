@@ -7,6 +7,6 @@ import { pullAll } from './pull-all';
  * - Lodash: 3,000 bytes
  * - Micro-dash: 166 bytes
  */
-export function pull<T>(array: T[], ...values: T[]) {
+export function pull<T>(array: T[], ...values: T[]): T[] {
   return pullAll(array, values);
 }

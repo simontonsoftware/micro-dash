@@ -16,7 +16,7 @@ import { isEmpty } from './is-empty';
  * - Lodash: 11,201 bytes
  * - Micro-dash: 650 bytes
  */
-export function isMatch<T>(object: T, source: DeepPartial<T>) {
+export function isMatch<T>(object: T, source: DeepPartial<T>): boolean {
   return isEmpty(source) || isMatch0(object, source);
 }
 

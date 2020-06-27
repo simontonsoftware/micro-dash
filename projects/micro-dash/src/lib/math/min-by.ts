@@ -11,7 +11,7 @@ import { Existent, Primitive, ValueIteratee } from '../interfaces';
 export function minBy<T extends Existent>(
   array: T[],
   iteratee: ValueIteratee<T, Primitive>,
-) {
+): T {
   let min: T | undefined;
   let minCriterion: Primitive;
   forEachOfArray(array, (value) => {

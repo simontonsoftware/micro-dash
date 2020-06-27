@@ -8,6 +8,6 @@
  * - Lodash: 8,274 bytes
  * - Micro-dash: 22 bytes
  */
-export function sumBy<T>(array: T[], iteratee: (element: T) => number) {
+export function sumBy<T>(array: T[], iteratee: (element: T) => number): number {
   return array.reduce((sum, element) => sum + iteratee(element), 0);
 }

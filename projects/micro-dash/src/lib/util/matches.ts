@@ -14,7 +14,7 @@ import { cloneDeep, isMatch } from '../lang';
  * - Lodash: 15,909 bytes
  * - Micro-dash: 955 bytes
  */
-export function matches(source: any) {
+export function matches(source: any): (value: any) => boolean {
   source = cloneDeep(source);
   return (value: any) => isMatch(value, source);
 }

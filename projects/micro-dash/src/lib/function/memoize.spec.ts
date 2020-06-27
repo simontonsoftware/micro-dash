@@ -23,7 +23,7 @@ describe('memoize()', () => {
   });
 
   it('should use `this` binding of function for `resolver`', () => {
-    function fn(this: any, a: number) {
+    function fn(this: any, a: number): any {
       return a + this.b + this.c;
     }
 
@@ -66,7 +66,7 @@ describe('memoize()', () => {
     const key = '__proto__';
     let count = 0;
 
-    function func(_arg: any) {
+    function func(_arg: any): any[] {
       ++count;
       return array;
     }

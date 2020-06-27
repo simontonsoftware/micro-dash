@@ -19,7 +19,7 @@ export function mapValues<T, O>(
   iteratee: ObjectIteratee<T, O>,
 ): { [key in keyof NonNullable<T>]: O } | IfCouldBe<T, Nil, {}>;
 
-export function mapValues(object: any, iteratee: Function) {
+export function mapValues(object: any, iteratee: Function): any {
   const obj: any = {};
   forOwn(object, (value, key) => {
     obj[key] = iteratee(value, key);

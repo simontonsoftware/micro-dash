@@ -59,7 +59,7 @@ export function merge<T extends object>(
   ...sources: Array<Partial<T>>
 ): T;
 
-export function merge(object: any, ...sources: any[]) {
+export function merge(object: any, ...sources: any[]): any {
   for (const source of sources) {
     forEach<any>(source, (value, key) => {
       const myValue = object[key];

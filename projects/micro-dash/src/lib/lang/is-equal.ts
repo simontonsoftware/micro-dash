@@ -12,7 +12,7 @@ import { keysOfNonArray } from '../object/keys';
  * - Lodash: 10,790 bytes
  * - Micro-dash: 276 bytes
  */
-export function isEqual(value: any, other: any) {
+export function isEqual(value: any, other: any): boolean {
   if (Object.is(value, other)) {
     // covers e.g. NaN === NaN
     return true;

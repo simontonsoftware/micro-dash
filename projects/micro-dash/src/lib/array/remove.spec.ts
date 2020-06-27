@@ -65,7 +65,7 @@ describe('remove()', () => {
     expect(array).toEqual([2]);
   });
 
-  function isEven(i: number) {
+  function isEven(i: number): boolean {
     return i % 2 === 0;
   }
 });

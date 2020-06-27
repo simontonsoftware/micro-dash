@@ -18,7 +18,7 @@ export function forEach<T>(
   iteratee: ObjectIteratee<T, void | boolean>,
 ): T;
 
-export function forEach(collection: any, iteratee: any) {
+export function forEach(collection: any, iteratee: any): any {
   if (Array.isArray(collection)) {
     forEachOfArray(collection, iteratee);
   } else {
@@ -31,7 +31,7 @@ export function forEach(collection: any, iteratee: any) {
 export function forEachOfArray<T>(
   array: T[],
   iteratee: ArrayIteratee<T, void | boolean>,
-) {
+): void {
   for (let i = 0, len = array.length; i < len; ++i) {
     if (iteratee(array[i], i) === false) {
       break;

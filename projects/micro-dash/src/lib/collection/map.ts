@@ -18,7 +18,7 @@ export function map<T, O>(
   iteratee: ObjectIteratee<T, O>,
 ): O[];
 
-export function map(collection: any, iteratee: any) {
+export function map(collection: any, iteratee: any): any[] {
   const mapped: any[] = [];
   forEach(collection, (value, keyOrIndex) => {
     mapped.push(iteratee(value, keyOrIndex));

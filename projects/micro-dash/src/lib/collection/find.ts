@@ -90,7 +90,7 @@ export function find<T>(
   fromIndex?: number,
 ): T[keyof T] | undefined;
 
-export function find(collection: any, predicate: Function, fromIndex = 0) {
+export function find(collection: any, predicate: Function, fromIndex = 0): any {
   if (Array.isArray(collection)) {
     return collection
       .slice(fromIndex)

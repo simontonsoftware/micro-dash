@@ -5,6 +5,6 @@
  * - Lodash: 1,410 bytes
  * - Micro-dash: 7 bytes
  */
-export function concat<T>(array: T[], ...values: Array<T | T[]>) {
+export function concat<T>(array: T[], ...values: Array<T | T[]>): T[] {
   return array.concat(...values);
 }

@@ -12,7 +12,7 @@ import { words } from './words';
  * - Micro-dash: 322 bytes
  */
 // tslint:disable-next-line:variable-name
-export function camelCase(string: string) {
+export function camelCase(string: string): string {
   return words(string)
     .map((w, i) => (i ? capitalize(w) : w.toLowerCase()))
     .join('');

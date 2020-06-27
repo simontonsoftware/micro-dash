@@ -15,7 +15,7 @@
  * - Micro-dash: 78 bytes
  */
 // tslint:disable-next-line:variable-name
-export function round(number: number, precision = 0) {
+export function round(number: number, precision = 0): number {
   const factor = 10 ** Math.trunc(precision);
   return Math.round(number * factor) / factor;
 }
