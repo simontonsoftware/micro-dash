@@ -3,6 +3,7 @@ export { filter } from './filter';
 export { find } from './find';
 export { flatMap } from './flat-map';
 export { forEach } from './for-each';
+export { groupBy } from './group-by';
 export { forEachRight } from './for-each-right';
 export { includes } from './includes';
 export { keyBy } from './key-by';

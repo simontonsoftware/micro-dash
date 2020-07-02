@@ -45,9 +45,9 @@ export type IfCouldBe<T1, T2, If, Else = never> = Extract<T1, T2> extends never
   : If;
 /** @hidden */
 export type IfIndexType<T extends Key, If, Else = never> = string extends T
-  ? number extends T
-    ? If
-    : If
+  ? If
+  : number extends T
+  ? If
   : Else;
 
 /** @hidden */

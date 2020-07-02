@@ -3,7 +3,7 @@ import { stub } from 'sinon';
 import { identity } from '../util';
 import { map } from './map';
 
-describe('forEach()', () => {
+describe('map()', () => {
   //
   // stolen from https://github.com/lodash/lodash
   //
