@@ -1,4 +1,4 @@
-import { ArrayIteratee, ObjectIteratee } from '../interfaces';
+import { Nil, ObjectWith, ValueIteratee } from '../interfaces';
 import { castArray } from '../lang';
 import { map } from './map';
 
@@ -7,39 +7,25 @@ import { map } from './map';
  *
  * Contribution to minified bundle size, when it is the only function imported:
  * - Lodash: 16,054 bytes
- * - Micro-dash: 622 bytes
+ * - Micro-dash: 612 bytes
  */
-
 export function sortBy<T>(
-  array: T[],
-  iteratees: ArrayIteratee<T, any> | Array<ArrayIteratee<T, any>>,
-): T[];
-export function sortBy<T>(
-  object: T,
-  iteratees: ObjectIteratee<T, any> | Array<ObjectIteratee<T, any>>,
-): Array<T[keyof T]>;
-
-export function sortBy(collection: any, iteratees: Function | Function[]): any {
+  collection: T[] | ObjectWith<T> | Nil,
+  iteratees: ValueIteratee<T, any> | Array<ValueIteratee<T, any>>,
+): T[] {
   const fns = castArray(iteratees);
+  const metas = map(collection, (value: any) =>
+    Object.assign(
+      fns.map((fn) => fn(value)),
+      { value },
+    ),
+  );
 
-  let index = 0;
-  const metas = map(collection, (value) => {
-    const meta: Meta = [] as any;
-    meta.value = value;
-    for (const fn of fns) {
-      const v = fn(value);
-      meta.push(ordinal(v), v);
-    }
-    meta.push(index++);
-    return meta;
-  });
-
-  metas.sort((m1, m2): any => {
+  metas.sort((m1, m2) => {
     for (let i = 0; i < m1.length; ++i) {
-      if (m1[i] < m2[i]) {
-        return -1;
-      } else if (m1[i] > m2[i]) {
-        return 1;
+      const comp = compareValues(m1[i], m2[i]);
+      if (comp) {
+        return comp;
       }
     }
   });
@@ -48,7 +34,22 @@ export function sortBy(collection: any, iteratees: Function | Function[]): any {
 }
 
 /** @hidden */
-function ordinal(value: any): number {
+export const compareValues = (x: any, y: any): any => {
+  let v1 = getSortOrdinal(x);
+  let v2 = getSortOrdinal(y);
+  if (v1 === v2) {
+    v1 = x;
+    v2 = y;
+  }
+  if (v1 < v2) {
+    return -1;
+  } else if (v1 > v2) {
+    return 1;
+  }
+};
+
+/** @hidden */
+const getSortOrdinal = (value: any): number => {
   if (Number.isNaN(value)) {
     return 3;
   }
@@ -59,9 +60,4 @@ function ordinal(value: any): number {
     return 1;
   }
   return 0;
-}
-
-/** @hidden */
-interface Meta extends Array<any> {
-  value: number;
-}
+};

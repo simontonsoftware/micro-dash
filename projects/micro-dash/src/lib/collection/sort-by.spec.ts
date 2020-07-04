@@ -2,6 +2,11 @@ import { identity } from 'lodash-es';
 import { sortBy } from './sort-by';
 
 describe('sortBy()', () => {
+  it('handles nil collections', () => {
+    expect(sortBy(null, identity)).toEqual([]);
+    expect(sortBy(undefined, identity)).toEqual([]);
+  });
+
   //
   // stolen from https://github.com/lodash/lodash
   //
@@ -37,10 +42,6 @@ describe('sortBy()', () => {
         identity,
       ),
     ).toEqual(['a', 'b', 'c', 'd', null, null, undefined, undefined, NaN, NaN]);
-  });
-
-  it('should treat number values for `collection` as empty', () => {
-    expect(sortBy(1, identity)).toEqual([]);
   });
 
   it('should coerce arrays returned from `iteratee`', () => {
