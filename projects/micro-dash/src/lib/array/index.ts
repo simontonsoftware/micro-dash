@@ -9,6 +9,7 @@ export { pull } from './pull';
 export { pullAll } from './pull-all';
 export { pullAt } from './pull-at';
 export { remove } from './remove';
+export { sortedIndex } from './sorted-index';
 export { union } from './union';
 export { uniq } from './uniq';
 export { uniqBy } from './uniq-by';
