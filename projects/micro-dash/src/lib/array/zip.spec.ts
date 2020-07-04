@@ -44,13 +44,13 @@ describe('zip()', () => {
     expect(actual1).toEqual([
       ['barney', 'fred'],
       [36, 40],
-      [undefined, false],
+      [undefined as any, false],
     ]);
 
     const actual2 = zip(...actual1);
     expect('2' in actual2[0]).toBeTruthy();
     expect(actual2).toEqual([
-      ['barney', 36, undefined],
+      ['barney', 36, undefined as any],
       ['fred', 40, false],
     ]);
   });

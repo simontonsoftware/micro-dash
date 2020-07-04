@@ -9,21 +9,19 @@ import { times } from '../util';
  * - Micro-dash: 155 bytes
  */
 
-export function zip<T1, T2>(
-  array1: T1[],
-  array2: T2[],
-): Array<[T1 | undefined, T2 | undefined]>;
+export function zip<T1, T2>(array1: T1[], array2: T2[]): Array<[T1, T2]>;
 export function zip<T1, T2, T3>(
   array1: T1[],
   array2: T2[],
   array3: T3[],
-): Array<[T1 | undefined, T2 | undefined, T3 | undefined]>;
+): Array<[T1, T2, T3]>;
 export function zip<T1, T2, T3, T4>(
   array1: T1[],
   array2: T2[],
   array3: T3[],
   array4: T4[],
-): Array<[T1 | undefined, T2 | undefined, T3 | undefined, T4 | undefined]>;
+): Array<[T1, T2, T3, T4]>;
+export function zip<T>(...arrays: Array<T[]>): T[][];
 export function zip<T>(...arrays: Array<T[] | Nil>): Array<Array<T | Nil>>;
 
 export function zip<T>(...arrays: Array<T[] | Nil>): Array<Array<T | Nil>> {
