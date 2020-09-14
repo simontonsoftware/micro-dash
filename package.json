@@ -1,6 +1,6 @@
 {
   "name": "micro-dash-platform",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/simontonsoftware/micro-dash/compare/v8.0.0...v8.1.0) (2020-09-14)
+
+### Features
+
+- add `groupBy()`. Closes [#45](https://github.com/simontonsoftware/micro-dash/issues/45). ([eb53cae](https://github.com/simontonsoftware/micro-dash/commit/eb53cae21352c6e19a45fd76fca3c676357e94c0))
+- add `maxBy()`. Closes [#43](https://github.com/simontonsoftware/micro-dash/issues/43). ([6cf7bcc](https://github.com/simontonsoftware/micro-dash/commit/6cf7bcc524fb34b8443474f146398ae9d25e331d))
+- add `range()`. Closes [#44](https://github.com/simontonsoftware/micro-dash/issues/44). ([05fb092](https://github.com/simontonsoftware/micro-dash/commit/05fb09240e032eaad9f324d4d82bcc76876d0cce))
+- add `sortedIndex()`. Closes [#46](https://github.com/simontonsoftware/micro-dash/issues/46). ([e826e61](https://github.com/simontonsoftware/micro-dash/commit/e826e61ef9ead047cabc3f8112fee18628fb6f21))
+- loosen typing of `zip()`. Closes [#47](https://github.com/simontonsoftware/micro-dash/issues/47). ([6b5c9e5](https://github.com/simontonsoftware/micro-dash/commit/6b5c9e504acfad1f840d5e30ca06d36a5d4f99be))
+- reduce size and improve typing of `sortBy()` ([e8fbe54](https://github.com/simontonsoftware/micro-dash/commit/e8fbe54541f2d7753c90e635965624f5070b58b4))
+
 ## [8.0.0](https://github.com/simontonsoftware/micro-dash/compare/v7.3.0...v8.0.0) (2020-06-27)
 
 ### ⚠ BREAKING CHANGES
